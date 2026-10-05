@@ -202,3 +202,9 @@ Choose from the [game menu](../docs/game-options.md). For Alien Tic-Tac-Toe, rec
 ## Optional: share your class experience on LinkedIn
 
 Want Mark to endorse your vibe coding skill? Add the skill to your profile, publish an honest LinkedIn post about the class, and send Mark your profile link, post link, and exact skill name. Connect with him if needed. Follow the [LinkedIn wrap-up guide](../docs/linkedin-wrap-up.md) for the post example and handoff checklist. This is optional; you can post after class.
+
+## Website choice, scope, and plan
+
+My starting point: vanilla / ATA Orbit / ATA Groove / dream restaurant / dream product / dream business / pet / my own idea.
+
+Use [the scope-and-plan lesson](../docs/scope-and-plan.md), [scope template](../templates/website-scope.md), and [plan template](../templates/website-plan.md). Record what belongs now, what waits, and how each of three small changes will be checked. Keep this within the website’s existing planning time.

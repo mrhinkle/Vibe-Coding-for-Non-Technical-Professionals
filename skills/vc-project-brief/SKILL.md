@@ -1,14 +1,16 @@
 ---
 name: vc-project-brief
-description: "Interview a business learner and write a small website project brief with observable acceptance checks before building."
+description: "Turn a business learner's website idea into a concise brief describing its visitor, purpose, content, and observable result before scoping and planning."
 ---
 
-# Define the first version
+# Describe who the website serves and why
 
-Use any existing notes before asking questions. Ask short groups of questions about the intended user, their task, the business outcome, supplied content, and the time available. Offer a small default when the learner is unsure.
+Use existing notes before asking questions. Ask only about missing details that affect the visitor, purpose, main action, supplied content, or time available. Offer a small default when the learner is unsure. If a referenced course file or starter is unavailable, request the relevant text or file; do not invent its contents.
 
-Write project-brief.md, or return the same content in chat when file writing is unavailable. Include the user and problem, a one-sentence outcome, first-version features, excluded features, supplied facts and assets, assumptions, and acceptance checks. Make each check something a person can observe. Mark unknown facts rather than inventing credentials, customer quotes, or performance claims.
+Write a short `project-brief.md`, or return its complete contents in chat. Include the intended visitor, their task, a one-sentence outcome, supplied facts and assets, whether the subject is real or fictional, assumptions, and a few observable success statements. Mark unknown facts rather than inventing customer quotes, credentials, availability, or performance claims.
 
-For project 1, scope a single page on the learner's chosen topic with a heading, two or three sections, and a meaningful link or button. Define its destination, working navigation, accurate content, and narrow-screen usability. Use supplied or fictional content. The game project uses its own game brief.
+For the classroom website, begin with one page, three main sections, and one meaningful primary action. The learner may choose a course starter or their own design. Record that preference if known; a particular template is not mandatory. Specify what the main action actually does. A link to a menu section is sufficient for a fictional restaurant. Do not imply a reservation, order, or message is processed unless a real, authorized working service exists and is within scope.
 
-Ask the learner to correct the completed brief and choose any unresolved scope decision. Finish with a concise account of what building this version would accomplish. Do not generate the site before the scope is settled.
+Keep the three decisions distinct: the **brief** explains who and why; the **scope** selects what belongs in the first version; the **plan** describes how to build and check it. Reuse agreed information across these records rather than repeating the interview or producing long business documents. The game has its own game brief.
+
+Invite the learner to correct factual errors and resolve material unknowns. Finish with the concise outcome and the next scoping decision, if one remains. If the scope is already clear, carry it forward without asking again. Do not generate the website as part of writing its brief.

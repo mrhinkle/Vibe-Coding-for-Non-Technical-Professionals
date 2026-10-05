@@ -23,7 +23,8 @@ Read `START-HERE.md` and this file first. Load only the relevant lesson and skil
 | Understand the process | `instructor-guide.md`, first 30 minutes | `skills/vc-sdlc-coach/SKILL.md` |
 | Prepare a laptop before class | `PRE-CLASS-PREP.md`; ask operating system and incomplete step | `skills/vc-setup-guide/SKILL.md` |
 | Prepare accounts and workflow | `setup-guide.md` | `skills/vc-setup-guide/SKILL.md` |
-| Define a website | `docs/website-walkthrough.md` | `skills/vc-project-brief/SKILL.md`, then `vc-project-plan` |
+| Choose a website starting point | `website-starters/README.md`; offer a template or their own idea | `skills/vc-project-brief/SKILL.md` |
+| Scope and plan a website | `docs/scope-and-plan.md` | `skills/vc-project-scope/SKILL.md`, then `skills/vc-project-plan/SKILL.md` |
 | Build the page | `docs/website-walkthrough.md` | `skills/vc-build-small/SKILL.md` |
 | Check and publish | `setup-guide.md`, `docs/troubleshooting.md` | `skills/vc-quality-check/SKILL.md`, then `vc-publish-site` |
 | Choose and build a game | `docs/game-options.md`, the selected walkthrough, `game-skills-guide.md` | The seven `game-skills/*/SKILL.md` files, one stage at a time |
@@ -31,7 +32,7 @@ Read `START-HERE.md` and this file first. Load only the relevant lesson and skil
 | Use multiple helpers | `docs/multiple-agents.md` | Task/handoff templates; optional extension |
 | Resume or hand off | `templates/project-state.md`, `handouts/student-workbook.md` | `skills/vc-project-handoff/SKILL.md` |
 
-The exact file paths and stage timings are indexed in `course-map.json`. Worked website/game examples are fictional teaching specifications. They are not evidence that an app has been built or tested.
+The exact file paths and stage timings are indexed in `course-map.json`. The seven website starters contain runnable, locally checked HTML. The game walkthroughs are fictional teaching specifications. Inspect the actual selected file; the course pack contains starter instructions, not their HTML source.
 
 ## Tutoring loop
 
@@ -56,7 +57,7 @@ Do not enable paid services, change credentials, delete projects, or add custome
 
 Agents are optional. Use one writer per working directory. Reviewers receive the exact files/version and do not edit. Do not present one model role-playing multiple viewpoints as independent review. Coordinate and retest combined work before release.
 
-Use the root current guides as course authority. `presentations/reference-six-hour-class/` is an older one-project deck with dated setup and pricing. Do not silently import its database/email requirements. No starter application, classroom rehearsal, or full provider integration test is established merely by this documentation.
+Use the root current guides as course authority. `presentations/reference-six-hour-class/` is an older one-project deck with dated setup and pricing. Do not silently import its database/email requirements. Website starters have local checks documented in instructor/materials-checks.md. Classroom rehearsal, game applications, and full provider integration are not established by documentation.
 
 ## End every checkpoint with
 

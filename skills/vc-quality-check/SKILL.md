@@ -12,3 +12,5 @@ Test the primary link or button, navigation, images, keyboard interaction, accur
 Use a browser when available. Otherwise give the learner precise manual steps and wait for observed results. Record unperformed work as Not tested. Write test-report.md with test, expected outcome, actual outcome, evidence, and Passed, Failed, or Not tested. Distinguish functional testing, code inspection, and automated scores.
 
 Prioritize failures that prevent the agreed visitor task. Report defects with reproduction steps. If asked to fix them, repair within scope and rerun the failed and adjacent checks. Invite a partner to attempt the task independently. Call the result a classroom quality check, not a complete accessibility or security certification.
+
+Use project-scope.md when available alongside the brief and plan. Preserve its first-version limits and check the actual main action; do not add postponed features while improving a starter. If using a template, inspect its actual HTML and preserve a working checkpoint before changes.

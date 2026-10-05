@@ -6,6 +6,16 @@ This walkthrough takes a fictional one-page website from a short brief to a chec
 
 Allow about 90 minutes during class. Start with [the course entry point](../START-HERE.md) and complete the [account and connection guide](../setup-guide.md). If something stops working, follow the matching symptom in [troubleshooting](troubleshooting.md). The instructor must prepare any recovery checkpoint mentioned there before class; a tested starter is not automatically supplied by these instructions.
 
+**Prefer a ready-made starting point?** Choose one of the [seven website starters](../website-starters/README.md), or make your own. This reading-club example remains an optional from-scratch walkthrough. Use [scope and plan](scope-and-plan.md) and `vc-project-scope` between the brief and build plan; when adapting a starter, inspect its actual HTML before changing it.
+
+## Continuing from a starter or your own plan
+
+If you already finished [scope and plan](scope-and-plan.md), keep your chosen project and skip the Riverbend brief and planning prompts below. Give `vc-build-small` your current HTML, agreed brief/scope/plan, and first unfinished increment. Use this prompt:
+
+> Continue my chosen website from the attached files and plan. Make only the next agreed increment, preserve what already works, and return the complete updated index.html. Do not replace my topic or copy with the Riverbend example. Tell me the visible check to perform.
+
+Then use [step 4 to save and open the file](#4-save-the-file-and-open-it), followed by the checking and publishing steps. In later sample prompts, keep your own topic, content, and agreed styling. If starting from scratch with Riverbend, follow the numbered steps below.
+
 ## The example you will build
 
 **Riverbend Reading Club** is a fictional community group. Its page helps a visitor understand the club and find the next practice gathering. Use this content or replace it with a similarly small idea.
@@ -40,7 +50,7 @@ Open [vc-project-brief](../skills/vc-project-brief/SKILL.md). Copy or attach its
 
 Read the response. Correct any invented features or changed facts. Save the agreed brief as `project-brief.md` in your website folder, or keep the same text in your workbook until you can save it. A `.md` file is a plain-text document with simple formatting marks.
 
-Use [vc-project-plan](../skills/vc-project-plan/SKILL.md) with the brief:
+Use [vc-project-scope](../skills/vc-project-scope/SKILL.md) to save the one-page scope, its primary action, must-have/later/out-of-scope lists, and five checks. Reuse the brief rather than starting another interview. Then use [vc-project-plan](../skills/vc-project-plan/SKILL.md) with the brief:
 
 > Plan this as one static page. List the sections in order and explain what each link or button does. Use one complete index.html with the styles included and a simple decoration that needs no downloaded image. Give me a small build plan that fits this class. Do not add a framework or server.
 

@@ -41,6 +41,7 @@
       "lesson": "docs/website-walkthrough.md",
       "skills": [
         "skills/vc-project-brief/SKILL.md",
+        "skills/vc-project-scope/SKILL.md",
         "skills/vc-project-plan/SKILL.md",
         "skills/vc-build-small/SKILL.md",
         "skills/vc-quality-check/SKILL.md",
@@ -164,5 +165,13 @@
       "lesson": "docs/game-options.md"
     }
   ],
-  "game_menu": "docs/game-options.md"
+  "game_menu": "docs/game-options.md",
+  "website_starters": {
+    "guide": "website-starters/README.md",
+    "gallery": "website-starters/index.html",
+    "catalog": "website-starters/catalog.json",
+    "optional": true,
+    "own_idea_allowed": true
+  },
+  "website_planning_lesson": "docs/scope-and-plan.md"
 }

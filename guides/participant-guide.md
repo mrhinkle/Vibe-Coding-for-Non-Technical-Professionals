@@ -171,25 +171,25 @@ Start with a small, specific promise to one kind of visitor.
 ![Conceptual illustration: Give the page one clear job.](assets/website.svg)
 
 
-Example: a fictional community event page. A visitor can learn what the event is, find when and where it takes place, and follow a real directions link. No registration system or payment is needed.
+Choose a starter or make your own: vanilla, two All Things AI fan sites, dream restaurant, dream product, dream business, or pet. Download the course and open website-starters/index.html. Copy the chosen folder into your own project.
 
 
 1. Write the audience and desired outcome in one sentence.
-2. Choose a heading, two or three sections, a visual treatment, and the main link or button.
-3. Name five checks: clear purpose, correct content, main action, navigation, and phone layout.
+2. Scope WHAT: one page, three sections, one useful action. Put extra features in a later list.
+3. Plan HOW: three small changes, each with a visible check. Check purpose, content, action, navigation, and phone layout.
 
 
 **Try this prompt**
 
-> Use vc-project-brief and vc-project-plan. Interview me about my page, then write a small brief and three build increments. Include the exact destination or behavior of the main action.
+> Use vc-project-brief, vc-project-scope, and vc-project-plan. Help me define who and why, what belongs now, and how to build in three increments. Include the exact destination or behavior of the main action.
 
 
 **Keep in mind**
 
-Save project-brief.md. Use content and images you have permission to use. Fictional examples should be visibly fictional; do not invent testimonials or working services.
+Save your brief, scope, and plan. Use content and images you have permission to use. Fictional examples should be visibly fictional; do not invent testimonials or working services.
 
 
-[Detailed lesson: docs/website-walkthrough.md](../docs/website-walkthrough.md)
+[Detailed lesson: docs/scope-and-plan.md](../docs/scope-and-plan.md)
 
 
 ## 08. Build small. Look. Then improve.
@@ -502,7 +502,7 @@ Brand palette and logo come from the existing All Things AI class presentation. 
 
 **Keep in mind**
 
-The guide is a learning aid. Starter applications and full classroom rehearsal remain preparation tasks. A documented workflow is not a claim that every provider or device has been exercised.
+The guide is a learning aid. Website starters have local checks; game checkpoints and full classroom rehearsal remain preparation tasks. A documented workflow is not a claim that every provider or device has been exercised.
 
 
 [Detailed lesson: repository-map.md](../repository-map.md)

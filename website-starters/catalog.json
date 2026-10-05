@@ -1,0 +1,51 @@
+[
+  {
+    "id": "vanilla",
+    "title": "The blank canvas",
+    "headline": "Plain. Clear. Yours.",
+    "description": "A clean starting point with three sections and one working link.",
+    "path": "vanilla/index.html"
+  },
+  {
+    "id": "ata-orbit",
+    "title": "All Things AI / Orbit",
+    "headline": "Bright ideas, in orbit.",
+    "description": "Blue and orange. Crisp type. A little gravitational pull.",
+    "path": "ata-orbit/index.html"
+  },
+  {
+    "id": "ata-groove",
+    "title": "All Things AI / Groove",
+    "headline": "Good future energy.",
+    "description": "A groovy fan page with peach waves and a bold point of view.",
+    "path": "ata-groove/index.html"
+  },
+  {
+    "id": "dream-restaurant",
+    "title": "Your dream restaurant",
+    "headline": "Make a place at the table.",
+    "description": "Remix Moonlight Noodle Club into the place you wish existed.",
+    "path": "dream-restaurant/index.html"
+  },
+  {
+    "id": "dream-product",
+    "title": "Your dream product",
+    "headline": "Meet your next big idea.",
+    "description": "Give one imaginary product a beautiful, simple introduction.",
+    "path": "dream-product/index.html"
+  },
+  {
+    "id": "dream-business",
+    "title": "Your dream business",
+    "headline": "Small business. Big character.",
+    "description": "Create a home for the work you would love to do.",
+    "path": "dream-business/index.html"
+  },
+  {
+    "id": "pet",
+    "title": "Your pet",
+    "headline": "The internet\u2019s next favorite.",
+    "description": "Make a little fan club for a very good companion.",
+    "path": "pet/index.html"
+  }
+]

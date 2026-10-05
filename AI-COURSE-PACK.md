@@ -16,6 +16,10 @@ The illustrated PDF/HTML, legacy slides, artwork, instructor preflight, and sour
 - `course-map.json`
 - `instructor-guide.md`
 - `setup-guide.md`
+- `website-starters/README.md`
+- `docs/scope-and-plan.md`
+- `templates/website-scope.md`
+- `templates/website-plan.md`
 - `docs/website-walkthrough.md`
 - `docs/game-options.md`
 - `docs/alien-tic-tac-toe.md`
@@ -48,6 +52,7 @@ The illustrated PDF/HTML, legacy slides, artwork, instructor preflight, and sour
 - `skills/vc-project-brief/SKILL.md`
 - `skills/vc-project-handoff/SKILL.md`
 - `skills/vc-project-plan/SKILL.md`
+- `skills/vc-project-scope/SKILL.md`
 - `skills/vc-publish-site/SKILL.md`
 - `skills/vc-quality-check/SKILL.md`
 - `skills/vc-sdlc-coach/SKILL.md`
@@ -85,7 +90,8 @@ Read `START-HERE.md` and this file first. Load only the relevant lesson and skil
 | Understand the process | `instructor-guide.md`, first 30 minutes | `skills/vc-sdlc-coach/SKILL.md` |
 | Prepare a laptop before class | `PRE-CLASS-PREP.md`; ask operating system and incomplete step | `skills/vc-setup-guide/SKILL.md` |
 | Prepare accounts and workflow | `setup-guide.md` | `skills/vc-setup-guide/SKILL.md` |
-| Define a website | `docs/website-walkthrough.md` | `skills/vc-project-brief/SKILL.md`, then `vc-project-plan` |
+| Choose a website starting point | `website-starters/README.md`; offer a template or their own idea | `skills/vc-project-brief/SKILL.md` |
+| Scope and plan a website | `docs/scope-and-plan.md` | `skills/vc-project-scope/SKILL.md`, then `skills/vc-project-plan/SKILL.md` |
 | Build the page | `docs/website-walkthrough.md` | `skills/vc-build-small/SKILL.md` |
 | Check and publish | `setup-guide.md`, `docs/troubleshooting.md` | `skills/vc-quality-check/SKILL.md`, then `vc-publish-site` |
 | Choose and build a game | `docs/game-options.md`, the selected walkthrough, `game-skills-guide.md` | The seven `game-skills/*/SKILL.md` files, one stage at a time |
@@ -93,7 +99,7 @@ Read `START-HERE.md` and this file first. Load only the relevant lesson and skil
 | Use multiple helpers | `docs/multiple-agents.md` | Task/handoff templates; optional extension |
 | Resume or hand off | `templates/project-state.md`, `handouts/student-workbook.md` | `skills/vc-project-handoff/SKILL.md` |
 
-The exact file paths and stage timings are indexed in `course-map.json`. Worked website/game examples are fictional teaching specifications. They are not evidence that an app has been built or tested.
+The exact file paths and stage timings are indexed in `course-map.json`. The seven website starters contain runnable, locally checked HTML. The game walkthroughs are fictional teaching specifications. Inspect the actual selected file; the course pack contains starter instructions, not their HTML source.
 
 ## Tutoring loop
 
@@ -118,7 +124,7 @@ Do not enable paid services, change credentials, delete projects, or add custome
 
 Agents are optional. Use one writer per working directory. Reviewers receive the exact files/version and do not edit. Do not present one model role-playing multiple viewpoints as independent review. Coordinate and retest combined work before release.
 
-Use the root current guides as course authority. `presentations/reference-six-hour-class/` is an older one-project deck with dated setup and pricing. Do not silently import its database/email requirements. No starter application, classroom rehearsal, or full provider integration test is established merely by this documentation.
+Use the root current guides as course authority. `presentations/reference-six-hour-class/` is an older one-project deck with dated setup and pricing. Do not silently import its database/email requirements. Website starters have local checks documented in instructor/materials-checks.md. Classroom rehearsal, game applications, and full provider integration are not established by documentation.
 
 ## End every checkpoint with
 
@@ -176,7 +182,7 @@ read my project-state.md and actual files before suggesting changes.
 | --- | --- | --- |
 | Brand new | [Illustrated participant guide](guides/participant-guide.pdf), pages 2–5 | You can explain the roles of the chatbot, GitHub, and Vercel |
 | Setting up | [Account and connection guide](setup-guide.md) | You can receive runnable files and find your own practice repository |
-| Ready for the website | [Website walkthrough](docs/website-walkthrough.md) | Your exported page works, and the published URL is checked or the blocker recorded |
+| Ready for the website | [Choose a starter](website-starters/README.md), then [scope and plan](docs/scope-and-plan.md) | Your exported page works, and the published URL is checked or the blocker recorded |
 | Ready for the game | [Choose your game](docs/game-options.md) | A person can start, finish, and restart a round |
 | Something broke | [Troubleshooting](docs/troubleshooting.md) | You have reproduced the issue and checked one focused repair |
 | Want another AI's help | [Multiple-agent options](docs/multiple-agents.md) | Each helper has a clear job, input version, and permitted files |
@@ -198,7 +204,7 @@ Use the [student workbook](handouts/student-workbook.md) for your brief, game ru
 
 ## How much help is available?
 
-The repo includes stage skills, worked examples, an illustrated field guide, a troubleshooting reference, a prompt library, and templates for saving context. The examples describe what to build; they are not pretested starter applications. Live account screens and chatbot features can change. If the route differs, report what you actually see and use the portable file route or ask the instructor for help.
+The repo includes stage skills, worked examples, an illustrated field guide, a troubleshooting reference, a prompt library, and templates for saving context. Seven optional website starters contain runnable files checked locally. The game walkthroughs remain specifications, not tested game applications. Live account screens and chatbot features can change. If the route differs, report what you actually see and use the portable file route or ask the instructor for help.
 
 <!-- END COURSE SOURCE: START-HERE.md -->
 
@@ -412,6 +418,7 @@ Product-specific references checked October 5, 2026. This guide supplies prepara
       "lesson": "docs/website-walkthrough.md",
       "skills": [
         "skills/vc-project-brief/SKILL.md",
+        "skills/vc-project-scope/SKILL.md",
         "skills/vc-project-plan/SKILL.md",
         "skills/vc-build-small/SKILL.md",
         "skills/vc-quality-check/SKILL.md",
@@ -535,7 +542,15 @@ Product-specific references checked October 5, 2026. This guide supplies prepara
       "lesson": "docs/game-options.md"
     }
   ],
-  "game_menu": "docs/game-options.md"
+  "game_menu": "docs/game-options.md",
+  "website_starters": {
+    "guide": "website-starters/README.md",
+    "gallery": "website-starters/index.html",
+    "catalog": "website-starters/catalog.json",
+    "optional": true,
+    "own_idea_allowed": true
+  },
+  "website_planning_lesson": "docs/scope-and-plan.md"
 }
 
 <!-- END COURSE SOURCE: course-map.json -->
@@ -612,9 +627,9 @@ Limit individual setup troubleshooting to five minutes before using a prepared c
 
 ## Project 1 Create a simple website in 90 minutes
 
-Students choose a small topic: a personal introduction, an event, a hobby, a community group, or a fictional business. Require one page with a clear heading, two or three useful sections, an image or simple visual treatment, and a meaningful link or button.
+Students choose an optional [website starter](website-starters/README.md) or their own small idea. Offer vanilla, two All Things AI fan sites, dream restaurant, dream product, dream business, or pet. Demonstrate the downloaded gallery, then copy just the chosen starter into the student’s project. Require one page with a clear heading, two or three useful sections, an image or simple visual treatment, and a meaningful link or button.
 
-**Define and outline for 15 minutes.** Use `vc-project-brief` and `vc-project-plan` to decide the audience, purpose, sections, style, and primary action. Save `project-brief.md` in this project's folder. Core checks: accurate content; correct main link or button destination; working navigation; usable phone layout; and a purpose another student can identify.
+**Define and outline for 15 minutes.** Use `vc-project-brief`, `vc-project-scope`, and `vc-project-plan`: roughly 3 minutes for who/why, 5 for what belongs in version one, and 7 for layout and three build increments. Follow [scope and plan](docs/scope-and-plan.md). Save the brief, scope, and plan in this project’s folder; these can be short notes. Core checks: accurate content; correct main link or button destination; working navigation; usable phone layout; and a purpose another student can identify.
 
 **Build and refine for 50 minutes.** Use `vc-build-small`. For the simplest portable route, request one complete `index.html` with styles included. If separate files are provided, preserve their names and relative paths. Open the actual files in a browser, then request one specific improvement at a time. Prompt pattern: “For this audience, make this specific change, preserve these working parts, and tell me how to check it.” Save a working checkpoint before substantial changes.
 
@@ -656,7 +671,7 @@ Point students to the [LinkedIn wrap-up guide](docs/linkedin-wrap-up.md), includ
 
 ## Instructor preparation and limits
 
-Rehearse both complete projects on each offered chatbot route. Prepare a tested website checkpoint and a playable checkpoint for each offered game recipe. Preflight account access, file download or copy, GitHub upload, Vercel import, and classroom network. This draft contains instructions and skills; the starter applications and revised slide deck have not been built in this revision.
+Rehearse both complete projects on each offered chatbot route. Prepare a tested website checkpoint and a playable checkpoint for each offered game recipe. Preflight account access, file download or copy, GitHub upload, Vercel import, and classroom network. Seven runnable website starters are included. Check the chosen starter on the classroom laptops and rehearse a small edit and its deployment; game checkpoints and the revised slide deck still need preparation.
 
 Confirm hosting before sending prerequisites. Vercel Hobby is for noncommercial personal use; a real business website may require another plan. [Vercel fair use](https://vercel.com/docs/limits/fair-use-guidelines)
 
@@ -799,6 +814,223 @@ The documentation was researched for this guide. No student account flow, full c
 
 ---
 
+# Source file: website-starters/README.md
+
+<!-- BEGIN COURSE SOURCE: website-starters/README.md -->
+
+# Pick a starting point—or make your own
+
+These are **optional, runnable websites**, not screenshots or prompts that still need to be built. Each starter is one `index.html` with its styles and any artwork included. Open it directly in a browser. No installation, remote images, paid services, or API keys are needed.
+
+**Your choice comes first.** Use a starter as-is, give one a new theme, start with the plain page, or build your own small idea. You only make one website in class.
+
+| Starter | Style and idea | The main action |
+| --- | --- | --- |
+| [Vanilla](website-starters/vanilla/index.html) | A completely plain white page with room for your idea | Jump to the next-step section |
+| [All Things AI: Orbit](website-starters/ata-orbit/index.html) | Blue, orange, orbital line art, and crisp editorial type | Read a tiny creative challenge |
+| [All Things AI: Groove](website-starters/ata-groove/index.html) | Dark ink, peach waves, lime accents, and oversized serif type | Try three creative changes |
+| [Dream restaurant](website-starters/dream-restaurant/index.html) | Moonlight Noodle Club: your imaginary neighborhood favorite | Browse the sample menu |
+| [Dream product](website-starters/dream-product/index.html) | Daylight: a desk lamp for your dream workspace | Explore where it belongs |
+| [Dream business](website-starters/dream-business/index.html) | Good Company: a creative studio with personality | Read a project checklist |
+| [Your pet](website-starters/pet/index.html) | Captain Pickles: a very important dog’s fan page | Explore a day in the pet’s life |
+
+GitHub displays HTML source rather than running it. Download the course ZIP, extract it, and open `website-starters/index.html` for a visual gallery. Each card opens a working example. For a chatbot, provide the actual chosen `index.html`; the course pack explains the templates but does not contain their source files.
+
+## Start in five steps
+
+1. Choose a design—or choose “make my own.” Read [scope and plan](docs/scope-and-plan.md) with your AI before changing code.
+2. For a starter, **copy its folder** into your separately identified website project. Keep the original course files as a recovery copy. If your project already has files, preserve a checkpoint before replacing anything.
+3. Open the copied `index.html`. Try the navigation and main link so you know what already works.
+4. Attach that file to your chatbot, along with the current skill. Ask for one change, get the complete file back, save it, and reopen it. See [file-saving instructions](docs/website-walkthrough.md#4-save-the-file-and-open-it).
+5. When ready, upload the chosen website’s `index.html` at your website repository root and use the [publication guide](setup-guide.md#publish-each-project). Do not upload all seven starters or the gallery as your class website.
+
+## First remix prompt
+
+> I chose [starter / my own idea]. My intended visitor is [person], and the one thing I want them to do is [action]. Read the HTML I attached before changing it. Help me write a short brief, scope, and plan. Keep one page and three main sections. Preserve working navigation. Use my facts or clearly fictional examples. Build in small increments and return complete runnable files. Do not add a form, booking system, shopping cart, login, or database to this first version.
+
+Try changing the headline, the theme colors, or one section. Then check the page at laptop and phone widths, follow every link, and use Tab and Enter to reach the controls. The starter READMEs suggest three small edits apiece.
+
+## What is real here?
+
+The navigation and section links work. The dream businesses and products are fictional. These pages do not take reservations, orders, payments, enquiries, or newsletter signups. A link to a menu or checklist is the intended action, not a pretend transaction.
+
+The two All Things AI pages are explicitly labeled **unofficial classroom fan sites**. Keep that label while retaining the organization’s name. Their illustrations are original inline SVG and their text is sample fan commentary, not official announcements or claims about events. No official logo files or private site services are required.
+
+These starters were checked locally; that does not verify your edited version or a Vercel deployment. After changing or publishing a page, repeat its checks.
+
+<!-- END COURSE SOURCE: website-starters/README.md -->
+
+
+---
+
+# Source file: docs/scope-and-plan.md
+
+<!-- BEGIN COURSE SOURCE: docs/scope-and-plan.md -->
+
+# Decide what to build, then how to build it
+
+Spend **10–15 minutes** on this exercise at the start of the website project. It fits inside the existing 90-minute website block; it is not an extra lesson added to the day. Your result is a small brief, a clear scope, and three build steps. Short notes are enough.
+
+> **For an AI receiving only this lesson:** State which materials you received. Ask whether the learner is starting or continuing. Read their current files and project state before changing existing work. Ask for a named skill or starter if its contents are unavailable. Reuse answers already given and ask only for decisions that affect the result.
+
+Three questions keep the work clear:
+
+| Record | Question | Restaurant example |
+| --- | --- | --- |
+| Brief | Who is this for, and why? | A curious visitor wants to understand my fictional dream restaurant. |
+| Scope | **What** belongs in this small first version? | One page, three sections, and a working View sample menu button. |
+| Plan | **How** will we build and check it? | Add the content, connect the action, then improve phone layout and retest. |
+
+## 1. Choose a starting point and purpose — about 3 minutes
+
+Choose a starter **or your own idea/design**. You are building one website, not completing every template. A starter can save layout work, but you still decide its purpose and behavior.
+
+| Starting point | File to inspect or copy |
+| --- | --- |
+| Vanilla | [website-starters/vanilla/index.html](website-starters/vanilla/index.html) |
+| ATA Orbit | [website-starters/ata-orbit/index.html](website-starters/ata-orbit/index.html) |
+| ATA Groove | [website-starters/ata-groove/index.html](website-starters/ata-groove/index.html) |
+| Dream restaurant | [website-starters/dream-restaurant/index.html](website-starters/dream-restaurant/index.html) |
+| Dream product | [website-starters/dream-product/index.html](website-starters/dream-product/index.html) |
+| Dream business | [website-starters/dream-business/index.html](website-starters/dream-business/index.html) |
+| Pet | [website-starters/pet/index.html](website-starters/pet/index.html) |
+| My own | Begin with your brief and request complete runnable files. |
+
+Open the actual starter in your browser before deciding what to keep. Copy the chosen files into your own `my-first-site` folder, preserving any supporting file paths; keep the course copy unchanged. A starter's example button or form is not evidence of a real business service. Inspect what it does.
+
+Use [vc-project-brief](skills/vc-project-brief/SKILL.md) with this prompt:
+
+> My first website is for [visitor]. They should be able to [outcome]. I want to start from [starter name / my own design]. Use what I have already told you and ask only for missing decisions. Write a short project-brief.md. Separate supplied facts from fictional practice content. Do not build yet.
+
+For the worked example, invent **Moonlight Noodle Club**, a clearly fictional dream restaurant. The visitor should understand the dining idea and browse a sample menu. No real booking or ordering is promised.
+
+## 2. Select the scope — about 5 minutes
+
+Use [vc-project-scope](skills/vc-project-scope/SKILL.md) and the [scope template](templates/website-scope.md). Decide what earns a place in the first version.
+
+| Category | Moonlight Noodle Club example |
+| --- | --- |
+| Must-have now | One page; concept, sample menu, and sample visit details; visible fiction label; a View sample menu button that scrolls to the menu. |
+| Later | Another page about the imagined chef, more menu choices, or additional visual polish. |
+| Out of scope for this project | Real reservations, orders, payments, customer accounts, and collected visitor information. |
+
+The three main sections are **Concept**, **Sample menu**, and **Sample visit details**. Add a heading, navigation, and footer if useful; they do not need their own extra pages. Keep invented locations and hours visibly labeled as sample information.
+
+> Use my brief to scope one page with three main sections and one primary action. Separate must-have, later, and out-of-scope ideas. For Moonlight Noodle Club, View sample menu must scroll to that section; the page must not claim to book a table. Write five checks a person can actually perform. Return a compact project-scope.md. Keep decisions we already made.
+
+For this example, the five checks are:
+
+1. A partner can explain the restaurant concept and identify the site as fictional practice.
+2. All displayed menu and visit information matches the brief and is labeled as sample content where needed.
+3. View sample menu reaches the menu section; it does not pretend to place an order or reservation.
+4. Navigation reaches the named sections, and the main action can be reached and activated using the keyboard.
+5. The page remains readable in a narrow browser window, with the primary action visible and usable. Record a real-phone check separately if performed.
+
+If you want a real business action, name exactly what it needs to do. A supplied link to an existing booking service differs from building a new reservation system. Resolve that scope choice before code is generated; postpone it if it would consume the workshop. Do not invent a working service behind a decorative button.
+
+## 3. Make a three-step plan — about 4 minutes
+
+Use [vc-project-plan](skills/vc-project-plan/SKILL.md) and the [plan template](templates/website-plan.md). Carry the scope forward instead of interviewing yourself again.
+
+| Increment | Build | Check before continuing |
+| --- | --- | --- |
+| 1. Content and structure | Heading, the three sections, and fiction label | Open the file and compare its content with the brief. |
+| 2. Action and navigation | The menu button and links to the sections | Activate each link; confirm the right section appears and try keyboard access. |
+| 3. Usability and finish | Readable spacing and phone layout | Narrow the window, then repeat the content and button checks. |
+
+> Plan HOW to deliver this agreed scope in three small increments. Use my chosen starter if I supplied it; otherwise plan one complete index.html. For each increment name the result, expected files to change, and a visible check. Preserve any already-working parts. Keep later and out-of-scope features out. Return project-plan.md and the first build instruction.
+
+Save the short records with your website files and identify the next step in `project-state.md`. If your assistant cannot write files, ask for the complete text to save yourself. The blank templates are optional conveniences; complete answers already in your conversation are enough to proceed.
+
+**Ready to build:** you can name the visitor, the three sections, what the primary action really does, and the first increment's check. Continue with [vc-build-small](skills/vc-build-small/SKILL.md) and the [website walkthrough](docs/website-walkthrough.md). Check the actual result after each increment before expanding it.
+
+<!-- END COURSE SOURCE: docs/scope-and-plan.md -->
+
+
+---
+
+# Source file: templates/website-scope.md
+
+<!-- BEGIN COURSE SOURCE: templates/website-scope.md -->
+
+# Website scope: what we will build
+
+Fill this in briefly and save it in your learner website project as `project-scope.md`. Reuse your brief; do not repeat settled decisions. See the [scope and plan lesson](docs/scope-and-plan.md).
+
+- Website name:
+- Intended visitor and one useful outcome:
+- Real activity or visibly fictional practice:
+- Starter chosen, or my own design:
+- My working folder/repository:
+
+## First version
+
+One page with three main sections:
+
+1.
+2.
+3.
+
+- Primary action label:
+- Exact destination or visible result:
+- Any demonstration-only behavior and its label:
+
+| Must-have now | Later | Out of scope |
+| --- | --- | --- |
+| | | |
+
+## Five acceptance checks
+
+| Check | What I will do | What I expect to observe |
+| --- | --- | --- |
+| Purpose | | |
+| Accurate or visibly fictional content | | |
+| Main action: real result versus demonstration | | |
+| Navigation and keyboard access | | |
+| Narrow-screen usability | | |
+
+Unresolved decision, if any:
+
+Next step: plan the build increments using these agreed limits.
+
+<!-- END COURSE SOURCE: templates/website-scope.md -->
+
+
+---
+
+# Source file: templates/website-plan.md
+
+<!-- BEGIN COURSE SOURCE: templates/website-plan.md -->
+
+# Website plan: how we will build and check it
+
+Fill this in briefly and save it in your learner website project as `project-plan.md`. Use your existing brief and scope. See the [scope and plan lesson](docs/scope-and-plan.md).
+
+- Website and input scope/version:
+- Starting files or chosen starter:
+- Own project folder/repository:
+- Visitor's starting point and intended action:
+- Three main sections in order:
+- Style in a few words:
+
+| Increment | Result to produce | Files expected to change | Action and expected observation |
+| --- | --- | --- | --- |
+| 1. Content and structure | | | |
+| 2. Main action and navigation | | | |
+| 3. Usability and finish | | | |
+
+- Working behavior to preserve:
+- Missing content, assets, or decision that affects this plan:
+- First build instruction:
+- Where I will save a working checkpoint:
+
+Keep postponed features outside this plan. A planned check is not a passed test; record actual results after building.
+
+<!-- END COURSE SOURCE: templates/website-plan.md -->
+
+
+---
+
 # Source file: docs/website-walkthrough.md
 
 <!-- BEGIN COURSE SOURCE: docs/website-walkthrough.md -->
@@ -810,6 +1042,16 @@ The documentation was researched for this guide. No student account flow, full c
 This walkthrough takes a fictional one-page website from a short brief to a checked Vercel URL. Use your favorite chatbot. You will receive actual files, open them yourself, save them in your own GitHub repository, and publish the checked version. The course repository contains instructions; your website belongs in a separate project.
 
 Allow about 90 minutes during class. Start with [the course entry point](START-HERE.md) and complete the [account and connection guide](setup-guide.md). If something stops working, follow the matching symptom in [troubleshooting](docs/troubleshooting.md). The instructor must prepare any recovery checkpoint mentioned there before class; a tested starter is not automatically supplied by these instructions.
+
+**Prefer a ready-made starting point?** Choose one of the [seven website starters](website-starters/README.md), or make your own. This reading-club example remains an optional from-scratch walkthrough. Use [scope and plan](docs/scope-and-plan.md) and `vc-project-scope` between the brief and build plan; when adapting a starter, inspect its actual HTML before changing it.
+
+## Continuing from a starter or your own plan
+
+If you already finished [scope and plan](docs/scope-and-plan.md), keep your chosen project and skip the Riverbend brief and planning prompts below. Give `vc-build-small` your current HTML, agreed brief/scope/plan, and first unfinished increment. Use this prompt:
+
+> Continue my chosen website from the attached files and plan. Make only the next agreed increment, preserve what already works, and return the complete updated index.html. Do not replace my topic or copy with the Riverbend example. Tell me the visible check to perform.
+
+Then use [step 4 to save and open the file](#4-save-the-file-and-open-it), followed by the checking and publishing steps. In later sample prompts, keep your own topic, content, and agreed styling. If starting from scratch with Riverbend, follow the numbered steps below.
 
 ## The example you will build
 
@@ -845,7 +1087,7 @@ Open [vc-project-brief](skills/vc-project-brief/SKILL.md). Copy or attach its in
 
 Read the response. Correct any invented features or changed facts. Save the agreed brief as `project-brief.md` in your website folder, or keep the same text in your workbook until you can save it. A `.md` file is a plain-text document with simple formatting marks.
 
-Use [vc-project-plan](skills/vc-project-plan/SKILL.md) with the brief:
+Use [vc-project-scope](skills/vc-project-scope/SKILL.md) to save the one-page scope, its primary action, must-have/later/out-of-scope lists, and five checks. Reuse the brief rather than starting another interview. Then use [vc-project-plan](skills/vc-project-plan/SKILL.md) with the brief:
 
 > Plan this as one static page. List the sections in order and explain what each link or button does. Use one complete index.html with the styles included and a simple decoration that needs no downloaded image. Give me a small build plan that fits this class. Do not add a framework or server.
 
@@ -2162,7 +2404,7 @@ Platform interfaces and access rules change. Use the [setup guide](setup-guide.m
 
 # Skills for the vibe coding class
 
-These nine short skills adapt the workflow in Mark Hinkle's VibeCoding-a-Website repository for the foundations and website project in a six-hour, two-project business workshop. Seven additional game skills are in the [game skill guide](game-skills-guide.md). Each accepts a specific input and produces an inspectable result. They are draft instruction files, not installed plugins or a promise that every chatbot has the same tools.
+These ten short skills adapt the workflow in Mark Hinkle's VibeCoding-a-Website repository for the foundations and website project in a six-hour, two-project business workshop. Seven additional game skills are in the [game skill guide](game-skills-guide.md). Each accepts a specific input and produces an inspectable result. They are draft instruction files, not installed plugins or a promise that every chatbot has the same tools.
 
 ## Use a skill
 
@@ -2192,11 +2434,19 @@ The skills are deliberately self-contained. No scripts, API keys, or original sk
 
 > Interview me about my project, then create a short brief with a small first version and clear acceptance checks.
 
+### Scope the first version
+
+[vc-project-scope](skills/vc-project-scope/SKILL.md)
+
+> Use my brief to decide what we will make now, save for later, and leave out. Keep one page, three sections, and one useful action. Give me five observable checks and save the scope for the planning stage.
+
+Choose a [starter or your own idea](website-starters/README.md). The [scope-and-plan lesson](docs/scope-and-plan.md) explains the distinct outputs: brief = who and why; scope = what; plan = how. Attach the chosen HTML to your chatbot if using a starter.
+
 ### Plan the page and work
 
 [vc-project-plan](skills/vc-project-plan/SKILL.md)
 
-> Use my approved brief to plan the visitor journey, page layout, and three small build increments. Explain what we will check after each.
+> Use my agreed brief and scope to plan the visitor journey, page layout, and three small build increments. Explain what we will check after each.
 
 ### Build one increment at a time
 
@@ -2550,6 +2800,12 @@ Choose from the [game menu](docs/game-options.md). For Alien Tic-Tac-Toe, record
 ## Optional: share your class experience on LinkedIn
 
 Want Mark to endorse your vibe coding skill? Add the skill to your profile, publish an honest LinkedIn post about the class, and send Mark your profile link, post link, and exact skill name. Connect with him if needed. Follow the [LinkedIn wrap-up guide](docs/linkedin-wrap-up.md) for the post example and handoff checklist. This is optional; you can post after class.
+
+## Website choice, scope, and plan
+
+My starting point: vanilla / ATA Orbit / ATA Groove / dream restaurant / dream product / dream business / pet / my own idea.
+
+Use [the scope-and-plan lesson](docs/scope-and-plan.md), [scope template](templates/website-scope.md), and [plan template](templates/website-plan.md). Record what belongs now, what waits, and how each of three small changes will be checked. Keep this within the website’s existing planning time.
 
 <!-- END COURSE SOURCE: handouts/student-workbook.md -->
 
@@ -3052,6 +3308,8 @@ After each increment, run the relevant available checks and show a usable previe
 
 Prepare meaningful saved checkpoints through the supported repository workflow within the learner's authorization. Keep publication separate from file creation. If blocked, report the observed error and make one focused repair before expanding scope. Return changed files, checked behavior, and remaining work.
 
+Use project-scope.md when available alongside the brief and plan. Preserve its first-version limits and check the actual main action; do not add postponed features while improving a starter. If using a template, inspect its actual HTML and preserve a working checkpoint before changes.
+
 <!-- END COURSE SOURCE: skills/vc-build-small/SKILL.md -->
 
 
@@ -3087,18 +3345,20 @@ Write change-record.md with the request, before and after behavior, source versi
 
 ---
 name: vc-project-brief
-description: "Interview a business learner and write a small website project brief with observable acceptance checks before building."
+description: "Turn a business learner's website idea into a concise brief describing its visitor, purpose, content, and observable result before scoping and planning."
 ---
 
-# Define the first version
+# Describe who the website serves and why
 
-Use any existing notes before asking questions. Ask short groups of questions about the intended user, their task, the business outcome, supplied content, and the time available. Offer a small default when the learner is unsure.
+Use existing notes before asking questions. Ask only about missing details that affect the visitor, purpose, main action, supplied content, or time available. Offer a small default when the learner is unsure. If a referenced course file or starter is unavailable, request the relevant text or file; do not invent its contents.
 
-Write project-brief.md, or return the same content in chat when file writing is unavailable. Include the user and problem, a one-sentence outcome, first-version features, excluded features, supplied facts and assets, assumptions, and acceptance checks. Make each check something a person can observe. Mark unknown facts rather than inventing credentials, customer quotes, or performance claims.
+Write a short `project-brief.md`, or return its complete contents in chat. Include the intended visitor, their task, a one-sentence outcome, supplied facts and assets, whether the subject is real or fictional, assumptions, and a few observable success statements. Mark unknown facts rather than inventing customer quotes, credentials, availability, or performance claims.
 
-For project 1, scope a single page on the learner's chosen topic with a heading, two or three sections, and a meaningful link or button. Define its destination, working navigation, accurate content, and narrow-screen usability. Use supplied or fictional content. The game project uses its own game brief.
+For the classroom website, begin with one page, three main sections, and one meaningful primary action. The learner may choose a course starter or their own design. Record that preference if known; a particular template is not mandatory. Specify what the main action actually does. A link to a menu section is sufficient for a fictional restaurant. Do not imply a reservation, order, or message is processed unless a real, authorized working service exists and is within scope.
 
-Ask the learner to correct the completed brief and choose any unresolved scope decision. Finish with a concise account of what building this version would accomplish. Do not generate the site before the scope is settled.
+Keep the three decisions distinct: the **brief** explains who and why; the **scope** selects what belongs in the first version; the **plan** describes how to build and check it. Reuse agreed information across these records rather than repeating the interview or producing long business documents. The game has its own game brief.
+
+Invite the learner to correct factual errors and resolve material unknowns. Finish with the concise outcome and the next scoping decision, if one remains. If the scope is already clear, carry it forward without asking again. Do not generate the website as part of writing its brief.
 
 <!-- END COURSE SOURCE: skills/vc-project-brief/SKILL.md -->
 
@@ -3135,20 +3395,62 @@ Finish with one practical next action and the files needed to continue later. If
 
 ---
 name: vc-project-plan
-description: "Turn an agreed beginner website brief into a visitor journey, page outline, and incremental build plan."
+description: "Turn an agreed small website scope into a visitor journey, page outline, and three checked build increments without adding features."
 ---
 
-# Plan the page and work
+# Plan how to build and check the agreed version
 
-Read the agreed brief. If the goal or required behavior is missing, resolve that gap before selecting technology. Preserve the learner's chosen project.
+Planning decides **how** to deliver the scope, which already states **what** belongs in this version. Read the available brief, scope, and chosen starter or current files. If a referenced input cannot be accessed, ask for the relevant contents. Do not require a separate scope file when the same decisions are already clear in the conversation. Ask only about missing goals, required behavior, or dependencies that affect the plan.
 
-Write project-plan.md containing the visitor's starting point and task, page sections in order, concise style guidance, required content, and a small sequence of build increments. For each increment, state what the learner should see or be able to do and how to check it.
+Write a compact `project-plan.md`, or return its complete contents in chat. Include the visitor's first impression and task, three main sections in order, concise style guidance, required content, starter choice or own design, and these three build increments:
 
-For the classroom website, prefer one portable index.html with styles included, or a few plain static files if appropriate. Plan content and layout, working navigation and the main action, then a focused usability improvement. Explain any additional framework or service in terms of a concrete requirement; avoid adding infrastructure just because it is available.
+1. **Content and structure:** show the heading, sections, and accurate or visibly fictional content. State what the learner will read and check.
+2. **Main action and navigation:** implement the exact agreed link/button behavior and navigation. State the action and expected result, including keyboard use.
+3. **Usability and finish:** improve phone layout and readability, then repeat the main checks. Preserve the working content and behavior.
 
-Identify missing assets, facts, and decisions. Use supplied images or a simple typographic treatment when image creation would consume the build period. Show the plan for review before implementation. This skill ends with a plan, not a deployment.
+Adapt the increments to existing working files; do not rebuild completed parts. Give each increment an observable completion test and name the files expected to change. Keep must-have items within the plan and leave postponed or excluded features out.
+
+For the core class, prefer one portable `index.html` with styles included or a few static files when the chosen starter requires them. Preserve needed relative paths. Use the learner's own project folder, leaving the course starter unchanged. Do not add a framework, backend, or service without a concrete agreed requirement. A demonstration interaction must remain labeled as such rather than being planned as a working business service.
+
+List missing facts, assets, and decisions briefly. Favor supplied images or simple typography when asset creation would consume the build time. Brief, scope, and planning together use about 10–15 minutes of the existing 90-minute website block; keep the records short enough for that purpose.
+
+Show the completed plan and its first check. Resolve only material unknowns before implementation; do not repeat approvals already given. This skill ends with the plan and does not commit, push, or deploy.
 
 <!-- END COURSE SOURCE: skills/vc-project-plan/SKILL.md -->
+
+
+---
+
+# Source file: skills/vc-project-scope/SKILL.md
+
+<!-- BEGIN COURSE SOURCE: skills/vc-project-scope/SKILL.md -->
+
+---
+name: vc-project-scope
+description: "Help a beginner choose what a small website's first version includes, separating must-have, later, and out-of-scope features before planning the build."
+---
+
+# Choose what the first version includes
+
+Scoping decides **what** to build now. Planning later decides **how** to build and check it. Use the learner's brief or existing answers; ask only for missing decisions that change the first version. If a referenced brief, starter, or course file is unavailable, request the relevant text or files. Do not claim to have inspected them. This skill can also work from the learner's answers alone.
+
+Confirm the intended visitor, one useful outcome, the time available, and whether the site represents a real activity or a clearly labeled practice example. Preserve the learner's topic. They may adapt a supplied starter or create their own design; choosing a starter does not require keeping all of its example features.
+
+For the classroom version, propose **one page, three main sections, and one primary action**. A heading, navigation, and footer can support those sections. Name the primary action and its exact destination or visible result. For a fictional restaurant, a useful action is “View sample menu,” which scrolls to the menu section. A button that only shows a demo message must not be described as taking a reservation or sending an order.
+
+Sort ideas into three small lists:
+
+- **Must-have:** needed for the agreed visitor outcome and achievable in this version.
+- **Later:** useful ideas deliberately postponed; they are not promised features.
+- **Out of scope:** things this project will not do under the current brief.
+
+Prefer working links and static content for the core class. Do not add forms, accounts, payments, databases, or external services merely because they appear in a starter. A request for a real service integration is a scope decision; explain its effect and let the learner choose whether to postpone it. Label fictional facts and demonstration-only interactions visibly.
+
+Return a compact `project-scope.md`, or its complete contents in chat, with the outcome, three sections, primary action, starter choice or own design, the three feature lists, and **five observable acceptance checks**. Cover purpose, accurate or visibly fictional content, the main action's actual behavior, navigation/keyboard use, and narrow-screen usability. Include the distinction between a demonstration and a real service in the relevant check. State unresolved decisions without inventing facts.
+
+Use existing decisions without reopening them. Invite correction of the completed scope, resolve only material unknowns, and stop with the scope record. Do not build, save to GitHub, or publish as part of this skill.
+
+<!-- END COURSE SOURCE: skills/vc-project-scope/SKILL.md -->
 
 
 ---
@@ -3196,6 +3498,8 @@ Use a browser when available. Otherwise give the learner precise manual steps an
 
 Prioritize failures that prevent the agreed visitor task. Report defects with reproduction steps. If asked to fix them, repair within scope and rerun the failed and adjacent checks. Invite a partner to attempt the task independently. Call the result a classroom quality check, not a complete accessibility or security certification.
 
+Use project-scope.md when available alongside the brief and plan. Preserve its first-version limits and check the actual main action; do not add postponed features while improving a starter. If using a template, inspect its actual HTML and preserve a working checkpoint before changes.
+
 <!-- END COURSE SOURCE: skills/vc-quality-check/SKILL.md -->
 
 
@@ -3207,18 +3511,28 @@ Prioritize failures that prevent the agreed visitor task. Report defects with re
 
 ---
 name: vc-sdlc-coach
-description: "Explain the software development lifecycle to a nontechnical workshop learner using their small website project."
+description: "Explain the software development lifecycle to a nontechnical workshop learner, including scoping what to build and planning how to build it."
 ---
 
 # Teach the lifecycle
 
-Start with the learner's project and user outcome. Explain discovery, definition, design and planning, building, testing, release, and maintenance as a loop. Use one example consistently. Introduce a technical term only with its business meaning.
+Start with the learner's project and intended user outcome. Use one familiar example consistently, such as a fictional restaurant page whose main button opens its sample menu. Use information already provided; ask only for a missing choice that affects the explanation. If referenced material is unavailable, ask for its relevant text instead of claiming it was read.
 
-Distinguish the browser, project files, hosting, frontend, backend, database, and API. Explain which of these the current project needs. Explain Git as change tracking, GitHub as the shared project and history, and Vercel as the hosting service. Distinguish a saved checkpoint, a branch, a proposed change, and a deployed version.
+Explain the lifecycle as a loop of practical questions:
 
-Have the learner explain what should happen when the website's main link is clicked or the game's Play again button is pressed. Ask where defining that behavior and testing it fit in the lifecycle. Correct gaps with a concrete example.
+- **Discover:** who needs this, and why?
+- **Define and scope:** what will the small first version do, and what can wait?
+- **Design and plan:** what will the visitor see, and how will we build and check it in small steps?
+- **Build:** create one usable increment.
+- **Test:** try the promised behavior and record what happens.
+- **Release:** make an identified, checked version available to its intended audience.
+- **Maintain:** improve it from observed use and repeat the checks.
 
-Return a short lifecycle map and a teach-back question. Do not build or publish a project as part of this teaching exercise. Completion means the learner can describe the next step and how its result will be checked.
+Make the distinction concrete: “one page with three sections and a View sample menu button” is **scope—what**. “First add the content, then connect the button, then improve phone layout and retest” is **planning—how**. A starter supplies a starting design; it does not decide the visitor's goal or justify extra features.
+
+Distinguish browser, project files, hosting, frontend, backend, database, and API in plain language, explaining which the current static project needs. Explain Git as change tracking, GitHub as the saved project and history, and Vercel as hosting. Distinguish a checkpoint, a branch, a proposed change, and a deployed version. A demonstration button is not proof of a real reservation, order, or message service.
+
+Return a short lifecycle map and a teach-back question. Have the learner describe the website's main action or the game's Play again behavior, place its definition and test in the loop, and identify one idea to postpone. Correct gaps with the same example. Do not build or publish during this teaching exercise. Completion means the learner can name the next step and the observation that will show whether it worked.
 
 <!-- END COURSE SOURCE: skills/vc-sdlc-coach/SKILL.md -->
 

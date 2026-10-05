@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Daylight — a fictional desk lamp concept for a classroom project.">
+  <title>Daylight · A little light for your corner</title>
+  <style>
+    /* CUSTOMIZE: The product palette lives here. */
+    :root { --paper:#f9f7eb; --blue:#2149ba; --yellow:#ffe062; --ink:#18244e; --muted:#565d73; --line:#c9cede; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:Arial,Helvetica,sans-serif; }
+    a { color:inherit; text-underline-offset:.22em; }
+    a:focus-visible { outline:3px solid var(--blue); outline-offset:6px; }
+    .skip { position:absolute; top:1rem; left:1rem; z-index:10; padding:1rem; background:var(--ink); color:white; transform:translateY(-200%); }
+    .skip:focus { transform:translateY(0); }
+    .wrap { width:min(1180px,100% - 3rem); margin-inline:auto; }
+    header { padding-block:1.8rem; }
+    .header-row { display:flex; justify-content:space-between; align-items:center; gap:2rem; }
+    .brand { display:flex; align-items:center; gap:.65rem; color:var(--blue); text-decoration:none; font-size:1.5rem; font-weight:bold; letter-spacing:-.07em; }
+    .brand-dot { width:22px; height:22px; border-radius:50%; background:var(--yellow); border:1px solid var(--blue); }
+    nav { display:flex; gap:1.5rem; font-size:.82rem; }
+    nav a { text-decoration:none; }
+    nav a:hover { text-decoration:underline; }
+    .hero { display:grid; grid-template-columns:.95fr 1.05fr; gap:2rem; align-items:center; padding-block:2rem 4rem; }
+    .hero-copy { padding-block:2rem; }
+    .eyebrow { font-size:.72rem; line-height:1.5; text-transform:uppercase; letter-spacing:.16em; margin:0 0 1.5rem; font-weight:bold; }
+    h1 { font:normal clamp(3.5rem,6.5vw,6.3rem)/1.01 Georgia,'Times New Roman',serif; letter-spacing:-.065em; margin:0; color:var(--blue); }
+    h1 em { font-weight:normal; }
+    .intro { max-width:27rem; font-size:1rem; line-height:1.8; margin:1.5rem 0 2rem; color:var(--muted); }
+    .action { display:inline-flex; align-items:center; gap:2.5rem; min-height:48px; padding:.9rem 0; border-bottom:2px solid var(--blue); color:var(--blue); text-decoration:none; font-weight:bold; font-size:.9rem; }
+    .action:hover { border-bottom-color:var(--ink); color:var(--ink); }
+    .product { margin:0; background:var(--yellow); border-radius:52% 52% 1rem 1rem; position:relative; padding:1rem 1rem 1.7rem; }
+    .product svg { display:block; width:100%; height:auto; }
+    .product figcaption { display:flex; justify-content:space-between; gap:1rem; padding-inline:1rem; font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; }
+    .features { border-top:1px solid var(--line); padding-block:3rem 4rem; }
+    .features-heading { display:grid; grid-template-columns:1fr 2fr; gap:2rem; margin-bottom:2.5rem; }
+    h2 { margin:0; font:normal clamp(2.2rem,4vw,3.5rem)/1.1 Georgia,'Times New Roman',serif; letter-spacing:-.045em; }
+    .features-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:3rem; }
+    .feature { border-top:1px solid var(--blue); padding-top:1.1rem; }
+    .number { color:var(--blue); font-size:.75rem; }
+    h3 { margin:1.4rem 0 .8rem; font-size:1.15rem; font-weight:normal; letter-spacing:-.035em; }
+    .feature p { margin:0; font-size:.9rem; line-height:1.75; color:var(--muted); }
+    .spaces { background:var(--blue); color:var(--paper); padding-block:3.5rem; }
+    .spaces a:focus-visible { outline-color:var(--yellow); }
+    .space-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; }
+    .spaces h2 { max-width:28rem; }
+    .space-list { margin:0; padding:0; list-style:none; }
+    .space-list li { display:grid; grid-template-columns:2rem 1fr; gap:1rem; border-top:1px solid #8eacf0; padding:1.2rem 0; }
+    .space-list li:last-child { border-bottom:1px solid #8eacf0; }
+    .space-letter { font-family:Georgia,'Times New Roman',serif; color:var(--yellow); font-size:1.6rem; }
+    .space-list h3 { margin:0 0 .5rem; font-size:1.2rem; }
+    .space-list p { margin:0; font-size:.87rem; line-height:1.6; color:#e2e9ff; }
+    footer { padding-block:1.5rem; }
+    .footer-row { display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem; font-size:.75rem; }
+    .footer-row p { margin:0; }
+    @media (max-width:760px) {
+      .hero { grid-template-columns:1fr; gap:.5rem; padding-top:.4rem; }
+      .hero-copy { padding-block:1rem 2rem; }
+      .product { max-width:460px; width:100%; margin-inline:auto; }
+      .features-heading { grid-template-columns:1fr; gap:0; }
+      .features-grid { grid-template-columns:1fr; gap:1.6rem; }
+      .feature { display:grid; grid-template-columns:2rem 1fr; gap:0 1rem; }
+      .feature .number { grid-row:1/3; padding-top:.2rem; }
+      .feature h3 { margin:0 0 .6rem; }
+      .space-grid { grid-template-columns:1fr; gap:2.2rem; }
+    }
+    @media (max-width:400px) { .wrap { width:calc(100% - 2rem); } nav { gap:1rem; font-size:.78rem; } .product figcaption { padding-inline:0; font-size:.62rem; } }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header id="top"><div class="wrap header-row">
+    <!-- CUSTOMIZE: Product name and navigation. -->
+    <a class="brand" href="#top"><span class="brand-dot" aria-hidden="true"></span>daylight</a>
+    <nav aria-label="Main navigation"><a href="#details">The details</a><a href="#spaces">Your space</a></nav>
+  </div></header>
+  <main id="main">
+    <section class="wrap hero" aria-labelledby="hero-heading">
+      <div class="hero-copy">
+        <!-- CUSTOMIZE: Product promise and description. -->
+        <p class="eyebrow">A desk lamp concept · made for little moments</p>
+        <h1 id="hero-heading">Make room<br>for <em>a little<br>daylight.</em></h1>
+        <p class="intro">Meet an imagined desk companion with a simple shape and a sunny personality. A thoughtful little light for whatever you're making next.</p>
+        <a class="action" href="#spaces">Choose your space <span aria-hidden="true">↗</span></a>
+      </div>
+      <figure class="product">
+        <svg viewBox="0 0 500 530" role="img" aria-labelledby="lamp-title lamp-desc">
+          <title id="lamp-title">The Daylight desk lamp concept</title>
+          <desc id="lamp-desc">An original drawing of a cobalt blue desk lamp with a round base and a tilted dome shade, on a sunny yellow background.</desc>
+          <path d="M61 446h378" stroke="#c6a63c" stroke-width="2"/>
+          <path d="M281 413c85 0 75-93 126-81 24 6 22 25 20 34" fill="none" stroke="#18244e" stroke-width="5" stroke-linecap="round"/>
+          <ellipse cx="244" cy="431" rx="106" ry="13" fill="#c6a63c"/>
+          <path d="M149 415c0-33 44-55 96-55s96 22 96 55v8H149z" fill="#2149ba"/>
+          <ellipse cx="245" cy="423" rx="96" ry="16" fill="#182f79"/>
+          <path d="M245 378V260l67-108" fill="none" stroke="#2149ba" stroke-width="22" stroke-linejoin="round" stroke-linecap="round"/>
+          <path d="M245 377V260l67-108" fill="none" stroke="#688beb" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+          <circle cx="246" cy="260" r="24" fill="#2149ba"/>
+          <circle cx="246" cy="260" r="9" fill="#f9f7eb"/>
+          <g transform="rotate(24 260 158)">
+            <path d="M157 178c0-89 48-127 103-127s103 38 103 127z" fill="#2149ba"/>
+            <ellipse cx="260" cy="178" rx="103" ry="27" fill="#182f79"/>
+            <ellipse cx="260" cy="178" rx="85" ry="18" fill="#f9f7eb"/>
+            <path d="M180 136c9-40 34-63 63-69" fill="none" stroke="#688beb" stroke-width="7" stroke-linecap="round"/>
+          </g>
+          <g fill="none" stroke="#18244e" stroke-width="2" stroke-linecap="round"><path d="M109 246l-15 22M150 266l-7 28M191 278l2 27"/></g>
+          <circle cx="245" cy="386" r="6" fill="#ffe062"/>
+        </svg>
+        <figcaption><span>Original concept illustration</span><span>Daylight / 01</span></figcaption>
+      </figure>
+    </section>
+    <section class="wrap features" id="details" aria-labelledby="details-heading">
+      <div class="features-heading"><p class="eyebrow">Small by design</p><h2 id="details-heading">Everything it needs.<br>A little less of everything else.</h2></div>
+      <!-- CUSTOMIZE: Describe three qualities of your fictional product. -->
+      <div class="features-grid">
+        <article class="feature"><span class="number">01</span><h3>A friendly silhouette</h3><p>A rounded shade and uncomplicated lines give this concept its easygoing character.</p></article>
+        <article class="feature"><span class="number">02</span><h3>Room for your work</h3><p>A compact imagined footprint leaves the spotlight on your notebook, sketch, or next idea.</p></article>
+        <article class="feature"><span class="number">03</span><h3>Color with a point of view</h3><p>A cheerful cobalt finish turns an everyday object into a small personal statement.</p></article>
+      </div>
+    </section>
+    <section class="spaces" id="spaces" aria-labelledby="spaces-heading">
+      <div class="wrap space-grid"><div><p class="eyebrow">Picture it here</p><h2 id="spaces-heading">Your corner.<br>Your kind of light.</h2></div>
+        <ul class="space-list">
+          <li><span class="space-letter" aria-hidden="true">a.</span><div><h3>The thinking desk</h3><p>A blank page, a sharpened pencil, and space for your next good idea.</p></div></li>
+          <li><span class="space-letter" aria-hidden="true">b.</span><div><h3>The reading nook</h3><p>Your favorite chair, a tall stack of books, and one more chapter.</p></div></li>
+          <li><span class="space-letter" aria-hidden="true">c.</span><div><h3>The bedside pause</h3><p>A quieter corner for a journal and a little end-of-day reflection.</p></div></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-row"><p>Daylight · Fictional classroom project</p><a href="#top">Back to the light ↑</a></div></footer>
+</body>
+</html>

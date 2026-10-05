@@ -43,7 +43,7 @@ Do not carry over the source spec's self-review as independent review, its repos
 
 ## Verification and remaining preparation
 
-The live Arcade, beta guide, and Promptle introduction and board were inspected. This was a design research pass, not an end-to-end acceptance test of the eleven games. The current class repository assembles draft guides, a student workbook, instructor preparation notes, nine shared website and lifecycle skills, seven game skills, and the existing presentation reference files. The original website material's [MIT license](licenses/VibeCoding-a-Website-LICENSE) remains included with [scope and attribution notes](licenses/README.md). Course packaging does not establish that learner accounts, native skill installation, application behavior, or deployment paths have been exercised. Rehearsal, tested recovery checkpoints, and slide revision remain instructor preparation work.
+The live Arcade, beta guide, and Promptle introduction and board were inspected. This was a design research pass, not an end-to-end acceptance test of the eleven games. The current class repository assembles draft guides, a student workbook, instructor preparation notes, ten shared website and lifecycle skills, seven game skills, and the existing presentation reference files. The original website material's [MIT license](licenses/VibeCoding-a-Website-LICENSE) remains included with [scope and attribution notes](licenses/README.md). Course packaging does not establish that learner accounts, native skill installation, application behavior, or deployment paths have been exercised. Rehearsal, tested recovery checkpoints, and slide revision remain instructor preparation work.
 
 ## Self-guided expansion: October 5, 2026
 
@@ -54,3 +54,7 @@ The single-file course pack is generated from current text sources using [build_
 ## New classroom game choice
 
 Alien Tic-Tac-Toe is Mark’s October 5 classroom concept, documented in [its walkthrough](docs/alien-tic-tac-toe.md). It is not an existing Arcade title or copied Arcade code. The three-choice menu and optional instructor submission path add no Arcade integration or automatic acceptance.
+
+## Website starter collection and scoping
+
+Seven new original static website starters are in [website-starters](website-starters/README.md). Their inline SVG illustrations and sample copy were created for this course; the fan-site designs do not bundle official/private site assets. The added scoping skill separates first-version decisions from the brief and build plan. See [scope and plan](docs/scope-and-plan.md).

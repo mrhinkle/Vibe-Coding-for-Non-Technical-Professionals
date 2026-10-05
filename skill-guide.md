@@ -1,6 +1,6 @@
 # Skills for the vibe coding class
 
-These nine short skills adapt the workflow in Mark Hinkle's VibeCoding-a-Website repository for the foundations and website project in a six-hour, two-project business workshop. Seven additional game skills are in the [game skill guide](game-skills-guide.md). Each accepts a specific input and produces an inspectable result. They are draft instruction files, not installed plugins or a promise that every chatbot has the same tools.
+These ten short skills adapt the workflow in Mark Hinkle's VibeCoding-a-Website repository for the foundations and website project in a six-hour, two-project business workshop. Seven additional game skills are in the [game skill guide](game-skills-guide.md). Each accepts a specific input and produces an inspectable result. They are draft instruction files, not installed plugins or a promise that every chatbot has the same tools.
 
 ## Use a skill
 
@@ -30,11 +30,19 @@ The skills are deliberately self-contained. No scripts, API keys, or original sk
 
 > Interview me about my project, then create a short brief with a small first version and clear acceptance checks.
 
+### Scope the first version
+
+[vc-project-scope](skills/vc-project-scope/SKILL.md)
+
+> Use my brief to decide what we will make now, save for later, and leave out. Keep one page, three sections, and one useful action. Give me five observable checks and save the scope for the planning stage.
+
+Choose a [starter or your own idea](website-starters/README.md). The [scope-and-plan lesson](docs/scope-and-plan.md) explains the distinct outputs: brief = who and why; scope = what; plan = how. Attach the chosen HTML to your chatbot if using a starter.
+
 ### Plan the page and work
 
 [vc-project-plan](skills/vc-project-plan/SKILL.md)
 
-> Use my approved brief to plan the visitor journey, page layout, and three small build increments. Explain what we will check after each.
+> Use my agreed brief and scope to plan the visitor journey, page layout, and three small build increments. Explain what we will check after each.
 
 ### Build one increment at a time
 

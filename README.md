@@ -8,7 +8,7 @@ The class starts with 30 minutes on how software is developed. Students then lea
 
 **Instructor:** Mark Hinkle.
 
-**Status:** course documentation assembled; tested starter applications and classroom rehearsal remain preparation work. The existing presentation is included as reference. Complete the [instructor preflight](instructor/preflight.md) before teaching.
+**Status:** course documentation assembled; seven runnable website starters are included; game checkpoints and classroom rehearsal remain preparation work. The existing presentation is included as reference. Complete the [instructor preflight](instructor/preflight.md) before teaching.
 
 ## Give this course to your chatbot
 
@@ -91,6 +91,7 @@ A supported coding workspace can edit and save the files directly after you conn
 | [Understand the SDLC](skills/vc-sdlc-coach/SKILL.md) | [Choose and define a game](game-skills/vc-game-brief/SKILL.md) |
 | [Prepare accounts and workflow](skills/vc-setup-guide/SKILL.md) | [Write rules and controls](game-skills/vc-game-rules/SKILL.md) |
 | [Write the project brief](skills/vc-project-brief/SKILL.md) | [Build the playable loop](game-skills/vc-game-build/SKILL.md) |
+| [Scope the first version](skills/vc-project-scope/SKILL.md) | Use the agreed game rules to limit scope |
 | [Plan the page and increments](skills/vc-project-plan/SKILL.md) | [Improve appearance](game-skills/vc-game-look-feel/SKILL.md) |
 | [Build a small increment](skills/vc-build-small/SKILL.md) | [Explain outcomes and replay](game-skills/vc-game-feedback/SKILL.md) |
 | [Check quality](skills/vc-quality-check/SKILL.md) | [Playtest and tune](game-skills/vc-game-playtest/SKILL.md) |
@@ -111,7 +112,7 @@ AGENTS.md / CLAUDE.md        Course-repository assistant entry points
 course-map.json              Machine-readable course stages, files, and timings
 instructor-guide.md          Timed teaching plan and facilitation notes
 setup-guide.md               Accounts, connections, publishing, troubleshooting
-skill-guide.md               Nine shared skills and starter prompts
+skill-guide.md               Ten shared skills and starter prompts
 game-skills-guide.md         Seven game skills and three beginner recipes
 handouts/student-workbook.md Fill-in briefs, rules, tests, releases, and handoff
 instructor/preflight.md      Rehearsal and classroom preparation checklist
@@ -128,9 +129,9 @@ tools/                      Rebuild the guide and single-file course pack
 
 ## Current readiness
 
-The curriculum, 16 skill entrypoints, detailed self-study documentation, illustrated participant guide, and student templates are assembled. The 18-page guide uses the existing All Things AI logo and palette with explanatory diagrams. It is separate from the existing 51-slide deck preserved under `presentations/reference-six-hour-class/`. That older deck teaches one business application and includes database and email topics; it has **not yet been rewritten for this two-project agenda**.
+The curriculum, 17 skill entrypoints, detailed self-study documentation, illustrated participant guide, and student templates are assembled. The 18-page guide uses the existing All Things AI logo and palette with explanatory diagrams. It is separate from the existing 51-slide deck preserved under `presentations/reference-six-hour-class/`. That older deck teaches one business application and includes database and email topics; it has **not yet been rewritten for this two-project agenda**.
 
-Before class, revise the slides, prepare and test recovery checkpoints, rehearse each offered chatbot route, and playtest the selected game recipes. The repository does not yet contain tested starter applications. Documentation checks are not a substitute for a classroom rehearsal.
+Before class, revise the slides, prepare and test recovery checkpoints, rehearse each offered chatbot route, and playtest the selected game recipes. Seven standalone website starters are included and checked locally; playable game checkpoints still need preparation. Documentation checks are not a substitute for a classroom rehearsal.
 
 The multiple-agent lesson is optional. It does not add a required block to the 360-minute agenda. Begin with one builder and one read-only reviewer; advanced native agents and isolated worktrees are extensions.
 
@@ -141,3 +142,7 @@ This course adapts Mark's [VibeCoding-a-Website](https://github.com/mrhinkle/Vib
 Students proud of their game can prepare an [optional Arcade submission](docs/arcade-submission.md). Mark and the All Things AI team can select games for a later Arcade addition; course completion does not automatically publish a game there.
 
 **Optional closing invitation:** add vibe coding to your LinkedIn profile and post about your class experience, then send Mark the links for a skill endorsement. See the [LinkedIn wrap-up guide](docs/linkedin-wrap-up.md).
+
+## Choose a website starter—or make your own
+
+Open the [starter collection](website-starters/README.md): one vanilla page, two All Things AI fan-site designs, and four themes—dream restaurant, dream product, dream business, and pet. Download the course and open `website-starters/index.html` for the visual gallery. Every starter is a complete offline `index.html`; copy one into your own project. Follow [brief → scope → plan](docs/scope-and-plan.md) before remixing it.

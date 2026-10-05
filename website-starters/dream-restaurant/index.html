@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Moonlight Noodle Club — a fictional restaurant website for a classroom project.">
+  <title>Moonlight Noodle Club · A fictional restaurant</title>
+  <style>
+    /* CUSTOMIZE: Change these colors to make the restaurant your own. */
+    :root { --paper:#fff5df; --red:#bb302c; --ink:#39211d; --soft:#f3dfbb; --green:#446448; --line:#d7b99d; }
+    * { box-sizing:border-box; }
+    html { scroll-padding-top:1rem; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:Arial,Helvetica,sans-serif; }
+    a { color:inherit; text-underline-offset:.22em; }
+    a:focus-visible { outline:3px solid var(--green); outline-offset:5px; }
+    .skip { position:absolute; z-index:10; top:.75rem; left:1rem; padding:.8rem 1rem; background:var(--ink); color:var(--paper); transform:translateY(-180%); }
+    .skip:focus { transform:translateY(0); }
+    .wrap { width:min(1180px,100% - 3rem); margin-inline:auto; }
+    header { border-top:8px solid var(--red); }
+    .header-row { min-height:100px; display:flex; justify-content:space-between; align-items:center; gap:1.5rem; border-bottom:1px solid var(--red); }
+    .brand { color:var(--red); text-decoration:none; font-family:Georgia,'Times New Roman',serif; font-size:1.5rem; font-weight:bold; line-height:.95; letter-spacing:-.05em; }
+    .brand span { display:block; }
+    nav { display:flex; gap:1.5rem; font-size:.85rem; font-weight:bold; }
+    nav a { text-decoration:none; }
+    nav a:hover { text-decoration:underline; }
+    .hero { display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:2rem; padding-block:4.7rem 3rem; }
+    .eyebrow { margin:0 0 1.2rem; font-size:.75rem; line-height:1.5; letter-spacing:.16em; text-transform:uppercase; font-weight:bold; }
+    h1 { margin:0; color:var(--red); font:normal clamp(3.3rem,6.8vw,6.1rem)/.96 Georgia,'Times New Roman',serif; letter-spacing:-.065em; }
+    h1 em { font-weight:normal; }
+    .intro { max-width:28rem; margin:1.6rem 0 1.8rem; font-size:1.05rem; line-height:1.7; }
+    .button { display:inline-flex; align-items:center; gap:2.3rem; min-height:48px; padding:1rem 1.3rem; background:var(--red); color:var(--paper); border:1px solid var(--red); border-radius:2px; font-size:.85rem; text-decoration:none; font-weight:bold; }
+    .button:hover { background:var(--ink); border-color:var(--ink); }
+    figure { margin:0; position:relative; }
+    .bowl-art { display:block; width:100%; height:auto; }
+    figcaption { color:var(--red); font-family:Georgia,'Times New Roman',serif; font-style:italic; font-size:1.15rem; text-align:center; margin-top:-.2rem; }
+    .menu { padding-block:3rem 4rem; border-top:1px solid var(--red); }
+    .section-heading { display:flex; justify-content:space-between; align-items:baseline; gap:1rem; margin-bottom:1.5rem; }
+    h2 { margin:0; color:var(--red); font:normal clamp(2.25rem,4vw,3.65rem)/1.05 Georgia,'Times New Roman',serif; letter-spacing:-.045em; }
+    .section-heading p { margin:0; font-size:.75rem; text-transform:uppercase; letter-spacing:.12em; }
+    .menu-list { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+    .dish { padding-top:1.4rem; border-top:1px solid var(--line); }
+    .dish-number { color:var(--red); font-size:.75rem; font-weight:bold; }
+    h3 { margin:.8rem 0 .65rem; font:normal 1.6rem/1.1 Georgia,'Times New Roman',serif; letter-spacing:-.03em; }
+    .dish p { margin:0; max-width:20rem; font-size:.92rem; line-height:1.7; }
+    .story { background:var(--red); color:var(--paper); padding-block:3.6rem; }
+    .story-grid { display:grid; grid-template-columns:.75fr 1.25fr; align-items:start; gap:4rem; }
+    .story .eyebrow { margin-top:.4rem; }
+    .story h2 { color:var(--paper); max-width:40rem; }
+    .story-copy p { max-width:35rem; margin:1.3rem 0 0; font-size:1rem; line-height:1.7; }
+    footer { padding-block:1.6rem; }
+    .footer-row { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; font-size:.75rem; }
+    .footer-row p { margin:0; }
+    .footer-row a { font-weight:bold; }
+    @media (max-width:760px) {
+      .hero { grid-template-columns:1fr; gap:1.5rem; padding-block:3rem 2rem; }
+      .hero figure { max-width:450px; margin-inline:auto; }
+      .menu-list { grid-template-columns:1fr; gap:1.4rem; }
+      .dish { display:grid; grid-template-columns:2rem 1fr; gap:0 .75rem; }
+      .dish-number { grid-row:1/3; padding-top:.25rem; }
+      .dish h3 { margin:0 0 .5rem; }
+      .dish p { max-width:none; }
+      .section-heading { display:block; }
+      .section-heading p { margin-top:.7rem; }
+      .story-grid { grid-template-columns:1fr; gap:.5rem; }
+    }
+    @media (max-width:400px) { .wrap { width:calc(100% - 2rem); } nav { gap:1rem; font-size:.8rem; } .brand { font-size:1.3rem; } }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header id="top">
+    <div class="wrap header-row">
+      <!-- CUSTOMIZE: Restaurant name and navigation labels. -->
+      <a class="brand" href="#top" aria-label="Moonlight Noodle Club, top of page">Moonlight<span>Noodle Club</span></a>
+      <nav aria-label="Main navigation"><a href="#menu">The menu</a><a href="#story">Our idea</a></nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="wrap hero" aria-labelledby="hero-heading">
+      <div>
+        <!-- CUSTOMIZE: Main promise, introduction, and action. -->
+        <p class="eyebrow">Big bowls. Small rituals.</p>
+        <h1 id="hero-heading">Good noodles.<br><em>Great company.</em></h1>
+        <p class="intro">A little daydream of a neighborhood noodle spot. Steamy bowls, bright flavors, and a table with room for one more.</p>
+        <a class="button" href="#menu">Explore the sample menu <span aria-hidden="true">↗</span></a>
+      </div>
+      <figure>
+        <svg class="bowl-art" viewBox="0 0 550 490" role="img" aria-labelledby="bowl-title bowl-desc">
+          <title id="bowl-title">A generous bowl of noodles</title>
+          <desc id="bowl-desc">An original illustration of a red bowl with curling yellow noodles, green leaves, a soft egg, and two chopsticks.</desc>
+          <circle cx="276" cy="228" r="203" fill="#f3dfbb"/>
+          <path d="M98 86l10-20 10 20 20 10-20 10-10 20-10-20-20-10zM432 174l7-14 7 14 14 7-14 7-7 14-7-14-14-7z" fill="#bb302c"/>
+          <path d="M214 122c-28-27 25-36 0-62M265 128c-28-28 24-42 0-68M311 126c-24-25 20-33 1-57" fill="none" stroke="#bb302c" stroke-width="4" stroke-linecap="round"/>
+          <ellipse cx="277" cy="420" rx="141" ry="12" fill="#d7b99d"/>
+          <path d="M90 245c13 112 80 172 187 172s174-60 187-172z" fill="#bb302c"/>
+          <ellipse cx="277" cy="245" rx="188" ry="76" fill="#39211d" stroke="#bb302c" stroke-width="12"/>
+          <ellipse cx="277" cy="247" rx="166" ry="57" fill="#c98b48"/>
+          <g fill="none" stroke="#ffda83" stroke-width="8" stroke-linecap="round">
+            <path d="M161 237c-19-36 72-53 78-17s-82 39-57 61 77-8 62-26 12-40 40-18"/>
+            <path d="M234 213c14-30 76-17 66 8s-78 17-59 43 68 23 66-2 26-42 51-21"/>
+            <path d="M178 213c39-29 18 34 58 26s71-13 90 11-13 38-43 26"/>
+          </g>
+          <path d="M142 219c-32-3-40-35-36-49 30-3 54 11 55 36M157 212c-8-27 5-52 29-60 21 32 8 59-29 60M171 220c15-36 46-46 65-38-3 34-29 51-65 38" fill="#446448"/>
+          <g transform="rotate(22 355 216)"><ellipse cx="355" cy="216" rx="46" ry="54" fill="#fff5df"/><ellipse cx="355" cy="221" rx="23" ry="27" fill="#efa838"/></g>
+          <path d="M245 228L423 66M264 236L450 87" fill="none" stroke="#39211d" stroke-width="10" stroke-linecap="round"/>
+          <path d="M245 228L423 66M264 236L450 87" fill="none" stroke="#6d4433" stroke-width="4" stroke-linecap="round"/>
+          <path d="M114 307c94 48 236 48 327 0" fill="none" stroke="#fff5df" stroke-width="4"/>
+          <path d="M245 371c-15-25 12-55 38-39-14 0-19 21-4 30-11 10-25 12-34 9z" fill="#fff5df"/>
+          <circle cx="312" cy="345" r="5" fill="#fff5df"/>
+        </svg>
+        <figcaption>A bowl worth slowing down for.</figcaption>
+      </figure>
+    </section>
+    <section class="wrap menu" id="menu" aria-labelledby="menu-heading">
+      <div class="section-heading"><h2 id="menu-heading">A few house daydreams.</h2><p>Sample menu · three good ideas</p></div>
+      <!-- CUSTOMIZE: Replace these fictional dishes and descriptions. -->
+      <div class="menu-list">
+        <article class="dish"><span class="dish-number">01</span><h3>Midnight Miso</h3><p>A cozy bowl of miso broth, springy noodles, mushrooms, and a tangle of greens.</p></article>
+        <article class="dish"><span class="dish-number">02</span><h3>Sunshine Sesame</h3><p>Cool noodles, crunchy cucumber, bright herbs, and a creamy sesame dressing.</p></article>
+        <article class="dish"><span class="dish-number">03</span><h3>Little Chili Crunch</h3><p>Warm noodles tossed with garlic, crisp shallots, and a cheerful kick of chili.</p></article>
+      </div>
+    </section>
+    <section class="story" id="story" aria-labelledby="story-heading">
+      <div class="wrap story-grid"><p class="eyebrow">The idea behind the bowl</p><div class="story-copy"><h2 id="story-heading">Nothing fancy.<br>Just a little more together.</h2><p>Imagine a place where the menu stays small and the conversations run long. Moonlight is our fictional invitation to put the phone down, pull up a chair, and enjoy something warm.</p></div></div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-row"><p>Moonlight Noodle Club · Fictional classroom project</p><a href="#top">Back to the top ↑</a></div></footer>
+</body>
+</html>

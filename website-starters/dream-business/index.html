@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Good Company — a fictional creative studio and a simple classroom website.">
+  <title>Good Company · A creative studio concept</title>
+  <style>
+    /* CUSTOMIZE: Studio colors. Keep strong contrast when changing them. */
+    :root { --ink:#202622; --paper:#f4f1e8; --lime:#d9f786; --muted:#c0c8bd; --line:#5b655c; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--ink); color:var(--paper); font-family:Arial,Helvetica,sans-serif; }
+    a { color:inherit; text-underline-offset:.2em; }
+    a:focus-visible { outline:3px solid var(--lime); outline-offset:6px; }
+    .skip { position:absolute; top:1rem; left:1rem; z-index:10; padding:1rem; background:var(--lime); color:var(--ink); transform:translateY(-200%); }
+    .skip:focus { transform:translateY(0); }
+    .wrap { width:min(1180px,100% - 3rem); margin-inline:auto; }
+    .header-row { display:flex; align-items:center; justify-content:space-between; gap:2rem; min-height:100px; border-bottom:1px solid var(--line); }
+    .brand { text-decoration:none; font-size:1.1rem; font-weight:bold; letter-spacing:-.05em; display:flex; gap:.65rem; align-items:center; }
+    .brand-mark { width:14px; height:14px; background:var(--lime); transform:rotate(45deg); display:inline-block; }
+    nav { display:flex; gap:1.6rem; font-size:.8rem; }
+    nav a { text-decoration:none; }
+    nav a:hover { color:var(--lime); }
+    .hero { padding-block:4rem 3rem; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.15em; font-size:.72rem; font-weight:bold; line-height:1.5; margin:0 0 1.5rem; }
+    .hero h1 { font-size:clamp(3.7rem,9.9vw,9rem); line-height:.96; letter-spacing:-.075em; font-weight:normal; margin:0; max-width:1000px; }
+    .hero h1 span { font-family:Georgia,'Times New Roman',serif; font-style:italic; color:var(--lime); letter-spacing:-.055em; }
+    .hero-bottom { display:grid; grid-template-columns:1fr 1fr; align-items:end; gap:5rem; margin-top:2.6rem; }
+    .hero-intro { max-width:30rem; }
+    .hero-intro p { font-size:1rem; line-height:1.75; color:var(--muted); margin:0 0 1.7rem; }
+    .action { display:inline-flex; align-items:center; justify-content:space-between; gap:2rem; min-height:48px; padding:1rem 1.15rem; background:var(--lime); color:var(--ink); text-decoration:none; font-size:.83rem; font-weight:bold; }
+    .action:hover { background:var(--paper); }
+    figure { margin:0; display:flex; justify-content:flex-end; align-items:end; gap:1.3rem; }
+    figure svg { width:min(235px,65%); height:auto; display:block; }
+    figcaption { font-size:.65rem; text-transform:uppercase; line-height:1.7; letter-spacing:.12em; color:var(--muted); padding-bottom:.6rem; }
+    .services { padding-block:3rem 4rem; }
+    .section-heading { display:grid; grid-template-columns:.55fr 1.45fr; gap:2rem; border-top:1px solid var(--line); padding-top:1.5rem; }
+    h2 { margin:0; font-weight:normal; font-size:clamp(2.3rem,4.7vw,4.3rem); line-height:1.08; letter-spacing:-.06em; }
+    .service-list { list-style:none; padding:0; margin:2.5rem 0 0; }
+    .service-list li { display:grid; grid-template-columns:.15fr .7fr 1fr; align-items:baseline; gap:2rem; padding:1.7rem 0; border-top:1px solid var(--line); }
+    .service-list li:last-child { border-bottom:1px solid var(--line); }
+    .number { font-size:.75rem; color:var(--lime); }
+    h3 { font-size:1.6rem; font-weight:normal; letter-spacing:-.035em; margin:0; }
+    .service-list p { margin:0; font-size:.91rem; line-height:1.7; color:var(--muted); }
+    .checklist { background:var(--lime); color:var(--ink); padding-block:3.5rem 4rem; }
+    .checklist-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; }
+    .checklist h2 { font-family:Georgia,'Times New Roman',serif; font-size:clamp(2.75rem,5vw,4.7rem); }
+    .checklist-intro { max-width:26rem; font-size:.95rem; line-height:1.7; margin:1.5rem 0 0; }
+    .questions { list-style:none; margin:0; padding:0; counter-reset:item; }
+    .questions li { counter-increment:item; display:grid; grid-template-columns:2rem 1fr; gap:.6rem; padding:1.3rem 0; border-top:1px solid #677a43; }
+    .questions li::before { content:'0' counter(item); font-size:.7rem; padding-top:.25rem; }
+    .questions h3 { font-size:1.13rem; font-weight:bold; line-height:1.35; }
+    .questions p { margin:.6rem 0 0; font-size:.87rem; line-height:1.65; }
+    footer { padding-block:1.6rem; }
+    .footer-row { display:flex; justify-content:space-between; gap:1.2rem; flex-wrap:wrap; font-size:.75rem; color:var(--muted); }
+    .footer-row p { margin:0; }
+    @media (max-width:760px) {
+      .hero { padding-top:3rem; }
+      .hero-bottom { grid-template-columns:1fr; gap:2.5rem; }
+      figure { justify-content:flex-start; }
+      figure svg { width:180px; }
+      .section-heading { grid-template-columns:1fr; gap:0; }
+      .service-list li { grid-template-columns:2rem 1fr; gap:.6rem 1rem; }
+      .service-list .number { grid-row:1/3; }
+      .service-list p { grid-column:2; }
+      .checklist-grid { grid-template-columns:1fr; gap:2.5rem; }
+    }
+    @media (max-width:400px) { .wrap { width:calc(100% - 2rem); } nav { gap:1rem; font-size:.73rem; } .brand { font-size:1rem; gap:.5rem; } }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header id="top"><div class="wrap header-row">
+    <!-- CUSTOMIZE: Studio identity and navigation. -->
+    <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"></span>Good Company</a>
+    <nav aria-label="Main navigation"><a href="#services">What we do</a><a href="#checklist">Start here</a></nav>
+  </div></header>
+  <main id="main">
+    <section class="wrap hero" aria-labelledby="hero-heading">
+      <!-- CUSTOMIZE: Main message and studio introduction. -->
+      <p class="eyebrow">An independent creative studio concept</p>
+      <h1 id="hero-heading">Good ideas.<br><span>Better together.</span></h1>
+      <div class="hero-bottom"><div class="hero-intro"><p>Imagine a small studio for people making thoughtful things. Clear words, considered design, and websites with a reason to exist.</p><a class="action" href="#checklist">Explore the project checklist <span aria-hidden="true">↗</span></a></div>
+        <figure>
+          <figcaption>A little order.<br>A fresh angle.</figcaption>
+          <svg viewBox="0 0 240 210" role="img" aria-labelledby="studio-art-title studio-art-desc"><title id="studio-art-title">Ideas coming together</title><desc id="studio-art-desc">Original geometric artwork with an open cream circle, a tilted lime square, and a small solid circle.</desc><circle cx="101" cy="104" r="78" fill="none" stroke="#f4f1e8" stroke-width="3"/><path d="M93 30h105v105H93z" transform="rotate(18 145 82)" fill="#d9f786"/><circle cx="154" cy="151" r="41" fill="#f4f1e8"/><path d="M44 183h159" stroke="#5b655c" stroke-width="2"/><circle cx="45" cy="34" r="9" fill="#d9f786"/></svg>
+        </figure>
+      </div>
+    </section>
+    <section class="wrap services" id="services" aria-labelledby="services-heading">
+      <div class="section-heading"><p class="eyebrow">What the studio could do</p><h2 id="services-heading">A clear idea.<br>A considered expression.</h2></div>
+      <!-- CUSTOMIZE: Replace the three sample services with your own. -->
+      <ol class="service-list">
+        <li><span class="number" aria-hidden="true">01</span><h3>Find the story</h3><p>Bring a scattered idea into focus: who it serves, why it matters, and what you want people to remember.</p></li>
+        <li><span class="number" aria-hidden="true">02</span><h3>Give it a shape</h3><p>Explore an identity through type, color, and a small set of thoughtful visual choices.</p></li>
+        <li><span class="number" aria-hidden="true">03</span><h3>Make it useful</h3><p>Plan a simple website around the next action you want a real visitor to take.</p></li>
+      </ol>
+    </section>
+    <section class="checklist" id="checklist" aria-labelledby="checklist-heading"><div class="wrap checklist-grid">
+      <div><p class="eyebrow">Before the first sketch</p><h2 id="checklist-heading">Every good project<br>starts with a question.</h2><p class="checklist-intro">Use this small checklist to put your idea into words. A notebook is all you need; nothing is submitted or collected here.</p></div>
+      <ol class="questions"><li><div><h3>Who are you making this for?</h3><p>Picture one person and the thing they are trying to accomplish.</p></div></li><li><div><h3>What needs to become clearer?</h3><p>Name the one problem the project should help that person solve.</p></div></li><li><div><h3>What would a useful first version do?</h3><p>Choose a small outcome you could show, try, and improve.</p></div></li></ol>
+    </div></section>
+  </main>
+  <footer><div class="wrap footer-row"><p>Good Company · Fictional classroom project</p><a href="#top">Back to the beginning ↑</a></div></footer>
+</body>
+</html>

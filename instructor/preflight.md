@@ -87,3 +87,5 @@ Before distributing the course, decide how learners will receive the private rep
 Use [START-HERE.md](../START-HERE.md) as the student landing page. Open the [illustrated guide](../guides/participant-guide.pdf), verify its links, and introduce [troubleshooting](../docs/troubleshooting.md). Demonstrate a cold restart using project-state.md and the actual files. Offer [multiple agents](../docs/multiple-agents.md) only when learners have a working first version; it is not an extra required block in the 360-minute schedule.
 
 For the optional LinkedIn closing invitation, have Mark’s correct profile and the class contact channel ready. Refer students to [the wrap-up guide](../docs/linkedin-wrap-up.md); allow posting afterward so demonstrations retain their time.
+
+Website starter rehearsal: open [the gallery](../website-starters/index.html) from a downloaded copy. Confirm each offered template opens, copy one into a learner project, change its headline with the chosen chatbot, and check its main action again. Rehearse publication separately. The static starters are not working booking, shopping, or lead-capture systems.

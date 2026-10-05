@@ -39,7 +39,7 @@ read my project-state.md and actual files before suggesting changes.
 | --- | --- | --- |
 | Brand new | [Illustrated participant guide](guides/participant-guide.pdf), pages 2–5 | You can explain the roles of the chatbot, GitHub, and Vercel |
 | Setting up | [Account and connection guide](setup-guide.md) | You can receive runnable files and find your own practice repository |
-| Ready for the website | [Website walkthrough](docs/website-walkthrough.md) | Your exported page works, and the published URL is checked or the blocker recorded |
+| Ready for the website | [Choose a starter](website-starters/README.md), then [scope and plan](docs/scope-and-plan.md) | Your exported page works, and the published URL is checked or the blocker recorded |
 | Ready for the game | [Choose your game](docs/game-options.md) | A person can start, finish, and restart a round |
 | Something broke | [Troubleshooting](docs/troubleshooting.md) | You have reproduced the issue and checked one focused repair |
 | Want another AI's help | [Multiple-agent options](docs/multiple-agents.md) | Each helper has a clear job, input version, and permitted files |
@@ -61,4 +61,4 @@ Use the [student workbook](handouts/student-workbook.md) for your brief, game ru
 
 ## How much help is available?
 
-The repo includes stage skills, worked examples, an illustrated field guide, a troubleshooting reference, a prompt library, and templates for saving context. The examples describe what to build; they are not pretested starter applications. Live account screens and chatbot features can change. If the route differs, report what you actually see and use the portable file route or ask the instructor for help.
+The repo includes stage skills, worked examples, an illustrated field guide, a troubleshooting reference, a prompt library, and templates for saving context. Seven optional website starters contain runnable files checked locally. The game walkthroughs remain specifications, not tested game applications. Live account screens and chatbot features can change. If the route differs, report what you actually see and use the portable file route or ask the instructor for help.

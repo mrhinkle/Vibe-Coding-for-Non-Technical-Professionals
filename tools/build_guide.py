@@ -73,12 +73,12 @@ page('05 / GET READY','Choose the route that works.','Start with complete runnab
     prompt('Confirm whether you can return complete files, edit my project, run checks, and access GitHub or Vercel. Mark each verified, unavailable, or not tried. Use the portable route for anything you cannot do here.'),
     note('No API key, database, or paid integration is needed for the core projects. Confirm hosting suitability before class: Vercel Hobby is for noncommercial personal use. Native skills and multiple agents are optional.')],'setup-guide.md'),
 page('06 / WEBSITE BRIEF','Give the page one clear job.','Start with a small, specific promise to one kind of visitor.','website',[
-    para('Example: a fictional community event page. A visitor can learn what the event is, find when and where it takes place, and follow a real directions link. No registration system or payment is needed.'),
+    para('Choose a starter or make your own: vanilla, two All Things AI fan sites, dream restaurant, dream product, dream business, or pet. Download the course and open website-starters/index.html. Copy the chosen folder into your own project.'),
     steps('Write the audience and desired outcome in one sentence.',
-          'Choose a heading, two or three sections, a visual treatment, and the main link or button.',
-          'Name five checks: clear purpose, correct content, main action, navigation, and phone layout.'),
-    prompt('Use vc-project-brief and vc-project-plan. Interview me about my page, then write a small brief and three build increments. Include the exact destination or behavior of the main action.'),
-    note('Save project-brief.md. Use content and images you have permission to use. Fictional examples should be visibly fictional; do not invent testimonials or working services.')],'docs/website-walkthrough.md'),
+          'Scope WHAT: one page, three sections, one useful action. Put extra features in a later list.',
+          'Plan HOW: three small changes, each with a visible check. Check purpose, content, action, navigation, and phone layout.'),
+    prompt('Use vc-project-brief, vc-project-scope, and vc-project-plan. Help me define who and why, what belongs now, and how to build in three increments. Include the exact destination or behavior of the main action.'),
+    note('Save your brief, scope, and plan. Use content and images you have permission to use. Fictional examples should be visibly fictional; do not invent testimonials or working services.')],'docs/scope-and-plan.md'),
 page('07 / WEBSITE BUILD','Build small. Look. Then improve.','A specific change is easier to check than an instruction to make everything better.','prompt',[
     steps('Ask for the smallest complete page. A single index.html can contain its styles and behavior.',
           'Save and open the actual exported file. If separate images or scripts are supplied, keep their paths intact.',
@@ -161,7 +161,7 @@ page('17 / KEEP THIS REFERENCE','The right help, one click away.','All core inst
     head('Sources and edition notes'),
     para('The setup guide cites official GitHub, Vercel, OpenAI, and Claude documentation. Product guidance was checked October 5, 2026; screens and account availability may change. The source map records the original website course, existing presentation, and Arcade research.'),
     para('Brand palette and logo come from the existing All Things AI class presentation. Diagrams in this guide are conceptual illustrations, not screenshots of provider interfaces. The detailed Markdown is the living reference.'),
-    note('The guide is a learning aid. Starter applications and full classroom rehearsal remain preparation tasks. A documented workflow is not a claim that every provider or device has been exercised.')],'repository-map.md')]
+    note('The guide is a learning aid. Website starters have local checks; game checkpoints and full classroom rehearsal remain preparation tasks. A documented workflow is not a claim that every provider or device has been exercised.')],'repository-map.md')]
 
 def color(s):return HexColor(s)
 def diagram(kind):

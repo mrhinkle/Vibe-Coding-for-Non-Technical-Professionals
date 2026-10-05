@@ -63,9 +63,9 @@ Limit individual setup troubleshooting to five minutes before using a prepared c
 
 ## Project 1 Create a simple website in 90 minutes
 
-Students choose a small topic: a personal introduction, an event, a hobby, a community group, or a fictional business. Require one page with a clear heading, two or three useful sections, an image or simple visual treatment, and a meaningful link or button.
+Students choose an optional [website starter](website-starters/README.md) or their own small idea. Offer vanilla, two All Things AI fan sites, dream restaurant, dream product, dream business, or pet. Demonstrate the downloaded gallery, then copy just the chosen starter into the student’s project. Require one page with a clear heading, two or three useful sections, an image or simple visual treatment, and a meaningful link or button.
 
-**Define and outline for 15 minutes.** Use `vc-project-brief` and `vc-project-plan` to decide the audience, purpose, sections, style, and primary action. Save `project-brief.md` in this project's folder. Core checks: accurate content; correct main link or button destination; working navigation; usable phone layout; and a purpose another student can identify.
+**Define and outline for 15 minutes.** Use `vc-project-brief`, `vc-project-scope`, and `vc-project-plan`: roughly 3 minutes for who/why, 5 for what belongs in version one, and 7 for layout and three build increments. Follow [scope and plan](docs/scope-and-plan.md). Save the brief, scope, and plan in this project’s folder; these can be short notes. Core checks: accurate content; correct main link or button destination; working navigation; usable phone layout; and a purpose another student can identify.
 
 **Build and refine for 50 minutes.** Use `vc-build-small`. For the simplest portable route, request one complete `index.html` with styles included. If separate files are provided, preserve their names and relative paths. Open the actual files in a browser, then request one specific improvement at a time. Prompt pattern: “For this audience, make this specific change, preserve these working parts, and tell me how to check it.” Save a working checkpoint before substantial changes.
 
@@ -107,7 +107,7 @@ Point students to the [LinkedIn wrap-up guide](docs/linkedin-wrap-up.md), includ
 
 ## Instructor preparation and limits
 
-Rehearse both complete projects on each offered chatbot route. Prepare a tested website checkpoint and a playable checkpoint for each offered game recipe. Preflight account access, file download or copy, GitHub upload, Vercel import, and classroom network. This draft contains instructions and skills; the starter applications and revised slide deck have not been built in this revision.
+Rehearse both complete projects on each offered chatbot route. Prepare a tested website checkpoint and a playable checkpoint for each offered game recipe. Preflight account access, file download or copy, GitHub upload, Vercel import, and classroom network. Seven runnable website starters are included. Check the chosen starter on the classroom laptops and rehearse a small edit and its deployment; game checkpoints and the revised slide deck still need preparation.
 
 Confirm hosting before sending prerequisites. Vercel Hobby is for noncommercial personal use; a real business website may require another plan. [Vercel fair use](https://vercel.com/docs/limits/fair-use-guidelines)
 
