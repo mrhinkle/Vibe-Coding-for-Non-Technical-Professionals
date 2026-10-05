@@ -44,3 +44,9 @@ Do not carry over the source spec's self-review as independent review, its repos
 ## Verification and remaining preparation
 
 The live Arcade, beta guide, and Promptle introduction and board were inspected. This was a design research pass, not an end-to-end acceptance test of the eleven games. The current class repository assembles draft guides, a student workbook, instructor preparation notes, nine shared website and lifecycle skills, seven game skills, and the existing presentation reference files. The original website material's [MIT license](licenses/VibeCoding-a-Website-LICENSE) remains included with [scope and attribution notes](licenses/README.md). Course packaging does not establish that learner accounts, native skill installation, application behavior, or deployment paths have been exercised. Rehearsal, tested recovery checkpoints, and slide revision remain instructor preparation work.
+
+## Self-guided expansion: October 5, 2026
+
+The current repository adds AI and student entry points, a generated single-file course pack, worked website and quiz examples, 30 troubleshooting paths, optional multiple-agent workflows, learner AGENTS.md and handoff templates, and an 18-page illustrated participant guide. Official product-specific sources are linked in the setup, troubleshooting, walkthrough, and multi-agent documents. The new guide uses the reference presentation palette and unmodified logo/artwork, with newly drawn conceptual diagrams. See [guide source and brand notes](guides/README.md). These diagrams are not captured product UI.
+
+The single-file course pack is generated from current text sources using [build_course_pack.py](tools/build_course_pack.py). The guide is generated using [build_guide.py](tools/build_guide.py). Student artifacts, native agent configuration, runtime applications, and classroom rehearsal are not implied by these documentation builds.

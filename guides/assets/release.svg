@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="504" height="158" preserveAspectRatio="xMinYMin meet" viewBox="0 0 504 158" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>Check before you share.</title>
+	<desc>Conceptual teaching diagram. A full text explanation appears in the participant guide beside this illustration.</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="504" height="158"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-158)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="88" width="148" height="54" rx="7" ry="7" style="stroke: rgb(85%,87%,91%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(95%,96%,98%); fill-rule: evenodd;"/>
+			<text x="14" y="117" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 12px;fill: rgb(18%,49%,88%); stroke:none;" transform="translate(0,234) scale(1,-1)">Checked files</text>
+			<rect x="178" y="88" width="148" height="54" rx="7" ry="7" style="stroke: rgb(85%,87%,91%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(95%,96%,98%); fill-rule: evenodd;"/>
+			<text x="192" y="117" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 12px;fill: rgb(18%,49%,88%); stroke:none;" transform="translate(0,234) scale(1,-1)">GitHub</text>
+			<rect x="356" y="88" width="148" height="54" rx="7" ry="7" style="stroke: rgb(85%,87%,91%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(95%,96%,98%); fill-rule: evenodd;"/>
+			<text x="370" y="117" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 12px;fill: rgb(18%,49%,88%); stroke:none;" transform="translate(0,234) scale(1,-1)">Vercel URL</text>
+			<path d="M 151,115 L 175,115 Z" style="stroke: rgb(18%,49%,88%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<polygon points="175 115, 170 118, 170 112" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(18%,49%,88%); fill-rule: evenodd;"/>
+			<path d="M 329,115 L 353,115 Z" style="stroke: rgb(18%,49%,88%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<polygon points="353 115, 348 118, 348 112" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(18%,49%,88%); fill-rule: evenodd;"/>
+			<rect x="0" y="10" width="242" height="57" rx="7" ry="7" style="stroke: rgb(85%,87%,91%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(95%,96%,98%); fill-rule: evenodd;"/>
+			<text x="12" y="45" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 9px;fill: rgb(18%,49%,88%); stroke:none;" transform="translate(0,90) scale(1,-1)">FIRST DEPLOYMENT</text>
+			<text x="12" y="26" style="font-family: Arial, Helvetica, sans-serif; font-size: 10px;fill: rgb(5%,7%,9%); stroke:none;" transform="translate(0,52) scale(1,-1)">Production: confirm before sharing.</text>
+			<rect x="260" y="10" width="244" height="57" rx="7" ry="7" style="stroke: rgb(85%,87%,91%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(95%,96%,98%); fill-rule: evenodd;"/>
+			<text x="272" y="45" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 9px;fill: rgb(18%,49%,88%); stroke:none;" transform="translate(0,90) scale(1,-1)">LATER CHANGES</text>
+			<text x="272" y="26" style="font-family: Arial, Helvetica, sans-serif; font-size: 9.5px;fill: rgb(5%,7%,9%); stroke:none;" transform="translate(0,52) scale(1,-1)">Branch &gt; preview &gt; review &gt; release</text>
+		</g>
+	</g>
+</svg>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="504" height="158" preserveAspectRatio="xMinYMin meet" viewBox="0 0 504 158" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>Choose the route that works.</title>
+	<desc>Conceptual teaching diagram. A full text explanation appears in the participant guide beside this illustration.</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="504" height="158"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-158)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="8" width="238" height="140" rx="7" ry="7" style="stroke: rgb(85%,87%,91%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(95%,96%,98%); fill-rule: evenodd;"/>
+			<text x="15" y="122" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 11px;fill: rgb(18%,49%,88%); stroke:none;" transform="translate(0,244) scale(1,-1)">my-first-site</text>
+			<text x="25" y="94" style="font-family: Arial, Helvetica, sans-serif; font-size: 10px;fill: rgb(5%,7%,9%); stroke:none;" transform="translate(0,188) scale(1,-1)">index.html</text>
+			<text x="25" y="67" style="font-family: Arial, Helvetica, sans-serif; font-size: 10px;fill: rgb(5%,7%,9%); stroke:none;" transform="translate(0,134) scale(1,-1)">project-brief.md</text>
+			<text x="25" y="40" style="font-family: Arial, Helvetica, sans-serif; font-size: 10px;fill: rgb(5%,7%,9%); stroke:none;" transform="translate(0,80) scale(1,-1)">project-state.md</text>
+			<rect x="266" y="8" width="238" height="140" rx="7" ry="7" style="stroke: rgb(85%,87%,91%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(95%,96%,98%); fill-rule: evenodd;"/>
+			<text x="281" y="122" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 11px;fill: rgb(18%,49%,88%); stroke:none;" transform="translate(0,244) scale(1,-1)">my-first-game</text>
+			<text x="291" y="94" style="font-family: Arial, Helvetica, sans-serif; font-size: 10px;fill: rgb(5%,7%,9%); stroke:none;" transform="translate(0,188) scale(1,-1)">index.html</text>
+			<text x="291" y="67" style="font-family: Arial, Helvetica, sans-serif; font-size: 10px;fill: rgb(5%,7%,9%); stroke:none;" transform="translate(0,134) scale(1,-1)">game-rules.md</text>
+			<text x="291" y="40" style="font-family: Arial, Helvetica, sans-serif; font-size: 10px;fill: rgb(5%,7%,9%); stroke:none;" transform="translate(0,80) scale(1,-1)">project-state.md</text>
+			<text x="194" y="0" style="font-family: Arial, Helvetica, sans-serif; font-size: 9px;fill: rgb(35%,40%,45%); stroke:none;" transform="translate(0,0) scale(1,-1)">Keep both projects separate.</text>
+		</g>
+	</g>
+</svg>

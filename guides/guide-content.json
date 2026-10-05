@@ -1,0 +1,496 @@
+[
+  {
+    "kicker": "YOUR FIELD GUIDE",
+    "title": "Vibe Coding for Non-Technical Professionals",
+    "lead": "Your first website. Your first game. Your next idea.",
+    "diagram": "cover",
+    "blocks": [
+      [
+        "p",
+        "A website. A game. A repeatable way to turn an idea into working software."
+      ],
+      [
+        "p",
+        "No programming experience required. Bring your favorite chatbot and learn to describe, build, check, save, and publish."
+      ],
+      [
+        "note",
+        "Six teaching hours, plus lunch and breaks.\nMark Hinkle | All Things AI\nParticipant edition | October 2026"
+      ]
+    ],
+    "ref": "START-HERE.md"
+  },
+  {
+    "kicker": "01 / YOUR ROUTE",
+    "title": "Two projects. One useful process.",
+    "lead": "Use this guide as a map. The repository holds the detailed instructions and recovery steps.",
+    "diagram": "route",
+    "blocks": [
+      [
+        "steps",
+        [
+          "FOUNDATIONS - 60 minutes. Understand the software lifecycle, then prepare GitHub, Vercel, and your chatbot.",
+          "WEBSITE - 90 minutes. Define one page, build it, test its main action, and publish it.",
+          "GAME - 195 minutes. Choose a pattern, write rules, build a playable loop, improve it, playtest, and publish.",
+          "HANDOFF - 15 minutes. Demonstrate both projects and save your next action."
+        ]
+      ],
+      [
+        "note",
+        "Go at your own pace outside class. A checkpoint is a visible result, not a number of prompts sent."
+      ],
+      [
+        "p",
+        "Quick page finder: AI handoff 3; lifecycle 4; tools 5; setup 6; website 7-9; game 10-12; troubleshooting 13; agents 14-15; resume 16; checklist 17; resources 18."
+      ]
+    ],
+    "ref": "instructor-guide.md"
+  },
+  {
+    "kicker": "02 / HAND THE COURSE TO YOUR AI",
+    "title": "Start with the right context.",
+    "lead": "A chatbot can help only with the material and tools it can actually access.",
+    "diagram": "handoff",
+    "blocks": [
+      [
+        "steps",
+        [
+          "Open START-HERE.md. If your assistant can read the authorized repository, direct it to AI-START.md.",
+          "If it cannot read the private link, download AI-COURSE-PACK.md and attach it. If file upload fails, paste AI-START.md and the current lesson.",
+          "Ask it to identify the files it received, both projects, and your next checkpoint. A vague summary is not proof of access."
+        ]
+      ],
+      [
+        "prompt",
+        "Be my patient course guide. Read AI-START.md and tell me which files you actually received. I am starting fresh / continuing / stuck. Give me one next action and tell me what success will look like."
+      ],
+      [
+        "note",
+        "The course repo is private. Your instructor must grant access or supply a copy. Never share a password or access token to make a link work. ZIP uploads are not supported by every chatbot."
+      ]
+    ],
+    "ref": "START-HERE.md"
+  },
+  {
+    "kicker": "03 / THE FIRST 30 MINUTES",
+    "title": "How software gets made.",
+    "lead": "The software development lifecycle is a set of questions you revisit as you learn.",
+    "diagram": "lifecycle",
+    "blocks": [
+      [
+        "p",
+        "Discover the user and purpose. Define the smallest useful result. Design the experience and plan small steps. Build one increment. Test the actual behavior. Release the checked version. Maintain it as needs change."
+      ],
+      [
+        "h",
+        "Make each stage concrete"
+      ],
+      [
+        "p",
+        "Website: a visitor should find event details and open a directions link. Game: a player should answer five questions, see an accurate score, and play again. Those promises become tests."
+      ],
+      [
+        "prompt",
+        "Explain our current stage using my project. What decision do I need to make, what file should we produce, and what can a person do to check the result?"
+      ],
+      [
+        "note",
+        "You can return to an earlier stage. A confusing result may need a better rule or clearer wording, not more code."
+      ]
+    ],
+    "ref": "instructor-guide.md"
+  },
+  {
+    "kicker": "04 / THE TOOL MAP",
+    "title": "Know what each tool does.",
+    "lead": "The chatbot helps create files. Your browser shows what those files actually do.",
+    "diagram": "tools",
+    "blocks": [
+      [
+        "p",
+        "HTML gives a page structure. CSS controls its appearance. JavaScript supplies behavior, such as answering a quiz or restarting a game. Both core projects can run as plain static files."
+      ],
+      [
+        "steps",
+        [
+          "CHATBOT: creates or changes project files. Its response is a proposal until checked.",
+          "GITHUB: stores your files and their saved history. A commit is a named checkpoint; a branch is a separate line of changes.",
+          "VERCEL: hosts a deployed version at a URL. Your browser opens that URL; the local copy may differ."
+        ]
+      ],
+      [
+        "note",
+        "A repository is not the same thing as a live website. A private repository also does not prove that its deployed website is private."
+      ],
+      [
+        "p",
+        "A pull request proposes a branch change for review. A preview deployment helps you inspect a change before a later production release."
+      ]
+    ],
+    "ref": "docs/glossary.md"
+  },
+  {
+    "kicker": "05 / GET READY",
+    "title": "Choose the route that works.",
+    "lead": "Start with complete runnable files. Add connected tools only when they help.",
+    "diagram": "files",
+    "blocks": [
+      [
+        "steps",
+        [
+          "Create or sign in to GitHub and Vercel using setup-guide.md. Keep your account recovery details private.",
+          "Choose your chatbot. Ask it for a downloadable index.html, or complete plain-text contents you can save.",
+          "Create a website folder and learner-owned repository. Keep the game in a second folder and repository later.",
+          "Open the exported file in your browser. Confirm the filename ends in .html, not .html.txt, and that it is plain text."
+        ]
+      ],
+      [
+        "prompt",
+        "Confirm whether you can return complete files, edit my project, run checks, and access GitHub or Vercel. Mark each verified, unavailable, or not tried. Use the portable route for anything you cannot do here."
+      ],
+      [
+        "note",
+        "No API key, database, or paid integration is needed for the core projects. Confirm hosting suitability before class: Vercel Hobby is for noncommercial personal use. Native skills and multiple agents are optional."
+      ]
+    ],
+    "ref": "setup-guide.md"
+  },
+  {
+    "kicker": "06 / WEBSITE BRIEF",
+    "title": "Give the page one clear job.",
+    "lead": "Start with a small, specific promise to one kind of visitor.",
+    "diagram": "website",
+    "blocks": [
+      [
+        "p",
+        "Example: a fictional community event page. A visitor can learn what the event is, find when and where it takes place, and follow a real directions link. No registration system or payment is needed."
+      ],
+      [
+        "steps",
+        [
+          "Write the audience and desired outcome in one sentence.",
+          "Choose a heading, two or three sections, a visual treatment, and the main link or button.",
+          "Name five checks: clear purpose, correct content, main action, navigation, and phone layout."
+        ]
+      ],
+      [
+        "prompt",
+        "Use vc-project-brief and vc-project-plan. Interview me about my page, then write a small brief and three build increments. Include the exact destination or behavior of the main action."
+      ],
+      [
+        "note",
+        "Save project-brief.md. Use content and images you have permission to use. Fictional examples should be visibly fictional; do not invent testimonials or working services."
+      ]
+    ],
+    "ref": "docs/website-walkthrough.md"
+  },
+  {
+    "kicker": "07 / WEBSITE BUILD",
+    "title": "Build small. Look. Then improve.",
+    "lead": "A specific change is easier to check than an instruction to make everything better.",
+    "diagram": "prompt",
+    "blocks": [
+      [
+        "steps",
+        [
+          "Ask for the smallest complete page. A single index.html can contain its styles and behavior.",
+          "Save and open the actual exported file. If separate images or scripts are supplied, keep their paths intact.",
+          "Try the main action. Save a working copy before asking for one improvement.",
+          "Repeat the same check after the change and inspect anything that should have stayed the same."
+        ]
+      ],
+      [
+        "prompt",
+        "Build the first increment from my brief. Return the complete runnable file. Then change only the heading and button placement for phone readers. Preserve my content, destinations, and working links."
+      ],
+      [
+        "note",
+        "An image of a page is a design reference. It is not a runnable website. If the assistant only gives a screenshot, ask for the complete project files."
+      ]
+    ],
+    "ref": "docs/website-walkthrough.md"
+  },
+  {
+    "kicker": "08 / WEBSITE RELEASE",
+    "title": "Check before you share.",
+    "lead": "Publishing and verification are two separate steps.",
+    "diagram": "release",
+    "blocks": [
+      [
+        "steps",
+        [
+          "Have another person explain the page and follow its main action. Try all links, keyboard navigation, and a narrow screen. Record real observations.",
+          "Upload the checked files, not the ZIP, to your own website repository. Confirm index.html is at the selected project root.",
+          "Import that repository into the correct Vercel account/project. For plain static files, follow the Other / empty build command setup in setup-guide.md.",
+          "Confirm the intended publication, deploy, and repeat the main checks at the actual URL. Record that URL and the released version."
+        ]
+      ],
+      [
+        "note",
+        "The first Vercel deployment is production. Later updates to the configured production branch can publish automatically. Use branches and previews for later changes."
+      ],
+      [
+        "p",
+        "If deployment fails, keep your working files and record the exact error. A green build indicator is not evidence that the main button works."
+      ]
+    ],
+    "ref": "setup-guide.md"
+  },
+  {
+    "kicker": "09 / GAME BRIEF",
+    "title": "Choose one action and a short round.",
+    "lead": "Use a familiar pattern, then make the theme your own.",
+    "diagram": "game",
+    "blocks": [
+      [
+        "p",
+        "Three starter patterns: a small puzzle, a one-button obstacle game, or a paddle game. These draw on Promptle, Flappy Brains, and Brain Pong in the All Things AI Arcade."
+      ],
+      [
+        "h",
+        "The simplest worked example"
+      ],
+      [
+        "p",
+        "Create a five-question quiz. One submitted answer per question. A correct answer earns one point. After five questions, show a score from 0 to 5 and a Play again button. Replay resets the score and question index."
+      ],
+      [
+        "prompt",
+        "Use vc-game-brief and vc-game-rules. Write the player goal, main action, keyboard and touch controls, score rule, round ending, and restart behavior. Give me five observable checks."
+      ],
+      [
+        "note",
+        "Keep the first version small. Accounts, multiplayer, global rankings, daily locks, and remote score services can wait. Educational facts need reliable sources; a game can simply be fun."
+      ]
+    ],
+    "ref": "docs/game-walkthrough.md"
+  },
+  {
+    "kicker": "10 / GAME STATE",
+    "title": "Make the whole loop work.",
+    "lead": "State is what the game remembers: where you are, the score, and whether the round is over.",
+    "diagram": "loop",
+    "blocks": [
+      [
+        "steps",
+        [
+          "START: show short instructions and one clear way to begin.",
+          "PLAY: accept the intended input and update progress or score once.",
+          "RESULT: end the round, explain the outcome, and stop inappropriate input.",
+          "RESTART: reset the agreed state and begin a fresh round without duplicated timers or actions."
+        ]
+      ],
+      [
+        "prompt",
+        "Build the complete start, play, result, and restart loop with plain visuals first. Keep rules separate from drawing where practical. Explain how I can test one round and three restarts."
+      ],
+      [
+        "note",
+        "Try rapid double-clicks or taps where relevant. A quiz should not award points twice; an animated game should not run faster after every restart. Make controls match the instructions."
+      ]
+    ],
+    "ref": "game-skills-guide.md"
+  },
+  {
+    "kicker": "11 / GAME PLAYTEST",
+    "title": "Watch a new player.",
+    "lead": "Two minutes without coaching can reveal what your own testing misses.",
+    "diagram": "evidence",
+    "blocks": [
+      [
+        "steps",
+        [
+          "Give the current version to a partner. Let them start, play, finish, and restart without hints.",
+          "Record hesitation, control errors, unfair outcomes, and scoring surprises. Ask whether they would replay and why.",
+          "Fix the biggest issue. Tune only one setting, such as speed or time, then repeat the same test.",
+          "Publish to a separate game repository and Vercel project. Repeat a round and restart at the deployed URL."
+        ]
+      ],
+      [
+        "prompt",
+        "Review this exact version against game-rules.md. Separate observed failures from suspicions. Help me repair the biggest problem and retest it. Do not mark a phone test Passed if we only resized a desktop browser."
+      ],
+      [
+        "note",
+        "Use Passed, Failed, and Not tested. If you include local best scores, test refresh and unavailable storage. Sound is optional; gameplay should remain understandable without it."
+      ]
+    ],
+    "ref": "docs/game-walkthrough.md"
+  },
+  {
+    "kicker": "12 / GET UNSTUCK",
+    "title": "Diagnose one thing at a time.",
+    "lead": "Keep the last working version. Avoid turning a small failure into a full rewrite.",
+    "diagram": "triage",
+    "blocks": [
+      [
+        "steps",
+        [
+          "NAME THE SYMPTOM: exact click or input, expected result, actual result, error text, file or URL, and browser/device.",
+          "CHECK THE CONTEXT: correct project, latest file, filename, folder path, branch, and deployment.",
+          "TRY ONE REPAIR: make the smallest reversible change and repeat the same check.",
+          "ESCALATE WITH EVIDENCE: after two unsuccessful focused repairs, summarize what happened and ask for help."
+        ]
+      ],
+      [
+        "prompt",
+        "I expected [result] after [steps]. I observed [result/error] in [file/URL]. The last change was [change]. Help me test one likely cause. Preserve the working parts and say how we will know the fix worked."
+      ],
+      [
+        "note",
+        "Use docs/troubleshooting.md for symptom-by-symptom recovery, including blank pages, .html.txt, missing files, stale deployments, broken controls, agent conflicts, and lost chat context."
+      ]
+    ],
+    "ref": "docs/troubleshooting.md"
+  },
+  {
+    "kicker": "13 / OPTIONAL MULTIPLE AGENTS",
+    "title": "Give every helper a clear job.",
+    "lead": "Start with one builder and one reviewer. More agents are useful only when the work can be separated.",
+    "diagram": "agents",
+    "blocks": [
+      [
+        "steps",
+        [
+          "TWO CHATS: let one assistant build. Give another chat the same brief and a frozen copy to review read-only. Send useful findings back to the builder.",
+          "NATIVE SUBAGENTS: where supported, ask for one bounded helper, such as drafting acceptance checks. Keep one writer on the application files.",
+          "ISOLATED WORKTREES: advanced coding work can use separate folders and branches. A coordinator integrates the results and repeats the tests."
+        ]
+      ],
+      [
+        "prompt",
+        "Use one helper to review this exact saved version read-only. Give it the brief and test criteria. Do not let it edit or publish. Return concrete issues with reproduction steps, then propose a small fix."
+      ],
+      [
+        "note",
+        "Different role names are not independent reviewers. Separate agents can still share a model or provider. A second provider is optional and requires a deliberate data-sharing choice. Extra agents consume extra usage; keep this outside the core timebox if it slows you down."
+      ]
+    ],
+    "ref": "docs/multiple-agents.md"
+  },
+  {
+    "kicker": "14 / YOUR PROJECT INSTRUCTIONS",
+    "title": "Give your AI a working agreement.",
+    "lead": "AGENTS.md is a short instruction file for your own project, not a magic installation command.",
+    "diagram": "instructions",
+    "blocks": [
+      [
+        "steps",
+        [
+          "Copy templates/AGENTS.md into your learner project as AGENTS.md. Fill in the project identity, intended user, and scope.",
+          "Add your expected behavior, how to open the project, how to test it, and where to record progress.",
+          "Ask your assistant to read and summarize the rules before making changes. In ordinary chat, paste or attach the file.",
+          "Use templates/CLAUDE.md only as described in the optional agent guide. Product discovery differs by client and version."
+        ]
+      ],
+      [
+        "prompt",
+        "Read AGENTS.md and my current files. Tell me which project you are working in, the next allowed change, how you will test it, and what would require my decision. Do not claim you read instructions you could not access."
+      ],
+      [
+        "note",
+        "Use the sample inside templates/. The course root AGENTS.md routes assistants through the course; it is not the learner-project template. Instruction files guide behavior but do not replace platform permissions or tests."
+      ]
+    ],
+    "ref": "templates/AGENTS.md"
+  },
+  {
+    "kicker": "15 / PAUSE AND RESUME",
+    "title": "Save context outside the chat.",
+    "lead": "Your files and a short state record make it easier to switch assistants or continue tomorrow.",
+    "diagram": "handoff",
+    "blocks": [
+      [
+        "steps",
+        [
+          "Save the latest working project files and name the checkpoint or commit.",
+          "Update project-state.md: goal, scope, folder/repository, current stage, tested behavior, unresolved issue, and one next action.",
+          "Give the next assistant both the state record and the actual files. Include the relevant course lesson or skill.",
+          "Ask it to identify the version and missing evidence before continuing. Keep publication permission tied to the intended destination."
+        ]
+      ],
+      [
+        "prompt",
+        "Read my project-state.md and attached files. Summarize what works, what failed or was not tested, and the next action. Ask for missing files. Continue from the saved state without rebuilding everything."
+      ],
+      [
+        "note",
+        "Keep the website and game state records separate. Do not rely on an assistant remembering another chat or accessing a private conversation link."
+      ]
+    ],
+    "ref": "templates/project-state.md"
+  },
+  {
+    "kicker": "16 / FINISH WITH EVIDENCE",
+    "title": "What does done look like?",
+    "lead": "Show the result, identify the version, and state the limits.",
+    "diagram": "evidence",
+    "blocks": [
+      [
+        "h",
+        "Website"
+      ],
+      [
+        "p",
+        "A visitor understands the purpose, reads accurate content, follows the primary action, uses navigation, and can read the page on a phone-sized screen. The published URL has been checked, or the deployment blocker is recorded."
+      ],
+      [
+        "h",
+        "Game"
+      ],
+      [
+        "p",
+        "A new player understands the instructions, uses the supported controls, receives correct scoring and a clear result, and can restart repeatedly. The deployed version has been played, or working files and the blocker are retained."
+      ],
+      [
+        "h",
+        "Your handoff"
+      ],
+      [
+        "p",
+        "Name the owner, files, repository, version, URL, test report, known limits, and next improvement. Demonstrate the website action and a full game round. Explain one assumption you corrected using evidence."
+      ],
+      [
+        "note",
+        "Published and checked; published but verification incomplete; or working files with deployment blocked. Use the statement that matches your evidence."
+      ]
+    ],
+    "ref": "handouts/student-workbook.md"
+  },
+  {
+    "kicker": "17 / KEEP THIS REFERENCE",
+    "title": "The right help, one click away.",
+    "lead": "All core instructions are readable as text, so your chatbot can use them alongside you.",
+    "diagram": null,
+    "blocks": [
+      [
+        "steps",
+        [
+          "START-HERE.md - access the course, choose a route, and give your AI the starting prompt.",
+          "AI-COURSE-PACK.md - a single text file containing the current learning instructions, templates, and skills.",
+          "docs/website-walkthrough.md and docs/game-walkthrough.md - worked examples and stage prompts.",
+          "docs/troubleshooting.md - symptom-led recovery. templates/help-request.md - an evidence-based request for help.",
+          "docs/multiple-agents.md and templates/AGENTS.md - optional collaboration and project instructions.",
+          "handouts/student-workbook.md and templates/project-state.md - records you can reuse in both projects."
+        ]
+      ],
+      [
+        "h",
+        "Sources and edition notes"
+      ],
+      [
+        "p",
+        "The setup guide cites official GitHub, Vercel, OpenAI, and Claude documentation. Product guidance was checked October 5, 2026; screens and account availability may change. The source map records the original website course, existing presentation, and Arcade research."
+      ],
+      [
+        "p",
+        "Brand palette and logo come from the existing All Things AI class presentation. Diagrams in this guide are conceptual illustrations, not screenshots of provider interfaces. The detailed Markdown is the living reference."
+      ],
+      [
+        "note",
+        "The guide is a learning aid. Starter applications and full classroom rehearsal remain preparation tasks. A documented workflow is not a claim that every provider or device has been exercised."
+      ]
+    ],
+    "ref": "repository-map.md"
+  }
+]

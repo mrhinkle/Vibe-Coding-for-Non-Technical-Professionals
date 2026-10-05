@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="504" height="158" preserveAspectRatio="xMinYMin meet" viewBox="0 0 504 158" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>How software gets made.</title>
+	<desc>Conceptual teaching diagram. A full text explanation appears in the participant guide beside this illustration.</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="504" height="158"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-158)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="90" width="116" height="50" rx="7" ry="7" style="stroke: rgb(85%,87%,91%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(95%,96%,98%); fill-rule: evenodd;"/>
+			<text x="10" y="119" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 9px;fill: rgb(18%,49%,88%); stroke:none;" transform="translate(0,238) scale(1,-1)">01</text>
+			<text x="10" y="102" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 10px;fill: rgb(5%,7%,9%); stroke:none;" transform="translate(0,204) scale(1,-1)">Discover</text>
+			<path d="M 117,115 L 126,115 Z" style="stroke: rgb(18%,49%,88%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<polygon points="126 115, 121 118, 121 112" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(18%,49%,88%); fill-rule: evenodd;"/>
+			<rect x="128" y="90" width="116" height="50" rx="7" ry="7" style="stroke: rgb(85%,87%,91%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(95%,96%,98%); fill-rule: evenodd;"/>
+			<text x="138" y="119" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 9px;fill: rgb(18%,49%,88%); stroke:none;" transform="translate(0,238) scale(1,-1)">02</text>
+			<text x="138" y="102" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 10px;fill: rgb(5%,7%,9%); stroke:none;" transform="translate(0,204) scale(1,-1)">Define</text>
+			<path d="M 245,115 L 254,115 Z" style="stroke: rgb(18%,49%,88%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<polygon points="254 115, 249 118, 249 112" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(18%,49%,88%); fill-rule: evenodd;"/>
+			<rect x="256" y="90" width="116" height="50" rx="7" ry="7" style="stroke: rgb(85%,87%,91%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(95%,96%,98%); fill-rule: evenodd;"/>
+			<text x="266" y="119" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 9px;fill: rgb(18%,49%,88%); stroke:none;" transform="translate(0,238) scale(1,-1)">03</text>
+			<text x="266" y="102" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 10px;fill: rgb(5%,7%,9%); stroke:none;" transform="translate(0,204) scale(1,-1)">Design + plan</text>
+			<path d="M 373,115 L 382,115 Z" style="stroke: rgb(18%,49%,88%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<polygon points="382 115, 377 118, 377 112" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(18%,49%,88%); fill-rule: evenodd;"/>
+			<rect x="384" y="90" width="116" height="50" rx="7" ry="7" style="stroke: rgb(85%,87%,91%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(95%,96%,98%); fill-rule: evenodd;"/>
+			<text x="394" y="119" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 9px;fill: rgb(18%,49%,88%); stroke:none;" transform="translate(0,238) scale(1,-1)">04</text>
+			<text x="394" y="102" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 10px;fill: rgb(5%,7%,9%); stroke:none;" transform="translate(0,204) scale(1,-1)">Build</text>
+			<rect x="384" y="18" width="116" height="50" rx="7" ry="7" style="stroke: rgb(85%,87%,91%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(95%,96%,98%); fill-rule: evenodd;"/>
+			<text x="394" y="47" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 9px;fill: rgb(18%,49%,88%); stroke:none;" transform="translate(0,94) scale(1,-1)">05</text>
+			<text x="394" y="30" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 10px;fill: rgb(5%,7%,9%); stroke:none;" transform="translate(0,60) scale(1,-1)">Test</text>
+			<path d="M 382,43 L 373,43 Z" style="stroke: rgb(18%,49%,88%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<polygon points="373 43, 378 46, 378 40" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(18%,49%,88%); fill-rule: evenodd;"/>
+			<rect x="256" y="18" width="116" height="50" rx="7" ry="7" style="stroke: rgb(85%,87%,91%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(95%,96%,98%); fill-rule: evenodd;"/>
+			<text x="266" y="47" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 9px;fill: rgb(18%,49%,88%); stroke:none;" transform="translate(0,94) scale(1,-1)">06</text>
+			<text x="266" y="30" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 10px;fill: rgb(5%,7%,9%); stroke:none;" transform="translate(0,60) scale(1,-1)">Release</text>
+			<path d="M 254,43 L 245,43 Z" style="stroke: rgb(18%,49%,88%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<polygon points="245 43, 250 46, 250 40" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(18%,49%,88%); fill-rule: evenodd;"/>
+			<rect x="128" y="18" width="116" height="50" rx="7" ry="7" style="stroke: rgb(85%,87%,91%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(95%,96%,98%); fill-rule: evenodd;"/>
+			<text x="138" y="47" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 9px;fill: rgb(18%,49%,88%); stroke:none;" transform="translate(0,94) scale(1,-1)">07</text>
+			<text x="138" y="30" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 10px;fill: rgb(5%,7%,9%); stroke:none;" transform="translate(0,60) scale(1,-1)">Maintain</text>
+			<path d="M 442,87 L 442,71 Z" style="stroke: rgb(18%,49%,88%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<polygon points="442 71, 439 76, 445 76" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(18%,49%,88%); fill-rule: evenodd;"/>
+			<text x="10" y="44" style="font-family: Arial, Helvetica, sans-serif; font-size: 10px;fill: rgb(35%,40%,45%); stroke:none;" transform="translate(0,88) scale(1,-1)">Repeat as</text>
+			<text x="10" y="28" style="font-family: Arial, Helvetica, sans-serif; font-size: 10px;fill: rgb(35%,40%,45%); stroke:none;" transform="translate(0,56) scale(1,-1)">you learn.</text>
+		</g>
+	</g>
+</svg>

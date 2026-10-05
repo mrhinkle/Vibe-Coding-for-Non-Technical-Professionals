@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="504" height="158" preserveAspectRatio="xMinYMin meet" viewBox="0 0 504 158" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>Give your AI a working agreement.</title>
+	<desc>Conceptual teaching diagram. A full text explanation appears in the participant guide beside this illustration.</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="504" height="158"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-158)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="8" width="504" height="140" rx="7" ry="7" style="stroke: rgb(85%,87%,91%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(95%,96%,98%); fill-rule: evenodd;"/>
+			<text x="18" y="124" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 14px;fill: rgb(18%,49%,88%); stroke:none;" transform="translate(0,248) scale(1,-1)">AGENTS.md</text>
+			<text x="18" y="96" style="font-family: Arial, Helvetica, sans-serif; font-size: 10px;fill: rgb(5%,7%,9%); stroke:none;" transform="translate(0,192) scale(1,-1)">Project + audience       |  What we are making</text>
+			<text x="18" y="72" style="font-family: Arial, Helvetica, sans-serif; font-size: 10px;fill: rgb(5%,7%,9%); stroke:none;" transform="translate(0,144) scale(1,-1)">Scope + files            |  What can change</text>
+			<text x="18" y="48" style="font-family: Arial, Helvetica, sans-serif; font-size: 10px;fill: rgb(5%,7%,9%); stroke:none;" transform="translate(0,96) scale(1,-1)">Checks + evidence        |  How we know it works</text>
+			<text x="18" y="24" style="font-family: Arial, Helvetica, sans-serif; font-size: 10px;fill: rgb(5%,7%,9%); stroke:none;" transform="translate(0,48) scale(1,-1)">State + next action      |  How another chat resumes</text>
+		</g>
+	</g>
+</svg>

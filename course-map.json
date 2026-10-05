@@ -1,0 +1,130 @@
+{
+  "title": "Vibe Coding for Non-Technical Professionals",
+  "edition": "2026-10-05",
+  "teaching_minutes": 360,
+  "breaks_included": false,
+  "read_first": [
+    "AI-START.md",
+    "START-HERE.md"
+  ],
+  "single_file_pack": "AI-COURSE-PACK.md",
+  "learner_state": "templates/project-state.md",
+  "learner_instructions": "templates/AGENTS.md",
+  "troubleshooting": "docs/troubleshooting.md",
+  "illustrated_guide": {
+    "pdf": "guides/participant-guide.pdf",
+    "html": "guides/participant-guide.html",
+    "markdown": "guides/participant-guide.md"
+  },
+  "stages": [
+    {
+      "id": "sdlc",
+      "minutes": 30,
+      "lesson": "instructor-guide.md",
+      "skills": [
+        "skills/vc-sdlc-coach/SKILL.md"
+      ],
+      "completion": "Explain a stage and an observable check."
+    },
+    {
+      "id": "setup",
+      "minutes": 30,
+      "lesson": "setup-guide.md",
+      "skills": [
+        "skills/vc-setup-guide/SKILL.md"
+      ],
+      "completion": "Identify own project and verify a runnable-file workflow."
+    },
+    {
+      "id": "website",
+      "minutes": 90,
+      "lesson": "docs/website-walkthrough.md",
+      "skills": [
+        "skills/vc-project-brief/SKILL.md",
+        "skills/vc-project-plan/SKILL.md",
+        "skills/vc-build-small/SKILL.md",
+        "skills/vc-quality-check/SKILL.md",
+        "skills/vc-publish-site/SKILL.md"
+      ],
+      "completion": "Checked website URL, or working files with a deployment blocker."
+    },
+    {
+      "id": "arcade-tour",
+      "minutes": 15,
+      "lesson": "game-skills-guide.md",
+      "skills": [],
+      "completion": "Choose one small game pattern."
+    },
+    {
+      "id": "game-brief",
+      "minutes": 20,
+      "lesson": "docs/game-walkthrough.md",
+      "skills": [
+        "game-skills/vc-game-brief/SKILL.md",
+        "game-skills/vc-game-rules/SKILL.md"
+      ],
+      "completion": "Rules explain start, controls, score, result, restart."
+    },
+    {
+      "id": "game-build",
+      "minutes": 65,
+      "lesson": "docs/game-walkthrough.md",
+      "skills": [
+        "game-skills/vc-game-build/SKILL.md"
+      ],
+      "completion": "Complete and restart a plain round."
+    },
+    {
+      "id": "game-polish",
+      "minutes": 30,
+      "lesson": "docs/game-walkthrough.md",
+      "skills": [
+        "game-skills/vc-game-look-feel/SKILL.md",
+        "game-skills/vc-game-feedback/SKILL.md"
+      ],
+      "completion": "Readable controls, score, results, and replay."
+    },
+    {
+      "id": "game-playtest",
+      "minutes": 40,
+      "lesson": "docs/game-walkthrough.md",
+      "skills": [
+        "game-skills/vc-game-playtest/SKILL.md"
+      ],
+      "completion": "Observed partner playtest; biggest issue repaired and retested."
+    },
+    {
+      "id": "game-publish",
+      "minutes": 25,
+      "lesson": "setup-guide.md",
+      "skills": [
+        "game-skills/vc-game-publish/SKILL.md"
+      ],
+      "completion": "Separate game project; round/restart checked live, or blocker recorded."
+    },
+    {
+      "id": "handoff",
+      "minutes": 15,
+      "lesson": "handouts/student-workbook.md",
+      "skills": [
+        "skills/vc-project-handoff/SKILL.md"
+      ],
+      "completion": "Two projects, versions, test records, limits, and next actions."
+    }
+  ],
+  "optional_extensions": [
+    {
+      "id": "multiple-agents",
+      "lesson": "docs/multiple-agents.md",
+      "included_in_core_minutes": false
+    },
+    {
+      "id": "maintenance",
+      "lesson": "skill-guide.md",
+      "skills": [
+        "skills/vc-maintain-site/SKILL.md"
+      ],
+      "included_in_core_minutes": false
+    }
+  ]
+}

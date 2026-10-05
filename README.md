@@ -8,17 +8,31 @@ The class starts with 30 minutes on how software is developed. Students then lea
 
 **Instructor:** Mark Hinkle.
 
-**Status:** curriculum and skills draft; existing presentation included as reference. Complete the [instructor preflight](instructor/preflight.md) before teaching.
+**Status:** course documentation assembled; tested starter applications and classroom rehearsal remain preparation work. The existing presentation is included as reference. Complete the [instructor preflight](instructor/preflight.md) before teaching.
+
+## Give this course to your chatbot
+
+**[Start here](START-HERE.md)** for the student route. Point an authorized coding assistant at this repository and ask it to read **[AI-START.md](AI-START.md)**. If your chatbot cannot access the private repository, download and attach **[AI-COURSE-PACK.md](AI-COURSE-PACK.md)**, a single text file containing the current lessons, prompts, templates, and skills. If file upload is unavailable, paste the entry point and current lesson.
+
+> Read AI-START.md from this repository or the course materials I attached. Be my patient guide. Tell me which files you actually received, ask whether I am starting or continuing, and guide me through the website first, then the game. Use one checkpoint at a time and show me how to check each result.
+
+Private repository access does not transfer automatically to your chatbot. Students need repository access or an instructor-supplied copy. Instructions never require sharing passwords or access tokens. The website and game belong in separate learner-owned repositories.
 
 ## Start here
 
 | You are… | Open this |
 | --- | --- |
 | Preparing to attend | [Account and chatbot setup](setup-guide.md) |
+| Wanting an illustrated overview | [18-page participant PDF](guides/participant-guide.pdf), [Markdown](guides/participant-guide.md), or [offline HTML](guides/participant-guide.html) |
 | Taking the class | [Student workbook](handouts/student-workbook.md) |
 | Teaching the class | [Instructor guide and timed lesson plan](instructor-guide.md) |
 | Building the website | [Website and lifecycle skills](skill-guide.md) |
 | Building the game | [Game skills, recipes, and prompts](game-skills-guide.md) |
+| Following a worked example | [Website walkthrough](docs/website-walkthrough.md) and [quiz-game walkthrough](docs/game-walkthrough.md) |
+| Stuck or seeing an error | [30 troubleshooting paths](docs/troubleshooting.md) and [help request template](templates/help-request.md) |
+| Wanting multiple AI helpers | [Three collaboration options](docs/multiple-agents.md) and [sample AGENTS.md](templates/AGENTS.md) |
+| Changing chats or stopping for the day | [Project state template](templates/project-state.md) |
+| Looking for words or prompts | [Glossary](docs/glossary.md) and [prompt library](docs/prompt-library.md) |
 | Updating the slides | [Presentation reference and adaptation plan](presentations/README.md) |
 | Checking where the material came from | [Source map](repository-map.md) |
 
@@ -88,24 +102,35 @@ A supported coding workspace can edit and save the files directly after you conn
 
 ```text
 README.md                    Class overview and navigation
+START-HERE.md                Student entry point and copy/paste startup prompt
+AI-START.md                  AI tutor workflow and honest capability checks
+AI-COURSE-PACK.md            Single-file chatbot handoff, generated from current docs
+AGENTS.md / CLAUDE.md        Course-repository assistant entry points
+course-map.json              Machine-readable course stages, files, and timings
 instructor-guide.md          Timed teaching plan and facilitation notes
 setup-guide.md               Accounts, connections, publishing, troubleshooting
 skill-guide.md               Nine shared skills and starter prompts
 game-skills-guide.md         Seven game skills and three beginner recipes
 handouts/student-workbook.md Fill-in briefs, rules, tests, releases, and handoff
 instructor/preflight.md      Rehearsal and classroom preparation checklist
+docs/                       Worked examples, troubleshooting, agents, prompts, glossary
+templates/                  Learner AGENTS.md, state, help, agent tasks, and handoffs
+guides/                     Illustrated participant guide: PDF, HTML, Markdown, diagrams
 skills/                     Website and lifecycle SKILL.md files
 game-skills/                Game SKILL.md files
 presentations/              Existing six-hour deck, assets, and adaptation plan
 repository-map.md           Sources, inspected versions, and adaptation choices
 licenses/                   Original website material's license
+tools/                      Rebuild the guide and single-file course pack
 ```
 
 ## Current readiness
 
-The curriculum, 16 skill entrypoints, and student templates are assembled. The existing 51-slide deck and its source files are preserved under `presentations/reference-six-hour-class/`. That older deck teaches one business application and includes database and email topics; it has **not yet been rewritten for this two-project agenda**.
+The curriculum, 16 skill entrypoints, detailed self-study documentation, illustrated participant guide, and student templates are assembled. The 18-page guide uses the existing All Things AI logo and palette with explanatory diagrams. It is separate from the existing 51-slide deck preserved under `presentations/reference-six-hour-class/`. That older deck teaches one business application and includes database and email topics; it has **not yet been rewritten for this two-project agenda**.
 
 Before class, revise the slides, prepare and test recovery checkpoints, rehearse each offered chatbot route, and playtest the selected game recipes. The repository does not yet contain tested starter applications. Documentation checks are not a substitute for a classroom rehearsal.
+
+The multiple-agent lesson is optional. It does not add a required block to the 360-minute agenda. Begin with one builder and one read-only reviewer; advanced native agents and isolated worktrees are extensions.
 
 ## Sources and reuse
 

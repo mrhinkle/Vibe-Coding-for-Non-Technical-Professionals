@@ -78,3 +78,9 @@ A green deployment indicator is not the acceptance test. If a project cannot be 
 Have each learner demonstrate the website's main action and the game's round/restart loop, identify both saved projects, and complete the handoff template. Check that they know where their files and records are and can describe one small next improvement plus how they will verify it.
 
 Record recurring setup problems and confusing instructions for the next rehearsal. Keep incomplete account issues separate from what the learner successfully built and tested.
+
+## Self-guided materials and AI access
+
+Before distributing the course, decide how learners will receive the private repository or a course copy. Test the authorized-repository route, the single-file AI-COURSE-PACK.md upload, and the pasted-lesson fallback in the actual supported student surfaces. The class instructions do not grant repository access.
+
+Use [START-HERE.md](../START-HERE.md) as the student landing page. Open the [illustrated guide](../guides/participant-guide.pdf), verify its links, and introduce [troubleshooting](../docs/troubleshooting.md). Demonstrate a cold restart using project-state.md and the actual files. Offer [multiple agents](../docs/multiple-agents.md) only when learners have a working first version; it is not an extra required block in the 360-minute schedule.
