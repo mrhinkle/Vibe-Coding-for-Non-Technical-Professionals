@@ -77,7 +77,7 @@ Checkpoint: another student opens the URL and follows the main link. Save `test-
 
 The seven game skills are new classroom adaptations derived from the [All Things AI Arcade](https://staging.allthingsai.org/arcade) and its shared build specification. They are not pre-existing game skill packages copied from the repository. See the [game skill guide](game-skills-guide.md) for the source map, prompts, and starter recipes.
 
-**Tour and choose for 15 minutes.** Show a few Arcade examples and how their instructions, controls, and replay work. Prepare demonstration access before class; students should not need to complete the medallion hunt to start building. Offer a small word or knowledge puzzle inspired by Promptle, a one-button obstacle game inspired by Flappy Brains, or a paddle game inspired by Brain Pong. Students choose their own theme. AI Steroids and Super AI illustrate possibilities for later work.
+**Tour and choose for 15 minutes.** Show a few Arcade examples and how their instructions, controls, and replay work. Prepare demonstration access before class; students should not need to complete the medallion hunt to start building. Offer [three choices](docs/game-options.md): Alien Tic-Tac-Toe (Mark’s new classroom idea), a five-question quiz inspired by the Arcade’s puzzle patterns, or a one-button space dodger inspired by Flappy Brains. Explain that the featured game is a solo variant: each selected square goes to X or O according to its alien battle, with no separate opponent move. Use the quiz when a learner needs the smallest scope. Students choose their own theme. AI Steroids and Super AI illustrate possibilities for later work.
 
 **Define the game for 20 minutes.** Use `vc-game-brief` and `vc-game-rules`. Write the goal, main action, controls, score, result, restart behavior, and exclusions. Choose one short round and one central mechanic. A partner should be able to explain how to start, play, finish, and restart from the rules alone.
 
@@ -115,3 +115,5 @@ The live Arcade, beta guide, and Promptle introduction and controls were inspect
 - [Student workbook](handouts/student-workbook.md)
 - [Instructor preflight](instructor/preflight.md)
 - [Presentation reference and adaptation plan](presentations/README.md)
+
+During the existing wrap-up, invite proud creators to complete the [Arcade submission](docs/arcade-submission.md). This is optional and adds no core teaching minutes. Mark/ATA review candidates before any Arcade integration. Rehearse the board-and-battle combination before offering it live; the walkthrough is a design specification, not a tested starter.

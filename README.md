@@ -28,7 +28,7 @@ Private repository access does not transfer automatically to your chatbot. Stude
 | Teaching the class | [Instructor guide and timed lesson plan](instructor-guide.md) |
 | Building the website | [Website and lifecycle skills](skill-guide.md) |
 | Building the game | [Game skills, recipes, and prompts](game-skills-guide.md) |
-| Following a worked example | [Website walkthrough](docs/website-walkthrough.md) and [quiz-game walkthrough](docs/game-walkthrough.md) |
+| Following a worked example | [Website walkthrough](docs/website-walkthrough.md) plus [Alien Tic-Tac-Toe](docs/alien-tic-tac-toe.md) and [quiz-game walkthroughs](docs/game-walkthrough.md) |
 | Stuck or seeing an error | [30 troubleshooting paths](docs/troubleshooting.md) and [help request template](templates/help-request.md) |
 | Wanting multiple AI helpers | [Three collaboration options](docs/multiple-agents.md) and [sample AGENTS.md](templates/AGENTS.md) |
 | Changing chats or stopping for the day | [Project state template](templates/project-state.md) |
@@ -69,7 +69,7 @@ The times above exclude lunch and breaks. A sample day is 9:00 a.m.–4:30 p.m. 
 
 **Project 1 — A simple website.** Choose a personal introduction, event, hobby, community group, or fictional business. Build one page with a clear heading, two or three sections, a visual treatment, and a working primary action. Save it to a learner-owned `my-first-site` repository and publish it on Vercel.
 
-**Project 2 — A browser game.** Choose a small word or knowledge puzzle, a one-button obstacle game, or a paddle game. These recipes draw on patterns from the [All Things AI Arcade](https://staging.allthingsai.org/arcade). Keep a single main action and a short start → play → result → restart loop. Use a separate `my-first-game` repository and Vercel project.
+**Project 2 — A browser game.** Choose [Alien Tic-Tac-Toe, a five-question quiz, or a one-button space dodger](docs/game-options.md). In the featured game, selecting a square starts an alien battle: win to claim X; lose and the alien claims O. Mark proposed this new classroom concept; the other recipes adapt patterns from the [All Things AI Arcade](https://staging.allthingsai.org/arcade). Keep a short start → play → result → restart loop. Use a separate `my-first-game` repository and Vercel project.
 
 Both projects can be static HTML, CSS, and JavaScript. Accounts, databases, multiplayer, global leaderboards, and paid APIs are outside the core exercises. A real commercial website needs a hosting plan appropriate to its use; see the [setup guide](setup-guide.md).
 
@@ -137,3 +137,5 @@ The multiple-agent lesson is optional. It does not add a required block to the 3
 ## Sources and reuse
 
 This course adapts Mark's [VibeCoding-a-Website](https://github.com/mrhinkle/VibeCoding-a-Website), the existing private [Presentations class folder](https://github.com/mrhinkle/Presentations/tree/03a1e051e62f11134a723e498dda955e2ed2f394/vibe-coding-class), and patterns from the All Things AI Arcade. See the [source map](repository-map.md) for pinned versions and attribution, and [reuse notes](licenses/README.md) for license scope. The repository is private so the existing presentation assets remain within the same visibility boundary.
+
+Students proud of their game can prepare an [optional Arcade submission](docs/arcade-submission.md). Mark and the All Things AI team can select games for a later Arcade addition; course completion does not automatically publish a game there.

@@ -48,7 +48,7 @@ Elapsed times exclude lunch and breaks. The [instructor guide](../instructor-gui
 | 0:00–0:30 | 30 | Learner can connect discover, define, design/plan, build, test, release, and maintain to a website or game example | Reuse the same example and ask for one observable test |
 | 0:30–1:00 | 30 | Correct learner-owned website repo identified; runnable-file or connected-workspace route verified | Use a checkpoint or partner; record the access blocker |
 | 1:00–2:30 | 90 | Website brief, working files, test report, and release record; main action checked at actual URL or blocker recorded | Reduce to one page and one meaningful link |
-| 2:30–2:45 | 15 | Learner selects a small game pattern and theme | Offer a prepared puzzle, one-button, or paddle recipe |
+| 2:30–2:45 | 15 | Learner selects a small game pattern and theme | Offer Alien Tic-Tac-Toe, the five-question quiz, or the one-button space dodger; use the quiz for a smaller scope |
 | 2:45–3:05 | 20 | Partner can explain goal, controls, score, round end, and restart from the written rules | Remove extra mechanics; keep one short round |
 | 3:05–4:10 | 65 | Player completes start, play, result, and restart with plain visuals | Use the playable checkpoint; defer decoration |
 | 4:10–4:40 | 30 | Controls, score, result, and Play again are understandable on the intended screens | Fix legibility and instructions before optional effects |

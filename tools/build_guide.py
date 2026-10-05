@@ -93,12 +93,12 @@ page('08 / WEBSITE RELEASE','Check before you share.','Publishing and verificati
           'Confirm the intended publication, deploy, and repeat the main checks at the actual URL. Record that URL and the released version.'),
     note('The first Vercel deployment is production. Later updates to the configured production branch can publish automatically. Use branches and previews for later changes.'),
     para('If deployment fails, keep your working files and record the exact error. A green build indicator is not evidence that the main button works.')],'setup-guide.md'),
-page('09 / GAME BRIEF','Choose one action and a short round.','Use a familiar pattern, then make the theme your own.','game',[
-    para('Three starter patterns: a small puzzle, a one-button obstacle game, or a paddle game. These draw on Promptle, Flappy Brains, and Brain Pong in the All Things AI Arcade.'),
-    head('The simplest worked example'),
-    para('Create a five-question quiz. One submitted answer per question. A correct answer earns one point. After five questions, show a score from 0 to 5 and a Play again button. Replay resets the score and question index.'),
+page('09 / GAME BRIEF','Battle an alien. Claim a square.','Use a familiar pattern, then make the theme your own.','game',[
+    para('Pick one: Alien Tic-Tac-Toe (featured), a five-question quiz (easiest), or a one-button space dodger (action). Mark proposed the alien game; the alternatives draw on Arcade patterns.'),
+    head('Alien Tic-Tac-Toe: a solo variant'),
+    para('Choose an empty square, then battle an alien. Win to claim X; lose and the alien claims O. Three Xs wins; three Os loses; a full board with no line draws. There is no extra opponent move. Build the board and short turn-based battle separately, then connect them.'),
     prompt('Use vc-game-brief and vc-game-rules. Write the player goal, main action, keyboard and touch controls, score rule, round ending, and restart behavior. Give me five observable checks.'),
-    note('Keep the first version small. Accounts, multiplayer, global rankings, daily locks, and remote score services can wait. Educational facts need reliable sources; a game can simply be fun.')],'docs/game-walkthrough.md'),
+    note('Keep the first version small. Accounts, multiplayer, global rankings, daily locks, and remote score services can wait. Educational facts need reliable sources; a game can simply be fun.')],'docs/game-options.md'),
 page('10 / GAME STATE','Make the whole loop work.','State is what the game remembers: where you are, the score, and whether the round is over.','loop',[
     steps('START: show short instructions and one clear way to begin.',
           'PLAY: accept the intended input and update progress or score once.',
@@ -112,7 +112,7 @@ page('11 / GAME PLAYTEST','Watch a new player.','Two minutes without coaching ca
           'Fix the biggest issue. Tune only one setting, such as speed or time, then repeat the same test.',
           'Publish to a separate game repository and Vercel project. Repeat a round and restart at the deployed URL.'),
     prompt('Review this exact version against game-rules.md. Separate observed failures from suspicions. Help me repair the biggest problem and retest it. Do not mark a phone test Passed if we only resized a desktop browser.'),
-    note('Use Passed, Failed, and Not tested. If you include local best scores, test refresh and unavailable storage. Sound is optional; gameplay should remain understandable without it.')],'docs/game-walkthrough.md'),
+    note('Use Passed, Failed, and Not tested. If you include local best scores, test refresh and unavailable storage. Sound is optional; gameplay should remain understandable without it.')],'docs/game-options.md'),
 page('12 / GET UNSTUCK','Diagnose one thing at a time.','Keep the last working version. Avoid turning a small failure into a full rewrite.','triage',[
     steps('NAME THE SYMPTOM: exact click or input, expected result, actual result, error text, file or URL, and browser/device.',
           'CHECK THE CONTEXT: correct project, latest file, filename, folder path, branch, and deployment.',
@@ -151,10 +151,11 @@ page('16 / FINISH WITH EVIDENCE','What does done look like?','Show the result, i
 page('17 / KEEP THIS REFERENCE','The right help, one click away.','All core instructions are readable as text, so your chatbot can use them alongside you.',None,[
     steps('START-HERE.md - access the course, choose a route, and give your AI the starting prompt.',
           'AI-COURSE-PACK.md - a single text file containing the current learning instructions, templates, and skills.',
-          'docs/website-walkthrough.md and docs/game-walkthrough.md - worked examples and stage prompts.',
+          'docs/website-walkthrough.md and docs/game-options.md - website steps and three game choices.',
           'docs/troubleshooting.md - symptom-led recovery. templates/help-request.md - an evidence-based request for help.',
           'docs/multiple-agents.md and templates/AGENTS.md - optional collaboration and project instructions.',
           'handouts/student-workbook.md and templates/project-state.md - records you can reuse in both projects.'),
+    para('Proud of your game? Use docs/arcade-submission.md to prepare a review packet for Mark and All Things AI. Selected games may join the Arcade after later integration.'),
     head('Sources and edition notes'),
     para('The setup guide cites official GitHub, Vercel, OpenAI, and Claude documentation. Product guidance was checked October 5, 2026; screens and account availability may change. The source map records the original website course, existing presentation, and Arcade research.'),
     para('Brand palette and logo come from the existing All Things AI class presentation. Diagrams in this guide are conceptual illustrations, not screenshots of provider interfaces. The detailed Markdown is the living reference.'),
@@ -192,10 +193,17 @@ def diagram(kind):
         for x,t in [(20,'What to expect'),(180,'When and where'),(340,'Useful details')]:rect(x,20,145,49);txt(x+10,48,t,10,True)
         rect(350,78,134,28,BLUE,BLUE);txt(363,87,'Get directions',10,True,'#FFFFFF')
     elif kind=='game':
-        rect(1,4,502,149,'#FFFFFF');txt(20,128,'YOUR FIVE-QUESTION QUIZ',11,True,BLUE);txt(385,128,'Score: 0 / 5',10,True)
-        txt(20,98,'Question 1: choose one answer.',15,True)
-        for x,t in [(20,'Answer A'),(260,'Answer B')]:rect(x,48,222,32);txt(x+14,59,t,11,True)
-        txt(20,23,'One submission. One score update. Clear feedback.',10,False,MUTED)
+        txt(8,141,'PICK A SQUARE',10,True,BLUE)
+        for row in range(3):
+            for col in range(3):
+                x=8+col*40;y=12+(2-row)*40;rect(x,y,35,35)
+                if (row,col)==(0,0):txt(x+12,y+11,'X',14,True,BLUE)
+                if (row,col)==(1,1):rect(x,y,35,35,ORANGE,ORANGE);txt(x+12,y+11,'?',14,True)
+        arrow(136,74,190,74)
+        rect(200,12,302,116);txt(216,107,'BATTLE FOR THIS SQUARE',11,True,BLUE)
+        txt(216,83,'Two health each. Read the alien move.',10)
+        txt(216,60,'Win battle: place X. Lose battle: place O.',10)
+        txt(216,34,'Three in a row decides the board.',10,True)
     elif kind=='loop':
         labels=[('START','Instructions + begin'),('PLAY','Action + score'),('RESULT','Outcome + explanation'),('RESTART','Reset round state')]
         for i,(a,b) in enumerate(labels):

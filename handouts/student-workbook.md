@@ -64,7 +64,7 @@ Copy this brief into the game project's `game-brief.md`. Use [vc-game-brief](../
 | --- | --- |
 | Game title and theme | |
 | Who will play? | |
-| Pattern: puzzle, one-button obstacle game, paddle game, or another small idea | |
+| Choice: Alien Tic-Tac-Toe, five-question quiz, one-button space dodger, or another approved small idea | |
 | What is the player's goal? | |
 | What is the main action? | |
 | How long should one round take? | |
@@ -194,3 +194,7 @@ Use [vc-project-handoff](../skills/vc-project-handoff/SKILL.md) to prepare this 
 **My final demonstration:** Show the website's main action, complete a game round and restart, then point to the saved versions and test records. If a deployment is blocked, demonstrate the working files and explain the recorded blocker.
 
 **What I learned:** One assumption I corrected was ____________. The evidence that changed my mind was ____________.
+
+## Optional: offer your game to the Arcade
+
+Choose from the [game menu](../docs/game-options.md). For Alien Tic-Tac-Toe, record both battle and board outcomes, including X win, O win, draw, and restart during battle. If you want your finished game considered for the All Things AI Arcade, fill in the [submission template](../templates/arcade-submission.md) and share it with the instructor. Explain what is fun, include your playable link and source version, and record known issues. Selection and integration happen later.

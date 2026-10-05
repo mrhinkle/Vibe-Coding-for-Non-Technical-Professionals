@@ -58,40 +58,44 @@
     {
       "id": "game-brief",
       "minutes": 20,
-      "lesson": "docs/game-walkthrough.md",
+      "lesson": "docs/game-options.md",
       "skills": [
         "game-skills/vc-game-brief/SKILL.md",
         "game-skills/vc-game-rules/SKILL.md"
       ],
-      "completion": "Rules explain start, controls, score, result, restart."
+      "completion": "Rules explain start, controls, score, result, restart.",
+      "instruction": "Use the selected game choice lesson."
     },
     {
       "id": "game-build",
       "minutes": 65,
-      "lesson": "docs/game-walkthrough.md",
+      "lesson": "docs/game-options.md",
       "skills": [
         "game-skills/vc-game-build/SKILL.md"
       ],
-      "completion": "Complete and restart a plain round."
+      "completion": "Complete and restart a plain round.",
+      "instruction": "Use the selected game choice lesson."
     },
     {
       "id": "game-polish",
       "minutes": 30,
-      "lesson": "docs/game-walkthrough.md",
+      "lesson": "docs/game-options.md",
       "skills": [
         "game-skills/vc-game-look-feel/SKILL.md",
         "game-skills/vc-game-feedback/SKILL.md"
       ],
-      "completion": "Readable controls, score, results, and replay."
+      "completion": "Readable controls, score, results, and replay.",
+      "instruction": "Use the selected game choice lesson."
     },
     {
       "id": "game-playtest",
       "minutes": 40,
-      "lesson": "docs/game-walkthrough.md",
+      "lesson": "docs/game-options.md",
       "skills": [
         "game-skills/vc-game-playtest/SKILL.md"
       ],
-      "completion": "Observed partner playtest; biggest issue repaired and retested."
+      "completion": "Observed partner playtest; biggest issue repaired and retested.",
+      "instruction": "Use the selected game choice lesson."
     },
     {
       "id": "game-publish",
@@ -125,6 +129,11 @@
         "skills/vc-maintain-site/SKILL.md"
       ],
       "included_in_core_minutes": false
+    },
+    {
+      "id": "arcade-submission",
+      "lesson": "docs/arcade-submission.md",
+      "included_in_core_minutes": false
     }
   ],
   "pre_class": {
@@ -133,5 +142,21 @@
     "suggested_lead_time": "2\u20133 days",
     "estimated_minutes": "30\u201345",
     "included_in_teaching_minutes": false
-  }
+  },
+  "game_choices": [
+    {
+      "id": "alien-tic-tac-toe",
+      "featured": true,
+      "lesson": "docs/alien-tic-tac-toe.md"
+    },
+    {
+      "id": "five-question-quiz",
+      "lesson": "docs/game-walkthrough.md"
+    },
+    {
+      "id": "space-dodger",
+      "lesson": "docs/game-options.md"
+    }
+  ],
+  "game_menu": "docs/game-options.md"
 }

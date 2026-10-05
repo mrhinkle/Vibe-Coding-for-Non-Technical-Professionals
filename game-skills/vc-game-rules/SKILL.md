@@ -12,3 +12,7 @@ Prepare a one-sentence goal and two to four how-to steps that name the actual ke
 Define immediate replay after a finished round, without forcing the player through onboarding again. For a puzzle specify invalid input, repeated submissions, and attempt limits. For action games specify movement, collisions, timing, and score boundaries.
 
 Return test cases a partner can follow. Do not assume a keyboard-only interface works on a phone.
+
+For Alien Tic-Tac-Toe, define board and battle states separately. Selecting an empty square locks the board; resolving the fight assigns exactly one X or O there. Check lines before checking a full-board draw. No automatic opponent turn. Restart clears both states. Use the precise counter rules in docs/alien-tic-tac-toe.md.
+
+If a referenced course file is unavailable, request its text or the relevant course-pack section. Do not invent missing rules or submission instructions.

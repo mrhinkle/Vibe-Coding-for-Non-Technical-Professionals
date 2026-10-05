@@ -26,7 +26,7 @@ Read `START-HERE.md` and this file first. Load only the relevant lesson and skil
 | Define a website | `docs/website-walkthrough.md` | `skills/vc-project-brief/SKILL.md`, then `vc-project-plan` |
 | Build the page | `docs/website-walkthrough.md` | `skills/vc-build-small/SKILL.md` |
 | Check and publish | `setup-guide.md`, `docs/troubleshooting.md` | `skills/vc-quality-check/SKILL.md`, then `vc-publish-site` |
-| Choose and build a game | `docs/game-walkthrough.md`, `game-skills-guide.md` | The seven `game-skills/*/SKILL.md` files, one stage at a time |
+| Choose and build a game | `docs/game-options.md`, the selected walkthrough, `game-skills-guide.md` | The seven `game-skills/*/SKILL.md` files, one stage at a time |
 | Diagnose a failure | `docs/troubleshooting.md` | The current build or checking skill |
 | Use multiple helpers | `docs/multiple-agents.md` | Task/handoff templates; optional extension |
 | Resume or hand off | `templates/project-state.md`, `handouts/student-workbook.md` | `skills/vc-project-handoff/SKILL.md` |

@@ -244,21 +244,21 @@ If deployment fails, keep your working files and record the exact error. A green
 [Detailed lesson: setup-guide.md](../setup-guide.md)
 
 
-## 10. Choose one action and a short round.
+## 10. Battle an alien. Claim a square.
 
 Use a familiar pattern, then make the theme your own.
 
 
-![Conceptual illustration: Choose one action and a short round.](assets/game.svg)
+![Conceptual illustration: Battle an alien. Claim a square.](assets/game.svg)
 
 
-Three starter patterns: a small puzzle, a one-button obstacle game, or a paddle game. These draw on Promptle, Flappy Brains, and Brain Pong in the All Things AI Arcade.
+Pick one: Alien Tic-Tac-Toe (featured), a five-question quiz (easiest), or a one-button space dodger (action). Mark proposed the alien game; the alternatives draw on Arcade patterns.
 
 
-### The simplest worked example
+### Alien Tic-Tac-Toe: a solo variant
 
 
-Create a five-question quiz. One submitted answer per question. A correct answer earns one point. After five questions, show a score from 0 to 5 and a Play again button. Replay resets the score and question index.
+Choose an empty square, then battle an alien. Win to claim X; lose and the alien claims O. Three Xs wins; three Os loses; a full board with no line draws. There is no extra opponent move. Build the board and short turn-based battle separately, then connect them.
 
 
 **Try this prompt**
@@ -271,7 +271,7 @@ Create a five-question quiz. One submitted answer per question. A correct answer
 Keep the first version small. Accounts, multiplayer, global rankings, daily locks, and remote score services can wait. Educational facts need reliable sources; a game can simply be fun.
 
 
-[Detailed lesson: docs/game-walkthrough.md](../docs/game-walkthrough.md)
+[Detailed lesson: docs/game-options.md](../docs/game-options.md)
 
 
 ## 11. Make the whole loop work.
@@ -325,7 +325,7 @@ Two minutes without coaching can reveal what your own testing misses.
 Use Passed, Failed, and Not tested. If you include local best scores, test refresh and unavailable storage. Sound is optional; gameplay should remain understandable without it.
 
 
-[Detailed lesson: docs/game-walkthrough.md](../docs/game-walkthrough.md)
+[Detailed lesson: docs/game-options.md](../docs/game-options.md)
 
 
 ## 13. Diagnose one thing at a time.
@@ -476,10 +476,13 @@ All core instructions are readable as text, so your chatbot can use them alongsi
 
 1. START-HERE.md - access the course, choose a route, and give your AI the starting prompt.
 2. AI-COURSE-PACK.md - a single text file containing the current learning instructions, templates, and skills.
-3. docs/website-walkthrough.md and docs/game-walkthrough.md - worked examples and stage prompts.
+3. docs/website-walkthrough.md and docs/game-options.md - website steps and three game choices.
 4. docs/troubleshooting.md - symptom-led recovery. templates/help-request.md - an evidence-based request for help.
 5. docs/multiple-agents.md and templates/AGENTS.md - optional collaboration and project instructions.
 6. handouts/student-workbook.md and templates/project-state.md - records you can reuse in both projects.
+
+
+Proud of your game? Use docs/arcade-submission.md to prepare a review packet for Mark and All Things AI. Selected games may join the Arcade after later integration.
 
 
 ### Sources and edition notes

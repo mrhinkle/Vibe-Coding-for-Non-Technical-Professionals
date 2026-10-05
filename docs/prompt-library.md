@@ -47,3 +47,15 @@ See [multiple-agent options](multiple-agents.md) for using manual chats, native 
 > Check the actual deployed URL [URL] against the same acceptance checks. A successful upload alone is not proof. Record the version, device, observations, and any untested behavior.
 
 > Update project-state.md with the actual files, saved version, working behavior, failed or untested checks, current blocker, and one next action. Give me a short prompt for continuing in a new chatbot.
+
+## Choose the featured alien game
+
+Attach [the game menu](game-options.md), [Alien Tic-Tac-Toe walkthrough](alien-tic-tac-toe.md), and the current game skill.
+
+> Help me build Alien Tic-Tac-Toe from the attached course rules. First confirm you can read those rules. This is a solo variant: selecting an empty square starts a battle; winning claims X, losing claims O, and there is no separate opponent turn. Build the board, battle, and connection as separate checkpoints. Keep the first version turn-based and self-contained. Give me one visible check at a time.
+
+## Prepare an Arcade review packet
+
+Attach [the submission guide](arcade-submission.md), [template](../templates/arcade-submission.md), and your actual game files and test record.
+
+> Help me prepare my game for possible All Things AI Arcade inclusion. Describe what makes it fun, record the playable URL and matching source version, and summarize only tests we actually performed. Identify missing evidence and asset credits. Fill the template for me to review and hand to the instructor. Do not claim the game has been selected or integrated.

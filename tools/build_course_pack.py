@@ -8,7 +8,7 @@ import json, re, posixpath
 
 ROOT=Path(__file__).resolve().parents[1]
 FILES=['AI-START.md','START-HERE.md','PRE-CLASS-PREP.md','course-map.json','instructor-guide.md','setup-guide.md',
-       'docs/website-walkthrough.md','docs/game-walkthrough.md','docs/troubleshooting.md',
+       'docs/website-walkthrough.md','docs/game-options.md','docs/alien-tic-tac-toe.md','docs/arcade-submission.md','templates/arcade-submission.md','docs/game-walkthrough.md','docs/troubleshooting.md',
        'docs/multiple-agents.md','docs/prompt-library.md','docs/glossary.md',
        'skill-guide.md','game-skills-guide.md','handouts/student-workbook.md',
        'templates/AGENTS.md','templates/CLAUDE.md','templates/project-state.md',

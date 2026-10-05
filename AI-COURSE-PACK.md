@@ -17,6 +17,10 @@ The illustrated PDF/HTML, legacy slides, artwork, instructor preflight, and sour
 - `instructor-guide.md`
 - `setup-guide.md`
 - `docs/website-walkthrough.md`
+- `docs/game-options.md`
+- `docs/alien-tic-tac-toe.md`
+- `docs/arcade-submission.md`
+- `templates/arcade-submission.md`
 - `docs/game-walkthrough.md`
 - `docs/troubleshooting.md`
 - `docs/multiple-agents.md`
@@ -83,7 +87,7 @@ Read `START-HERE.md` and this file first. Load only the relevant lesson and skil
 | Define a website | `docs/website-walkthrough.md` | `skills/vc-project-brief/SKILL.md`, then `vc-project-plan` |
 | Build the page | `docs/website-walkthrough.md` | `skills/vc-build-small/SKILL.md` |
 | Check and publish | `setup-guide.md`, `docs/troubleshooting.md` | `skills/vc-quality-check/SKILL.md`, then `vc-publish-site` |
-| Choose and build a game | `docs/game-walkthrough.md`, `game-skills-guide.md` | The seven `game-skills/*/SKILL.md` files, one stage at a time |
+| Choose and build a game | `docs/game-options.md`, the selected walkthrough, `game-skills-guide.md` | The seven `game-skills/*/SKILL.md` files, one stage at a time |
 | Diagnose a failure | `docs/troubleshooting.md` | The current build or checking skill |
 | Use multiple helpers | `docs/multiple-agents.md` | Task/handoff templates; optional extension |
 | Resume or hand off | `templates/project-state.md`, `handouts/student-workbook.md` | `skills/vc-project-handoff/SKILL.md` |
@@ -170,7 +174,7 @@ read my project-state.md and actual files before suggesting changes.
 | Brand new | [Illustrated participant guide](guides/participant-guide.pdf), pages 2–5 | You can explain the roles of the chatbot, GitHub, and Vercel |
 | Setting up | [Account and connection guide](setup-guide.md) | You can receive runnable files and find your own practice repository |
 | Ready for the website | [Website walkthrough](docs/website-walkthrough.md) | Your exported page works, and the published URL is checked or the blocker recorded |
-| Ready for the game | [Game walkthrough](docs/game-walkthrough.md) | A person can start, finish, and restart a round |
+| Ready for the game | [Choose your game](docs/game-options.md) | A person can start, finish, and restart a round |
 | Something broke | [Troubleshooting](docs/troubleshooting.md) | You have reproduced the issue and checked one focused repair |
 | Want another AI's help | [Multiple-agent options](docs/multiple-agents.md) | Each helper has a clear job, input version, and permitted files |
 | Pausing or changing chatbots | [Project state template](templates/project-state.md) | Your latest files, observations, and next action are saved |
@@ -422,40 +426,44 @@ Product-specific references checked October 5, 2026. This guide supplies prepara
     {
       "id": "game-brief",
       "minutes": 20,
-      "lesson": "docs/game-walkthrough.md",
+      "lesson": "docs/game-options.md",
       "skills": [
         "game-skills/vc-game-brief/SKILL.md",
         "game-skills/vc-game-rules/SKILL.md"
       ],
-      "completion": "Rules explain start, controls, score, result, restart."
+      "completion": "Rules explain start, controls, score, result, restart.",
+      "instruction": "Use the selected game choice lesson."
     },
     {
       "id": "game-build",
       "minutes": 65,
-      "lesson": "docs/game-walkthrough.md",
+      "lesson": "docs/game-options.md",
       "skills": [
         "game-skills/vc-game-build/SKILL.md"
       ],
-      "completion": "Complete and restart a plain round."
+      "completion": "Complete and restart a plain round.",
+      "instruction": "Use the selected game choice lesson."
     },
     {
       "id": "game-polish",
       "minutes": 30,
-      "lesson": "docs/game-walkthrough.md",
+      "lesson": "docs/game-options.md",
       "skills": [
         "game-skills/vc-game-look-feel/SKILL.md",
         "game-skills/vc-game-feedback/SKILL.md"
       ],
-      "completion": "Readable controls, score, results, and replay."
+      "completion": "Readable controls, score, results, and replay.",
+      "instruction": "Use the selected game choice lesson."
     },
     {
       "id": "game-playtest",
       "minutes": 40,
-      "lesson": "docs/game-walkthrough.md",
+      "lesson": "docs/game-options.md",
       "skills": [
         "game-skills/vc-game-playtest/SKILL.md"
       ],
-      "completion": "Observed partner playtest; biggest issue repaired and retested."
+      "completion": "Observed partner playtest; biggest issue repaired and retested.",
+      "instruction": "Use the selected game choice lesson."
     },
     {
       "id": "game-publish",
@@ -489,6 +497,11 @@ Product-specific references checked October 5, 2026. This guide supplies prepara
         "skills/vc-maintain-site/SKILL.md"
       ],
       "included_in_core_minutes": false
+    },
+    {
+      "id": "arcade-submission",
+      "lesson": "docs/arcade-submission.md",
+      "included_in_core_minutes": false
     }
   ],
   "pre_class": {
@@ -497,7 +510,23 @@ Product-specific references checked October 5, 2026. This guide supplies prepara
     "suggested_lead_time": "2\u20133 days",
     "estimated_minutes": "30\u201345",
     "included_in_teaching_minutes": false
-  }
+  },
+  "game_choices": [
+    {
+      "id": "alien-tic-tac-toe",
+      "featured": true,
+      "lesson": "docs/alien-tic-tac-toe.md"
+    },
+    {
+      "id": "five-question-quiz",
+      "lesson": "docs/game-walkthrough.md"
+    },
+    {
+      "id": "space-dodger",
+      "lesson": "docs/game-options.md"
+    }
+  ],
+  "game_menu": "docs/game-options.md"
 }
 
 <!-- END COURSE SOURCE: course-map.json -->
@@ -588,7 +617,7 @@ Checkpoint: another student opens the URL and follows the main link. Save `test-
 
 The seven game skills are new classroom adaptations derived from the [All Things AI Arcade](https://staging.allthingsai.org/arcade) and its shared build specification. They are not pre-existing game skill packages copied from the repository. See the [game skill guide](game-skills-guide.md) for the source map, prompts, and starter recipes.
 
-**Tour and choose for 15 minutes.** Show a few Arcade examples and how their instructions, controls, and replay work. Prepare demonstration access before class; students should not need to complete the medallion hunt to start building. Offer a small word or knowledge puzzle inspired by Promptle, a one-button obstacle game inspired by Flappy Brains, or a paddle game inspired by Brain Pong. Students choose their own theme. AI Steroids and Super AI illustrate possibilities for later work.
+**Tour and choose for 15 minutes.** Show a few Arcade examples and how their instructions, controls, and replay work. Prepare demonstration access before class; students should not need to complete the medallion hunt to start building. Offer [three choices](docs/game-options.md): Alien Tic-Tac-Toe (Mark’s new classroom idea), a five-question quiz inspired by the Arcade’s puzzle patterns, or a one-button space dodger inspired by Flappy Brains. Explain that the featured game is a solo variant: each selected square goes to X or O according to its alien battle, with no separate opponent move. Use the quiz when a learner needs the smallest scope. Students choose their own theme. AI Steroids and Super AI illustrate possibilities for later work.
 
 **Define the game for 20 minutes.** Use `vc-game-brief` and `vc-game-rules`. Write the goal, main action, controls, score, result, restart behavior, and exclusions. Choose one short round and one central mechanic. A partner should be able to explain how to start, play, finish, and restart from the rules alone.
 
@@ -626,6 +655,8 @@ The live Arcade, beta guide, and Promptle introduction and controls were inspect
 - [Student workbook](handouts/student-workbook.md)
 - [Instructor preflight](instructor/preflight.md)
 - [Presentation reference and adaptation plan](presentations/README.md)
+
+During the existing wrap-up, invite proud creators to complete the [Arcade submission](docs/arcade-submission.md). This is optional and adds no core teaching minutes. Mark/ATA review candidates before any Arcade integration. Rehearse the board-and-battle combination before offering it live; the walkthrough is a design specification, not a tested starter.
 
 <!-- END COURSE SOURCE: instructor-guide.md -->
 
@@ -896,6 +927,419 @@ The first deployment is production under the course's documented flow. A private
 
 ---
 
+# Source file: docs/game-options.md
+
+<!-- BEGIN COURSE SOURCE: docs/game-options.md -->
+
+# Choose your classroom game
+
+> **For an AI receiving only this lesson:** State which text and files you actually received. Ask whether the learner is choosing a game, continuing one, or stuck. Request the current `project-state.md` and actual files before changing an existing project. Do not claim to have read a linked lesson that was not available.
+
+Choose **one** game for the second project. Use your favorite chatbot and the same [seven game skills](game-skills-guide.md): brief, rules, build, appearance, feedback, playtest, and publish. The website remains your first project, and the class remains 360 teaching minutes plus breaks. These options replace each other within the game block; they are not three additional assignments.
+
+The instructions below describe projects to build. They are not tested starter applications. The instructor should rehearse the offered choices and prepare a recovery checkpoint for each before class.
+
+| Choice | What the player does | Why choose it? | Main thing to test |
+| --- | --- | --- | --- |
+| **Featured: Alien Tic-Tac-Toe** | Chooses a board cell and wins or loses a short alien battle to determine its mark. | A distinctive game that combines a familiar board with a small battle system. | Battle outcomes award exactly one cell and end the board correctly. |
+| **Five-question quiz** | Answers one question at a time, sees feedback, and tries again. | The simplest complete worked example, with predictable tests and no movement. | One answer scores once; final scores and replay are correct. |
+| **One-button space dodger** | Taps or presses a key to rise between obstacles. | A visual action game with one control and a theme you can customize. | Motion, collisions, scoring, and restart work consistently. |
+
+All three can use plain static HTML, CSS, and JavaScript in a separate learner-owned game repository and Vercel project. Keep accounts, multiplayer, databases, global leaderboards, payments, and external asset libraries outside the core exercise.
+
+## Featured game Alien Tic-Tac-Toe
+
+[Open the full Alien Tic-Tac-Toe walkthrough](docs/alien-tic-tac-toe.md).
+
+This is **Mark's new concept**, not an existing title in the All Things AI Arcade. You select an empty cell on a three-by-three board and fight for it. A battle win places X; a loss places O. No automatic opponent move follows. A line of X wins, a line of O loses, and a full board with no line draws.
+
+Each battle starts with two health points for each side. The alien shows Laser, Shield, or Claw; the corresponding correct responses are Shield, Blast, and Dodge. A correct response damages the alien by one point; an incorrect response damages you by one. Answer once, then use Next exchange if neither side has reached zero. A battle ends after two or three exchanges, and its selected cell is resolved exactly once.
+
+Restart game remains available during active play and immediately clears both the whole board and any battle in progress. You cannot abandon only a losing battle while retaining earlier marks.
+
+Build in three increments: **board first, battle second, connected game third**. This gives you checkpoints that can be checked separately. Use simple shapes and ordinary keyboard/touch buttons. There are no timers or external assets in the first version.
+
+> Help me build Alien Tic-Tac-Toe using its walkthrough. Start with the brief and exact rules. Preserve the solo battle-for-a-cell mechanic: no automatic opponent move, one resolved battle per selected cell, immediate terminal outcomes, and a fresh board on replay. Plan the board, battle, and integration as separate checked increments.
+
+Choose it if you want to learn how two small systems connect. Keep the scope disciplined: visual effects, randomized enemies, upgrades, and additional attack types can wait.
+
+## Five-question quiz
+
+[Open the full quiz walkthrough](docs/game-walkthrough.md).
+
+Riverbend Club Quiz asks five questions about a fictional reading club. Each question accepts one answer, shows an explanation, and then offers Next. After the fifth question, it displays the score out of five and Play again. The walkthrough supplies the question content and exact answer sequences for scores of 5, 0, and 3.
+
+The quiz adapts the broader Arcade pattern of short instructions, clear results, and replay, with Promptle as inspiration. It does not copy Promptle's word-guessing rules or source code. You can change the theme after the basic game works, provided any factual teaching content is verified.
+
+> Help me build the five-question quiz from the worked lesson. Keep its supplied question order and scoring rules. Return complete runnable files. Build the start, answer, feedback, next-question, result, and replay flow before adding decoration. Use the exact known-answer tests.
+
+Choose it if finishing a small complete game is your priority. It is also a useful scope reduction if a more complex game is consuming the class period; save the earlier work and record the change of plan rather than pretending both were completed.
+
+## One-button space dodger
+
+Use the one-button recipe in the [game skill guide](game-skills-guide.md), inspired by the Arcade's Flappy Brains pattern. The space theme is a new classroom variation, not a claim that the Arcade contains a game with this exact name.
+
+Define the first version before building:
+
+1. A small spaceship falls gently unless the player taps a visible control or presses Space to rise.
+2. Obstacles approach with generous gaps. Passing one obstacle earns one point, once.
+3. A visible collision ends the round and shows the score and Play again.
+4. Replay resets ship position, obstacles, score, and movement. Repeated restart must not add extra animation loops.
+5. Instructions hold the game idle before Start. Motion should be consistent across devices and handle returning from a background tab without an unavoidable loss.
+
+Use simple geometric shapes and no sound in the first build. Do not add physics libraries, downloaded sprite packs, multiple worlds, or a separate countdown timer merely for polish.
+
+> Use the game-brief and game-rules skills to plan a one-button space dodger. Use tap or Space to rise, generous obstacle gaps, one point per obstacle passed, a visible collision result, and immediate replay. Define start, movement, collision, score, and reset checks. Use simple shapes and portable static files. Do not build until the rules are clear.
+
+After the first playable file is exported, test one tap versus a held key, each obstacle's single score, a visible collision, three restarts, phone controls, and returning after a tab switch. This option has more movement behavior to diagnose than the quiz. Mark checks not performed honestly.
+
+## Make the choice and save it
+
+1. Record your choice and its small first version in `game-brief.md`.
+2. Identify the separate game folder, repository, and current stage in [project state](templates/project-state.md).
+3. Read the relevant walkthrough and give the chatbot its current skill plus the actual files as you progress.
+4. Keep a tested checkpoint before adding a new mechanic or changing the visual theme.
+5. Use [troubleshooting](docs/troubleshooting.md) if behavior differs from the rules. Ask for one focused repair rather than starting a different game automatically.
+
+Your final demonstration is the same for every choice: explain the goal, complete a round, show the result, replay, and identify the version and checks behind your claim that it works.
+
+If you want to share the finished game with the All Things AI Arcade, read the [optional Arcade submission guide](docs/arcade-submission.md) after completing the class checks. Follow its separate review and authorization process; publishing to your own Vercel project does not submit the game automatically.
+
+<!-- END COURSE SOURCE: docs/game-options.md -->
+
+
+---
+
+# Source file: docs/alien-tic-tac-toe.md
+
+<!-- BEGIN COURSE SOURCE: docs/alien-tic-tac-toe.md -->
+
+# Build Alien Tic-Tac-Toe
+
+> **For an AI receiving only this lesson:** State which text and files you actually received. Ask whether the learner is starting fresh, continuing, or stuck. For continuing work, request `project-state.md` and the actual current files before proposing changes. Ask for a named skill when needed; do not claim to have read linked content you cannot access.
+
+Alien Tic-Tac-Toe is Mark's new classroom game concept: choose a square, fight a short alien battle, then claim that square as X or lose it to O. It is not an existing All Things AI Arcade title. This walkthrough is a specification and set of build instructions; it does not establish that the application exists, has been tested, or has been rehearsed in class.
+
+Use your favorite chatbot and the seven [game skills](game-skills-guide.md). Keep the game in its own folder, GitHub repository, and Vercel project, separate from your website. The first version uses plain HTML, CSS, and JavaScript, ordinary buttons, and simple shapes. It needs no timer, account inside the game, backend, downloaded art, paid API, or sound.
+
+If you would prefer a shorter ruleset, choose the [five-question quiz](docs/game-walkthrough.md). See [all three game choices](docs/game-options.md) before starting. The instructor should rehearse each offered option and prepare a tested recovery checkpoint; these instructions do not supply a hidden starter application.
+
+## What you are making
+
+This is a **solo variant** of tic-tac-toe. You choose every square. A short battle determines who receives it.
+
+1. Start with an empty three-by-three board.
+2. Select an empty cell. That cell becomes the pending battle location and the whole board locks.
+3. Win the battle to put **X** in the selected cell. Lose the battle to put **O** there.
+4. There is **no automatic opponent move**. One finished battle fills exactly one cell.
+5. Three X marks in any row, column, or diagonal wins the board. Three O marks loses it. A full board with neither line is a draw.
+6. If the board is not finished, return to it and choose another empty cell. If it is finished, use Play again to start a new empty board.
+7. During active play, an always-available **Restart game** button abandons the whole board immediately and returns to an empty board. It also clears any battle in progress. It does not let you cancel only one battle while keeping earlier marks.
+
+Winning a battle is different from winning the board. A battle might give you the first X of a line; it does not end the whole game unless that placement completes a line or fills the board.
+
+Use these cell names in your notes and tests:
+
+| | Column 1 | Column 2 | Column 3 |
+| --- | --- | --- | --- |
+| Row 1 | Cell 1 | Cell 2 | Cell 3 |
+| Row 2 | Cell 4 | Cell 5 | Cell 6 |
+| Row 3 | Cell 7 | Cell 8 | Cell 9 |
+
+The winning lines are **1–2–3, 4–5–6, 7–8–9, 1–4–7, 2–5–8, 3–6–9, 1–5–9, and 3–5–7**.
+
+## The battle rules
+
+Every battle starts with **2 player health points and 2 alien health points**. Display health as text such as “You: 2 of 2” and “Alien: 2 of 2”; icons may reinforce it. Do not make the player infer health from color alone.
+
+The alien announces its move. You choose one of three response buttons:
+
+| Alien shows | Correct response | Result of a correct response |
+| --- | --- | --- |
+| Laser | Shield | Alien loses 1 health point. |
+| Shield | Blast | Alien loses 1 health point. |
+| Claw | Dodge | Alien loses 1 health point. |
+
+Any other response costs the **player** 1 health point. Exactly one side loses exactly one point per accepted response. There is no extra automatic retaliation, simultaneous damage, healing, or random damage.
+
+For the first classroom version, use **Laser → Shield → Claw**, starting again at Laser for every new battle. This predictable sequence makes the rules and tests easy to reproduce. The correct responses are therefore **Shield → Blast → Dodge**. Randomized alien moves can be a later extension after the basic loop works.
+
+After a response, disable all response buttons and show what happened. If both sides still have health, show an explicit **Next exchange** button. The next alien move and fresh response buttons appear only when the player activates it. Do not reuse the answer click to advance an exchange.
+
+If the alien reaches zero health, the battle ends immediately with a win. If the player reaches zero, it ends immediately with a loss. Do not show Next exchange after either terminal result. A battle needs two or three exchanges at most: with one health point lost on every exchange, someone must have lost both points by the third. No separate “round limit draw” is needed.
+
+When a battle ends, fill the pending cell **exactly once**, then immediately evaluate the board. If the board continues, a short summary can offer **Return to board**. If the placement ends the board, show **You won**, **The aliens won**, or **Draw** immediately and offer **Play again**. Acknowledging a summary must never place a second mark.
+
+## 1 Prepare the project and brief
+
+1. Create or locate your `my-first-game` folder and learner-owned GitHub repository. Check their names before giving an assistant permission to edit. Keep your website separate.
+2. Start a `project-state.md` note from [the state template](templates/project-state.md). Record “Alien Tic-Tac-Toe,” the destination, and the current stage.
+3. Open [vc-game-brief](game-skills/vc-game-brief/SKILL.md) and give it to your chatbot with this lesson.
+4. Use the prompt below. Read the returned brief and correct any unwanted rules before building.
+
+> Write game-brief.md for Alien Tic-Tac-Toe using this lesson exactly. It is a solo three-by-three board. Selecting an empty square locks the board and starts a battle for that square. A battle win places X; a loss places O. No separate automatic opponent move occurs. X line wins, O line loses, full board without a line draws. Battles use 2 health each, the stated Laser/Shield/Claw counters, one accepted response per exchange, and explicit Next exchange between nonterminal responses. Exclude timers, logins, backend services, downloaded assets, and sound. Give me observable completion checks. Do not build yet.
+
+**Checkpoint:** you can explain how a square is awarded and why the alien does not take another turn afterward. Save the agreed brief.
+
+## 2 Describe the states and controls
+
+Use [vc-game-rules](game-skills/vc-game-rules/SKILL.md). A state is simply the situation the game currently remembers and the actions it allows.
+
+| State | What the player sees | Allowed action and result |
+| --- | --- | --- |
+| Instructions | Goal, counter table, Start | Start opens the empty board. Nothing progresses beforehand. |
+| Choose a cell | Board and “Choose an empty square” | One empty cell starts one battle and locks all cells. |
+| Choose a response | Pending cell, health, announced alien move | One response applies one damage result and locks responses. |
+| Exchange feedback | Correct/incorrect explanation and updated health | Next exchange is available only while both sides have health. |
+| Battle finished, board continues | Awarded cell and battle summary | Return to board unlocks only empty cells; no further mark is placed. |
+| Board finished | Final board, winning line or draw, result | Play again clears the entire board and returns to cell selection. |
+| Any active board or battle state | A clearly labeled Restart game button | Restart game immediately clears the entire board, pending cell, health, exchange, selected response, and feedback; it returns to empty-cell selection. |
+
+Use standard buttons for cells, responses, Start, Next exchange, Return to board, Restart game, and Play again. They must work with touch or mouse, and with keyboard Tab plus Enter or Space. Show visible keyboard focus. Give cells readable labels such as “Row 1, column 2, empty,” then update the label when occupied. Keep Restart game reachable during both battle input and battle feedback; label that it clears the whole board.
+
+Reopening instructions must preserve the pending cell, health, accepted response, and board. While help is open, hide or disable gameplay controls except Restart game, which must remain reachable. Closing help must not count as a move. There is no cancel-a-single-battle option: finish the battle to resolve its cell, or use Restart game to abandon all progress and begin an empty board.
+
+> Use the game-rules skill to turn this brief into game-rules.md. Include the state table and exact allowed actions. Keep the board locked during battle and while battle feedback is being acknowledged. Reject occupied cells. Accept each response once and resolve each battle once. On zero health, resolve immediately; never wait for another exchange. Check lines before declaring a full-board draw. Specify keyboard, pointer, and touch behavior and what Play again resets. Keep Restart game available throughout active play; it abandons and resets both the board and battle immediately, with no mark awarded from the abandoned fight.
+
+**Checkpoint:** a partner can describe Start → choose a cell → battle → mark → continue or result → restart from the rules. Save the rules before asking for code.
+
+## 3 Build the board first
+
+Ask [vc-game-build](game-skills/vc-game-build/SKILL.md) for a small **board prototype**. Keep it in a clearly named prototype folder outside your final upload folder. This is a temporary testing step, not the finished game.
+
+> Build a plain board prototype as one complete index.html. It must open directly in a browser without installation. Implement empty and occupied cells, selecting one pending cell, locking the board, detecting all eight winning lines, and Play again. For this prototype only, provide clearly labeled Test battle win and Test battle loss buttons to resolve the pending cell as X or O. Show only one accepted resolution. These temporary controls must be removed when the real battle is integrated. Use normal accessible buttons and simple text. Return the actual complete file and tell me which checks I must perform.
+
+1. Save and open the complete file using [the Mac and Windows file instructions](docs/website-walkthrough.md#4-save-the-file-and-open-it).
+2. Select cell 1. Try selecting cell 2 before resolving; it should have no effect.
+3. Use Test battle win once. Only cell 1 should become X. Repeat the control or select the occupied cell; neither should change the board.
+4. Use test outcomes to check an X line, an O line, and the draw pattern below.
+5. Use Play again and confirm all nine cells are empty.
+
+**Checkpoint:** save a separate working copy named `alien-board-checkpoint-01`. Record what you actually tested. If the board rules fail, fix them before adding the battle.
+
+## 4 Build and check the battle separately
+
+Make a second prototype in a different folder so it cannot overwrite the board checkpoint.
+
+> Build a standalone battle prototype from game-rules.md. Return a complete directly openable index.html. Start each battle with player health 2 and alien health 2. Show Laser, then Shield, then Claw only as needed. The counters are Shield, Blast, and Dodge respectively. Correct damages only the alien by 1; incorrect damages only the player by 1. Lock all responses after one choice. Use an explicit Next exchange button only when both still have health. At zero health, end immediately and show a win or loss with no further damage or exchange. Provide Restart battle for this prototype. No timers, random damage, or automatic retaliation.
+
+Try these exact sequences, activating Next exchange only when it appears:
+
+| Test | Your responses | Expected outcome |
+| --- | --- | --- |
+| Two correct | Shield, Blast | Win after exchange 2; player health 2, alien health 0. |
+| Two incorrect | Blast, Shield | Loss after exchange 2; player health 0, alien health 2. |
+| Win on third | Shield, Shield, Dodge | Win after exchange 3; player health 1, alien health 0. |
+| Lose on third | Blast, Blast, Blast | Loss after exchange 3; player health 0, alien health 1. |
+| Repeat input | Choose Shield against Laser, then press it repeatedly before Next exchange | Alien health remains 1 and player health remains 2; exchange stays at 1. |
+
+**Checkpoint:** each accepted choice causes one explained damage event. There is never a fourth exchange, negative health, or a battle draw. Save `alien-battle-checkpoint-02` outside the final upload folder and update project state.
+
+## 5 Connect the board and battle
+
+Give the chatbot both working prototypes, the brief, and the rules. Keep your checkpoints intact. Ask it to produce the final `index.html` in the game project folder.
+
+> Integrate these checked prototypes into Alien Tic-Tac-Toe. The board's selected empty cell is the only destination for that battle. Lock the entire board before the battle opens. Start fresh health for every battle. Resolve a terminal battle exactly once: win sets the pending cell to X, loss sets it to O, then check the board immediately. There is no automatic opponent placement. If the board continues, Return to board only dismisses the summary; it must not place another mark. If a line or full-board draw ends the game, stop gameplay and show Play again. Remove the temporary Test battle win/Test battle loss controls and standalone Restart battle. Add an always-available Restart game control during active play. It immediately clears both board and battle state and returns to the empty board; an abandoned battle must never award a delayed mark. Return one complete runnable index.html. Explain the changes and untested behavior.
+
+1. Open the integrated file and win a battle for cell 1. Confirm exactly one X.
+2. Return to the board and lose a battle for cell 2. Confirm exactly one O and no mark elsewhere.
+3. Try occupied cells and rapid clicks during battle; neither should start another fight or change the pending cell.
+4. Complete the board and use Play again. Confirm no health, response, mark, or pending-cell selection carries into the new game.
+5. Start another battle and answer once, then use Restart game while its feedback is visible. Confirm the whole board clears, no old battle controls remain, and the next selected cell begins a fresh battle with 2 health per side.
+
+**Checkpoint:** the complete loop works in the exported file. A chatbot preview alone is not this checkpoint. Save a working copy before visual changes.
+
+## 6 Make the game readable
+
+Use [vc-game-look-feel](game-skills/vc-game-look-feel/SKILL.md) and [vc-game-feedback](game-skills/vc-game-feedback/SKILL.md). A small alien drawn with simple shapes, a dark space background, and clear X/O marks are sufficient. Keep the counter table visible or immediately available; this game teaches a rule rather than testing memory under time pressure.
+
+> Improve this working game's appearance without changing the rules. Make X, O, the pending cell, current alien move, both health values, and available actions clear on a phone and laptop. Use words or symbols as well as color. Show feedback such as “Shield counters Laser. Alien loses 1 health.” Distinguish Battle won from Board won. Keep focus visible and controls reachable. Do not introduce external assets, timers, sound, backend services, or effects that block play.
+
+**Checkpoint:** a first-time player can identify whose health changed, which cell the battle concerns, and what to do next. Record short style and feedback notes alongside the files.
+
+## 7 Test the integrated game
+
+Use [vc-game-playtest](game-skills/vc-game-playtest/SKILL.md). Record the exact file/version, browser, device, steps, and observed result in `game-test-report.md`. Use **Passed**, **Failed**, or **Not tested**.
+
+For the fixed battle sequence, you can deliberately win a cell using **Shield, Blast**, or deliberately lose it using **Blast, Shield**. Activate Next exchange between those responses. This makes board tests repeatable without leaving test buttons in the finished game.
+
+| Check | What to do | What must happen |
+| --- | --- | --- |
+| Start | Open the game and leave instructions visible | No board mark, health loss, or battle occurs before Start. |
+| Occupied cell | Finish a battle for cell 1, return, then select it again | Nothing changes and no new battle opens. |
+| Board lock | Select cell 2, then rapidly try cell 3 and other cells | The pending location remains cell 2; only one battle exists. |
+| One response | Rapidly click or press an answer before Next exchange | Exactly one damage event is accepted. |
+| One resolution | Win a battle, then repeat the last input and acknowledge its summary | Exactly the selected cell changes once; the other eight stay as they were. |
+| Immediate terminal | Reach zero alien or player health | No Next exchange appears; the board mark and outcome are resolved immediately. |
+| No extra opponent turn | Win one battle and return to the board | One X appears and no O is added automatically. |
+| X line | On a fresh board, win cells 1, 2, and 3 | X wins immediately; no further cell can start a battle. |
+| O line | On a fresh board, lose cells 1, 2, and 3 | O wins immediately; no further cell can start a battle. |
+| Other lines | On fresh boards, repeat the appropriate outcomes for each remaining winning line | Every row, column, and diagonal is recognized. Record the lines actually tried. |
+| Full-board draw | Fill cells 1–9 in order as X, O, X, X, O, O, O, X, X | The ninth result is Draw; there is no earlier line. |
+| Last-cell win | Fill cells 1–9 in order as X, O, O, O, X, X, X, O, X | The ninth X completes 1–5–9 and is a win, not a draw. |
+| Restart | After a win, loss, or draw, use Play again and repeat for several games | Nine empty cells; no pending battle, stale feedback, old health, or duplicate action. |
+| Restart during battle | Claim one cell, start another battle, answer once, and activate Restart game during feedback | All nine cells clear immediately; the abandoned fight awards no mark. A newly selected cell starts exchange 1 with 2 health per side. |
+| Restart before responding | Start a battle and activate Restart game before choosing a response, then repeat after reopening help | The empty board returns and old response or help controls cannot change it. |
+| Help during battle | Answer once, reopen help, then close it | Board, pending cell, health, and locked response remain correct. |
+| Keyboard and phone | Play through the supported keyboard route and on a real phone when available | Focus is visible, buttons are reachable, and one activation produces one action. |
+
+Give a partner two minutes without coaching. Record where they hesitate, especially whether they expect an automatic opponent move. If the instructions do not resolve that confusion, improve the explanation while keeping the rules unchanged.
+
+> On [version and file/URL], I did [steps]. The rule says [expected result], but I observed [actual result]. Here are the current file and rules. Make the smallest repair, preserve the working parts, and return the complete file. Tell me which failed test and related checks to repeat. Do not claim a browser check that neither of us performed.
+
+If repeated repairs fail, use [troubleshooting](docs/troubleshooting.md) and your saved checkpoints. A plain working version is more useful than polished graphics covering an incorrect result.
+
+## 8 Publish and hand off
+
+1. Use [vc-game-publish](game-skills/vc-game-publish/SKILL.md) and the [publication guide](setup-guide.md#publish-each-project).
+2. Upload the intended integrated `index.html` and necessary supporting files to the game repository. Keep prototype folders and temporary test controls out of the final application upload.
+3. Check the repository, version, Vercel project, root, and static-file settings before the authorized release. The first deployment is production under the course's documented flow.
+4. Open the completed deployment URL. Win one battle, lose another, complete a board result, and restart. Have a partner use that exact URL where possible.
+5. Save `game-release.md` with the version, URL, observed results, limitations, and recovery checkpoint. Update `project-state.md` with the next small action.
+
+The finished handoff should distinguish the published game's observed behavior from local tests and any checks not attempted. If deployment is blocked, retain the working files and exact error rather than calling the game live.
+
+After the class project is checked, you can follow the [optional Arcade submission guide](docs/arcade-submission.md). Submission is a separate step from deploying your own game; follow that guide's review and authorization process.
+
+<!-- END COURSE SOURCE: docs/alien-tic-tac-toe.md -->
+
+
+---
+
+# Source file: docs/arcade-submission.md
+
+<!-- BEGIN COURSE SOURCE: docs/arcade-submission.md -->
+
+# Offer your game for the All Things AI Arcade
+
+Mark has invited the possibility of adding strong student games to the All Things AI Arcade. If you make something you enjoy playing, you can prepare it for Mark and the All Things AI team to review. **This is optional. Selection is not guaranteed, and submitting a game does not publish it in the Arcade.**
+
+First finish the classroom project: a small standalone game with clear instructions, a complete round, correct results, and reliable replay. Use the [game options](docs/game-options.md) to choose a manageable pattern. Keep the game in its own folder, repository, and Vercel project. You do not need accounts, a backend, multiplayer, or a remote leaderboard to offer a good game.
+
+## Prepare a game another person can try
+
+Make the first action obvious and keep a round short enough for a reviewer to understand the idea. Let another person play without coaching, then ask what they enjoyed, where they hesitated, and whether they wanted another round. Record their observations and fix the most important problem.
+
+Check the actual version you intend to offer. Test the keyboard and touch controls your game supports, complete a round, inspect the result, and restart repeatedly. Test a real phone when available; a resized desktop browser does not establish that touch controls work. Report unsupported controls and untested devices plainly. A known limitation is useful information for the reviewer.
+
+A working local file is enough to begin building. For an Arcade review packet, provide a playable URL if you have one and verify its main play loop. If publication is blocked, retain the runnable files and record the blocker rather than inventing a URL or describing the game as live.
+
+## Build a small review packet
+
+Complete the [Arcade submission template](templates/arcade-submission.md). Include:
+
+- The game's name, intended player, goal, and one sentence about what makes it fun.
+- A playable URL and the matching repository and saved version, or runnable files with a clear deployment blocker.
+- Short instructions, supported controls, and how scoring, results, and replay work.
+- Real playtest observations, test status, known issues, and what has not been tested.
+- Credits for code, images, sounds, fonts, and other material, with source or provenance notes. Identify work you created yourself, AI-assisted material, and anything whose reuse status needs clarification.
+- The name you would like associated with the game and any question you want the reviewers to consider.
+
+Keep credentials, authentication codes, private account details, and unrelated personal or business information out of the packet. If the repository is private, note that fact and arrange access with the instructor through the existing class channel. Do not assume a private link is readable by the reviewer or change repository visibility just to make the packet easier to open.
+
+## Hand it to the instructor
+
+Use the class's existing instructor contact channel to give Mark the packet or ask how to hand it over. This course does not establish a separate submission email address, form, deadline, response time, or automated selection process. Your chatbot can help organize the packet; you decide what to share and send it through the agreed channel.
+
+Mark and the All Things AI team can review whether the game is enjoyable, understandable, reliable enough to develop further, and a fit for the Arcade. They may request changes or decide not to include it. Continue treating the learner's repository as the source for the offered version until a maintainer gives you a specific next step.
+
+## What happens if there is interest?
+
+Actual Arcade adaptation and integration would be a later task for its maintainers. They would determine the changes, access, testing, and release process needed for the current Arcade. The classroom project does not authorize editing the Arcade, connecting its services, or deploying to its environment.
+
+Keep your standalone game working and preserve the offered version. If maintainers request a revision, make a bounded change, record the new version, and repeat the affected checks. Do not promise that your classroom files can be dropped into the Arcade unchanged or that any particular private implementation will be used.
+
+This optional path gives a strong project a clear handoff. Your class outcome remains your own playable game, its saved files, and an honest record of what works.
+
+<!-- END COURSE SOURCE: docs/arcade-submission.md -->
+
+
+---
+
+# Source file: templates/arcade-submission.md
+
+<!-- BEGIN COURSE SOURCE: templates/arcade-submission.md -->
+
+# Optional All Things AI Arcade review packet
+
+Complete this for the exact game version you want Mark and the All Things AI team to review. Read the [submission guide](docs/arcade-submission.md) and [game options](docs/game-options.md). Offering a game does not guarantee selection or authorize Arcade publication or integration.
+
+## The game
+
+- Game title:
+- Creator name or preferred credit:
+- Intended player:
+- Goal and main action:
+- What makes it fun:
+- Approximate round length:
+- Why I think it could suit the Arcade:
+
+## Exact version and access
+
+- Playable URL, or “not deployed”:
+- Repository URL and whether it is public or private:
+- Exact commit or clearly named saved version:
+- Runnable file location or supplied attachment:
+- Date this version was checked:
+- If access or deployment is blocked, the specific blocker:
+
+Do not include passwords, tokens, recovery codes, or private account details. Arrange any needed repository access with the instructor through the existing class channel.
+
+## How to play
+
+- Start:
+- Keyboard controls, or unsupported:
+- Pointer/touch controls, or unsupported:
+- How progress or scoring works:
+- How a round ends:
+- What Play again resets:
+- Any other information a first-time player needs:
+
+## Checks and player observations
+
+Use **Passed**, **Failed**, or **Not tested**. Identify actual devices and distinguish a real phone test from a narrow desktop window. Record local and deployed results separately when they differ.
+
+| Check | Version/location and device | Status | Actual observation or issue |
+| --- | --- | --- | --- |
+| Instructions and Start | | | |
+| Keyboard controls | | | |
+| Touch controls on a real device | | | |
+| Progress/scoring and round end | | | |
+| Repeated restart | | | |
+| Published URL's play loop | | | |
+
+- What a new player enjoyed:
+- Where they hesitated or found a problem:
+- Whether they wanted to replay, and why:
+- Most important fix made after that test:
+- Known issues and untested behavior:
+
+## Credits and provenance
+
+Include relevant code, art, sound, fonts, and other materials. Mark items that need clarification rather than assuming they are ready for reuse.
+
+| Material | Creator/source link or provenance | How it was made or obtained | Reuse information or open question |
+| --- | --- | --- | --- |
+| | | | |
+
+- AI assistance used, if any:
+- Material I created myself:
+- Material needing further review:
+
+## Handoff
+
+- Packet prepared on:
+- Handed to the instructor through:
+- Question for Mark or the ATA reviewers:
+- Next revision I would like to make:
+
+Arcade selection, adaptation, testing, integration, and release remain later decisions for Mark and the All Things AI maintainers. This packet does not authorize those actions.
+
+<!-- END COURSE SOURCE: templates/arcade-submission.md -->
+
+
+---
+
 # Source file: docs/game-walkthrough.md
 
 <!-- BEGIN COURSE SOURCE: docs/game-walkthrough.md -->
@@ -1015,6 +1459,8 @@ Use this repair prompt with the current file:
 6. Update your project-state note. A later chatbot can continue from the current file, rules, test report, and next action without pretending to remember this conversation.
 
 **Final demonstration:** open the website and its main action; open the separate game; complete and restart a round; show where both versions and their test notes are saved. Adding another question or changing one style choice is a reasonable next exercise. Add it through the same brief → change → test → publish process.
+
+This is the easiest of the [three game choices](docs/game-options.md). For the featured board-and-battle project, use [Alien Tic-Tac-Toe](docs/alien-tic-tac-toe.md). Finished games can follow the [optional Arcade submission path](docs/arcade-submission.md).
 
 <!-- END COURSE SOURCE: docs/game-walkthrough.md -->
 
@@ -1541,6 +1987,18 @@ See [multiple-agent options](docs/multiple-agents.md) for using manual chats, na
 
 > Update project-state.md with the actual files, saved version, working behavior, failed or untested checks, current blocker, and one next action. Give me a short prompt for continuing in a new chatbot.
 
+## Choose the featured alien game
+
+Attach [the game menu](docs/game-options.md), [Alien Tic-Tac-Toe walkthrough](docs/alien-tic-tac-toe.md), and the current game skill.
+
+> Help me build Alien Tic-Tac-Toe from the attached course rules. First confirm you can read those rules. This is a solo variant: selecting an empty square starts a battle; winning claims X, losing claims O, and there is no separate opponent turn. Build the board, battle, and connection as separate checkpoints. Keep the first version turn-based and self-contained. Give me one visible check at a time.
+
+## Prepare an Arcade review packet
+
+Attach [the submission guide](docs/arcade-submission.md), [template](templates/arcade-submission.md), and your actual game files and test record.
+
+> Help me prepare my game for possible All Things AI Arcade inclusion. Describe what makes it fun, record the playable URL and matching source version, and summarize only tests we actually performed. Identify missing evidence and asset credits. Fill the template for me to review and hand to the instructor. Do not claim the game has been selected or integrated.
+
 <!-- END COURSE SOURCE: docs/prompt-library.md -->
 
 
@@ -1721,7 +2179,7 @@ Seven new classroom skills derived from the All Things AI Arcade. Use them with 
 
 ## How to use the pack
 
-Open the current stage's SKILL.md and paste or attach it to your chatbot with its starter prompt and the earlier stage's output. If the platform supports native skills, install through its supported workflow and verify discovery. Pasting the instructions is sufficient for the portable route; it does not grant tools or account access.
+Open the current stage's SKILL.md and paste or attach it to your chatbot with its starter prompt, the selected game walkthrough, and the earlier stage's output. Start by sharing [the game menu](docs/game-options.md); for Alien Tic-Tac-Toe, also attach [its complete rules and walkthrough](docs/alien-tic-tac-toe.md). A path printed in a skill does not give an ordinary chatbot the file. If the platform supports native skills, install through its supported workflow and verify discovery. Pasting the instructions is sufficient for the portable route; it does not grant tools or account access.
 
 Keep the game in its own folder and repository. Request complete runnable HTML, CSS, and JavaScript files. Open the files in a browser, test them, and publish them to the game's own Vercel project. Use a connected coding workspace if available, or manually upload the checked files through GitHub.
 
@@ -1741,29 +2199,19 @@ The two documentation outputs in the polish stage can be short paragraphs; the p
 
 ## Choose a starter recipe
 
-### A small word or knowledge puzzle
+### 1. Alien Tic-Tac-Toe — featured choice
 
-Inspired by [Promptle](https://staging.allthingsai.org/arcade/promptle). Start with five to ten prepared questions or words, a few attempts, visible progress, a result explanation, and replay. Theme it around a hobby, company vocabulary, or a subject the learner knows. Use verified content if presenting facts.
+Mark’s new classroom idea: selecting an empty square starts a short alien battle. Win to place X; lose and the alien places O there. Three Xs wins, three Os loses, and a full board without a line draws. This is a solo variant with no extra opponent turn. Build the plain board, a turn-based battle, then connect them. See the [complete rules and walkthrough](docs/alien-tic-tac-toe.md).
 
-The easiest version can use clues or multiple-choice answers. A full Wordle-style version is an extension: it also needs correct handling of repeated letters, allowed guesses, and letter-position feedback. Daily locks, streaks, large dictionaries, and share cards can wait.
+### 2. Five-question quiz — easiest choice
 
-Completion example: invalid input does not spend an attempt; a correct answer changes progress once; the final attempt ends the round correctly; replay returns to the agreed starting state.
+Inspired by the Arcade’s small puzzle patterns, including Promptle, rather than copying its word rules. Five questions, one point per correct answer, clear feedback, and replay. Use the [worked quiz example](docs/game-walkthrough.md). Verify any factual answers. A full word puzzle is a later extension.
 
-### A one-button obstacle game
+### 3. One-button space dodger — action choice
 
-Inspired by Flappy Brains in the [Arcade](https://staging.allthingsai.org/arcade). Start with one character, a tap or key to move upward, generous obstacle gaps, a score for passing an obstacle, a collision result, and immediate replay. Students choose the character and setting.
+Inspired by Flappy Brains: tap or press Space to boost a ship, pass generous obstacle gaps, and score each obstacle once. Collision ends the run; restart clears movement and score. Keep one screen and one obstacle type. The [game menu](docs/game-options.md) contains the starter brief and acceptance checks. Tune timing, collision, and restart behavior before artwork.
 
-Keep the first version forgiving. Add consistent motion across devices, correct hit detection, and a fresh state on every restart. Extra worlds, advanced physics, collectibles, and asset packs can wait.
-
-Completion example: one tap produces one intended action; each obstacle scores once; loss has a visible cause; repeated restart does not make the game run faster.
-
-### A paddle game
-
-Inspired by Brain Pong in the [Arcade](https://staging.allthingsai.org/arcade). Start with a player paddle, ball, simple opponent or target wall, clear scoring, and a short round. Use keys on a laptop and pointer or touch controls on a phone. Students can change the visual theme and target score.
-
-Keep speed, paddle size, and opponent behavior adjustable. Fancy opponents, network play, tournaments, and global rankings are later work. The first test is whether a beginner can understand and control it.
-
-Completion example: the ball bounces correctly; a missed ball changes score once; reaching the target ends the round; replay resets score, positions, and movement.
+Students build **one** of these games. A different small idea is welcome if its scope fits the same time. Strong finished projects can use the [optional Arcade submission path](docs/arcade-submission.md); acceptance and later integration are decided by Mark/ATA.
 
 ## Starter prompts
 
@@ -1896,7 +2344,7 @@ Copy this brief into the game project's `game-brief.md`. Use [vc-game-brief](gam
 | --- | --- |
 | Game title and theme | |
 | Who will play? | |
-| Pattern: puzzle, one-button obstacle game, paddle game, or another small idea | |
+| Choice: Alien Tic-Tac-Toe, five-question quiz, one-button space dodger, or another approved small idea | |
 | What is the player's goal? | |
 | What is the main action? | |
 | How long should one round take? | |
@@ -2026,6 +2474,10 @@ Use [vc-project-handoff](skills/vc-project-handoff/SKILL.md) to prepare this rec
 **My final demonstration:** Show the website's main action, complete a game round and restart, then point to the saved versions and test records. If a deployment is blocked, demonstrate the working files and explain the recorded blocker.
 
 **What I learned:** One assumption I corrected was ____________. The evidence that changed my mind was ____________.
+
+## Optional: offer your game to the Arcade
+
+Choose from the [game menu](docs/game-options.md). For Alien Tic-Tac-Toe, record both battle and board outcomes, including X win, O win, draw, and restart during battle. If you want your finished game considered for the All Things AI Arcade, fill in the [submission template](templates/arcade-submission.md) and share it with the instructor. Explain what is fun, include your playable link and source version, and record known issues. Selection and integration happen later.
 
 <!-- END COURSE SOURCE: handouts/student-workbook.md -->
 
@@ -2332,13 +2784,17 @@ description: "Turn a nontechnical learner's game idea into a small classroom pro
 
 # Choose a small game
 
-Ask for the player's goal, preferred theme, and the kind of interaction they enjoy. Offer a small word or knowledge puzzle, one-button obstacle game, or paddle game if they need a starting point. Preserve the learner's choice; an educational purpose is optional.
+Ask for the player's goal, preferred theme, and the kind of interaction they enjoy. Offer Alien Tic-Tac-Toe (featured), a five-question quiz (easiest), or a one-button space dodger; read docs/game-options.md and the chosen walkthrough. Preserve the learner's choice; an educational purpose is optional.
 
 Write game-brief.md with a one-sentence concept, intended player, one main action, a short round, scoring, win or loss conditions, restart, controls, and first-version exclusions. Define five observable completion checks. Keep the initial build to one scene or board and one mechanic that can be finished within the class period.
 
 Separate fictional scoring and metaphors from factual claims. Do not invent an AI lesson or business objective if the learner wants a game for fun. Put multiplayer, logins, payments, global leaderboards, daily challenges, and large asset libraries in a later list unless explicitly required and feasible.
 
 Summarize the playable first version for review. End with the brief; do not build or publish yet.
+
+For Alien Tic-Tac-Toe, the bounded exception to one mechanic is one board plus one small turn-based battle. Use docs/alien-tic-tac-toe.md; exclude separate bot turns, timers, inventories, and additional levels.
+
+If a referenced course file is unavailable, request its text or the relevant course-pack section. Do not invent missing rules or submission instructions.
 
 <!-- END COURSE SOURCE: game-skills/vc-game-brief/SKILL.md -->
 
@@ -2363,6 +2819,10 @@ For the portable class route, favor a complete index.html with included CSS and 
 For animated games, use elapsed-time or fixed-step updates and handle long background-tab gaps so returning does not cause an unavoidable loss. Prevent duplicated animation loops, event listeners, or score updates after restart. Use repeatable starting conditions when testing random behavior.
 
 Keep controls from capturing typing in unrelated inputs. If storage is optional, catch failures and continue playing. Do not call ATA services or add accounts. Show checked behavior and untested behavior separately; ask the learner to perform browser checks when you cannot.
+
+For Alien Tic-Tac-Toe, build and check the plain board and battle separately before integration. Lock occupied squares and the board during battle; allow one answer per exchange and one square assignment per fight. Clear pending square, health, turn feedback, and board on restart. Follow docs/alien-tic-tac-toe.md.
+
+If a referenced course file is unavailable, request its text or the relevant course-pack section. Do not invent missing rules or submission instructions.
 
 <!-- END COURSE SOURCE: game-skills/vc-game-build/SKILL.md -->
 
@@ -2436,6 +2896,10 @@ Write game-test-report.md with expected versus observed outcomes and Passed, Fai
 
 Tune one setting at a time, such as speed, gap size, attempts, or opponent reaction. Compare equivalent starting conditions. Do not claim tests, browser observations, or player feedback that did not occur.
 
+For Alien Tic-Tac-Toe, check X win, O win, draw, occupied-square rejection, board lock during fights, rapid repeated answers, a single square assignment per fight, and restart during and after battle. Verify health and pending square reset. Do not report these as passed without playing the actual build.
+
+If a referenced course file is unavailable, request its text or the relevant course-pack section. Do not invent missing rules or submission instructions.
+
 <!-- END COURSE SOURCE: game-skills/vc-game-playtest/SKILL.md -->
 
 
@@ -2460,6 +2924,10 @@ Use the supported connected deployment workflow, or guide the learner to upload 
 
 At the actual URL, verify loading, instructions, start, one full round, result, and replay, including a second device when available. Record URL, version, observed results, limitations, and recovery target in game-release.md. Label browser-local scores accurately. Leave blocked or untested status visible and preserve the working files.
 
+If the learner wants Arcade consideration, use docs/arcade-submission.md and templates/arcade-submission.md after checking the game. Prepare the instructor handoff; do not submit, integrate, or claim acceptance automatically.
+
+If a referenced course file is unavailable, request its text or the relevant course-pack section. Do not invent missing rules or submission instructions.
+
 <!-- END COURSE SOURCE: game-skills/vc-game-publish/SKILL.md -->
 
 
@@ -2483,6 +2951,10 @@ Prepare a one-sentence goal and two to four how-to steps that name the actual ke
 Define immediate replay after a finished round, without forcing the player through onboarding again. For a puzzle specify invalid input, repeated submissions, and attempt limits. For action games specify movement, collisions, timing, and score boundaries.
 
 Return test cases a partner can follow. Do not assume a keyboard-only interface works on a phone.
+
+For Alien Tic-Tac-Toe, define board and battle states separately. Selecting an empty square locks the board; resolving the fight assigns exactly one X or O there. Check lines before checking a full-board draw. No automatic opponent turn. Restart clears both states. Use the precise counter rules in docs/alien-tic-tac-toe.md.
+
+If a referenced course file is unavailable, request its text or the relevant course-pack section. Do not invent missing rules or submission instructions.
 
 <!-- END COURSE SOURCE: game-skills/vc-game-rules/SKILL.md -->
 

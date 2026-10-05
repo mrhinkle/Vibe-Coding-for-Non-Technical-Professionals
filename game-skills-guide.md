@@ -4,7 +4,7 @@ Seven new classroom skills derived from the All Things AI Arcade. Use them with 
 
 ## How to use the pack
 
-Open the current stage's SKILL.md and paste or attach it to your chatbot with its starter prompt and the earlier stage's output. If the platform supports native skills, install through its supported workflow and verify discovery. Pasting the instructions is sufficient for the portable route; it does not grant tools or account access.
+Open the current stage's SKILL.md and paste or attach it to your chatbot with its starter prompt, the selected game walkthrough, and the earlier stage's output. Start by sharing [the game menu](docs/game-options.md); for Alien Tic-Tac-Toe, also attach [its complete rules and walkthrough](docs/alien-tic-tac-toe.md). A path printed in a skill does not give an ordinary chatbot the file. If the platform supports native skills, install through its supported workflow and verify discovery. Pasting the instructions is sufficient for the portable route; it does not grant tools or account access.
 
 Keep the game in its own folder and repository. Request complete runnable HTML, CSS, and JavaScript files. Open the files in a browser, test them, and publish them to the game's own Vercel project. Use a connected coding workspace if available, or manually upload the checked files through GitHub.
 
@@ -24,29 +24,19 @@ The two documentation outputs in the polish stage can be short paragraphs; the p
 
 ## Choose a starter recipe
 
-### A small word or knowledge puzzle
+### 1. Alien Tic-Tac-Toe — featured choice
 
-Inspired by [Promptle](https://staging.allthingsai.org/arcade/promptle). Start with five to ten prepared questions or words, a few attempts, visible progress, a result explanation, and replay. Theme it around a hobby, company vocabulary, or a subject the learner knows. Use verified content if presenting facts.
+Mark’s new classroom idea: selecting an empty square starts a short alien battle. Win to place X; lose and the alien places O there. Three Xs wins, three Os loses, and a full board without a line draws. This is a solo variant with no extra opponent turn. Build the plain board, a turn-based battle, then connect them. See the [complete rules and walkthrough](docs/alien-tic-tac-toe.md).
 
-The easiest version can use clues or multiple-choice answers. A full Wordle-style version is an extension: it also needs correct handling of repeated letters, allowed guesses, and letter-position feedback. Daily locks, streaks, large dictionaries, and share cards can wait.
+### 2. Five-question quiz — easiest choice
 
-Completion example: invalid input does not spend an attempt; a correct answer changes progress once; the final attempt ends the round correctly; replay returns to the agreed starting state.
+Inspired by the Arcade’s small puzzle patterns, including Promptle, rather than copying its word rules. Five questions, one point per correct answer, clear feedback, and replay. Use the [worked quiz example](docs/game-walkthrough.md). Verify any factual answers. A full word puzzle is a later extension.
 
-### A one-button obstacle game
+### 3. One-button space dodger — action choice
 
-Inspired by Flappy Brains in the [Arcade](https://staging.allthingsai.org/arcade). Start with one character, a tap or key to move upward, generous obstacle gaps, a score for passing an obstacle, a collision result, and immediate replay. Students choose the character and setting.
+Inspired by Flappy Brains: tap or press Space to boost a ship, pass generous obstacle gaps, and score each obstacle once. Collision ends the run; restart clears movement and score. Keep one screen and one obstacle type. The [game menu](docs/game-options.md) contains the starter brief and acceptance checks. Tune timing, collision, and restart behavior before artwork.
 
-Keep the first version forgiving. Add consistent motion across devices, correct hit detection, and a fresh state on every restart. Extra worlds, advanced physics, collectibles, and asset packs can wait.
-
-Completion example: one tap produces one intended action; each obstacle scores once; loss has a visible cause; repeated restart does not make the game run faster.
-
-### A paddle game
-
-Inspired by Brain Pong in the [Arcade](https://staging.allthingsai.org/arcade). Start with a player paddle, ball, simple opponent or target wall, clear scoring, and a short round. Use keys on a laptop and pointer or touch controls on a phone. Students can change the visual theme and target score.
-
-Keep speed, paddle size, and opponent behavior adjustable. Fancy opponents, network play, tournaments, and global rankings are later work. The first test is whether a beginner can understand and control it.
-
-Completion example: the ball bounces correctly; a missed ball changes score once; reaching the target ends the round; replay resets score, positions, and movement.
+Students build **one** of these games. A different small idea is welcome if its scope fits the same time. Strong finished projects can use the [optional Arcade submission path](docs/arcade-submission.md); acceptance and later integration are decided by Mark/ATA.
 
 ## Starter prompts
 

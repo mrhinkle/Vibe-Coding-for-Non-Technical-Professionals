@@ -113,3 +113,5 @@ Use this repair prompt with the current file:
 6. Update your project-state note. A later chatbot can continue from the current file, rules, test report, and next action without pretending to remember this conversation.
 
 **Final demonstration:** open the website and its main action; open the separate game; complete and restart a round; show where both versions and their test notes are saved. Adding another question or changing one style choice is a reasonable next exercise. Add it through the same brief → change → test → publish process.
+
+This is the easiest of the [three game choices](game-options.md). For the featured board-and-battle project, use [Alien Tic-Tac-Toe](alien-tic-tac-toe.md). Finished games can follow the [optional Arcade submission path](arcade-submission.md).

@@ -40,7 +40,7 @@ read my project-state.md and actual files before suggesting changes.
 | Brand new | [Illustrated participant guide](guides/participant-guide.pdf), pages 2–5 | You can explain the roles of the chatbot, GitHub, and Vercel |
 | Setting up | [Account and connection guide](setup-guide.md) | You can receive runnable files and find your own practice repository |
 | Ready for the website | [Website walkthrough](docs/website-walkthrough.md) | Your exported page works, and the published URL is checked or the blocker recorded |
-| Ready for the game | [Game walkthrough](docs/game-walkthrough.md) | A person can start, finish, and restart a round |
+| Ready for the game | [Choose your game](docs/game-options.md) | A person can start, finish, and restart a round |
 | Something broke | [Troubleshooting](docs/troubleshooting.md) | You have reproduced the issue and checked one focused repair |
 | Want another AI's help | [Multiple-agent options](docs/multiple-agents.md) | Each helper has a clear job, input version, and permitted files |
 | Pausing or changing chatbots | [Project state template](templates/project-state.md) | Your latest files, observations, and next action are saved |
