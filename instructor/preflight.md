@@ -29,7 +29,8 @@ Confirm the class's account and hosting arrangement before distributing the prer
 
 ## Prepare before class
 
-- Send the setup guide, the laptop/browser requirement, and the account-access checklist. Ask learners to verify they can receive runnable files from their preferred chatbot.
+- Send the [pre-class laptop preparation guide](../PRE-CLASS-PREP.md) and course-access invitation or authorized copy several days ahead. Ask learners to complete it 2–3 days before class and report blockers at least a day ahead where possible. Confirm the contact channel for help.
+- Review their readiness records: Mac/Windows file-saving route, chatbot output, GitHub/Vercel sign-in and repository access, and the offline [laptop check](../prep/laptop-check.html). Account access still needs to be tested on each learner's device; a passed local button check does not verify deployment.
 - Choose one primary demonstration route. Keep the portable file route ready even when demonstrating a connected workspace.
 - Prepare a tested website checkpoint and a playable checkpoint for every game recipe you offer. Record the file version and tests. This repository's instructions are not a substitute for tested starter applications.
 - Rehearse copying or downloading files, saving plain text, extracting a ZIP, opening `index.html`, and uploading the files rather than the archive.

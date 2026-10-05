@@ -2,6 +2,8 @@
 
 You do not need to know how to code. You need a laptop, a chatbot that can return runnable files, and a willingness to try what it makes. This class guides you through a simple website and then a small game. Allow six teaching hours plus breaks, or work through one checkpoint at a time on your own.
 
+**Before the teaching day:** complete the [laptop preparation guide](PRE-CLASS-PREP.md) 2–3 days ahead. It covers Mac/Windows file setup, sign-in, course access, and a five-minute local device check.
+
 ## 1. Get the course into your chatbot
 
 This repository is currently private. Seeing it in your browser does not mean your chatbot can read it. The instructor must give you repository access or a copy of the course materials. Do not send passwords, access tokens, or recovery codes to make a link work.

@@ -21,6 +21,7 @@ Read `START-HERE.md` and this file first. Load only the relevant lesson and skil
 | Learner intent | Reference | Skill |
 | --- | --- | --- |
 | Understand the process | `instructor-guide.md`, first 30 minutes | `skills/vc-sdlc-coach/SKILL.md` |
+| Prepare a laptop before class | `PRE-CLASS-PREP.md`; ask operating system and incomplete step | `skills/vc-setup-guide/SKILL.md` |
 | Prepare accounts and workflow | `setup-guide.md` | `skills/vc-setup-guide/SKILL.md` |
 | Define a website | `docs/website-walkthrough.md` | `skills/vc-project-brief/SKILL.md`, then `vc-project-plan` |
 | Build the page | `docs/website-walkthrough.md` | `skills/vc-build-small/SKILL.md` |

@@ -126,5 +126,12 @@
       ],
       "included_in_core_minutes": false
     }
-  ]
+  ],
+  "pre_class": {
+    "guide": "PRE-CLASS-PREP.md",
+    "local_check": "prep/laptop-check.html",
+    "suggested_lead_time": "2\u20133 days",
+    "estimated_minutes": "30\u201345",
+    "included_in_teaching_minutes": false
+  }
 }

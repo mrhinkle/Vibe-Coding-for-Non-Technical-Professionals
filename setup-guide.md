@@ -4,6 +4,8 @@ Use this guide to prepare a practice repository, an AI coding workspace, and a V
 
 ## Before class
 
+Start with the [pre-class laptop preparation guide](PRE-CLASS-PREP.md). It provides a timed checklist, Mac/Windows steps, a local readiness exercise, and a record to bring to class. This document supplies the detailed account and connection instructions referenced there.
+
 Bring a laptop, a browser, access to your account email, and a way to complete multifactor sign-in. Create the required accounts and confirm that your chosen assistant can provide runnable files before the teaching day. The instructor will demonstrate the setup and help verify it in class.
 
 Use a personal practice repository and fictional information. Ask your organization's administrator about restrictions if you must use a managed work account. Students enter their own passwords and authentication codes directly into the provider's sign-in screens.

@@ -7,7 +7,7 @@ from pathlib import Path
 import json, re, posixpath
 
 ROOT=Path(__file__).resolve().parents[1]
-FILES=['AI-START.md','START-HERE.md','course-map.json','instructor-guide.md','setup-guide.md',
+FILES=['AI-START.md','START-HERE.md','PRE-CLASS-PREP.md','course-map.json','instructor-guide.md','setup-guide.md',
        'docs/website-walkthrough.md','docs/game-walkthrough.md','docs/troubleshooting.md',
        'docs/multiple-agents.md','docs/prompt-library.md','docs/glossary.md',
        'skill-guide.md','game-skills-guide.md','handouts/student-workbook.md',

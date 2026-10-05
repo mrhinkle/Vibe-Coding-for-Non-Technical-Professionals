@@ -22,7 +22,7 @@ Private repository access does not transfer automatically to your chatbot. Stude
 
 | You are… | Open this |
 | --- | --- |
-| Preparing to attend | [Account and chatbot setup](setup-guide.md) |
+| Preparing to attend | [Pre-class laptop preparation](PRE-CLASS-PREP.md), then [account and chatbot setup](setup-guide.md) |
 | Wanting an illustrated overview | [18-page participant PDF](guides/participant-guide.pdf), [Markdown](guides/participant-guide.md), or [offline HTML](guides/participant-guide.html) |
 | Taking the class | [Student workbook](handouts/student-workbook.md) |
 | Teaching the class | [Instructor guide and timed lesson plan](instructor-guide.md) |
@@ -103,6 +103,8 @@ A supported coding workspace can edit and save the files directly after you conn
 ```text
 README.md                    Class overview and navigation
 START-HERE.md                Student entry point and copy/paste startup prompt
+PRE-CLASS-PREP.md            Mac/Windows setup, accounts, and readiness checklist
+prep/laptop-check.html       Offline file-opening and button/keyboard check
 AI-START.md                  AI tutor workflow and honest capability checks
 AI-COURSE-PACK.md            Single-file chatbot handoff, generated from current docs
 AGENTS.md / CLAUDE.md        Course-repository assistant entry points

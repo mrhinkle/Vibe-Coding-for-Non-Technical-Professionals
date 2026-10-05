@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your laptop check | Vibe Coding</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 24px; background: #f3f6fb; color: #0d1219; font: 18px/1.6 Arial, sans-serif; }
+    main { max-width: 650px; margin: 8vh auto; padding: 32px; background: white; border: 1px solid #d9e0ea; border-radius: 12px; }
+    .label { color: #175daf; font-size: 13px; font-weight: bold; letter-spacing: .08em; }
+    h1 { line-height: 1.15; }
+    button { padding: 14px 20px; border: 0; border-radius: 6px; background: #175daf; color: white; font: bold 18px Arial, sans-serif; cursor: pointer; }
+    button:focus-visible { outline: 4px solid #ef8b39; outline-offset: 4px; }
+    #status { min-height: 72px; padding: 16px; border-left: 4px solid #307fe2; background: #f3f6fb; }
+    small { color: #5b6675; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="label">ALL THINGS AI / CLASS PREPARATION</p>
+    <h1>Your laptop check</h1>
+    <p>This file runs on your laptop. Click the button, then reload the page and try reaching the button with Tab and activating it with Enter.</p>
+    <button type="button" id="test">Test this laptop</button>
+    <p id="status" role="status" aria-live="polite">Not tested yet</p>
+    <p><small>Mac/Safari: if Tab skips this button but clicking works, note that keyboard navigation needs setup. See the Mac/Safari note in the prep guide or ask your instructor; this does not mean the file or laptop is broken.</small></p>
+    <small>No sign-in, data collection, network requests, or publication. This checks only this local exercise.</small>
+    <noscript><p>JavaScript is unavailable here. Record this message and ask your instructor about an approved browser setup.</p></noscript>
+  </main>
+  <script>
+    document.getElementById('test').addEventListener('click', function () {
+      document.getElementById('status').textContent = 'Button works. Your browser can run this local exercise.';
+    });
+  </script>
+</body>
+</html>
