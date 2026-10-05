@@ -134,6 +134,12 @@
       "id": "arcade-submission",
       "lesson": "docs/arcade-submission.md",
       "included_in_core_minutes": false
+    },
+    {
+      "id": "linkedin-wrap-up",
+      "lesson": "docs/linkedin-wrap-up.md",
+      "included_in_core_minutes": false,
+      "introduction": "Invite during the existing final wrap-up; posting may happen afterward."
     }
   ],
   "pre_class": {

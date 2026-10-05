@@ -24,6 +24,7 @@ The illustrated PDF/HTML, legacy slides, artwork, instructor preflight, and sour
 - `docs/game-walkthrough.md`
 - `docs/troubleshooting.md`
 - `docs/multiple-agents.md`
+- `docs/linkedin-wrap-up.md`
 - `docs/prompt-library.md`
 - `docs/glossary.md`
 - `skill-guide.md`
@@ -122,6 +123,8 @@ Use the root current guides as course authority. `presentations/reference-six-ho
 ## End every checkpoint with
 
 **Current project and version → what changed → what was observed → what remains → next small action.** If blocked, include retained files and the precise blocker. Do not call a project live or working unless the evidence supports that specific claim.
+
+For the optional closing invitation, use `docs/linkedin-wrap-up.md`: help draft an honest class-experience post and organize profile/post links for Mark’s skill endorsement offer. Do not invent completion claims or publish/send on the learner’s behalf without explicit instructions.
 
 <!-- END COURSE SOURCE: AI-START.md -->
 
@@ -502,6 +505,12 @@ Product-specific references checked October 5, 2026. This guide supplies prepara
       "id": "arcade-submission",
       "lesson": "docs/arcade-submission.md",
       "included_in_core_minutes": false
+    },
+    {
+      "id": "linkedin-wrap-up",
+      "lesson": "docs/linkedin-wrap-up.md",
+      "included_in_core_minutes": false,
+      "introduction": "Invite during the existing final wrap-up; posting may happen afterward."
     }
   ],
   "pre_class": {
@@ -636,6 +645,14 @@ Use the Arcade's five perspectives as questions: Can the player understand it? A
 Use paired demonstrations. Each student shows the website, plays the game, explains one rule or fix, and identifies the saved versions. Use `vc-project-handoff` to record both projects, tests, limitations, ownership, and the next improvement. Students finish with two URLs or working files and recorded deployment blockers.
 
 Explain how later changes can use a branch, preview, review, and release. Deeper maintenance and recovery practice become follow-on exercises rather than a third project today.
+
+### Closing invitation: LinkedIn skill endorsement
+
+Use the last two minutes of the existing wrap-up for this optional invitation. Students can write their posts afterward; retain the six-hour agenda.
+
+> “If you’d like to add vibe coding to your LinkedIn profile, I’ll endorse you. Here’s the catch: publish a LinkedIn post about this class—what you built, what you learned, or what surprised you. It doesn’t have to be praise; make it your honest experience. Add the skill, connect with me, and send me your profile and post links so I can find you.”
+
+Point students to the [LinkedIn wrap-up guide](docs/linkedin-wrap-up.md), including its editable post example and brief disclosure of the endorsement offer. Identify your correct profile and the existing channel for sending links. If “Vibe Coding” is unavailable as an endorsable skill, help the learner choose an available label that accurately reflects their work. Endorse personally after receiving the post and profile links; no automated posting or endorsement is part of this course.
 
 ## Instructor preparation and limits
 
@@ -1933,6 +1950,57 @@ These instructions describe a bounded working method. They do not certify the ge
 
 ---
 
+# Source file: docs/linkedin-wrap-up.md
+
+<!-- BEGIN COURSE SOURCE: docs/linkedin-wrap-up.md -->
+
+# Optional: share what you built and request Mark’s endorsement
+
+At the end of class, Mark’s invitation is simple: **add vibe coding to your LinkedIn profile and publish a post about the class, then send Mark your profile and post links so he can endorse the skill you practiced.** Participation is optional and does not affect class completion.
+
+## Your steps
+
+1. Add **Vibe Coding** in your profile’s Skills section if that skill is available. If you cannot find it, ask Mark which available, accurate skill label to use. Describing vibe coding in your About section alone does not create an endorsable skill.
+2. Connect with Mark Hinkle if you are not already connected. Use the profile Mark identifies during class rather than guessing a profile URL. LinkedIn skill endorsements come from first-degree connections. [LinkedIn’s skill endorsement guide](https://www.linkedin.com/help/linkedin/answer/a565106/skill-endorsements-overview)
+3. Publish a LinkedIn post about the class in your own words. Describe something you built, something you learned, or a challenge you worked through. An honest account qualifies; praise is not required. A screenshot or project link is useful if you want to share it.
+4. Send Mark your **profile URL, post URL, and exact skill name** through the class’s existing instructor contact channel. Tagging him in the post is optional; sending the links makes the request easy to find.
+
+Mark handles the endorsement personally. This is recognition of the skill practiced in class, not a certification or a claim of professional software-engineering expertise. Describe what you actually completed; if a project is unfinished, say what you built so far.
+
+## A post you can personalize
+
+Replace every bracketed item and check each statement before publishing:
+
+> I took Vibe Coding for Non-Technical Professionals with Mark Hinkle and All Things AI.
+>
+> I worked on [your website idea] and [your game choice]. My favorite lesson was [one specific thing you learned]. The part I had to work through was [a real challenge or surprise].
+>
+> Here’s [what works so far / the finished project]: [optional link or screenshot]. Next I want to [one improvement].
+>
+> As part of the class wrap-up, Mark offered a LinkedIn skill endorsement to participants who share a post about their experience.
+
+The final sentence makes the endorsement offer clear to readers. Keep your own voice and your honest experience; no specific compliment or rating is required. Remove the project-link line if you do not want to share the project publicly.
+
+## Ask your chatbot for a draft
+
+> Help me draft a short LinkedIn post about this class using only these facts: [what I built, what works, what I learned, and a challenge]. Keep my voice. Mention that Mark offered a skill endorsement to participants who post about their experience. Do not invent outcomes, praise, or expertise. Give me a draft to review; do not publish it or message anyone.
+
+## Your handoff note
+
+- My LinkedIn profile URL:
+- My class-post URL:
+- The exact skill I added:
+- Connection with Mark: connected / request pending
+- Links sent to Mark on:
+- Endorsement: pending / received
+
+Course assistants may help draft the post and organize these links. The learner chooses what to publish and sends their request; the course materials do not initiate posts, connection requests, messages, or endorsements.
+
+<!-- END COURSE SOURCE: docs/linkedin-wrap-up.md -->
+
+
+---
+
 # Source file: docs/prompt-library.md
 
 <!-- BEGIN COURSE SOURCE: docs/prompt-library.md -->
@@ -2478,6 +2546,10 @@ Use [vc-project-handoff](skills/vc-project-handoff/SKILL.md) to prepare this rec
 ## Optional: offer your game to the Arcade
 
 Choose from the [game menu](docs/game-options.md). For Alien Tic-Tac-Toe, record both battle and board outcomes, including X win, O win, draw, and restart during battle. If you want your finished game considered for the All Things AI Arcade, fill in the [submission template](templates/arcade-submission.md) and share it with the instructor. Explain what is fun, include your playable link and source version, and record known issues. Selection and integration happen later.
+
+## Optional: share your class experience on LinkedIn
+
+Want Mark to endorse your vibe coding skill? Add the skill to your profile, publish an honest LinkedIn post about the class, and send Mark your profile link, post link, and exact skill name. Connect with him if needed. Follow the [LinkedIn wrap-up guide](docs/linkedin-wrap-up.md) for the post example and handoff checklist. This is optional; you can post after class.
 
 <!-- END COURSE SOURCE: handouts/student-workbook.md -->
 

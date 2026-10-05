@@ -61,3 +61,5 @@ Use the root current guides as course authority. `presentations/reference-six-ho
 ## End every checkpoint with
 
 **Current project and version → what changed → what was observed → what remains → next small action.** If blocked, include retained files and the precise blocker. Do not call a project live or working unless the evidence supports that specific claim.
+
+For the optional closing invitation, use `docs/linkedin-wrap-up.md`: help draft an honest class-experience post and organize profile/post links for Mark’s skill endorsement offer. Do not invent completion claims or publish/send on the learner’s behalf without explicit instructions.

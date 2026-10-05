@@ -85,3 +85,5 @@ Record recurring setup problems and confusing instructions for the next rehearsa
 Before distributing the course, decide how learners will receive the private repository or a course copy. Test the authorized-repository route, the single-file AI-COURSE-PACK.md upload, and the pasted-lesson fallback in the actual supported student surfaces. The class instructions do not grant repository access.
 
 Use [START-HERE.md](../START-HERE.md) as the student landing page. Open the [illustrated guide](../guides/participant-guide.pdf), verify its links, and introduce [troubleshooting](../docs/troubleshooting.md). Demonstrate a cold restart using project-state.md and the actual files. Offer [multiple agents](../docs/multiple-agents.md) only when learners have a working first version; it is not an extra required block in the 360-minute schedule.
+
+For the optional LinkedIn closing invitation, have Mark’s correct profile and the class contact channel ready. Refer students to [the wrap-up guide](../docs/linkedin-wrap-up.md); allow posting afterward so demonstrations retain their time.

@@ -7,7 +7,7 @@ Checked October 5, 2026. These results apply to the course documents and generat
 | Core agenda | 360 teaching minutes; breaks excluded; optional agents remain an extension |
 | Skill entrypoints | All 16 passed frontmatter/name validation |
 | Local Markdown navigation | Relative file links and section anchors resolved |
-| Single-file AI course pack | 41 named source sections, including pre-class preparation, match the current source files after relative-link adjustment |
+| Single-file AI course pack | 42 named source sections, including pre-class preparation, match the current source files after relative-link adjustment |
 | Troubleshooting coverage | 30 numbered symptom-led paths are present |
 | PDF | 18 pages rendered and visually inspected; content remained inside page bounds; 18 detailed-lesson links present |
 | HTML | Checked in an isolated Chromium browser at 1280px and 390px viewport widths; all 18 chapters and images loaded, chapter links navigated correctly, and the document did not overflow horizontally |

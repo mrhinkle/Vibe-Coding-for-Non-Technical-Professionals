@@ -485,6 +485,12 @@ All core instructions are readable as text, so your chatbot can use them alongsi
 Proud of your game? Use docs/arcade-submission.md to prepare a review packet for Mark and All Things AI. Selected games may join the Arcade after later integration.
 
 
+### Share your experience. Get a skill endorsement.
+
+
+Add vibe coding to your LinkedIn profile, post an honest account of the class, and send Mark your profile and post links. Connect with him if needed. Mark will endorse the skill you practiced. Participation is optional; see docs/linkedin-wrap-up.md for the post example and details.
+
+
 ### Sources and edition notes
 
 

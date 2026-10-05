@@ -198,3 +198,7 @@ Use [vc-project-handoff](../skills/vc-project-handoff/SKILL.md) to prepare this 
 ## Optional: offer your game to the Arcade
 
 Choose from the [game menu](../docs/game-options.md). For Alien Tic-Tac-Toe, record both battle and board outcomes, including X win, O win, draw, and restart during battle. If you want your finished game considered for the All Things AI Arcade, fill in the [submission template](../templates/arcade-submission.md) and share it with the instructor. Explain what is fun, include your playable link and source version, and record known issues. Selection and integration happen later.
+
+## Optional: share your class experience on LinkedIn
+
+Want Mark to endorse your vibe coding skill? Add the skill to your profile, publish an honest LinkedIn post about the class, and send Mark your profile link, post link, and exact skill name. Connect with him if needed. Follow the [LinkedIn wrap-up guide](../docs/linkedin-wrap-up.md) for the post example and handoff checklist. This is optional; you can post after class.

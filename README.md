@@ -139,3 +139,5 @@ The multiple-agent lesson is optional. It does not add a required block to the 3
 This course adapts Mark's [VibeCoding-a-Website](https://github.com/mrhinkle/VibeCoding-a-Website), the existing private [Presentations class folder](https://github.com/mrhinkle/Presentations/tree/03a1e051e62f11134a723e498dda955e2ed2f394/vibe-coding-class), and patterns from the All Things AI Arcade. See the [source map](repository-map.md) for pinned versions and attribution, and [reuse notes](licenses/README.md) for license scope. The repository is private so the existing presentation assets remain within the same visibility boundary.
 
 Students proud of their game can prepare an [optional Arcade submission](docs/arcade-submission.md). Mark and the All Things AI team can select games for a later Arcade addition; course completion does not automatically publish a game there.
+
+**Optional closing invitation:** add vibe coding to your LinkedIn profile and post about your class experience, then send Mark the links for a skill endorsement. See the [LinkedIn wrap-up guide](docs/linkedin-wrap-up.md).

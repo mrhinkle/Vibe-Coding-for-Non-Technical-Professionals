@@ -97,6 +97,14 @@ Use paired demonstrations. Each student shows the website, plays the game, expla
 
 Explain how later changes can use a branch, preview, review, and release. Deeper maintenance and recovery practice become follow-on exercises rather than a third project today.
 
+### Closing invitation: LinkedIn skill endorsement
+
+Use the last two minutes of the existing wrap-up for this optional invitation. Students can write their posts afterward; retain the six-hour agenda.
+
+> “If you’d like to add vibe coding to your LinkedIn profile, I’ll endorse you. Here’s the catch: publish a LinkedIn post about this class—what you built, what you learned, or what surprised you. It doesn’t have to be praise; make it your honest experience. Add the skill, connect with me, and send me your profile and post links so I can find you.”
+
+Point students to the [LinkedIn wrap-up guide](docs/linkedin-wrap-up.md), including its editable post example and brief disclosure of the endorsement offer. Identify your correct profile and the existing channel for sending links. If “Vibe Coding” is unavailable as an endorsable skill, help the learner choose an available label that accurately reflects their work. Endorse personally after receiving the post and profile links; no automated posting or endorsement is part of this course.
+
 ## Instructor preparation and limits
 
 Rehearse both complete projects on each offered chatbot route. Prepare a tested website checkpoint and a playable checkpoint for each offered game recipe. Preflight account access, file download or copy, GitHub upload, Vercel import, and classroom network. This draft contains instructions and skills; the starter applications and revised slide deck have not been built in this revision.

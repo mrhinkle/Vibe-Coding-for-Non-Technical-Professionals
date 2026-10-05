@@ -156,6 +156,8 @@ page('17 / KEEP THIS REFERENCE','The right help, one click away.','All core inst
           'docs/multiple-agents.md and templates/AGENTS.md - optional collaboration and project instructions.',
           'handouts/student-workbook.md and templates/project-state.md - records you can reuse in both projects.'),
     para('Proud of your game? Use docs/arcade-submission.md to prepare a review packet for Mark and All Things AI. Selected games may join the Arcade after later integration.'),
+    head('Share your experience. Get a skill endorsement.'),
+    para('Add vibe coding to your LinkedIn profile, post an honest account of the class, and send Mark your profile and post links. Connect with him if needed. Mark will endorse the skill you practiced. Participation is optional; see docs/linkedin-wrap-up.md for the post example and details.'),
     head('Sources and edition notes'),
     para('The setup guide cites official GitHub, Vercel, OpenAI, and Claude documentation. Product guidance was checked October 5, 2026; screens and account availability may change. The source map records the original website course, existing presentation, and Arcade research.'),
     para('Brand palette and logo come from the existing All Things AI class presentation. Diagrams in this guide are conceptual illustrations, not screenshots of provider interfaces. The detailed Markdown is the living reference.'),
