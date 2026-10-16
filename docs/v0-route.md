@@ -35,7 +35,7 @@ Look at the preview. Check your name, your three roles, every link. Fix facts be
 
 **Deploy.** Press v0's Deploy button (or "Publish"). It deploys through your Vercel account and gives you a URL ending in `.vercel.app`. Open it on your phone.
 
-**Push to GitHub.** Use the GitHub option to push the project to `my-first-site`. Open the repository on github.com. You should see the files v0 wrote and a commit for them. That commit is the first line of your audit trail. From now on, every v0 version you push becomes a commit you can read, compare, and roll back. See [reading what the agent wrote](agent-loop-and-pull-requests.md).
+**Push to GitHub.** If you connected v0 to `my-first-site` during setup, your project is already there; if v0 offers to connect or push at any point, accept it then. Otherwise use the GitHub option now to push the project to `my-first-site`. Open the repository on github.com. You should see the files v0 wrote and a commit for them. That commit is the first line of your audit trail. From now on, every v0 version you push becomes a commit you can read, compare, and roll back. See [reading what the agent wrote](agent-loop-and-pull-requests.md).
 
 Checkpoint: a live URL on a classmate's phone, and a GitHub repository with at least one commit you can open and read.
 

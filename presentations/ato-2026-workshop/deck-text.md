@@ -1,11 +1,12 @@
 # Deck text: AI Agents & Vibe Coding, All Things Open 2026
 
-Every visible word on each of the 85 slides, extracted from `ato-2026-workshop.pdf` with `pdftotext -layout` (footer page counter removed), followed by the speaker note from `speaker-notes.md`. Generated after the Tufte pass; for outside review. Prompts inside the dark cards are verbatim from the course docs and must not be reworded.
+Every visible word on each of the 85 slides, extracted from `ato-2026-workshop.pdf` with `pdftotext -layout` (footer page counter removed), followed by the speaker note from `speaker-notes.md`. Generated after the Tufte pass and the 2026-10-15 review fixes (see README); for outside review. Prompts inside the dark cards are verbatim from the course docs and must not be reworded.
 
 ## 01 · Hold slide: doors open
 
 ```
-ALL THINGS OPEN 2026 · EXTENDED WORKSHOP · RALEIGH CONVENTION CENTER
+ALL THINGS OPEN 2026 · EXTENDED WORKSHOP
+ATLANTIC UNION BANK CONVENTION CENTER (FORMERLY THE RALEIGH CONVENTION CENTER)
 
 AI Agents & Vibe Coding
 Doors 7:30           ·     We start at 9:00
@@ -74,7 +75,8 @@ The listing promised four things. Here they are.
 
 How software gets built              The lifecycle in plain words, and a six-step loop you run a dozen times.
 
-GitHub as your system of record      Every change tracked, reviewed, and reversible. Nothing is lost.
+GitHub as your system of record      Every change is saved, and you can go back to any of them. Nothing is
+                                     lost.
 
 Vercel and v0 build and deploy       v0 writes the code. Vercel ships it live on every push.
 
@@ -99,7 +101,7 @@ WHEN YOU NEED HELP, RAISE A HAND AND SAY ONE SENTENCE
 “I clicked X, expected Y, saw Z.”
 ```
 
-Notes: 9:05–9:07. The schedule is a plan, not a contract. We go as fast as the slowest table still working; every 30 minutes I check in and move the schedule out loud. Checkpoints are tested files you continue from; grabbing one is smart. Help? One sentence: “I clicked X, expected Y, saw Z.” Nobody here is judging your code. Feedback at the close earns you my book’s preview edition. If we run late, the cuts, in order: 1) drop sprint 1 at 11:45; a live URL by 11:45 is the gate; 2) everyone continues from game checkpoint 2 at 2:15; 3) everyone continues from checkpoint 3 at 3:00, straight to theme and publish; 4) drop sprints 2 and 3 to publish the game; 5) never cut the handoff. Watch for: people hiding they’re behind. Gate: everyone can say the help sentence.
+Notes: 9:05–9:07. The schedule is a plan, not a contract. We go as fast as the slowest table still working; every 30 minutes I check in and move the schedule out loud. Checkpoints are tested files you continue from; grabbing one is smart. Help? One sentence: “I clicked X, expected Y, saw Z.” Nobody is judging your code. Feedback at the close earns you my book’s preview edition. If we run late, the cuts, in order: 1) drop sprint 1 at 11:45; a live URL by 11:45 is the hard stop; 2) everyone continues from game checkpoint 2 at 2:15; 3) everyone continues from checkpoint 3 at 3:00, straight to theme and publish; 4) drop sprints 2 and 3 to publish the game; 5) never cut the handoff. Watch for: people hiding they’re behind. Gate: everyone can say the help sentence.
 
 ## 06 · The day at a glance: morning
 
@@ -514,7 +516,7 @@ GitHub only on paid plans; which                                                
                                                                                                                                                           commit.
 ```
 
-Notes: 9:20–9:25. Every tool on this line turns a sentence into a working app. The demo is never the difference; where your code lives afterward is. Left end: the builder keeps code and data on its servers. Right end: a repository you own, deployed to your Vercel. Emergent and Base44 sit left: code comes out, data and backend stay. Lovable, Bolt, and Replit sync two ways with a repository you own. v0, today’s tool, commits to a branch, opens a pull request, and deploys to your Vercel. Claude Code, Codex, and Cursor: it’s your folder. None is a bad tool. Read the line before you pay. Watch for: people asking which one is best. Ask them where they want the code to live next month. Gate: everyone can point at the spot on the line where their code would live.
+Notes: 9:20–9:25. Reference slide, point at it, don’t read it. Every tool here turns a sentence into a working app. The demo is never the difference; where your code lives afterward is. Left end: the builder keeps code and data on its servers. Right end: your repository, deployed to your Vercel. Emergent and Base44 sit left: code comes out, data and backend stay. Lovable, Bolt, and Replit sync two ways with your repository. v0, today’s tool, opens a pull request into your repository and deploys to your Vercel. Claude Code, Codex, and Cursor: it’s your folder. None is a bad tool. Read the line before you pay. Watch for: people asking which is best. Ask where they want the code to live next month. Gate: everyone can point at the spot on the line where their code would live.
 
 ## 24 · The map of tools: the one question and three facts
 
@@ -558,7 +560,7 @@ v0 writes, GitHub remembers, Vercel ships. Nothing is installed on your laptop.
                                   you open the URL on your phone and describe the next change
 ```
 
-Notes: 9:30–9:32. Three accounts, and they chain together. GitHub is the system of record: every version of every file, in your name. v0 writes the code: you describe, it generates a working app, and it comes with a free Vercel account, so sign in with GitHub and you’ve got it. Vercel ships: every push to GitHub becomes a live URL. The arrow runs left to right and loops back: v0 pushes to GitHub, GitHub triggers Vercel, you look at the URL and describe the next change. Most of you made these accounts in the prework; the next slides confirm each one works. Watch for: people with a Vercel account under a different email than GitHub. Sign in to Vercel with GitHub so the two are linked. Gate: everyone can point at the three tabs in their browser.
+Notes: 9:30–9:32. Three accounts, and they chain together. GitHub keeps every version of every file, in your name. v0 writes the code: you describe, it generates a working app, and it comes with a free Vercel account, so sign in with GitHub and you’ve got it. Vercel ships: every push to GitHub becomes a live URL. The arrow runs left to right and loops back: v0 pushes to GitHub, GitHub triggers Vercel, you look at the URL and describe the next change. Most of you made these accounts in the prework; the next slides confirm each one works. Watch for: people with a Vercel account under a different email than GitHub. Sign in to Vercel with GitHub so the two are linked. Gate: everyone can point at the three tabs in their browser.
 
 ## 26 · Setup: GitHub repository
 
@@ -583,7 +585,7 @@ This afternoon the game gets its own repository, my-first-game. Never this one.
                                      DESCRIBE   ·   PLAN    ·    BUILD    ·    CHECK     ·   SAVE   ·   PUBLISH
 ```
 
-Notes: 9:32–9:36. Everyone makes one empty repository now. Plus, New repository. You’re the owner. Name it my-first-site. Initialize it with a README so there’s a first saved file. Pick public or private on purpose; private doesn’t make the website private, Vercel decides that. Copy the URL into your notes. The game gets its own repository this afternoon, my-first-game. Don’t put the game in this one. Watch for: two-factor prompts and organization accounts. Use a personal account. If GitHub wants a code, that’s normal; the student types it, not the helper. Gate: you can open your repository, read the README, and the owner is your account.
+Notes: 9:32–9:36. Everyone makes one empty repository now. Plus, New repository. You’re the owner. Name it my-first-site. Initialize it with a README so there’s a first saved file. Pick public or private on purpose. A private repository doesn’t make the website private. Once Vercel publishes it, the URL is public either way. Copy the URL into your notes. The game gets its own repository this afternoon, my-first-game. Don’t put the game in this one. Watch for: two-factor prompts and organization accounts. Use a personal account. If GitHub wants a code, that’s normal; the student types it, not the helper. Gate: you can open your repository, read the README, and the owner is your account.
 
 ## 27 · A ten-minute tour of GitHub: the six screens
 
@@ -646,18 +648,19 @@ Notes: 9:41–9:42. Say it with me: nothing that unlocks an account goes into a 
 ## 30 · The one rule: where secrets live, and the clipboard move
 
 ```
-THE ONE RULE · DOCS/SECRETS-TOKENS-AND-THE-CLIPBOARD.MD                                                  9:41 – 9:43
+THE ONE RULE · DOCS/SECRETS-TOKENS-AND-THE-CLIPBOARD.MD                                                           9:41 – 9:43
 
 Where a secret lives. Where it never goes.
-YES                                                         NEVER
+YES                                                                  NEVER
 
-Your password manager: the source of truth.                 A chat window.
-Vercel → your project → Settings → Environment Variables.   The code, a README, a commit message, an issue.
-A .env.local file, if .gitignore lists it.                  A screenshot, a slide, a shared doc.
+Your password manager: the source of truth.                          A chat window.
+Vercel → your project → Settings → Environment Variables.            The code, a README, a commit message, an issue.
+A .env.local file, if .gitignore lists it.                           A screenshot, a slide, a shared doc.
 
-THE CLIPBOARD MOVE: COPY THE KEY, THEN ONE COMMAND MOVES IT. THE AGENT NEVER SEES IT.
+THE BROWSER MOVE: COPY FROM YOUR PASSWORD MANAGER, PASTE INTO VERCEL. THE AGENT NEVER SEES IT.
 
-pbpaste | vercel env add RESEND_API_KEY production
+Vercel → your project → Settings → Environment Variables → paste
+Mac with the Vercel CLI installed: pbpaste | vercel env add RESEND_API_KEY production
 
    ASK FOR THE COMMAND, NOT THE VALUE · VERBATIM
 
@@ -666,7 +669,7 @@ pbpaste | vercel env add RESEND_API_KEY production
    key.
 ```
 
-Notes: 9:42–9:43. Where secrets live: your password manager, your Vercel project’s environment variables, a .env.local file that’s in .gitignore. Where they never go: a chat window, the code, a README, a commit message, a screenshot. The first time you need one today is the skills-menu contact form. The clipboard move: copy the key from your password manager, and one command moves it from the clipboard into Vercel. Your eyes see it; the agent never does. Don’t type that command from memory; ask for it with the prompt on the screen. If the agent says “paste your key here,” say no. Composio, authorize-don’t-paste for Slack and Gmail, is the sprint 3 bonus if most tables have published by 4:50. Watch for: “but it’s just a test key.” Same rule. Gate: everyone can name one Yes place and one Never place.
+Notes: 9:42–9:43. Where secrets live: your password manager, your Vercel project’s environment variables, a .env.local file that’s in .gitignore. Where they never go: a chat window, the code, a README, a commit message, a screenshot. The first time you need one today is the skills-menu contact form. The browser move: copy the key from your password manager, paste it into your Vercel project’s environment variables. On a Mac with the Vercel CLI, one command moves it from the clipboard instead. Your eyes see it; the agent never does. Don’t type that command from memory; ask for it with the prompt on the screen. If the agent says “paste your key here,” say no. Watch for: “but it’s just a test key.” Same rule. Gate: everyone can name one Yes place and one Never place.
 
 ## 31 · Setup: Vercel and v0
 
@@ -689,7 +692,7 @@ Done when: Vercel and v0 both show your GitHub account, my-first-site is in the 
                                      DESCRIBE   ·   PLAN    ·    BUILD    ·    CHECK     ·   SAVE   ·   PUBLISH
 ```
 
-Notes: 9:43–9:48. Vercel’s the host and v0 comes with it. Sign in to Vercel with GitHub; that links the two and lets Vercel see your repository. Authorize the GitHub integration for my-first-site when it asks. Then open v0.app and sign in with the same account; it’s included with the free Vercel plan. Then stop. Don’t import, don’t deploy, don’t generate anything yet. Vercel Hobby is for noncommercial personal use. A site about you is fine today. A business site needs a paid plan later. Watch for: Vercel asking for a team name or a plan. Personal account, Hobby, no card. v0 showing a different account than Vercel: sign out and back in with GitHub. Gate: signed in to Vercel and v0 with the same GitHub account; my-first-site visible in the import list; nothing deployed.
+Notes: 9:43–9:48. Vercel hosts; v0 comes with it. Sign in to Vercel with GitHub so it can see your repository. Authorize the GitHub integration for my-first-site. Open v0.app, sign in with the same account; it’s included with the free plan. Then stop: don’t import, deploy, or generate anything yet. Hobby is for noncommercial personal use; a site about you is fine, a business site needs a paid plan. Watch for: Vercel asking for a team name or a plan. Personal account, Hobby, no card. v0 showing a different account than Vercel: sign out and back in with GitHub. If v0 stops generating on the free plan, that pair switches to the portable route for this project. Helpers know the pattern. Gate: signed in to Vercel and v0 with the same GitHub account; my-first-site visible in the import list; nothing deployed.
 
 ## 32 · Setup: two ways to build today
 
@@ -790,14 +793,15 @@ Meet Jordan Rivera. Jordan isn’t real.
 
                                                                                        Prints as a tidy resume.
 
-                                                                                       By 11:45 every word on it is yours.
+                                                                                       By 11:30 every word on it is yours,
+                                                                                       and it’s live.
 
 slate · centered                        ocean · sidebar
 
                          DESCRIBE   ·    PLAN   ·   BUILD   ·   CHECK   ·   SAVE   ·   PUBLISH
 ```
 
-Notes: 10:00–10:03. This is Jordan Rivera. Jordan doesn’t exist. This is the tested example in examples/personal-website, and by 11:45 every word on it is yours and it’s live. Six color themes and two layouts are built in; the picker’s in the footer. It prints as a resume, and the ADD-ON SLOT comments mark where the afternoon features go. Click through the themes on the big screen so people see the range. Time inside this block: export 10, content 20, build 30, colors 10, publish 20. Then we go get your content out of LinkedIn. Watch for: people wanting a different design. Today you change the words, the colors, and the layout. The structure is tested; keep it. Gate: everyone has opened the example index.html from the course folder.
+Notes: 10:00–10:03. This is Jordan Rivera. Jordan doesn’t exist. This is the tested example in examples/personal-website, and by 11:30 every word on it is yours and it’s live. Six color themes and two layouts are built in; the picker’s in the footer. It prints as a resume, and the ADD-ON SLOT comments mark where the afternoon features go. Click through the themes on the big screen so people see the range. Time inside this block: export 10, content 20, build 30, colors 10, publish 20. Then we go get your content out of LinkedIn. Watch for: people wanting a different design. Today you change the words, the colors, and the layout. The structure is tested; keep it. Gate: everyone has opened the example index.html from the course folder.
 
 ## 36 · Step 1: get your content out of LinkedIn
 
@@ -1088,7 +1092,8 @@ Notes: 11:12–11:20. Search the file for Jordan, Bright Harbor, and example, an
 PROJECT 1 · PERSONAL WEBSITE · STEP 6 · SAVE                                                                      11:20 – 11:30
 
 Save it: upload index.html to GitHub.
-v0 route: click Deploy, then connect the project to GitHub. Every version is pushed to my-first-site. Skip the steps below.
+v0 route: click Deploy. When v0 offers to connect the project to GitHub (before or after Deploy), accept and pick my-first-
+site. Every version is pushed there. Skip the steps below.
 
 1 Open my-first-site. “Add file” → “Upload files.”
 
@@ -1103,7 +1108,7 @@ v0 route: click Deploy, then connect the project to GitHub. Every version is pus
                                      DESCRIBE   ·   PLAN    ·    BUILD    ·    CHECK     ·   SAVE   ·   PUBLISH
 ```
 
-Notes: 11:20–11:30. Ten minutes and deliverable one. v0 route: click Deploy, then connect the project to GitHub, and you’re done with this slide. Portable route: follow the setup guide, don’t improvise. Open my-first-site. Add file, Upload files. Choose index.html itself, not a ZIP, not a folder. Commit message like “First version of my site,” commit to main. Refresh and make sure index.html sits at the top level, lowercase. That’s the save. Watch for: a ZIP or a folder uploaded instead of the file. index.html itself, at the top level. Gate: a live *.vercel.app address open on someone else’s phone, recorded in project-state.md.
+Notes: 11:20–11:30. Ten minutes and deliverable one. v0 route: click Deploy, accept v0’s offer to connect the project to GitHub, pick my-first-site, and you’re done with this slide. Portable route: follow the setup guide, don’t improvise. Open my-first-site. Add file, Upload files. Choose index.html itself, not a ZIP, not a folder. Commit message like “First version of my site,” commit to main. Refresh and make sure index.html sits at the top level, lowercase. That’s the save. Watch for: a ZIP or a folder uploaded instead of the file. index.html itself, at the top level. Gate: a live *.vercel.app address open on someone else’s phone, recorded in project-state.md.
 
 ## 49 · Step 6: publish on Vercel
 
@@ -1139,7 +1144,7 @@ A diff shows what the agent changed.
   - <p>Operations Manager who turns messy…</p>
                                                                    1 The message                Does it say what you asked
   + <p>Project lead for community programs…</p>
-                                                                                                for? Not “Refactor site.”
+                                                                                                for? Not “Update index.html.”
     <p>Durham, North Carolina</p>
   - <a href="mailto:jordan@example.com">Email</a>                  2 The file names             Only the files you expected.
   + <a href="mailto:you@yourdomain.com">Email</a>                                               One index.html, not six.
@@ -1232,9 +1237,9 @@ A skill is a folder with one file in it: SKILL.md.
 Instructions you’d otherwise retype, saved once, so the next session and the next model behave the same.
  vc-plan-first/
 
- SKILL.md                                                The front matter: a name, and a description that says when to
+ SKILL.md                                                The top of the file: a name, and a description that says when
   ---
-                                                         use it. Put the trigger phrases in.
+                                                         to use it. Put the trigger phrases in.
   name: vc-plan-first
   description: what it does, and the trigger phrases
   ---
@@ -1253,7 +1258,7 @@ Instructions you’d otherwise retype, saved once, so the next session and the n
   6   Checks that it worked
 ```
 
-Notes: 11:45–11:47. You’ve been using skills all morning without the word. A skill is instructions you’d otherwise retype, saved once in a file, so the next session, the next model, and your colleague get the same behavior. No code, no account. It’s a folder with one file in it, SKILL.md. Front matter at the top: a name and a description with the trigger phrases, because a skill nobody triggers is a skill nobody uses. Then the body, in this order: who you’re helping and the job, when it applies, steps that each end in something you can see, the never-do-this rules, one worked example, and the checks. Open skills/vc-plan-first/SKILL.md and you’ll see exactly that shape. Watch for: people hearing “plugin” and expecting an install wizard. It’s a text file. Gate: everyone can say what a skill is in one sentence.
+Notes: 11:45–11:47. You’ve been using skills all morning without the word. A skill is instructions you’d otherwise retype, saved once in a file, so the next session, the next model, and your colleague get the same behavior. No code, no account. It’s a folder with one file in it, SKILL.md. The top of the file (the front matter): a name and a description with the trigger phrases, because a skill nobody triggers is a skill nobody uses. Then the body, in this order: who you’re helping and the job, when it applies, steps that each end in something you can see, the never-do-this rules, one worked example, and the checks. Open skills/vc-plan-first/SKILL.md: exactly that shape. Watch for: people hearing “plugin” and expecting an install wizard. It’s a text file. Gate: everyone can say what a skill is in one sentence.
 
 ## 55 · Skills 2: what makes a skill good
 
@@ -1298,7 +1303,7 @@ Put the folder at .claude/skills/<name>/SKILL.md in your project. It     Create 
 appears as /<name>. Nothing to upload.                                   instructions. Share it with your team.
 ```
 
-Notes: 11:48–11:51. Three minutes, live, both chatbots. Claude first: I attach skills/vc-project-brief/SKILL.md, type the brief prompt from the walkthrough, and you see the shape: brief, scope, checks, no code. Fresh chat, no skill, same prompt, and you see the difference; that gap is what a skill buys. ChatGPT: same prompt three ways. Plain chat, no skill. Plain chat with the skill pasted after the one-line instruction. A Project with the skill uploaded and one line in its instructions. The Project version didn’t need the paste. Pick the row that matches the chatbot you actually use; the paste route works everywhere, including free plans, and lasts one conversation. Watch for: menu names that moved since this morning. Describe the shape, not the pixel. Gate: one skill installed in your own chatbot.
+Notes: 11:48–11:51. Reference table; point at the row that matches their chatbot, don’t read it. Three minutes, live, both chatbots. Claude first: I attach skills/vc-project-brief/SKILL.md, type the brief prompt from the walkthrough, and you see the shape: brief, scope, checks, no code. Fresh chat, no skill, same prompt, and you see the difference; that gap is what a skill buys. ChatGPT: same prompt three ways. Plain chat, no skill. Plain chat with the skill pasted after the one-line instruction. A Project with the skill uploaded and one line in its instructions. The Project version didn’t need the paste. The paste route works everywhere, including free plans, and lasts one conversation. Watch for: menu names that moved since this morning. Describe the shape, not the pixel. Gate: one skill installed in your own chatbot.
 
 ## 57 · Live hacking sprint 1: the skills menu
 
@@ -1975,12 +1980,13 @@ Notes: 17:26–17:28. Two offers, open to everyone. First, everyone gets the sli
 ## 84 · See you in the spring: All Things AI
 
 ```
-HANDOFF · ONE INVITATION                                                                5:15 – 5:30
+HANDOFF · ONE INVITATION                                                               5:15 – 5:30
 
 See you in the spring: All Things AI.
 
 April 18–20, 2027
-All Things AI 2027, in this same building: the Atlantic Union Bank Convention Center.
+All Things AI 2027, in this same building: the Atlantic Union Bank Convention Center
+(formerly the Raleigh Convention Center).
 
 April 18 is the Agent Hackathon. April 21 is a separate, screened Executive Summit.
 

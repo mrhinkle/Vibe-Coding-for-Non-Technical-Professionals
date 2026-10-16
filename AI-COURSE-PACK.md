@@ -1229,13 +1229,11 @@ printf 'RESEND_API_KEY=%s\n' "$(pbpaste)" >> .env.local
 
 Then make sure `.env.local` is listed in `.gitignore`; if the file doesn't exist, create it with that one line. Check with `cat .env.local` that the key landed, and with `git status` that `.env.local` is not waiting to be committed.
 
-**Into your Vercel project** (for the deployed site), with the Vercel CLI installed and logged in:
+**Into your Vercel project** (for the deployed site). The simplest route needs nothing installed: Vercel → your project → Settings → Environment Variables → paste into the value field. A form is not a chat; that's fine. If you have the Vercel CLI installed and logged in, the clipboard move does the same thing:
 
 ```bash
 pbpaste | vercel env add RESEND_API_KEY production
 ```
-
-Or do it in the browser: Vercel → your project → Settings → Environment Variables → paste into the value field. The browser form is also fine; it's a form, not a chat.
 
 **Into your shell, so Claude Code and Codex see it.** Both read the environment they were launched from. Add a line to your shell profile (`~/.zshrc` on a Mac):
 
@@ -1627,7 +1625,7 @@ Look at the preview. Check your name, your three roles, every link. Fix facts be
 
 **Deploy.** Press v0's Deploy button (or "Publish"). It deploys through your Vercel account and gives you a URL ending in `.vercel.app`. Open it on your phone.
 
-**Push to GitHub.** Use the GitHub option to push the project to `my-first-site`. Open the repository on github.com. You should see the files v0 wrote and a commit for them. That commit is the first line of your audit trail. From now on, every v0 version you push becomes a commit you can read, compare, and roll back. See [reading what the agent wrote](docs/agent-loop-and-pull-requests.md).
+**Push to GitHub.** If you connected v0 to `my-first-site` during setup, your project is already there; if v0 offers to connect or push at any point, accept it then. Otherwise use the GitHub option now to push the project to `my-first-site`. Open the repository on github.com. You should see the files v0 wrote and a commit for them. That commit is the first line of your audit trail. From now on, every v0 version you push becomes a commit you can read, compare, and roll back. See [reading what the agent wrote](docs/agent-loop-and-pull-requests.md).
 
 Checkpoint: a live URL on a classmate's phone, and a GitHub repository with at least one commit you can open and read.
 

@@ -48,13 +48,11 @@ printf 'RESEND_API_KEY=%s\n' "$(pbpaste)" >> .env.local
 
 Then make sure `.env.local` is listed in `.gitignore`; if the file doesn't exist, create it with that one line. Check with `cat .env.local` that the key landed, and with `git status` that `.env.local` is not waiting to be committed.
 
-**Into your Vercel project** (for the deployed site), with the Vercel CLI installed and logged in:
+**Into your Vercel project** (for the deployed site). The simplest route needs nothing installed: Vercel → your project → Settings → Environment Variables → paste into the value field. A form is not a chat; that's fine. If you have the Vercel CLI installed and logged in, the clipboard move does the same thing:
 
 ```bash
 pbpaste | vercel env add RESEND_API_KEY production
 ```
-
-Or do it in the browser: Vercel → your project → Settings → Environment Variables → paste into the value field. The browser form is also fine; it's a form, not a chat.
 
 **Into your shell, so Claude Code and Codex see it.** Both read the environment they were launched from. Add a line to your shell profile (`~/.zshrc` on a Mac):
 

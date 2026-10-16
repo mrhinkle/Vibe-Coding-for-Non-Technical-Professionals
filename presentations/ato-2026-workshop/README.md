@@ -1,6 +1,6 @@
 # Instructor deck: AI Agents & Vibe Coding, All Things Open 2026
 
-Mark Hinkle's slides for the extended workshop on **Monday, October 19, 2026**, Raleigh Convention Center, doors 7:30, programming 9:00 to 5:30. The deck runs the course in this repository and follows [`instructor/ato-2026-run-of-show.md`](../../instructor/ato-2026-run-of-show.md), with the additions from the official ATO workshop overview (the agent development loop, GitHub as system of record, v0 as the featured build route, reading diffs and pull requests, a Track B for the thing you brought, and a "Tuesday morning" close).
+Mark Hinkle's slides for the extended workshop on **Monday, October 19, 2026**, Atlantic Union Bank Convention Center (formerly the Raleigh Convention Center), doors 7:30, programming 9:00 to 5:30. The deck runs the course in this repository and follows [`instructor/ato-2026-run-of-show.md`](../../instructor/ato-2026-run-of-show.md), with the additions from the official ATO workshop overview (the agent development loop, GitHub as system of record, v0 as the featured build route, reading diffs and pull requests, a Track B for the thing you brought, and a "Tuesday morning" close).
 
 ## Files
 
@@ -40,6 +40,26 @@ Thumbnails: `rm previews/slide-*.png && pdftoppm -png -r 60 ato-2026-workshop.pd
 Deck text for review: for each page N, `pdftotext -layout -f N -l N ato-2026-workshop.pdf -`, strip the `NN / 85` footer counter from the end of any line, collapse runs of blank lines, and append the matching note from `speaker-notes.md` under `Notes:`. That is what `deck-text.md` holds.
 
 If LibreOffice is installed later, `soffice --headless --convert-to pdf ato-2026-workshop.pptx` works too; expect small font-metric differences between the two renderers.
+
+## Review fixes applied 2026-10-15
+
+The 11 "Recommended to apply" items from `reviews/TRIAGE.md`, by slide. Nothing from "Recommended to skip" was applied; every prompt card is byte-identical to the previous build (checked by script against the saved copy).
+
+- **Slides 1 and 84, venue name (row 1).** Both now say "Atlantic Union Bank Convention Center (formerly the Raleigh Convention Center)". The parenthetical stays because the ATO listing still uses the old name. Slide 1's kicker is two lines. The build.js header and the `speaker-notes.md` header say the same.
+- **Slide 4 and slide 25 notes, "system of record" (row 3).** Slide 4's GitHub description is now "Every change is saved, and you can go back to any of them. Nothing is lost."; the left-hand label keeps the listing's words. Slide 25 notes: "GitHub keeps every version of every file, in your name."
+- **Slide 5 notes (row 2).** The first cut now reads "a live URL by 11:45 is the hard stop" instead of "the gate". One word trimmed elsewhere to stay at 140.
+- **Slide 23 notes (row 5).** Opens with "Reference slide, point at it, don't read it." Three phrases shortened to stay under 140; no caption on the slide was cut.
+- **Slide 26 notes (row 6).** "A private repository doesn't make the website private. Once Vercel publishes it, the URL is public either way."
+- **Slide 30 (row 7).** The slide now leads with the browser route: label "The browser move: copy from your password manager, paste into Vercel. The agent never sees it.", then "Vercel → your project → Settings → Environment Variables → paste" at 18pt, then the `pbpaste | vercel env add RESEND_API_KEY production` line in 12pt labeled "Mac with the Vercel CLI installed:". The dark-card prompt is unchanged; the card moved down a quarter inch. Notes say the same thing in the same order.
+- **Slide 30 notes (row 8).** The Composio / Slack / Gmail sprint-3 sentence is deleted; nothing on slide 78 delivered it.
+- **Slide 31 notes (row 9).** Added to Watch for: "If v0 stops generating on the free plan, that pair switches to the portable route for this project. Helpers know the pattern." Setup sentences tightened to stay under 140.
+- **Slide 35 (row 2).** "By 11:30 every word on it is yours, and it's live." on the slide; the note says 11:30 too. The 10:00–11:45 block window in the kicker is unchanged.
+- **Slide 48 (row 12).** Lede: "v0 route: click Deploy. When v0 offers to connect the project to GitHub (before or after Deploy), accept and pick my-first-site. Every version is pushed there. Skip the steps below." The note's v0 sentence matches.
+- **Slide 50 (row 14).** "Not 'Refactor site.'" is now "Not 'Update index.html.'", the slide 28 commit-message lesson.
+- **Slide 54 (row 15).** Slide: "The top of the file: a name, and a description that says when to use it. Put the trigger phrases in." Notes: "The top of the file (the front matter): ..." once.
+- **Slide 56 notes (row 16).** Opens with "Reference table; point at the row that matches their chatbot, don't read it." All six rows kept.
+
+Rebuilt with `node build.js`, Keynote PDF, `pdftoppm` thumbnails, and `deck-text.md` regenerated. Thumbnails of slides 1, 4, 5, 23, 25, 26, 30, 31, 35, 48, 50, 54, 56, and 84 inspected; no overflow, no second render needed. All notes at or under 140 words (longest 140).
 
 ## The Tufte pass (October 15, evening)
 

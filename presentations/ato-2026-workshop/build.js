@@ -1,4 +1,4 @@
-// AI Agents & Vibe Coding: the All Things Open 2026 extended workshop. Monday October 19, 2026, Raleigh Convention Center, 9:00–5:30.
+// AI Agents & Vibe Coding: the All Things Open 2026 extended workshop. Monday October 19, 2026, Atlantic Union Bank Convention Center (formerly the Raleigh Convention Center), 9:00–5:30.
 // Instructor deck for the course in this repository. Schedule: instructor/ato-2026-run-of-show.md. Prompts are copied verbatim from docs/.
 // Brand tokens from presentations/reference-six-hour-class/build.js (All Things AI light). Rebuild: node build.js  (from this folder)
 // Design rules (the Tufte pass, October 15): one idea and one visual per slide; boxes only where 2–3 parallel items need alignment;
@@ -167,7 +167,7 @@ let s;
 s = slide({ dark:true, noFooter:true, name:'Hold slide: doors open',
   notes: NOTE('7:30–9:00', 'This slide stays up until 9:00 and I don’t start talking before then. I walk the tables with the helpers. Every laptop gets the laptop check on the big screen, prep/laptop-check.html, and a helper confirms two things per person: signed in to GitHub, signed in to Vercel with GitHub. Wi-Fi goes on this slide and on the whiteboard before anyone walks in. My laptop has ChatGPT, Claude, and v0 tabs signed in, so the demo matches whichever chatbot most people brought.', 'people who skipped the prework. Don’t debug one laptop for more than five minutes; sit them next to a partner and put them on the list for the setup block.', 'by 9:00 every seat shows a green check on the laptop check, or is on the helper list.') });
 s.addImage({ path:ASSETS+'logo-h-white.png', x:M, y:0.5, w:3.2, h:0.41 });
-text(s, 'ALL THINGS OPEN 2026 · EXTENDED WORKSHOP · RALEIGH CONVENTION CENTER', M, 1.1, CW, 0.3, { mono:true, size:11, bold:true, color:ORANGE, cs:1.5 });
+text(s, 'ALL THINGS OPEN 2026 · EXTENDED WORKSHOP\nATLANTIC UNION BANK CONVENTION CENTER (FORMERLY THE RALEIGH CONVENTION CENTER)', M, 1.02, CW, 0.5, { mono:true, size:11, bold:true, color:ORANGE, cs:1.5 });
 s.addText('AI Agents & Vibe Coding', { x:M, y:1.5, w:10, h:1.2, fontFace:SANS, fontSize:54, bold:true, color:WHITE, margin:0, isTextBox:true });
 s.addText('Doors 7:30  ·  We start at 9:00', { x:M, y:2.7, w:8, h:0.6, fontFace:MONO, fontSize:20, color:ORANGE, margin:0, isTextBox:true });
 label(s, 'Three things to do right now', M, 3.7, 6);
@@ -209,11 +209,11 @@ s = slide({ name:'What you will learn',
   notes: NOTE('9:04–9:05', 'The listing made four promises and this is them. How software actually gets built. GitHub as your system of record: every change tracked, reviewed, reversible. Vercel and v0 build and deploy, with nothing installed on your laptop. And the big one, directing agents instead of coding. You write the specification, not the syntax, and the pull request is where a human says yes or no. Three kinds of people are here today. If you don’t code, you leave with two live things you made and a loop you can repeat. Developers get a disciplined agent process with a review gate. Leaders, you get what to put in GitHub first and where agents still need supervision.', 'developers checking out during the basics. The review and rollback material at 11:30 is for them.', 'none; talk slide.') });
 kicker(s, 'What you will learn');
 title(s, 'The listing promised four things. Here they are.');
-defs(s, [['How software gets built','The lifecycle in plain words, and a six-step loop you run a dozen times.'],['GitHub as your system of record','Every change tracked, reviewed, and reversible. Nothing is lost.'],['Vercel and v0 build and deploy','v0 writes the code. Vercel ships it live on every push.'],['Directing agents instead of coding','You write the spec, not the syntax. The pull request is your checkpoint.']], { tw:4.6, pitch:0.95 });
+defs(s, [['How software gets built','The lifecycle in plain words, and a six-step loop you run a dozen times.'],['GitHub as your system of record','Every change is saved, and you can go back to any of them. Nothing is lost.'],['Vercel and v0 build and deploy','v0 writes the code. Vercel ships it live on every push.'],['Directing agents instead of coding','You write the spec, not the syntax. The pull request is your checkpoint.']], { tw:4.6, pitch:0.95 });
 
 // 5 Fluid day
 s = slide({ name:'How today works: behind, ahead, stuck',
-  notes: '9:05–9:07. The schedule is a plan, not a contract. We go as fast as the slowest table still working; every 30 minutes I check in and move the schedule out loud. Checkpoints are tested files you continue from; grabbing one is smart. Help? One sentence: “I clicked X, expected Y, saw Z.” Nobody here is judging your code. Feedback at the close earns you my book’s preview edition. If we run late, the cuts, in order: 1) drop sprint 1 at 11:45; a live URL by 11:45 is the gate; 2) everyone continues from game checkpoint 2 at 2:15; 3) everyone continues from checkpoint 3 at 3:00, straight to theme and publish; 4) drop sprints 2 and 3 to publish the game; 5) never cut the handoff. Watch for: people hiding they’re behind. Gate: everyone can say the help sentence.' });
+  notes: '9:05–9:07. The schedule is a plan, not a contract. We go as fast as the slowest table still working; every 30 minutes I check in and move the schedule out loud. Checkpoints are tested files you continue from; grabbing one is smart. Help? One sentence: “I clicked X, expected Y, saw Z.” Nobody is judging your code. Feedback at the close earns you my book’s preview edition. If we run late, the cuts, in order: 1) drop sprint 1 at 11:45; a live URL by 11:45 is the hard stop; 2) everyone continues from game checkpoint 2 at 2:15; 3) everyone continues from checkpoint 3 at 3:00, straight to theme and publish; 4) drop sprints 2 and 3 to publish the game; 5) never cut the handoff. Watch for: people hiding they’re behind. Gate: everyone can say the help sentence.' });
 kicker(s, 'How today works');
 title(s, 'Behind? Grab a checkpoint. Stuck? Say one sentence.');
 para(s, ['We go as fast as the slowest table still working. I check in every 30 minutes and move the schedule out loud.','Behind: every stage has a tested file you can continue from. Using one is smart, not cheating.','Ahead: ten skills for your site and four game extensions. One at a time.'], { y:2.1, h:2.2, gap:10 });
@@ -373,7 +373,7 @@ text(s, 'Describe the outcome, build in small steps, check the evidence, save pr
 // ---- 9:20 The map of tools (docs/platform-landscape.md) ----
 // 23 The spectrum: where your code lives afterward
 s = slide({ name:'The map of tools: where your code lives afterward',
-  notes: NOTE('9:20–9:25', 'Every tool on this line turns a sentence into a working app. The demo is never the difference; where your code lives afterward is. Left end: the builder keeps code and data on its servers. Right end: a repository you own, deployed to your Vercel. Emergent and Base44 sit left: code comes out, data and backend stay. Lovable, Bolt, and Replit sync two ways with a repository you own. v0, today’s tool, commits to a branch, opens a pull request, and deploys to your Vercel. Claude Code, Codex, and Cursor: it’s your folder. None is a bad tool. Read the line before you pay.', 'people asking which one is best. Ask them where they want the code to live next month.', 'everyone can point at the spot on the line where their code would live.') });
+  notes: NOTE('9:20–9:25', 'Reference slide, point at it, don’t read it. Every tool here turns a sentence into a working app. The demo is never the difference; where your code lives afterward is. Left end: the builder keeps code and data on its servers. Right end: your repository, deployed to your Vercel. Emergent and Base44 sit left: code comes out, data and backend stay. Lovable, Bolt, and Replit sync two ways with your repository. v0, today’s tool, opens a pull request into your repository and deploys to your Vercel. Claude Code, Codex, and Cursor: it’s your folder. None is a bad tool. Read the line before you pay.', 'people asking which is best. Ask where they want the code to live next month.', 'everyone can point at the spot on the line where their code would live.') });
 kicker(s, 'The map of tools · docs/platform-landscape.md', '9:20 – 9:30');
 title(s, 'Eight tools, one line: where does your code live afterward?');
 lede(s, 'Placed by the “Your GitHub?” column of the landscape doc. Prices and menus drift; the line doesn’t.');
@@ -404,7 +404,7 @@ defs(s, [['July 18, 2025','Replit’s agent deleted a production database during
 const B2 = (s, time) => kicker(s, 'Block 2 · Setup', time||'9:30 – 9:55');
 // 25 Three accounts, one loop: three nodes, labeled arrows, and the return
 s = slide({ name:'Setup: your three accounts, one loop',
-  notes: NOTE('9:30–9:32', 'Three accounts, and they chain together. GitHub is the system of record: every version of every file, in your name. v0 writes the code: you describe, it generates a working app, and it comes with a free Vercel account, so sign in with GitHub and you’ve got it. Vercel ships: every push to GitHub becomes a live URL. The arrow runs left to right and loops back: v0 pushes to GitHub, GitHub triggers Vercel, you look at the URL and describe the next change. Most of you made these accounts in the prework; the next slides confirm each one works.', 'people with a Vercel account under a different email than GitHub. Sign in to Vercel with GitHub so the two are linked.', 'everyone can point at the three tabs in their browser.') });
+  notes: NOTE('9:30–9:32', 'Three accounts, and they chain together. GitHub keeps every version of every file, in your name. v0 writes the code: you describe, it generates a working app, and it comes with a free Vercel account, so sign in with GitHub and you’ve got it. Vercel ships: every push to GitHub becomes a live URL. The arrow runs left to right and loops back: v0 pushes to GitHub, GitHub triggers Vercel, you look at the URL and describe the next change. Most of you made these accounts in the prework; the next slides confirm each one works.', 'people with a Vercel account under a different email than GitHub. Sign in to Vercel with GitHub so the two are linked.', 'everyone can point at the three tabs in their browser.') });
 B2(s);
 title(s, 'Three accounts, one loop.');
 lede(s, 'v0 writes, GitHub remembers, Vercel ships. Nothing is installed on your laptop.');
@@ -425,7 +425,7 @@ lede(s, 'v0 writes, GitHub remembers, Vercel ships. Nothing is installed on your
 
 // 26 GitHub repository
 s = slide({ name:'Setup: GitHub repository',
-  notes: NOTE('9:32–9:36', 'Everyone makes one empty repository now. Plus, New repository. You’re the owner. Name it my-first-site. Initialize it with a README so there’s a first saved file. Pick public or private on purpose; private doesn’t make the website private, Vercel decides that. Copy the URL into your notes. The game gets its own repository this afternoon, my-first-game. Don’t put the game in this one.', 'two-factor prompts and organization accounts. Use a personal account. If GitHub wants a code, that’s normal; the student types it, not the helper.', 'you can open your repository, read the README, and the owner is your account.') });
+  notes: NOTE('9:32–9:36', 'Everyone makes one empty repository now. Plus, New repository. You’re the owner. Name it my-first-site. Initialize it with a README so there’s a first saved file. Pick public or private on purpose. A private repository doesn’t make the website private. Once Vercel publishes it, the URL is public either way. Copy the URL into your notes. The game gets its own repository this afternoon, my-first-game. Don’t put the game in this one.', 'two-factor prompts and organization accounts. Use a personal account. If GitHub wants a code, that’s normal; the student types it, not the helper.', 'you can open your repository, read the README, and the owner is your account.') });
 B2(s);
 title(s, 'GitHub: one empty repository with your name on it.');
 lede(s, 'Done when: you open your repository, read the README, and the owner shown is you, not me.');
@@ -466,17 +466,18 @@ s.addText('Nothing that unlocks an account goes into a chat window. Ever.', { x:
 
 // 30 Where secrets live: Yes and Never, the clipboard move, the prompt
 s = slide({ name:'The one rule: where secrets live, and the clipboard move',
-  notes: NOTE('9:42–9:43', 'Where secrets live: your password manager, your Vercel project’s environment variables, a .env.local file that’s in .gitignore. Where they never go: a chat window, the code, a README, a commit message, a screenshot. The first time you need one today is the skills-menu contact form. The clipboard move: copy the key from your password manager, and one command moves it from the clipboard into Vercel. Your eyes see it; the agent never does. Don’t type that command from memory; ask for it with the prompt on the screen. If the agent says “paste your key here,” say no. Composio, authorize-don’t-paste for Slack and Gmail, is the sprint 3 bonus if most tables have published by 4:50.', '“but it’s just a test key.” Same rule.', 'everyone can name one Yes place and one Never place.') });
+  notes: NOTE('9:42–9:43', 'Where secrets live: your password manager, your Vercel project’s environment variables, a .env.local file that’s in .gitignore. Where they never go: a chat window, the code, a README, a commit message, a screenshot. The first time you need one today is the skills-menu contact form. The browser move: copy the key from your password manager, paste it into your Vercel project’s environment variables. On a Mac with the Vercel CLI, one command moves it from the clipboard instead. Your eyes see it; the agent never does. Don’t type that command from memory; ask for it with the prompt on the screen. If the agent says “paste your key here,” say no.', '“but it’s just a test key.” Same rule.', 'everyone can name one Yes place and one Never place.') });
 kicker(s, 'The one rule · docs/secrets-tokens-and-the-clipboard.md', '9:41 – 9:43');
 title(s, 'Where a secret lives. Where it never goes.');
 cols(s, [['Yes',null,GREEN,['Your password manager: the source of truth.','Vercel → your project → Settings → Environment Variables.','A .env.local file, if .gitignore lists it.']],['Never',null,RED,['A chat window.','The code, a README, a commit message, an issue.','A screenshot, a slide, a shared doc.']]], { y:1.85, size:15, gap2:6, h:1.7 });
-label(s, 'The clipboard move: copy the key, then one command moves it. The agent never sees it.', M, 3.75, CW);
-text(s, 'pbpaste | vercel env add RESEND_API_KEY production', M, 4.08, CW, 0.4, { mono:true, size:18, bold:true, color:INK });
-promptCard(s, 'I have the Resend API key on my clipboard. Give me the one command that saves it into .env.local as RESEND_API_KEY using pbpaste, and the line to add to .gitignore. Do not ask me to paste the key.', M, 4.65, CW, 1.45, { label:'ASK FOR THE COMMAND, NOT THE VALUE · VERBATIM' });
+label(s, 'The browser move: copy from your password manager, paste into Vercel. The agent never sees it.', M, 3.75, CW);
+text(s, 'Vercel → your project → Settings → Environment Variables → paste', M, 4.08, CW, 0.4, { size:18, bold:true, color:INK });
+s.addText([{ text:'Mac with the Vercel CLI installed:   ', options:{ fontFace:SANS, color:MUTED } }, { text:'pbpaste | vercel env add RESEND_API_KEY production', options:{ fontFace:MONO, color:MUTED } }], { x:M, y:4.52, w:CW, h:0.3, fontSize:12, margin:0, isTextBox:true, valign:'top' });
+promptCard(s, 'I have the Resend API key on my clipboard. Give me the one command that saves it into .env.local as RESEND_API_KEY using pbpaste, and the line to add to .gitignore. Do not ask me to paste the key.', M, 4.9, CW, 1.45, { label:'ASK FOR THE COMMAND, NOT THE VALUE · VERBATIM' });
 
 // 31 Vercel + v0
 s = slide({ name:'Setup: Vercel and v0',
-  notes: NOTE('9:43–9:48', 'Vercel’s the host and v0 comes with it. Sign in to Vercel with GitHub; that links the two and lets Vercel see your repository. Authorize the GitHub integration for my-first-site when it asks. Then open v0.app and sign in with the same account; it’s included with the free Vercel plan. Then stop. Don’t import, don’t deploy, don’t generate anything yet. Vercel Hobby is for noncommercial personal use. A site about you is fine today. A business site needs a paid plan later.', 'Vercel asking for a team name or a plan. Personal account, Hobby, no card. v0 showing a different account than Vercel: sign out and back in with GitHub.', 'signed in to Vercel and v0 with the same GitHub account; my-first-site visible in the import list; nothing deployed.') });
+  notes: NOTE('9:43–9:48', 'Vercel hosts; v0 comes with it. Sign in to Vercel with GitHub so it can see your repository. Authorize the GitHub integration for my-first-site. Open v0.app, sign in with the same account; it’s included with the free plan. Then stop: don’t import, deploy, or generate anything yet. Hobby is for noncommercial personal use; a site about you is fine, a business site needs a paid plan.', 'Vercel asking for a team name or a plan. Personal account, Hobby, no card. v0 showing a different account than Vercel: sign out and back in with GitHub. If v0 stops generating on the free plan, that pair switches to the portable route for this project. Helpers know the pattern.', 'signed in to Vercel and v0 with the same GitHub account; my-first-site visible in the import list; nothing deployed.') });
 B2(s);
 title(s, 'Vercel and v0: sign in with GitHub, then stop.');
 lede(s, 'Done when: Vercel and v0 both show your GitHub account, my-first-site is in the import list, nothing is deployed.');
@@ -524,7 +525,7 @@ here(s, 'PLAN');
 const P1 = (s, k, name, time) => kicker(s, `Project 1 · Personal website · Step ${k} · ${name}`, time);
 // 35 What done looks like
 s = slide({ name:'Project 1: what done looks like',
-  notes: NOTE('10:00–10:03', 'This is Jordan Rivera. Jordan doesn’t exist. This is the tested example in examples/personal-website, and by 11:45 every word on it is yours and it’s live. Six color themes and two layouts are built in; the picker’s in the footer. It prints as a resume, and the ADD-ON SLOT comments mark where the afternoon features go. Click through the themes on the big screen so people see the range. Time inside this block: export 10, content 20, build 30, colors 10, publish 20. Then we go get your content out of LinkedIn.', 'people wanting a different design. Today you change the words, the colors, and the layout. The structure is tested; keep it.', 'everyone has opened the example index.html from the course folder.') });
+  notes: NOTE('10:00–10:03', 'This is Jordan Rivera. Jordan doesn’t exist. This is the tested example in examples/personal-website, and by 11:30 every word on it is yours and it’s live. Six color themes and two layouts are built in; the picker’s in the footer. It prints as a resume, and the ADD-ON SLOT comments mark where the afternoon features go. Click through the themes on the big screen so people see the range. Time inside this block: export 10, content 20, build 30, colors 10, publish 20. Then we go get your content out of LinkedIn.', 'people wanting a different design. Today you change the words, the colors, and the layout. The structure is tested; keep it.', 'everyone has opened the example index.html from the course folder.') });
 P1(s, 0, 'What done looks like', '10:00 – 11:45');
 title(s, 'Meet Jordan Rivera. Jordan isn’t real.');
 s.addImage({ path:ASSETS+'slate-centered-crop.png', x:M, y:1.95, w:3.9, h:3.9 });
@@ -532,7 +533,7 @@ s.addImage({ path:ASSETS+'ocean-sidebar-crop.png', x:4.8, y:1.95, w:3.9, h:3.9 }
 text(s, 'slate · centered', M, 5.9, 3.9, 0.3, { mono:true, size:11, color:ORANGE });
 text(s, 'ocean · sidebar', 4.8, 5.9, 3.9, 0.3, { mono:true, size:11, color:ORANGE });
 text(s, 'examples/personal-website/index.html', 9.1, 1.95, 3.6, 0.6, { mono:true, size:11, color:ORANGE });
-para(s, ['One file. Opens by double-click.','Six color themes, two layouts, a picker in the footer.','Prints as a tidy resume.','By 11:45 every word on it is yours.'], { x:9.1, y:2.5, w:3.55, h:3.4, size:16, gap:12 });
+para(s, ['One file. Opens by double-click.','Six color themes, two layouts, a picker in the footer.','Prints as a tidy resume.','By 11:30 every word on it is yours, and it’s live.'], { x:9.1, y:2.5, w:3.55, h:3.4, size:16, gap:12 });
 here(s, 'DESCRIBE');
 
 // 36 Step 1: export LinkedIn
@@ -669,10 +670,10 @@ stickies(s); here(s, 'CHECK');
 
 // 48 Step 6: save to GitHub
 s = slide({ name:'Step 6: save to GitHub',
-  notes: NOTE('11:20–11:30', 'Ten minutes and deliverable one. v0 route: click Deploy, then connect the project to GitHub, and you’re done with this slide. Portable route: follow the setup guide, don’t improvise. Open my-first-site. Add file, Upload files. Choose index.html itself, not a ZIP, not a folder. Commit message like “First version of my site,” commit to main. Refresh and make sure index.html sits at the top level, lowercase. That’s the save.', 'a ZIP or a folder uploaded instead of the file. index.html itself, at the top level.', 'a live *.vercel.app address open on someone else’s phone, recorded in project-state.md.') });
+  notes: NOTE('11:20–11:30', 'Ten minutes and deliverable one. v0 route: click Deploy, accept v0’s offer to connect the project to GitHub, pick my-first-site, and you’re done with this slide. Portable route: follow the setup guide, don’t improvise. Open my-first-site. Add file, Upload files. Choose index.html itself, not a ZIP, not a folder. Commit message like “First version of my site,” commit to main. Refresh and make sure index.html sits at the top level, lowercase. That’s the save.', 'a ZIP or a folder uploaded instead of the file. index.html itself, at the top level.', 'a live *.vercel.app address open on someone else’s phone, recorded in project-state.md.') });
 P1(s, 6, 'Save', '11:20 – 11:30');
 title(s, 'Save it: upload index.html to GitHub.');
-lede(s, 'v0 route: click Deploy, then connect the project to GitHub. Every version is pushed to my-first-site. Skip the steps below.');
+lede(s, 'v0 route: click Deploy. When v0 offers to connect the project to GitHub (before or after Deploy), accept and pick my-first-site. Every version is pushed there. Skip the steps below.', { h:0.7 });
 numbered(s, ['Open my-first-site. “Add file” → “Upload files.”','Choose index.html itself. Not a ZIP. Not a folder.','Commit message: “First version of my site.” Commit to main.','Refresh. index.html is at the top level, lowercase.'], { y:2.5, h:3.0, size:18, gap:14 });
 stickies(s); here(s, 'SAVE');
 
@@ -702,7 +703,7 @@ s.addText([
   { text:'+ <a href="mailto:you@yourdomain.com">Email</a>', options:{ color:'86EFAC' } }],
   { x:M+0.3, y:2.2, w:5.8, h:3.0, fontFace:MONO, fontSize:13, margin:0, isTextBox:true, valign:'top', lineSpacingMultiple:1.4 });
 label(s, 'Read it in this order', 7.4, 1.95, 5.2);
-defs(s, [['1  The message','Does it say what you asked for? Not “Refactor site.”'],['2  The file names','Only the files you expected. One index.html, not six.'],['3  The lines','Green added, red removed. Read the red closely.']], { x:7.4, w:W-M-7.4, y:2.35, pitch:1.05, tw:2.5, tsize:16, size:15 });
+defs(s, [['1  The message','Does it say what you asked for? Not “Update index.html.”'],['2  The file names','Only the files you expected. One index.html, not six.'],['3  The lines','Green added, red removed. Read the red closely.']], { x:7.4, w:W-M-7.4, y:2.35, pitch:1.05, tw:2.5, tsize:16, size:15 });
 here(s, 'CHECK');
 
 // 51 The pull request, drawn with the "no" exit
@@ -744,7 +745,7 @@ here(s, 'SAVE');
 const SK = (s, time) => kicker(s, 'Skills · docs/skills-guide.md', time);
 // 54 What a skill is: a folder with one file, and the six parts of its body
 s = slide({ name:'Skills 1: what a skill is',
-  notes: NOTE('11:45–11:47', 'You’ve been using skills all morning without the word. A skill is instructions you’d otherwise retype, saved once in a file, so the next session, the next model, and your colleague get the same behavior. No code, no account. It’s a folder with one file in it, SKILL.md. Front matter at the top: a name and a description with the trigger phrases, because a skill nobody triggers is a skill nobody uses. Then the body, in this order: who you’re helping and the job, when it applies, steps that each end in something you can see, the never-do-this rules, one worked example, and the checks. Open skills/vc-plan-first/SKILL.md and you’ll see exactly that shape.', 'people hearing “plugin” and expecting an install wizard. It’s a text file.', 'everyone can say what a skill is in one sentence.') });
+  notes: NOTE('11:45–11:47', 'You’ve been using skills all morning without the word. A skill is instructions you’d otherwise retype, saved once in a file, so the next session, the next model, and your colleague get the same behavior. No code, no account. It’s a folder with one file in it, SKILL.md. The top of the file (the front matter): a name and a description with the trigger phrases, because a skill nobody triggers is a skill nobody uses. Then the body, in this order: who you’re helping and the job, when it applies, steps that each end in something you can see, the never-do-this rules, one worked example, and the checks. Open skills/vc-plan-first/SKILL.md: exactly that shape.', 'people hearing “plugin” and expecting an install wizard. It’s a text file.', 'everyone can say what a skill is in one sentence.') });
 SK(s, '11:45 – 11:51');
 title(s, 'A skill is a folder with one file in it: SKILL.md.');
 lede(s, 'Instructions you’d otherwise retype, saved once, so the next session and the next model behave the same.');
@@ -756,7 +757,7 @@ lede(s, 'Instructions you’d otherwise retype, saved once, so the next session 
   text(s, '---\nname: vc-plan-first\ndescription: what it does, and the trigger phrases\n---', x+0.3, y+0.47, w-0.6, 0.6, { mono:true, size:11, color:MUTED, lsm:1.0 });
   ['Who you’re helping and what the job is','When this applies, and when it doesn’t','Steps, each ending in something you can see','Rules: the short never-do-this list','One worked example','Checks that it worked'].forEach((t,i)=>{ const yy=y+1.2+i*0.44; text(s, String(i+1), x+0.25, yy, 0.4, 0.4, { mono:true, size:13, bold:true, color:ORANGE, valign:'middle' }); text(s, t, x+0.65, yy, w-0.9, 0.4, { size:14, valign:'middle' }); });
 }
-para(s, ['The front matter: a name, and a description that says when to use it. Put the trigger phrases in.','The body: six parts, in this order.','Open skills/vc-plan-first/SKILL.md. That exact shape. Copy it from templates/SKILL-template.md.'], { x:6.5, y:2.4, w:W-M-6.5, h:3.6, size:16, gap:14 });
+para(s, ['The top of the file: a name, and a description that says when to use it. Put the trigger phrases in.','The body: six parts, in this order.','Open skills/vc-plan-first/SKILL.md. That exact shape. Copy it from templates/SKILL-template.md.'], { x:6.5, y:2.4, w:W-M-6.5, h:3.6, size:16, gap:14 });
 
 // 55 What makes one good
 s = slide({ name:'Skills 2: what makes a skill good',
@@ -768,7 +769,7 @@ numbered(s, ['One job. “Write the brief.”','Triggers in the description.','S
 
 // 56 Install it where you work: Claude and ChatGPT
 s = slide({ name:'Skills 3: install it where you work (the live demo)',
-  notes: NOTE('11:48–11:51', 'Three minutes, live, both chatbots. Claude first: I attach skills/vc-project-brief/SKILL.md, type the brief prompt from the walkthrough, and you see the shape: brief, scope, checks, no code. Fresh chat, no skill, same prompt, and you see the difference; that gap is what a skill buys. ChatGPT: same prompt three ways. Plain chat, no skill. Plain chat with the skill pasted after the one-line instruction. A Project with the skill uploaded and one line in its instructions. The Project version didn’t need the paste. Pick the row that matches the chatbot you actually use; the paste route works everywhere, including free plans, and lasts one conversation.', 'menu names that moved since this morning. Describe the shape, not the pixel.', 'one skill installed in your own chatbot.') });
+  notes: NOTE('11:48–11:51', 'Reference table; point at the row that matches their chatbot, don’t read it. Three minutes, live, both chatbots. Claude first: I attach skills/vc-project-brief/SKILL.md, type the brief prompt from the walkthrough, and you see the shape: brief, scope, checks, no code. Fresh chat, no skill, same prompt, and you see the difference; that gap is what a skill buys. ChatGPT: same prompt three ways. Plain chat, no skill. Plain chat with the skill pasted after the one-line instruction. A Project with the skill uploaded and one line in its instructions. The Project version didn’t need the paste. The paste route works everywhere, including free plans, and lasts one conversation.', 'menu names that moved since this morning. Describe the shape, not the pixel.', 'one skill installed in your own chatbot.') });
 SK(s, '11:45 – 11:51');
 title(s, 'Install it where you work. Three ways in each.');
 lede(s, 'A skill is text. Any chatbot that can read a file or a paste can use one. The rows differ in how automatically it loads.');
@@ -1064,7 +1065,7 @@ s = slide({ name:'See you in the spring: All Things AI',
 HO(s, 'One invitation');
 title(s, 'See you in the spring: All Things AI.');
 s.addText('April 18–20, 2027', { x:M, y:2.0, w:CW, h:1.2, fontFace:SANS, fontSize:54, bold:true, color:BLUE, margin:0, isTextBox:true });
-para(s, ['All Things AI 2027, in this same building: the Atlantic Union Bank Convention Center.','April 18 is the Agent Hackathon. April 21 is a separate, screened Executive Summit.','allthingsai.org'], { y:3.4, w:9.4, h:2.2, size:17, gap:12 });
+para(s, ['All Things AI 2027, in this same building: the Atlantic Union Bank Convention Center (formerly the Raleigh Convention Center).','April 18 is the Agent Hackathon. April 21 is a separate, screened Executive Summit.','allthingsai.org'], { y:3.4, w:9.4, h:2.2, size:17, gap:12 });
 s.addImage({ path:ASSETS+'ata-square.png', x:W-M-2.4, y:3.3, w:2.4, h:2.4 });
 
 // 85 Thank you
@@ -1086,7 +1087,7 @@ const total = String(n);
 pres.slides.forEach(sl => { (sl._slideObjects||[]).forEach(o => { if (o.text && Array.isArray(o.text)) o.text.forEach(t => { if (typeof t.text==='string') t.text = t.text.replace('__TOTAL__', total); }); if (typeof o.text==='string') o.text = o.text.replace('__TOTAL__', total); }); });
 
 // speaker-notes.md, so the notes can be printed
-let md = '# Speaker notes: AI Agents & Vibe Coding, All Things Open 2026\n\nMonday October 19, 2026 · Raleigh Convention Center · 9:00–5:30. Generated by `node build.js`; edit build.js, not this file.\n\nEach note: the clock window from instructor/ato-2026-run-of-show.md, what to say in Mark’s words, "Watch for:" the common failure and its fix, and "Gate:" what every student should have before the next slide.\n\n';
+let md = '# Speaker notes: AI Agents & Vibe Coding, All Things Open 2026\n\nMonday October 19, 2026 · Atlantic Union Bank Convention Center (formerly the Raleigh Convention Center) · 9:00–5:30. Generated by `node build.js`; edit build.js, not this file.\n\nEach note: the clock window from instructor/ato-2026-run-of-show.md, what to say in Mark’s words, "Watch for:" the common failure and its fix, and "Gate:" what every student should have before the next slide.\n\n';
 let longest = 0, over = [];
 NOTES.forEach(x => { const words = x.notes.split(/\s+/).filter(Boolean).length; longest = Math.max(longest, words); if (words > 140) over.push(`${x.n} (${words})`); md += `## ${String(x.n).padStart(2,'0')} / ${total} · ${x.name}\n\n${x.notes}\n\n`; });
 fs.writeFileSync('speaker-notes.md', md);
