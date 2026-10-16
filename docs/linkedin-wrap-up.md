@@ -29,6 +29,10 @@ The final sentence makes the endorsement offer clear to readers. Keep your own v
 
 > Help me draft a short LinkedIn post about this class using only these facts: [what I built, what works, what I learned, and a challenge]. Keep my voice. Mention that Mark offered a skill endorsement to participants who post about their experience. Do not invent outcomes, praise, or expertise. Give me a draft to review; do not publish it or message anyone.
 
+## Everyone gets the slides; reviewers get the book
+
+Separate from the LinkedIn post, and open to everyone: every attendee gets the slides and all course files in the course repository (https://github.com/mrhinkle/Vibe-Coding-for-Non-Technical-Professionals). Tell Mark what worked and what did not, and he will also send you the preview release edition of his upcoming book, *Software Development for Non-Programmers: Beyond Vibecoding*. Good or bad; critical feedback is the most useful kind. Use the [feedback template](../templates/feedback.md): copy it into an email to mrhinkle@allthingsai.org with the subject "ATO workshop feedback," or hand Mark a filled-in printout before you leave.
+
 ## Your handoff note
 
 - My LinkedIn profile URL:
@@ -37,5 +41,6 @@ The final sentence makes the endorsement offer clear to readers. Keep your own v
 - Connection with Mark: connected / request pending
 - Links sent to Mark on:
 - Endorsement: pending / received
+- Feedback sent for the preview edition of the book: yes / not yet
 
 Course assistants may help draft the post and organize these links. The learner chooses what to publish and sends their request; the course materials do not initiate posts, connection requests, messages, or endorsements.

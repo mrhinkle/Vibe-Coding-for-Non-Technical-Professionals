@@ -7,3 +7,5 @@ The presentation files and assets in `presentations/reference-six-hour-class/` w
 The seven game skills are new instructional adaptations of patterns researched in the private `mrhinkle/allthingsai-org` repository and its staging Arcade. They do not include that site's implementation or game assets.
 
 This private repository does not introduce a blanket license for all material. Mark can decide the distribution and licensing arrangements before sharing the complete class publicly. See the [source map](../repository-map.md).
+
+The ten-skill website menu (October 15, 2026) links to `SKILL.md` files in Mark's public `mrhinkle/aienterprise-skills` and `mrhinkle/VibeCoding-a-Website` repositories by URL. No aienterprise-skills content is copied here; its license applies at the source. The examples under `examples/` were written for this course on October 15, 2026, with Mark's public `mrhinkle/describe-build-check-ship-companion` available as a reference for the game; they contain only fictional sample content and emoji, no third-party assets.

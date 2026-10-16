@@ -58,3 +58,15 @@ Alien Tic-Tac-Toe is Mark’s October 5 classroom concept, documented in [its wa
 ## Website starter collection and scoping
 
 Seven new original static website starters are in [website-starters](website-starters/README.md). Their inline SVG illustrations and sample copy were created for this course; the fan-site designs do not bundle official/private site assets. The added scoping skill separates first-version decisions from the brief and build plan. See [scope and plan](docs/scope-and-plan.md).
+
+## All Things Open 2026 additions: October 15, 2026
+
+Prepared for the Monday October 19 extended workshop ([public listing](https://2026.allthingsopen.org/ai-agents-vibe-coding)). New material:
+
+- **Tested examples.** [`examples/personal-website/`](examples/personal-website/) (fictional Jordan Rivera content, six themes, two layouts, print stylesheet, resume template) and [`examples/alien-tic-tac-toe/`](examples/alien-tic-tac-toe/) (three checkpoints, eight emoji themes, `?theme=` deep links). Each README records the headless-browser checks that were run. Mark's public [describe-build-check-ship-companion](https://github.com/mrhinkle/describe-build-check-ship-companion) repository holds an earlier tested build of the same game and was available as a reference.
+- **Lessons.** [Personal website from LinkedIn](docs/personal-website-walkthrough.md), [tic-tac-toe variants with wireframes](docs/tic-tac-toe-variants.md), [ten-skill website menu](docs/website-skills-menu.md), [stuck card](docs/stuck.md), and [low-fidelity wireframes](docs/wireframes/).
+- **Public skills by link.** The menu points to raw `SKILL.md` files in [aienterprise-skills](https://github.com/mrhinkle/aienterprise-skills) and [VibeCoding-a-Website](https://github.com/mrhinkle/VibeCoding-a-Website); nothing from aienterprise-skills is copied into this repository. All sixteen linked URLs returned HTTP 200 on 2026-10-15.
+- **Instructor.** [ATO run of show](instructor/ato-2026-run-of-show.md) mapping the 9:00 to 5:30 room onto the 360-minute course plus three live-hacking sprints, with ordered scope cuts; the [Monday deck with speaker notes](presentations/ato-2026-workshop/); new preflight rows.
+- **Close.** [Feedback template](templates/feedback.md); feedback earns the preview release edition of *Software Development for Non-Programmers: Beyond Vibecoding*.
+
+The public listing names v0 and promises a deployed application; the run of show treats v0 as a portable-route chatbot and delivers the website URL before lunch. LinkedIn menu labels ("More" or "Resources" → "Save to PDF"; Settings → Data privacy → "Get a copy of your data") were written from current knowledge and must be confirmed on a live account in preflight.

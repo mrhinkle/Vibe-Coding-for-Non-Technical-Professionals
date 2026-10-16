@@ -74,6 +74,10 @@ Use the [current Cloud environments guide](https://learn.chatgpt.com/docs/enviro
 
 A plugin connection, code-editing workspace, and deployment permission are separate capabilities. Confirm each one with the learner's actual account. Do not assume every GitHub connector is read-only or that every connected chatbot can edit and run a project.
 
+## The v0 route (featured at All Things Open 2026)
+
+v0 is Vercel's generative builder and comes with a free Vercel account. Sign in to Vercel with GitHub, then sign in to v0 with Vercel, so all three accounts share one identity. In v0 you describe the page, it writes a React project with a live preview, the Deploy button ships it through your Vercel account, and the GitHub option pushes the code to a repository you own. Every v0 version you push becomes a commit you can read and roll back. Step by step, with prompts for both projects and a table of what to do when v0 goes off the rails: [v0-route.md](docs/v0-route.md). The tested examples and checkpoints are single HTML files; they drop straight into the portable route below, and on v0 they serve as the style reference you attach.
+
 ## Choose the route by available capabilities
 
 The portable route needs complete runnable file output; the connected route additionally needs verified repository access. Use the same brief, skills, and checks on either route. If a chatbot cannot produce usable files, continue planning with it and use an instructor checkpoint or a supported assistant for the build. Pasting a skill does not grant missing tools.

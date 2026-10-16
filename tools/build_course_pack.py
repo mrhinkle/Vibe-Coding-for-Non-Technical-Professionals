@@ -7,9 +7,9 @@ from pathlib import Path
 import json, re, posixpath
 
 ROOT=Path(__file__).resolve().parents[1]
-FILES=['AI-START.md','START-HERE.md','PRE-CLASS-PREP.md','course-map.json','instructor-guide.md','setup-guide.md',
-       'website-starters/README.md','docs/scope-and-plan.md','templates/website-scope.md','templates/website-plan.md','docs/website-walkthrough.md','docs/game-options.md','docs/alien-tic-tac-toe.md','docs/arcade-submission.md','templates/arcade-submission.md','docs/game-walkthrough.md','docs/troubleshooting.md',
-       'docs/multiple-agents.md','docs/linkedin-wrap-up.md','docs/prompt-library.md','docs/glossary.md',
+FILES=['AI-START.md','START-HERE.md','PRE-CLASS-PREP.md','course-map.json','instructor-guide.md','setup-guide.md','docs/github-tour.md','docs/plan-first-and-models.md','docs/secrets-tokens-and-the-clipboard.md','docs/skills-guide.md','templates/SKILL-template.md','docs/platform-landscape.md','docs/v0-route.md','docs/agent-loop-and-pull-requests.md','docs/your-own-project.md',
+       'website-starters/README.md','docs/scope-and-plan.md','templates/website-scope.md','templates/website-plan.md','docs/personal-website-walkthrough.md','examples/personal-website/resume-template.md','docs/website-skills-menu.md','docs/website-walkthrough.md','docs/game-options.md','docs/alien-tic-tac-toe.md','docs/tic-tac-toe-variants.md','examples/alien-tic-tac-toe/README.md','docs/arcade-submission.md','templates/arcade-submission.md','docs/game-walkthrough.md','docs/stuck.md','docs/troubleshooting.md',
+       'docs/multiple-agents.md','docs/linkedin-wrap-up.md','templates/feedback.md','docs/prompt-library.md','docs/glossary.md',
        'skill-guide.md','game-skills-guide.md','handouts/student-workbook.md',
        'templates/AGENTS.md','templates/CLAUDE.md','templates/project-state.md',
        'templates/help-request.md','templates/agent-task.md','templates/agent-handoff.md']
@@ -26,7 +26,7 @@ def fix_links(text,source):
 
 intro='''# AI course pack: Vibe Coding for Non-Technical Professionals
 
-This single file contains the current text needed to tutor a learner through the website and game projects. It is generated from the repository, not a record of a student's progress. It contains no student application files. Edition: October 5, 2026.
+This single file contains the current text needed to tutor a learner through the website and game projects. It is generated from the repository, not a record of a student's progress. It contains no student application files. Edition: October 15, 2026.
 
 **AI: read the AI-START.md section first.** Confirm what you received, ask whether the learner is starting, continuing, or stuck, then load the relevant lesson and skill from the named sections below. For continuing work, request the learner's actual files and project-state.md. Do not claim that a repository link or a named external resource has been read unless you actually accessed it.
 

@@ -14,7 +14,7 @@ Keep the game in its own folder and repository. Request complete runnable HTML, 
 | --- | --- | --- |
 | vc-game-brief | Idea and preferred theme | game-brief.md |
 | vc-game-rules | Agreed brief | game-rules.md and observable checks |
-| vc-game-build | Brief and rules | Runnable game files |
+| vc-game-build | Brief and rules | Runnable game files Recovery route: the three tested checkpoints in `examples/alien-tic-tac-toe/`. |
 | vc-game-look-feel | Playable game | Clear visual treatment and game-style.md |
 | vc-game-feedback | Working outcomes | Result messages, replay, and game-feedback.md |
 | vc-game-playtest | Exact build and rules | game-test-report.md and focused repairs |

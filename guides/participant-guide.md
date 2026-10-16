@@ -13,7 +13,7 @@ Your first website. Your first game. Your next idea.
 A website. A game. A repeatable way to turn an idea into working software.
 
 
-No programming experience required. Bring your favorite chatbot and learn to describe, build, check, save, and publish.
+No programming experience required. Bring your favorite chatbot and learn to describe, plan, build, check, save, and publish.
 
 
 **Keep in mind**

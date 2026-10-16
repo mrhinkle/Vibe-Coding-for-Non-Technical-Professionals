@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en" data-theme="slate" data-layout="centered">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- CUSTOMIZE: the description shows up in search results and link previews. One sentence about you. -->
+<meta name="description" content="Jordan Rivera, Operations Manager in Durham, NC. Experience, skills, and how to get in touch.">
+<!-- CUSTOMIZE: the browser tab title. Use your name. -->
+<title>Jordan Rivera — Operations Manager</title>
+
+<style>
+/* ==========================================================================
+   1. THEMES
+   CUSTOMIZE: pick a theme by changing data-theme="slate" on the <html> tag
+   above to one of: slate, forest, sunset, ocean, mono, plum.
+   To invent your own theme, copy one block below, rename it, and change the
+   colors. Every theme needs all six values.
+   ========================================================================== */
+:root,
+html[data-theme="slate"] {
+  --background: #f6f3ee;        /* page background (warm gray) */
+  --surface: #ffffff;           /* cards and chips */
+  --text: #1c2333;              /* main text (navy) */
+  --muted: #5b6475;             /* secondary text */
+  --accent: #1f3a93;            /* links, buttons, headings */
+  --accent-contrast: #ffffff;   /* text on top of the accent color */
+}
+html[data-theme="forest"] {
+  --background: #f1f5ef;
+  --surface: #ffffff;
+  --text: #1b2a1f;
+  --muted: #53645a;
+  --accent: #2f6b3f;
+  --accent-contrast: #ffffff;
+}
+html[data-theme="sunset"] {
+  --background: #fff6ee;
+  --surface: #ffffff;
+  --text: #3a2318;
+  --muted: #7a5a4b;
+  --accent: #c2410c;
+  --accent-contrast: #ffffff;
+}
+html[data-theme="ocean"] {
+  --background: #0f1b2d;
+  --surface: #182a45;
+  --text: #e8eef8;
+  --muted: #a9b8d0;
+  --accent: #5cc8ff;
+  --accent-contrast: #06243a;
+}
+html[data-theme="mono"] {
+  --background: #ffffff;
+  --surface: #f3f3f3;
+  --text: #111111;
+  --muted: #555555;
+  --accent: #d6336c;
+  --accent-contrast: #ffffff;
+}
+html[data-theme="plum"] {
+  --background: #f8f3fa;
+  --surface: #ffffff;
+  --text: #2a1a30;
+  --muted: #6b5872;
+  --accent: #6d2a7c;
+  --accent-contrast: #ffffff;
+}
+
+/* ==========================================================================
+   2. BASICS (safe to leave alone)
+   ========================================================================== */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font: 18px/1.7 Georgia, "Times New Roman", serif;
+  color: var(--text);
+  background: var(--background);
+}
+h1, h2, h3, nav, .button, .chip, .meta, .pill, footer, .picker {
+  font-family: Arial, Helvetica, sans-serif;
+}
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible, select:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+.skip {
+  position: absolute; left: 16px; top: -100px; z-index: 20;
+  background: var(--surface); color: var(--text); padding: 12px;
+  border: 2px solid var(--accent);
+}
+.skip:focus { top: 12px; }
+section { scroll-margin-top: 24px; }
+ul { padding-left: 1.2em; }
+li { margin: 6px 0; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+/* ==========================================================================
+   3. LAYOUT: CENTERED (default) — one column, 760px wide, like the starters
+   ========================================================================== */
+header, main, footer { max-width: 760px; margin: auto; padding: 24px; }
+header {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 18px; flex-wrap: wrap;
+  border-bottom: 1px solid var(--muted);
+}
+.brand { font-weight: 700; text-decoration: none; color: var(--text); }
+nav { display: flex; gap: 18px; flex-wrap: wrap; }
+nav a { text-decoration: none; color: var(--text); }
+nav a:hover { text-decoration: underline; }
+
+h1 { font-size: clamp(36px, 7vw, 56px); line-height: 1.1; margin: 10px 0 4px; }
+h2 { font-size: 26px; line-height: 1.2; margin: 0 0 18px; color: var(--accent); }
+h3 { font-size: 20px; margin: 0 0 2px; }
+section { padding: 34px 0; border-bottom: 1px solid var(--muted); }
+section:last-of-type { border-bottom: 0; }
+.headline { font-size: 22px; margin: 0; }
+.meta { color: var(--muted); margin: 6px 0 16px; font-size: 16px; }
+
+.links { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 10px; }
+.button {
+  display: inline-block; padding: 10px 18px; text-decoration: none;
+  border: 2px solid var(--accent); border-radius: 6px; font-weight: 700;
+  background: var(--accent); color: var(--accent-contrast);
+}
+.button.secondary { background: transparent; color: var(--accent); }
+.button:hover { filter: brightness(1.1); }
+
+.role { margin-bottom: 26px; }
+.role:last-child { margin-bottom: 0; }
+.role .meta { margin: 0 0 8px; }
+.role ul { margin: 0; }
+
+.skill-group { margin-bottom: 16px; }
+.skill-group h3 { font-size: 16px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.chips { list-style: none; padding: 0; margin: 6px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  background: var(--surface); border: 1px solid var(--muted);
+  padding: 4px 12px; border-radius: 999px; font-size: 15px; margin: 0;
+}
+
+.card {
+  background: var(--surface); border: 1px solid var(--muted);
+  border-radius: 8px; padding: 16px 18px; margin-bottom: 14px;
+}
+.card p { margin: 6px 0 0; }
+
+footer {
+  font-size: 14px; color: var(--muted);
+  border-top: 1px solid var(--muted);
+  display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; align-items: center;
+}
+.picker { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+.picker label { display: flex; gap: 6px; align-items: center; }
+.picker select {
+  font: inherit; padding: 4px 6px; border-radius: 4px;
+  background: var(--surface); color: var(--text); border: 1px solid var(--muted);
+}
+
+/* ==========================================================================
+   4. LAYOUT: SIDEBAR — on screens 900px and wider, name, links, and skills
+   sit in a left column; everything else sits on the right. On phones it is
+   the same single column as "centered".
+   ========================================================================== */
+@media (min-width: 900px) {
+  html[data-layout="sidebar"] header,
+  html[data-layout="sidebar"] main,
+  html[data-layout="sidebar"] footer { max-width: 1100px; }
+  html[data-layout="sidebar"] main {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    column-gap: 48px;
+    align-items: start;
+  }
+  html[data-layout="sidebar"] #hero       { grid-column: 1; grid-row: 1; }
+  html[data-layout="sidebar"] #skills     { grid-column: 1; grid-row: 2 / 6; border-bottom: 0; }
+  html[data-layout="sidebar"] #about      { grid-column: 2; grid-row: 1; padding-top: 34px; }
+  html[data-layout="sidebar"] #experience { grid-column: 2; grid-row: 2; }
+  html[data-layout="sidebar"] #education  { grid-column: 2; grid-row: 3; }
+  html[data-layout="sidebar"] #projects   { grid-column: 2; grid-row: 4; }
+  html[data-layout="sidebar"] #contact    { grid-column: 2; grid-row: 5; }
+  html[data-layout="sidebar"] #hero h1 { font-size: 40px; }
+  html[data-layout="sidebar"] .links { flex-direction: column; align-items: flex-start; }
+}
+
+/* ==========================================================================
+   5. PRINT — the page prints as a tidy one-to-two page resume
+   ========================================================================== */
+@media print {
+  @page { margin: 0.6in; }
+  html { scroll-behavior: auto; }
+  * { color: #000 !important; background: transparent !important; box-shadow: none !important; }
+  body { font-size: 11pt; line-height: 1.4; color: #000 !important; background: #fff !important; }
+  nav, .button, .links, .skip, .picker, .print-hide { display: none !important; }
+  header, main, footer { max-width: none; padding: 0; }
+  header { border-bottom: 0; padding-bottom: 0; }
+  section { padding: 10pt 0; border-bottom: 1px solid #000; break-inside: avoid; }
+  h1 { font-size: 22pt; margin: 0; }
+  h2 { font-size: 14pt; margin: 0 0 6pt; }
+  h3 { font-size: 12pt; }
+  .card, .chip { border: 1px solid #000; }
+  .chips { gap: 4pt; }
+  /* Show link addresses after the link text, so a printed page is still useful. */
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; }
+  a[href^="mailto:"]::after { content: " (" attr(data-email) ")"; font-size: 9pt; }
+  a { text-decoration: none; }
+  /* Print the contact details in the hero even though the buttons are hidden. */
+  .print-contact { display: block !important; }
+}
+.print-contact { display: none; }
+</style>
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ======================================================================
+     HEADER — your name and the section links.
+     CUSTOMIZE: replace "Jordan Rivera" with your name. Keep the nav links
+     matching the section ids below. If you delete a section, delete its link.
+     ====================================================================== -->
+<header id="header">
+  <a class="brand" href="#hero">Jordan Rivera</a>
+  <nav aria-label="Main">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ====================================================================
+       HERO — name, one-line headline, city, and 2–3 link buttons.
+       CUSTOMIZE: your name, your LinkedIn headline, your city.
+       Privacy: show only your name, city, email, and public links here.
+       No phone number and no street address.
+       ==================================================================== -->
+  <section id="hero" aria-labelledby="name">
+    <h1 id="name">Jordan Rivera</h1>
+    <p class="headline">Operations Manager who turns messy processes into calm, reliable systems.</p>
+    <p class="meta">Durham, North Carolina</p>
+    <div class="links">
+      <!-- CUSTOMIZE: paste your real LinkedIn profile address in place of YOUR-LINKEDIN-HANDLE. -->
+      <a class="button" href="https://www.linkedin.com/in/YOUR-LINKEDIN-HANDLE">LinkedIn</a>
+      <!-- CUSTOMIZE: your email. Change it in BOTH the href and the data-email attribute. -->
+      <a class="button secondary" href="mailto:jordan.rivera@example.com" data-email="jordan.rivera@example.com">Email</a>
+      <!-- CUSTOMIZE: save your resume as resume.pdf next to this file, or delete this button. -->
+      <a class="button secondary" href="resume.pdf">Resume (PDF)</a>
+    </div>
+    <!-- This line only appears when printing, because the buttons are hidden on paper. -->
+    <p class="print-contact">jordan.rivera@example.com · linkedin.com/in/YOUR-LINKEDIN-HANDLE</p>
+  </section>
+
+  <!-- ====================================================================
+       ABOUT — three short paragraphs at most.
+       CUSTOMIZE: use the "About" section from your LinkedIn PDF. Write in
+       the first person. Keep it specific.
+       ==================================================================== -->
+  <section id="about" aria-labelledby="about-heading">
+    <h2 id="about-heading">About</h2>
+    <p>I run day-to-day operations for teams that move things: packages, patients, and paperwork. For the last nine years I have led scheduling, vendor relationships, and process improvement for small and mid-size organizations in the Triangle.</p>
+    <p>I like fixing the boring problems that slow people down. A clearer handoff, a better checklist, or a dashboard people actually look at usually beats a bigger budget.</p>
+    <p>Outside work I volunteer with a neighborhood tool library and coach a youth soccer team that has never once finished a practice on time.</p>
+  </section>
+
+  <!-- ====================================================================
+       EXPERIENCE — three roles. Each has a title, employer, dates, and
+       two or three bullets that say what changed because you were there.
+       CUSTOMIZE: copy roles from the "Experience" section of your LinkedIn
+       PDF, newest first. Turn duties into outcomes with a number where you can.
+       ==================================================================== -->
+  <section id="experience" aria-labelledby="experience-heading">
+    <h2 id="experience-heading">Experience</h2>
+
+    <article class="role">
+      <h3>Operations Manager</h3>
+      <p class="meta">Bright Harbor Logistics · Durham, NC · 2021 – Present</p>
+      <ul>
+        <li>Cut average order-to-ship time from 52 hours to 31 by redrawing the warehouse pick path and adding a morning stand-up.</li>
+        <li>Renegotiated three carrier contracts, saving about 12% a year on regional freight.</li>
+        <li>Built a weekly KPI dashboard the whole team reads, replacing four separate spreadsheets.</li>
+      </ul>
+    </article>
+
+    <article class="role">
+      <h3>Operations Coordinator</h3>
+      <p class="meta">Pinecrest Health Group · Raleigh, NC · 2017 – 2021</p>
+      <ul>
+        <li>Scheduled staff and rooms for four outpatient clinics, reducing same-day cancellations by a third.</li>
+        <li>Led the move to a shared supply-ordering system, which ended monthly stockouts of common items.</li>
+        <li>Trained 20 front-desk staff on the new intake checklist.</li>
+      </ul>
+    </article>
+
+    <article class="role">
+      <h3>Shift Supervisor</h3>
+      <p class="meta">Copperleaf Market Co-op · Chapel Hill, NC · 2014 – 2017</p>
+      <ul>
+        <li>Supervised a team of 12 across opening and closing shifts.</li>
+        <li>Introduced a simple end-of-day count sheet that cut inventory variance in half.</li>
+      </ul>
+    </article>
+  </section>
+
+  <!-- ====================================================================
+       SKILLS — grouped chips. Plain lists, nothing fancy.
+       CUSTOMIZE: use the "Skills" section of your LinkedIn PDF. Three groups
+       of three to six items each reads well. Rename the group headings.
+       ==================================================================== -->
+  <section id="skills" aria-labelledby="skills-heading">
+    <h2 id="skills-heading">Skills</h2>
+
+    <div class="skill-group">
+      <h3>Operations</h3>
+      <ul class="chips">
+        <li class="chip">Process mapping</li>
+        <li class="chip">Vendor management</li>
+        <li class="chip">Inventory planning</li>
+        <li class="chip">Scheduling</li>
+        <li class="chip">KPI dashboards</li>
+      </ul>
+    </div>
+
+    <div class="skill-group">
+      <h3>Tools</h3>
+      <ul class="chips">
+        <li class="chip">Spreadsheets</li>
+        <li class="chip">Project boards</li>
+        <li class="chip">Inventory systems</li>
+        <li class="chip">Shared calendars</li>
+      </ul>
+    </div>
+
+    <div class="skill-group">
+      <h3>People</h3>
+      <ul class="chips">
+        <li class="chip">Team leadership</li>
+        <li class="chip">Training</li>
+        <li class="chip">Cross-team communication</li>
+        <li class="chip">Plain-language writing</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       EDUCATION — schools and certificates.
+       CUSTOMIZE: use the "Education" and "Licenses & certifications"
+       sections of your LinkedIn PDF. Degree, school, year is enough.
+       ==================================================================== -->
+  <section id="education" aria-labelledby="education-heading">
+    <h2 id="education-heading">Education</h2>
+    <div class="card">
+      <h3>B.S. in Business Administration</h3>
+      <p class="meta">Eno River State University · 2014</p>
+    </div>
+    <div class="card">
+      <h3>Lean Six Sigma Green Belt</h3>
+      <p class="meta">Triangle Operations Institute · 2019</p>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       PROJECTS OR TALKS — two items. This section is optional.
+       Delete this section if you have nothing here yet. If you delete it,
+       also delete the "Projects" link in the nav at the top.
+       CUSTOMIZE: a side project, a talk, a volunteer effort, a published
+       article. One sentence on what it was and one on the result.
+       ==================================================================== -->
+  <section id="projects" aria-labelledby="projects-heading">
+    <h2 id="projects-heading">Projects &amp; Talks</h2>
+    <div class="card">
+      <h3>Warehouse Flow Redesign</h3>
+      <p>Mapped every step from dock to shelf, then rearranged the pick path with the people who walk it. Result: 40% fewer steps per order and zero overtime in the first holiday season after the change.</p>
+    </div>
+    <div class="card">
+      <h3>Talk: “Checklists People Actually Use”</h3>
+      <p>A 20-minute talk for a local operations meetup on why most checklists fail and the three fixes that make them stick.</p>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       CONTACT — a mailto link only in version 1.
+       CUSTOMIZE: your email address (href and data-email). Keep the privacy
+       line if you like it; it tells visitors what you will not post.
+       ==================================================================== -->
+  <section id="contact" aria-labelledby="contact-heading">
+    <h2 id="contact-heading">Contact</h2>
+    <p>The best way to reach me is email: <a id="contact-email" href="mailto:jordan.rivera@example.com" data-email="jordan.rivera@example.com">jordan.rivera@example.com</a>.</p>
+    <p class="meta">This site lists only my name, city, email, and public links. No phone number or street address, on purpose.</p>
+    <!-- ADD-ON SLOT: contact form (see docs/website-skills-menu.md) -->
+    <!-- ADD-ON SLOT: newsletter signup (see docs/website-skills-menu.md) -->
+  </section>
+
+  <!-- ADD-ON SLOT: blog/posts list (see docs/website-skills-menu.md) — add a new <section id="posts"> here and a nav link for it. -->
+  <!-- ADD-ON SLOT: testimonials (see docs/website-skills-menu.md) — add a new <section id="testimonials"> here with two or three short quotes. -->
+
+</main>
+
+<!-- ======================================================================
+     FOOTER — year, a fiction label for the sample, and the theme picker.
+     CUSTOMIZE: remove the "fictional" sentence once this is your own content.
+
+     THEME & LAYOUT PICKER — how to lock in your choice before publishing:
+       1. Pick the theme and layout you like with the two menus below.
+       2. At the top of this file, set data-theme="..." and data-layout="..."
+          on the <html> tag to those names.
+       3. Delete the whole <div class="picker"> ... </div> block below.
+       4. Delete the <script> block at the bottom of this file.
+     The page then shows your choice to everyone and has no JavaScript at all.
+     ====================================================================== -->
+<footer id="footer">
+  <p>© <span id="year">2026</span> Jordan Rivera. Jordan Rivera is a fictional person made up for a class example.</p>
+  <div class="picker">
+    <label>Theme
+      <select id="theme-select">
+        <option value="slate">Slate</option>
+        <option value="forest">Forest</option>
+        <option value="sunset">Sunset</option>
+        <option value="ocean">Ocean</option>
+        <option value="mono">Mono</option>
+        <option value="plum">Plum</option>
+      </select>
+    </label>
+    <label>Layout
+      <select id="layout-select">
+        <option value="centered">Centered</option>
+        <option value="sidebar">Sidebar</option>
+      </select>
+    </label>
+  </div>
+</footer>
+
+<script>
+/* Theme and layout picker.
+   Order of preference: the web address (?theme=forest&layout=sidebar),
+   then what this browser remembered last time, then the <html> tag defaults.
+   Delete this whole script once you hard-code your choice (see the footer comment). */
+(function () {
+  var THEMES = ["slate", "forest", "sunset", "ocean", "mono", "plum"];
+  var LAYOUTS = ["centered", "sidebar"];
+  var html = document.documentElement;
+  var themeSelect = document.getElementById("theme-select");
+  var layoutSelect = document.getElementById("layout-select");
+
+  function remember(key, value) {
+    try { localStorage.setItem(key, value); } catch (e) { /* private mode or storage blocked: ignore */ }
+  }
+  function recall(key) {
+    try { return localStorage.getItem(key); } catch (e) { return null; }
+  }
+  function pick(fromUrl, fromStorage, allowed, fallback) {
+    if (allowed.indexOf(fromUrl) !== -1) return fromUrl;
+    if (allowed.indexOf(fromStorage) !== -1) return fromStorage;
+    return fallback;
+  }
+
+  var params = new URLSearchParams(location.search);
+  var theme = pick(params.get("theme"), recall("theme"), THEMES, html.getAttribute("data-theme") || "slate");
+  var layout = pick(params.get("layout"), recall("layout"), LAYOUTS, html.getAttribute("data-layout") || "centered");
+
+  function apply() {
+    html.setAttribute("data-theme", theme);
+    html.setAttribute("data-layout", layout);
+    themeSelect.value = theme;
+    layoutSelect.value = layout;
+  }
+  apply();
+
+  themeSelect.addEventListener("change", function () {
+    theme = themeSelect.value; remember("theme", theme); apply();
+  });
+  layoutSelect.addEventListener("change", function () {
+    layout = layoutSelect.value; remember("layout", layout); apply();
+  });
+
+  // Keep the footer year current.
+  var year = document.getElementById("year");
+  if (year) year.textContent = String(new Date().getFullYear());
+})();
+</script>
+</body>
+</html>

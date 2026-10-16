@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en" data-theme="space-invasion">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Alien Tic-Tac-Toe: choose a square, win a short battle, claim the square. A solo classroom game.">
+<title>Alien Tic-Tac-Toe</title>
+<style>
+/* CUSTOMIZE: the base colors. Each theme in the script changes --bg, --panel, and --accent. */
+:root {
+  --bg: #0b1020;        /* page background */
+  --panel: #161d33;     /* boxes and cells */
+  --accent: #7dd3fc;    /* borders, headings, pending cell, winning line */
+  --text: #f4f6ff;      /* main text, always light */
+  --button-bg: #ffffff; /* buttons are always light with dark text so every theme stays readable */
+  --button-text: #111111;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; font: 18px/1.5 Arial, sans-serif; color: var(--text); background: var(--bg); }
+button { font: inherit; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.skip { position: absolute; left: 16px; top: -100px; z-index: 20; background: #fff; color: #111; padding: 12px; }
+.skip:focus { top: 12px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+[hidden] { display: none !important; }
+
+main { max-width: 480px; margin: 0 auto; padding: 16px; }
+h1 { font-size: 28px; line-height: 1.2; margin: 8px 0 4px; color: var(--accent); }
+h2 { font-size: 20px; margin: 16px 0 8px; }
+.note { margin: 0 0 12px; font-size: 16px; opacity: 0.9; }
+.panel { background: var(--panel); border: 2px solid var(--accent); border-radius: 8px; padding: 12px; margin: 12px 0; }
+.status { min-height: 52px; margin: 0; }
+
+/* Legend: who is which mark. Words and icons together. */
+.legend { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin: 8px 0; font-size: 16px; }
+.legend > span { background: var(--panel); border: 1px solid var(--accent); border-radius: 8px; padding: 4px 10px; }
+
+/* The 3 by 3 board. It must fit a 375px wide phone. */
+.board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; max-width: 360px; margin: 0 auto; }
+.cell {
+  aspect-ratio: 1 / 1; min-height: 44px; border: 2px solid var(--accent); border-radius: 8px;
+  background: var(--panel); color: var(--text); font-size: clamp(32px, 10vw, 48px); line-height: 1;
+  display: flex; align-items: center; justify-content: center; cursor: pointer;
+}
+.cell:disabled { cursor: default; opacity: 0.85; }
+.cell.pending { border-style: dashed; font-size: 16px; }
+.cell.winner { background: var(--accent); }
+
+/* Health is always shown as words, never only as color. */
+.health { display: flex; gap: 10px; flex-wrap: wrap; }
+.health p { flex: 1 1 140px; margin: 0; background: var(--panel); border: 2px solid var(--accent); border-radius: 8px; padding: 10px; text-align: center; font-weight: bold; }
+.opponent-move { font-size: 22px; font-weight: bold; margin: 0 0 8px; }
+
+/* Buttons: at least 44px tall. */
+.actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 12px 0; }
+.action { min-height: 44px; padding: 10px 18px; border: 2px solid var(--button-text); border-radius: 8px; background: var(--button-bg); color: var(--button-text); cursor: pointer; }
+.action:disabled { opacity: 0.5; cursor: default; }
+.action.chosen { outline: 3px solid var(--accent); }
+.quiet { background: var(--panel); color: var(--text); border-color: var(--accent); }
+
+/* Theme chooser: one radio button per theme. */
+fieldset { border: 2px solid var(--accent); border-radius: 8px; padding: 10px; margin: 12px 0; }
+legend { padding: 0 6px; font-weight: bold; }
+.themes { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.themes label { display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 4px 8px; border-radius: 8px; background: var(--panel); cursor: pointer; font-size: 16px; }
+.themes input { width: 20px; height: 20px; margin: 0; }
+
+table { border-collapse: collapse; width: 100%; font-size: 16px; }
+th, td { border: 1px solid var(--accent); padding: 6px 8px; text-align: left; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<main id="main">
+
+  <!-- Screen 1: instructions. Also shown as help during a game. -->
+  <section id="screen-instructions" aria-labelledby="title">
+    <h1 id="title">Alien Tic-Tac-Toe</h1>
+    <!-- CUSTOMIZE: the words on the instructions screen. Keep the rules the same. -->
+    <p>A solo game. Choose an empty square to start a battle for it. Win the battle and the square is yours
+      (<span id="intro-player-mark"></span>). Lose it and the square goes to the <span class="opponent-name"></span>
+      (<span id="intro-opponent-mark"></span>). The <span class="opponent-name"></span> never takes a turn on its own.</p>
+    <p>Three of your marks in a row, column, or diagonal wins. Three <span class="opponent-name"></span> marks loses. A full board with no line is a draw.</p>
+
+    <h2>The battle</h2>
+    <p>Each side has 2 health. The <span class="opponent-name"></span> shows a move; you pick a response. A correct response takes
+      1 health from the <span class="opponent-name"></span>. A wrong one takes 1 health from you. The first side to reach 0 loses the battle.</p>
+    <table>
+      <thead><tr><th scope="col"><span class="opponent-name-capital"></span> shows</th><th scope="col">Correct response</th></tr></thead>
+      <tbody id="counter-table"></tbody>
+    </table>
+
+    <fieldset>
+      <legend>Choose a look</legend>
+      <div class="themes" id="theme-list"></div>
+    </fieldset>
+
+    <div class="actions">
+      <button class="action" id="start" type="button">Start</button>
+      <button class="action" id="close-help" type="button" hidden>Back to game</button>
+      <button class="action quiet restart" type="button" hidden>Restart game (clears the whole board)</button>
+    </div>
+  </section>
+
+  <!-- Screen 2: the board. -->
+  <section id="screen-board" aria-labelledby="board-title" hidden>
+    <h1 id="board-title">Alien Tic-Tac-Toe</h1>
+    <div class="legend" id="legend"></div>
+    <p class="panel status" id="board-status" role="status" aria-live="polite" tabindex="-1"></p>
+    <div class="board" id="board" role="group" aria-label="Tic-tac-toe board"></div>
+    <div class="actions">
+      <button class="action" id="play-again" type="button" hidden>Play again</button>
+      <button class="action quiet help" type="button">How to play</button>
+      <button class="action quiet restart" type="button">Restart game (clears the whole board)</button>
+    </div>
+  </section>
+
+  <!-- Screen 3: a battle for one cell. -->
+  <section id="screen-battle" aria-labelledby="battle-title" hidden>
+    <h1 id="battle-title"></h1>
+    <div class="health">
+      <p id="player-health"></p>
+      <p id="opponent-health"></p>
+    </div>
+    <div class="panel">
+      <p id="exchange-label" class="note"></p>
+      <p class="opponent-move" id="opponent-move" tabindex="-1"></p>
+      <!-- The three response buttons are filled in by the script from the theme. -->
+      <div class="actions" id="responses"></div>
+      <p class="status" id="battle-status" role="status" aria-live="polite" tabindex="-1"></p>
+      <div class="actions">
+        <button class="action" id="next-exchange" type="button" hidden>Next exchange</button>
+        <button class="action" id="return-to-board" type="button" hidden>Return to board</button>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="action quiet help" type="button">How to play</button>
+      <button class="action quiet restart" type="button">Restart game (clears the whole board)</button>
+    </div>
+  </section>
+</main>
+
+<!-- CUSTOMIZE: the THEMES list is at the top of this script. Add or change a theme there.
+     Each theme has: an id (used in the web address as ?theme=id), a name, two emoji icons,
+     the opponent's name, three attack names, the three matching counters (same order),
+     and three colors. The rules never change; only the words, icons, and colors do. -->
+<script>
+var THEMES = {
+  "space-invasion": {
+    id: "space-invasion", name: "Space Invasion", playerIcon: "🧑‍🚀", opponentIcon: "👽", opponentName: "alien",
+    attacks: ["Laser", "Shield", "Claw"], counters: ["Shield", "Blast", "Dodge"],
+    colors: { "--bg": "#0b1020", "--panel": "#161d33", "--accent": "#7dd3fc" }
+  },
+  "cats-dogs": {
+    id: "cats-dogs", name: "Cats vs Dogs", playerIcon: "🐱", opponentIcon: "🐶", opponentName: "dog",
+    attacks: ["Bark", "Pounce", "Slobber"], counters: ["Hiss", "Climb", "Shake Off"],
+    colors: { "--bg": "#1f1410", "--panel": "#332219", "--accent": "#fdba74" }
+  },
+  "pizza-tacos": {
+    id: "pizza-tacos", name: "Pizza vs Tacos", playerIcon: "🍕", opponentIcon: "🌮", opponentName: "taco",
+    attacks: ["Hot Sauce", "Shell Crunch", "Salsa Splash"], counters: ["Extra Cheese", "Deep Dish", "Pizza Box"],
+    colors: { "--bg": "#2a0f0f", "--panel": "#3d1a1a", "--accent": "#fde047" }
+  },
+  "robots-dinos": {
+    id: "robots-dinos", name: "Robots vs Dinos", playerIcon: "🤖", opponentIcon: "🦖", opponentName: "dino",
+    attacks: ["Chomp", "Tail Swipe", "Roar"], counters: ["Steel Plate", "Jump Jets", "Mute Button"],
+    colors: { "--bg": "#0f1f14", "--panel": "#1a3322", "--accent": "#86efac" }
+  },
+  "ghosts-pumpkins": {
+    id: "ghosts-pumpkins", name: "Ghosts vs Pumpkins", playerIcon: "👻", opponentIcon: "🎃", opponentName: "pumpkin",
+    attacks: ["Seed Spit", "Vine Grab", "Lantern Glow"], counters: ["Phase Out", "Float Up", "Shadow Cloak"],
+    colors: { "--bg": "#140a1f", "--panel": "#241536", "--accent": "#fb923c" }
+  },
+  "sun-moon": {
+    id: "sun-moon", name: "Sun vs Moon", playerIcon: "☀️", opponentIcon: "🌙", opponentName: "moon",
+    attacks: ["Eclipse", "Moonbeam", "High Tide"], counters: ["Solar Flare", "Sunrise", "Heat Wave"],
+    colors: { "--bg": "#101a33", "--panel": "#1c2a4d", "--accent": "#fde68a" }
+  },
+  "wizards-dragons": {
+    id: "wizards-dragons", name: "Wizards vs Dragons", playerIcon: "🧙", opponentIcon: "🐉", opponentName: "dragon",
+    attacks: ["Fire Breath", "Wing Gust", "Tail Whip"], counters: ["Ice Spell", "Anchor Spell", "Levitate"],
+    colors: { "--bg": "#1a0f2a", "--panel": "#2a1a44", "--accent": "#c4b5fd" }
+  },
+  "coffee-donuts": {
+    id: "coffee-donuts", name: "Coffee vs Donuts", playerIcon: "☕", opponentIcon: "🍩", opponentName: "donut",
+    attacks: ["Sprinkle Storm", "Sugar Rush", "Glaze Drip"], counters: ["Lid On", "Espresso Shot", "Steam Cloud"],
+    colors: { "--bg": "#1c120c", "--panel": "#2e1f16", "--accent": "#f9a8d4" }
+  }
+};
+var DEFAULT_THEME = "space-invasion";
+var STORAGE_KEY = "alien-tic-tac-toe-theme";
+
+// ---------- Rules that never change ----------
+var LINES = [
+  [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows 1-2-3, 4-5-6, 7-8-9
+  [0, 3, 6], [1, 4, 7], [2, 5, 8], // columns 1-4-7, 2-5-8, 3-6-9
+  [0, 4, 8], [2, 4, 6]             // diagonals 1-5-9, 3-5-7
+];
+var STARTING_HEALTH = 2;
+
+// ---------- The game state ----------
+// screen is one of: "instructions", "board", "battle".
+// phase (on the board screen) is one of: "choose", "finished".
+// battle is null when no battle is happening. During a battle, battle.phase is one of:
+// "respond" (waiting for a response), "feedback" (answered, waiting for Next exchange),
+// "won" or "lost" (battle over, cell already filled, waiting for Return to board).
+var state = {
+  themeId: DEFAULT_THEME,
+  screen: "instructions",
+  helpOpen: false,
+  board: ["", "", "", "", "", "", "", "", ""], // each cell is "", "X", or "O"
+  pendingCell: null,
+  phase: "choose",
+  result: "",        // "", "win", "lose", or "draw"
+  winningLine: null,
+  battle: null
+};
+
+function theme() { return THEMES[state.themeId]; }
+
+// ---------- Theme ----------
+
+// Pick the starting theme: web address first, then saved choice, then the default.
+function startingTheme() {
+  var fromUrl = new URLSearchParams(window.location.search).get("theme");
+  if (fromUrl && THEMES[fromUrl]) return fromUrl;
+  try {
+    var saved = localStorage.getItem(STORAGE_KEY);
+    if (saved && THEMES[saved]) return saved;
+  } catch (error) { /* storage is optional; the game still works */ }
+  return DEFAULT_THEME;
+}
+
+// Any screen: switch the look. The rules and the board do not change.
+function applyTheme(id) {
+  if (!THEMES[id]) id = DEFAULT_THEME;
+  state.themeId = id;
+  document.documentElement.setAttribute("data-theme", id);
+  var colors = THEMES[id].colors;
+  for (var name in colors) document.documentElement.style.setProperty(name, colors[name]);
+  try { localStorage.setItem(STORAGE_KEY, id); } catch (error) { /* storage is optional */ }
+  render();
+}
+
+// ---------- Actions ----------
+
+// State "instructions": Start opens the empty board. Nothing happens before this.
+function startGame() {
+  state.screen = "board";
+  render();
+  focusMessage("board-status");
+}
+
+// Board screen, phase "choose": one empty cell starts one battle and locks the board.
+function chooseCell(index) {
+  if (state.screen !== "board" || state.phase !== "choose" || state.helpOpen) return;
+  if (state.board[index] !== "") return;   // occupied cells are ignored
+  if (state.pendingCell !== null) return;  // a battle already exists
+  state.pendingCell = index;
+  state.battle = {
+    playerHealth: STARTING_HEALTH,
+    opponentHealth: STARTING_HEALTH,
+    exchange: 0,       // 0, 1, or 2: which attack is showing
+    phase: "respond",
+    feedback: "",
+    chosen: -1         // index of the counter the player picked this exchange
+  };
+  state.screen = "battle";
+  render();
+  focusMessage("opponent-move"); // one Tab reaches the first response
+}
+
+// Battle, phase "respond": exactly one response is accepted, then responses lock.
+function respond(counterIndex) {
+  var battle = state.battle;
+  if (!battle || battle.phase !== "respond" || state.helpOpen) return;
+  var t = theme();
+  var attack = t.attacks[battle.exchange];
+  var correct = t.counters[battle.exchange];
+  var chosen = t.counters[counterIndex];
+  battle.chosen = counterIndex;
+
+  if (chosen === correct) {
+    battle.opponentHealth = battle.opponentHealth - 1;
+    battle.feedback = chosen + " counters " + attack + ". The " + t.opponentName + " loses 1 health.";
+  } else {
+    battle.playerHealth = battle.playerHealth - 1;
+    battle.feedback = chosen + " does not stop " + attack + ". You lose 1 health. (" + correct + " would have worked.)";
+  }
+
+  // Zero health ends the battle right away. The cell is filled once, here.
+  if (battle.opponentHealth === 0) {
+    finishBattle("won");
+  } else if (battle.playerHealth === 0) {
+    finishBattle("lost");
+  } else {
+    battle.phase = "feedback";
+    render();
+    focusMessage("battle-status"); // one Tab reaches Next exchange
+  }
+}
+
+// Battle, phase "feedback": Next exchange shows the next attack and fresh responses.
+function nextExchange() {
+  var battle = state.battle;
+  if (!battle || battle.phase !== "feedback" || state.helpOpen) return;
+  battle.exchange = battle.exchange + 1;
+  battle.phase = "respond";
+  battle.chosen = -1;
+  render();
+  focusMessage("opponent-move");
+}
+
+// Battle ended: fill the pending cell exactly once, then check the board immediately.
+function finishBattle(outcome) {
+  var index = state.pendingCell;
+  if (index === null || state.board[index] !== "") return; // already resolved; never place a second mark
+  state.board[index] = outcome === "won" ? "X" : "O";
+  state.pendingCell = null;
+  state.battle.phase = outcome;
+  evaluateBoard();
+
+  if (state.phase === "finished") {
+    // The board is over. Skip the battle summary and show the result.
+    state.battle = null;
+    state.screen = "board";
+    render();
+    focusMessage("board-status");
+  } else {
+    // The board continues. Show the summary and wait for Return to board.
+    state.battle.resolvedCell = index;
+    render();
+    focusMessage("battle-status");
+  }
+}
+
+// Battle, phase "won" or "lost": Return to board only dismisses the summary. No mark is placed.
+function returnToBoard() {
+  var battle = state.battle;
+  if (!battle || (battle.phase !== "won" && battle.phase !== "lost") || state.helpOpen) return;
+  state.battle = null;
+  state.screen = "board";
+  render();
+  focusMessage("board-status");
+}
+
+// Check all 8 lines, then check for a full board.
+function evaluateBoard() {
+  for (var i = 0; i < LINES.length; i++) {
+    var a = LINES[i][0], b = LINES[i][1], c = LINES[i][2];
+    if (state.board[a] !== "" && state.board[a] === state.board[b] && state.board[a] === state.board[c]) {
+      state.winningLine = LINES[i];
+      state.result = state.board[a] === "X" ? "win" : "lose";
+      state.phase = "finished";
+      return;
+    }
+  }
+  if (state.board.indexOf("") === -1) {
+    state.result = "draw";
+    state.phase = "finished";
+    return;
+  }
+  state.phase = "choose";
+}
+
+// Board screen, phase "finished": Play again gives a fresh empty board.
+function playAgain() {
+  resetGame();
+}
+
+// Any active state: Restart game clears the board and any battle right away.
+function restartGame() {
+  resetGame();
+}
+
+function resetGame() {
+  state.board = ["", "", "", "", "", "", "", "", ""];
+  state.pendingCell = null;
+  state.phase = "choose";
+  state.result = "";
+  state.winningLine = null;
+  state.battle = null;
+  state.helpOpen = false;
+  state.screen = "board";
+  render();
+  focusMessage("board-status");
+}
+
+// Help: reopening the instructions keeps the board, pending cell, health, and locked response.
+function openHelp() {
+  state.helpOpen = true;
+  render();
+  document.getElementById("close-help").focus();
+}
+function closeHelp() {
+  state.helpOpen = false;
+  render();
+  if (state.screen !== "battle") focusMessage("board-status");
+  else if (state.battle.phase === "respond") focusMessage("opponent-move");
+  else focusMessage("battle-status");
+}
+
+// After every action, focus moves to the message that explains what happened, never to a button.
+// A repeated Enter or Space then does nothing by accident; one Tab reaches the next button.
+function focusMessage(id) {
+  document.getElementById(id).focus();
+}
+
+// ---------- Drawing ----------
+// render() redraws everything from the state. It never changes the rules.
+function render() {
+  var t = theme();
+  var gameInProgress = state.screen !== "instructions";
+  var showInstructions = state.screen === "instructions" || state.helpOpen;
+
+  document.getElementById("screen-instructions").hidden = !showInstructions;
+  document.getElementById("screen-board").hidden = !(state.screen === "board" && !state.helpOpen);
+  document.getElementById("screen-battle").hidden = !(state.screen === "battle" && !state.helpOpen);
+
+  renderInstructions(t, gameInProgress);
+  renderBoard(t);
+  renderBattle(t);
+
+  // Restart game is reachable in every active state, including while help is open.
+  var restartButtons = document.querySelectorAll(".restart");
+  for (var i = 0; i < restartButtons.length; i++) {
+    restartButtons[i].hidden = !gameInProgress || state.phase === "finished";
+  }
+}
+
+// An icon plus hidden text, so screen readers hear "X" or "O".
+function markHtml(t, mark) {
+  var icon = mark === "X" ? t.playerIcon : t.opponentIcon;
+  return '<span aria-hidden="true">' + icon + '</span><span class="sr-only">' + mark + '</span>';
+}
+
+function capitalize(word) { return word.charAt(0).toUpperCase() + word.slice(1); }
+
+function renderInstructions(t, gameInProgress) {
+  var names = document.querySelectorAll(".opponent-name");
+  for (var i = 0; i < names.length; i++) names[i].textContent = t.opponentName;
+  var capitals = document.querySelectorAll(".opponent-name-capital");
+  for (var j = 0; j < capitals.length; j++) capitals[j].textContent = capitalize(t.opponentName);
+  document.getElementById("intro-player-mark").innerHTML = markHtml(t, "X") + " X";
+  document.getElementById("intro-opponent-mark").innerHTML = markHtml(t, "O") + " O";
+
+  var rows = "";
+  for (var k = 0; k < 3; k++) {
+    rows += "<tr><td>" + t.attacks[k] + "</td><td>" + t.counters[k] + "</td></tr>";
+  }
+  document.getElementById("counter-table").innerHTML = rows;
+
+  // Theme radio buttons, built once.
+  var list = document.getElementById("theme-list");
+  if (list.children.length === 0) {
+    for (var id in THEMES) {
+      var option = THEMES[id];
+      var label = document.createElement("label");
+      var input = document.createElement("input");
+      input.type = "radio";
+      input.name = "theme";
+      input.value = id;
+      input.addEventListener("change", makeThemeHandler(id));
+      label.appendChild(input);
+      label.appendChild(document.createTextNode(" " + option.playerIcon + " vs " + option.opponentIcon + " " + option.name));
+      list.appendChild(label);
+    }
+  }
+  var radios = list.querySelectorAll("input");
+  for (var r = 0; r < radios.length; r++) radios[r].checked = radios[r].value === state.themeId;
+
+  document.getElementById("start").hidden = gameInProgress;
+  document.getElementById("close-help").hidden = !gameInProgress;
+}
+
+function makeThemeHandler(id) {
+  return function () { applyTheme(id); };
+}
+
+function renderBoard(t) {
+  document.getElementById("legend").innerHTML =
+    "<span>You: " + markHtml(t, "X") + " (X)</span><span>" + capitalize(t.opponentName) + ": " + markHtml(t, "O") + " (O)</span>";
+
+  var boardElement = document.getElementById("board");
+  boardElement.innerHTML = "";
+  for (var i = 0; i < 9; i++) {
+    var button = document.createElement("button");
+    button.type = "button";
+    button.className = "cell";
+    button.setAttribute("data-cell", String(i + 1));
+    var mark = state.board[i];
+    button.setAttribute("data-mark", mark);
+    var label = "Row " + (Math.floor(i / 3) + 1) + ", column " + ((i % 3) + 1) + ", ";
+
+    if (state.pendingCell === i) {
+      button.classList.add("pending");
+      button.textContent = "pending";
+      label += "pending battle";
+    } else if (mark !== "") {
+      button.innerHTML = markHtml(t, mark);
+      label += mark;
+    } else {
+      label += "empty";
+    }
+    if (state.winningLine && state.winningLine.indexOf(i) !== -1) {
+      button.classList.add("winner");
+      label += ", part of the winning line";
+    }
+    button.setAttribute("aria-label", label);
+    button.disabled = !(state.phase === "choose" && mark === "" && state.pendingCell === null);
+    button.addEventListener("click", makeCellHandler(i));
+    boardElement.appendChild(button);
+  }
+
+  document.getElementById("play-again").hidden = state.phase !== "finished";
+  document.getElementById("board-status").textContent = boardStatusText(t);
+}
+
+function makeCellHandler(index) {
+  return function () { chooseCell(index); };
+}
+
+function boardStatusText(t) {
+  if (state.phase === "choose") return "Choose an empty square to start a battle.";
+  if (state.result === "win") return "You won! Three X in a row.";
+  if (state.result === "lose") return "The " + t.opponentName + " won. Three O in a row.";
+  return "Draw. The board is full with no line.";
+}
+
+function renderBattle(t) {
+  var battle = state.battle;
+  if (!battle) return;
+  var cellNumber = state.pendingCell !== null ? state.pendingCell + 1 : battle.resolvedCell + 1;
+  var battleOver = battle.phase === "won" || battle.phase === "lost";
+
+  document.getElementById("battle-title").textContent = "Battle for cell " + cellNumber;
+  document.getElementById("player-health").textContent = "You: " + battle.playerHealth + " of " + STARTING_HEALTH;
+  document.getElementById("opponent-health").textContent = capitalize(t.opponentName) + ": " + battle.opponentHealth + " of " + STARTING_HEALTH;
+  document.getElementById("exchange-label").textContent = "Exchange " + (battle.exchange + 1) + " of up to 3";
+  document.getElementById("opponent-move").textContent = battleOver
+    ? "The battle is over."
+    : "The " + t.opponentName + " uses " + t.attacks[battle.exchange] + "!";
+
+  // Response buttons, in the theme's counter order. Disabled unless waiting for a response.
+  var responses = document.getElementById("responses");
+  responses.innerHTML = "";
+  for (var i = 0; i < 3; i++) {
+    var button = document.createElement("button");
+    button.type = "button";
+    button.className = "action response";
+    button.setAttribute("data-response-index", String(i));
+    button.textContent = t.counters[i];
+    button.disabled = battle.phase !== "respond";
+    if (battle.chosen === i) button.classList.add("chosen");
+    button.addEventListener("click", makeResponseHandler(i));
+    responses.appendChild(button);
+  }
+
+  document.getElementById("next-exchange").hidden = battle.phase !== "feedback";
+  document.getElementById("return-to-board").hidden = !battleOver;
+  document.getElementById("battle-status").textContent = battleStatusText(t, cellNumber);
+}
+
+function makeResponseHandler(index) {
+  return function () { respond(index); };
+}
+
+function battleStatusText(t, cellNumber) {
+  var battle = state.battle;
+  if (battle.phase === "respond") return "Choose your response.";
+  if (battle.phase === "feedback") return battle.feedback + " Press Next exchange to continue.";
+  if (battle.phase === "won") return battle.feedback + " You won the battle! Cell " + cellNumber + " is now yours (X).";
+  return battle.feedback + " The " + t.opponentName + " won the battle. Cell " + cellNumber + " goes to the " + t.opponentName + " (O).";
+}
+
+// ---------- Wire up the fixed buttons once, then draw ----------
+document.getElementById("start").addEventListener("click", startGame);
+document.getElementById("close-help").addEventListener("click", closeHelp);
+document.getElementById("play-again").addEventListener("click", playAgain);
+document.getElementById("next-exchange").addEventListener("click", nextExchange);
+document.getElementById("return-to-board").addEventListener("click", returnToBoard);
+var helpButtons = document.querySelectorAll(".help");
+for (var h = 0; h < helpButtons.length; h++) helpButtons[h].addEventListener("click", openHelp);
+var restartButtons = document.querySelectorAll(".restart");
+for (var r = 0; r < restartButtons.length; r++) restartButtons[r].addEventListener("click", restartGame);
+
+applyTheme(startingTheme());
+</script>
+</body>
+</html>

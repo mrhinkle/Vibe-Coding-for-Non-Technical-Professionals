@@ -1,6 +1,6 @@
 # Skills for the vibe coding class
 
-These ten short skills adapt the workflow in Mark Hinkle's VibeCoding-a-Website repository for the foundations and website project in a six-hour, two-project business workshop. Seven additional game skills are in the [game skill guide](game-skills-guide.md). Each accepts a specific input and produces an inspectable result. They are draft instruction files, not installed plugins or a promise that every chatbot has the same tools.
+These eleven short skills (ten stages plus plan-first) adapt the workflow in Mark Hinkle's VibeCoding-a-Website repository for the foundations and website project in a six-hour, two-project business workshop. Seven additional game skills are in the [game skill guide](game-skills-guide.md). Each accepts a specific input and produces an inspectable result. They are draft instruction files, not installed plugins or a promise that every chatbot has the same tools.
 
 ## Use a skill
 
@@ -9,6 +9,10 @@ For the portable route, open the relevant SKILL.md, paste or attach its contents
 For native installation, use the chosen platform's current supported skill workflow and verify that the skill appears. The original repository uses .claude/skills. Do not assume placing this package in a folder automatically installs it in ChatGPT, Claude chat, or another product. In supported OpenAI surfaces, installed skills can be selected with @ in ChatGPT or $ in Codex. [Official skill guidance](https://learn.chatgpt.com/docs/skills-and-plugins)
 
 The skills are deliberately self-contained. No scripts, API keys, or original skill installation are required to read them. An ordinary chatbot may supply complete files for the learner to save, test, and upload. Automatic editing, testing, repository changes, and deployment require the corresponding tools and authorized connections.
+
+## Plan first, every time
+
+Before any stage that produces files, load [vc-plan-first](skills/vc-plan-first/SKILL.md). It makes the chatbot give you a plan (files, order, three hand checks) and wait for your approval, and it tells you which size of model to use for the step. See [plan first and models](docs/plan-first-and-models.md). To write your own skill, see the [skills guide](docs/skills-guide.md) and the [template](templates/SKILL-template.md).
 
 ## Stage prompts
 
@@ -72,7 +76,7 @@ Choose a [starter or your own idea](website-starters/README.md). The [scope-and-
 
 [vc-project-handoff](skills/vc-project-handoff/SKILL.md)
 
-> Create a concise handoff and a two-minute demo from the actual project records. Make unfinished or untested work clear.
+> Fill in project-state.md for each project from the actual records, list both live URLs, and write a two-minute demo script. Make unfinished or untested work clear.
 
 ## What was checked
 

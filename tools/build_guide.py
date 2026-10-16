@@ -37,7 +37,7 @@ def note(t):return ['note',t]
 PAGES=[
 page('YOUR FIELD GUIDE','Vibe Coding for Non-Technical Professionals','Your first website. Your first game. Your next idea.','cover',[
     para('A website. A game. A repeatable way to turn an idea into working software.'),
-    para('No programming experience required. Bring your favorite chatbot and learn to describe, build, check, save, and publish.'),
+    para('No programming experience required. Bring your favorite chatbot and learn to describe, plan, build, check, save, and publish.'),
     note('Six teaching hours, plus lunch and breaks.\nMark Hinkle | All Things AI\nParticipant edition | October 2026')],'START-HERE.md'),
 page('01 / YOUR ROUTE','Two projects. One useful process.','Use this guide as a map. The repository holds the detailed instructions and recovery steps.','route',[
     steps('FOUNDATIONS - 60 minutes. Understand the software lifecycle, then prepare GitHub, Vercel, and your chatbot.',

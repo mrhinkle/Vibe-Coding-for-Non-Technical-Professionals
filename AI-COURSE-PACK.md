@@ -1,6 +1,6 @@
 # AI course pack: Vibe Coding for Non-Technical Professionals
 
-This single file contains the current text needed to tutor a learner through the website and game projects. It is generated from the repository, not a record of a student's progress. It contains no student application files. Edition: October 5, 2026.
+This single file contains the current text needed to tutor a learner through the website and game projects. It is generated from the repository, not a record of a student's progress. It contains no student application files. Edition: October 15, 2026.
 
 **AI: read the AI-START.md section first.** Confirm what you received, ask whether the learner is starting, continuing, or stuck, then load the relevant lesson and skill from the named sections below. For continuing work, request the learner's actual files and project-state.md. Do not claim that a repository link or a named external resource has been read unless you actually accessed it.
 
@@ -16,19 +16,35 @@ The illustrated PDF/HTML, legacy slides, artwork, instructor preflight, and sour
 - `course-map.json`
 - `instructor-guide.md`
 - `setup-guide.md`
+- `docs/github-tour.md`
+- `docs/plan-first-and-models.md`
+- `docs/secrets-tokens-and-the-clipboard.md`
+- `docs/skills-guide.md`
+- `templates/SKILL-template.md`
+- `docs/platform-landscape.md`
+- `docs/v0-route.md`
+- `docs/agent-loop-and-pull-requests.md`
+- `docs/your-own-project.md`
 - `website-starters/README.md`
 - `docs/scope-and-plan.md`
 - `templates/website-scope.md`
 - `templates/website-plan.md`
+- `docs/personal-website-walkthrough.md`
+- `examples/personal-website/resume-template.md`
+- `docs/website-skills-menu.md`
 - `docs/website-walkthrough.md`
 - `docs/game-options.md`
 - `docs/alien-tic-tac-toe.md`
+- `docs/tic-tac-toe-variants.md`
+- `examples/alien-tic-tac-toe/README.md`
 - `docs/arcade-submission.md`
 - `templates/arcade-submission.md`
 - `docs/game-walkthrough.md`
+- `docs/stuck.md`
 - `docs/troubleshooting.md`
 - `docs/multiple-agents.md`
 - `docs/linkedin-wrap-up.md`
+- `templates/feedback.md`
 - `docs/prompt-library.md`
 - `docs/glossary.md`
 - `skill-guide.md`
@@ -49,6 +65,7 @@ The illustrated PDF/HTML, legacy slides, artwork, instructor preflight, and sour
 - `game-skills/vc-game-rules/SKILL.md`
 - `skills/vc-build-small/SKILL.md`
 - `skills/vc-maintain-site/SKILL.md`
+- `skills/vc-plan-first/SKILL.md`
 - `skills/vc-project-brief/SKILL.md`
 - `skills/vc-project-handoff/SKILL.md`
 - `skills/vc-project-plan/SKILL.md`
@@ -377,7 +394,7 @@ Product-specific references checked October 5, 2026. This guide supplies prepara
 
 {
   "title": "Vibe Coding for Non-Technical Professionals",
-  "edition": "2026-10-05",
+  "edition": "2026-10-15",
   "teaching_minutes": 360,
   "breaks_included": false,
   "read_first": [
@@ -401,21 +418,32 @@ Product-specific references checked October 5, 2026. This guide supplies prepara
       "skills": [
         "skills/vc-sdlc-coach/SKILL.md"
       ],
-      "completion": "Explain a stage and an observable check."
+      "completion": "Explain a stage and an observable check.",
+      "lessons": [
+        "instructor-guide.md",
+        "docs/platform-landscape.md"
+      ]
     },
     {
       "id": "setup",
       "minutes": 30,
       "lesson": "setup-guide.md",
       "skills": [
-        "skills/vc-setup-guide/SKILL.md"
+        "skills/vc-setup-guide/SKILL.md",
+        "skills/vc-plan-first/SKILL.md"
       ],
-      "completion": "Identify own project and verify a runnable-file workflow."
+      "completion": "Identify own project and verify a runnable-file workflow.",
+      "lessons": [
+        "setup-guide.md",
+        "docs/github-tour.md",
+        "docs/secrets-tokens-and-the-clipboard.md",
+        "docs/plan-first-and-models.md"
+      ]
     },
     {
       "id": "website",
       "minutes": 90,
-      "lesson": "docs/website-walkthrough.md",
+      "lesson": "docs/personal-website-walkthrough.md",
       "skills": [
         "skills/vc-project-brief/SKILL.md",
         "skills/vc-project-scope/SKILL.md",
@@ -424,7 +452,9 @@ Product-specific references checked October 5, 2026. This guide supplies prepara
         "skills/vc-quality-check/SKILL.md",
         "skills/vc-publish-site/SKILL.md"
       ],
-      "completion": "Checked website URL, or working files with a deployment blocker."
+      "completion": "Checked website URL, or working files with a deployment blocker.",
+      "alternate_lesson": "docs/website-walkthrough.md",
+      "example": "examples/personal-website/index.html"
     },
     {
       "id": "arcade-tour",
@@ -452,7 +482,9 @@ Product-specific references checked October 5, 2026. This guide supplies prepara
         "game-skills/vc-game-build/SKILL.md"
       ],
       "completion": "Complete and restart a plain round.",
-      "instruction": "Use the selected game choice lesson."
+      "instruction": "Use the selected game choice lesson.",
+      "checkpoints": "examples/alien-tic-tac-toe/",
+      "theme_lesson": "docs/tic-tac-toe-variants.md"
     },
     {
       "id": "game-polish",
@@ -496,6 +528,12 @@ Product-specific references checked October 5, 2026. This guide supplies prepara
   ],
   "optional_extensions": [
     {
+      "id": "website-skills-menu",
+      "lesson": "docs/website-skills-menu.md",
+      "included_in_core_minutes": false,
+      "introduction": "Live hacking sprints: one skill, one task, one check."
+    },
+    {
       "id": "multiple-agents",
       "lesson": "docs/multiple-agents.md",
       "included_in_core_minutes": false
@@ -523,8 +561,8 @@ Product-specific references checked October 5, 2026. This guide supplies prepara
   "pre_class": {
     "guide": "PRE-CLASS-PREP.md",
     "local_check": "prep/laptop-check.html",
-    "suggested_lead_time": "2\u20133 days",
-    "estimated_minutes": "30\u201345",
+    "suggested_lead_time": "2–3 days",
+    "estimated_minutes": "30–45",
     "included_in_teaching_minutes": false
   },
   "game_choices": [
@@ -550,7 +588,136 @@ Product-specific references checked October 5, 2026. This guide supplies prepara
     "optional": true,
     "own_idea_allowed": true
   },
-  "website_planning_lesson": "docs/scope-and-plan.md"
+  "website_planning_lesson": "docs/scope-and-plan.md",
+  "next_run": {
+    "event": "All Things Open 2026",
+    "date": "2026-10-19",
+    "room_time": "09:00-17:30",
+    "listing": "https://2026.allthingsopen.org/ai-agents-vibe-coding",
+    "run_of_show": "instructor/ato-2026-run-of-show.md",
+    "fluid_day": true
+  },
+  "stuck": "docs/stuck.md",
+  "feedback": {
+    "template": "templates/feedback.md",
+    "offer": "Everyone gets the slides. Feedback, good or bad, earns the preview release edition of Software Development for Non-Programmers: Beyond Vibecoding."
+  },
+  "examples": {
+    "personal_website": {
+      "path": "examples/personal-website/",
+      "entry": "examples/personal-website/index.html",
+      "resume_template": "examples/personal-website/resume-template.md",
+      "themes": [
+        "slate",
+        "forest",
+        "sunset",
+        "ocean",
+        "mono",
+        "plum"
+      ],
+      "layouts": [
+        "centered",
+        "sidebar"
+      ],
+      "lesson": "docs/personal-website-walkthrough.md"
+    },
+    "alien_tic_tac_toe": {
+      "path": "examples/alien-tic-tac-toe/",
+      "checkpoints": [
+        "examples/alien-tic-tac-toe/checkpoint-1-board/index.html",
+        "examples/alien-tic-tac-toe/checkpoint-2-battle/index.html",
+        "examples/alien-tic-tac-toe/checkpoint-3-complete/index.html"
+      ],
+      "themes": [
+        "space-invasion",
+        "cats-dogs",
+        "pizza-tacos",
+        "robots-dinos",
+        "ghosts-pumpkins",
+        "sun-moon",
+        "wizards-dragons",
+        "coffee-donuts"
+      ],
+      "lesson": "docs/tic-tac-toe-variants.md",
+      "rules": "docs/alien-tic-tac-toe.md"
+    }
+  },
+  "wireframes": {
+    "game": [
+      "docs/wireframes/game-instructions.svg",
+      "docs/wireframes/game-board.svg",
+      "docs/wireframes/game-battle.svg"
+    ],
+    "website": [
+      "docs/wireframes/site-centered.svg",
+      "docs/wireframes/site-sidebar.svg"
+    ]
+  },
+  "website_skills_menu": {
+    "lesson": "docs/website-skills-menu.md",
+    "sources": [
+      "https://github.com/mrhinkle/aienterprise-skills",
+      "https://github.com/mrhinkle/VibeCoding-a-Website"
+    ],
+    "count": 10
+  },
+  "presentations": {
+    "ato_2026": "presentations/ato-2026-workshop/",
+    "reference": "presentations/reference-six-hour-class/"
+  },
+  "routes": {
+    "featured": "v0",
+    "v0_lesson": "docs/v0-route.md",
+    "portable_and_connected": "setup-guide.md"
+  },
+  "agent_loop_lesson": {
+    "lesson": "docs/agent-loop-and-pull-requests.md",
+    "minutes": 15,
+    "placement": "after the website publishes, before lunch",
+    "exercise": "afternoon increment 2 goes through a pull request"
+  },
+  "afternoon_tracks": {
+    "A": {
+      "name": "Guided game",
+      "lesson": "docs/tic-tac-toe-variants.md"
+    },
+    "B": {
+      "name": "Your own project",
+      "lesson": "docs/your-own-project.md",
+      "scope_rule": "one screen, one input, one result"
+    }
+  },
+  "wrap_up": {
+    "tuesday_morning": [
+      "take it back to your team",
+      "what to automate next",
+      "where agents still need adult supervision"
+    ],
+    "feedback": "templates/feedback.md",
+    "linkedin": "docs/linkedin-wrap-up.md",
+    "all_things_ai": {
+      "dates": "2027-04-18 to 2027-04-20",
+      "venue": "Atlantic Union Bank Convention Center (formerly Raleigh Convention Center)",
+      "site": "https://allthingsai.org",
+      "note": "April 18 Agent Hackathon; April 21 separate Executive Summit"
+    }
+  },
+  "instructor_bio": "README.md#about-mark",
+  "contact_email": "mrhinkle@allthingsai.org",
+  "slides_distribution": {
+    "how": "course repository",
+    "path": "presentations/ato-2026-workshop/",
+    "repo": "https://github.com/mrhinkle/Vibe-Coding-for-Non-Technical-Professionals",
+    "note": "repo is private as of 2026-10-15; make public or invite attendees before 2026-10-19"
+  },
+  "lessons_added_2026_10_15": {
+    "github_tour": "docs/github-tour.md",
+    "plan_first_and_models": "docs/plan-first-and-models.md",
+    "skills_guide": "docs/skills-guide.md",
+    "secrets": "docs/secrets-tokens-and-the-clipboard.md",
+    "platform_landscape": "docs/platform-landscape.md",
+    "skill_template": "templates/SKILL-template.md"
+  }
 }
 
 <!-- END COURSE SOURCE: course-map.json -->
@@ -775,6 +942,10 @@ Use the [current Cloud environments guide](https://learn.chatgpt.com/docs/enviro
 
 A plugin connection, code-editing workspace, and deployment permission are separate capabilities. Confirm each one with the learner's actual account. Do not assume every GitHub connector is read-only or that every connected chatbot can edit and run a project.
 
+## The v0 route (featured at All Things Open 2026)
+
+v0 is Vercel's generative builder and comes with a free Vercel account. Sign in to Vercel with GitHub, then sign in to v0 with Vercel, so all three accounts share one identity. In v0 you describe the page, it writes a React project with a live preview, the Deploy button ships it through your Vercel account, and the GitHub option pushes the code to a repository you own. Every v0 version you push becomes a commit you can read and roll back. Step by step, with prompts for both projects and a table of what to do when v0 goes off the rails: [v0-route.md](docs/v0-route.md). The tested examples and checkpoints are single HTML files; they drop straight into the portable route below, and on v0 they serve as the style reference you attach.
+
 ## Choose the route by available capabilities
 
 The portable route needs complete runnable file output; the connected route additionally needs verified repository access. Use the same brief, skills, and checks on either route. If a chatbot cannot produce usable files, continue planning with it and use an instructor checkpoint or a supported assistant for the build. Pasting a skill does not grant missing tools.
@@ -810,6 +981,861 @@ Do not infer a private website from a private repository or a hard-to-guess URL.
 The documentation was researched for this guide. No student account flow, full classroom rehearsal, or live deployment was executed as part of preparing it.
 
 <!-- END COURSE SOURCE: setup-guide.md -->
+
+
+---
+
+# Source file: docs/github-tour.md
+
+<!-- BEGIN COURSE SOURCE: docs/github-tour.md -->
+
+# A ten-minute tour of the GitHub interface
+
+> **For an AI receiving only this lesson:** GitHub's screens change names and positions. Describe what to look for, not pixel positions. If the learner cannot find a control, ask them to describe what they see and guide from there. Never ask for a password, token, or recovery code.
+
+GitHub is where your project lives, where its history is kept, and where you review what an agent did before it goes live. You'll use maybe six screens today. This page walks them in the order you'll meet them. Do it once with a repository open in another tab; it takes ten minutes.
+
+## The five places you'll click today
+
+| Screen | What it's for | When you'll use it |
+| --- | --- | --- |
+| Repository home (the Code tab) | The file list, the README, the green Code button, Add file | Creating the project, uploading files, reading what's there |
+| Commits | The history: one line per saved change | Finding what changed and when |
+| A single commit | The diff: green added, red removed | Reviewing what an agent did |
+| Branches and Pull requests | A safe copy, and the review-then-merge checkpoint | Increment 2 of the afternoon project |
+| Settings | Visibility (public or private), collaborators, danger zone | Making the repo public, inviting a helper |
+
+## 1. Your profile and your repositories
+
+Click your avatar, top right, then **Your repositories**. Everything you own is listed. Each one is a separate project with its own history. Today you'll make two: `my-first-site` and `my-first-game` (or `my-first-tool` for Track B). Keep them separate; the Vercel project maps one to one.
+
+The green **New** button creates a repository: name it, pick **Public** or **Private** (private is fine for today; you can flip it later), tick **Add a README** so the repository isn't empty, and create. Don't add a license or `.gitignore` now; the chatbot can add them later if you need them.
+
+Check: a page with your repository name at the top and a README.md in the file list.
+
+## 2. Repository home: files, README, and the green button
+
+The **Code** tab is home. You'll see:
+
+- The **file list**. Click a file to read it. Click the pencil to edit it in the browser.
+- The **README**, rendered below the file list. It's the front page of your project. Five lines is enough: what it is, who it's for, how to run it.
+- The green **Code** button. Its **Download ZIP** is how you get a copy of everything onto your laptop. The other options are for people with Git installed; you don't need them today.
+- **Add file** → **Upload files**. This is the portable route's publish step: drag `index.html` in, write one line in the commit message box, press **Commit changes**. GitHub keeps file names and folder paths as you uploaded them.
+- The **branch dropdown** on the left, which says `main`. Leave it on `main` until the pull request lesson.
+
+Check: after an upload, your file appears in the list and the commit message you wrote appears next to it.
+
+## 3. Commits: the history
+
+Above the file list on the right, a line says something like **12 commits**. Click it. Each row is one saved change: the message, who, when. This is the audit trail the workshop listing talks about: when an agent writes code at 2 a.m., this is how you know what happened.
+
+Click any row to open the commit.
+
+Check: you can find the commit that added your About section by its message. If every message says "Update index.html," that's a lesson for your prompts: ask for a one-line message that says what changed.
+
+## 4. A commit: the diff
+
+A commit page shows every file the change touched, and in each file, the lines added (green, plus sign) and removed (red, minus sign), with a few gray lines of context around them. Read it like a supervisor, not a programmer: did it touch only what I asked, did it remove any safety, is there anything that looks like a key or a password, does it match my prompt. The full method is in [reading what the agent wrote](docs/agent-loop-and-pull-requests.md).
+
+Useful controls on this page: **Split** view puts old and new side by side. The **…** menu on a file offers **View file** to see the whole thing. **Browse files** at the top right shows the entire project as it was after this commit, which is how you look at an old version.
+
+Check: open the commit for your last change and say out loud what was added and removed.
+
+## 5. Branches and pull requests
+
+A **branch** is a copy of the project where a change happens without touching `main`. Open the branch dropdown, type a name like `battle`, and GitHub offers **Create branch: battle from main**. Now the dropdown says `battle`; anything you upload goes there, and your live site (which deploys from `main`) is untouched.
+
+After you upload to a branch, a yellow bar appears offering **Compare & pull request**. Press it. A pull request is the review-then-merge checkpoint:
+
+- **Conversation** tab: the description and comments. Write one sentence on what the change does.
+- **Files changed** tab: the diff of everything on the branch. Review it here.
+- **Merge pull request** button: accept the change into `main`. Vercel deploys within a minute.
+- **Close** without merging: say no. The branch and its files are still there if you want them later.
+
+The **Pull requests** tab at the top of the repository lists open and closed ones. Merged PRs are the readable history of your project's decisions.
+
+Check: a merged pull request in your game repository with a one-sentence description, and a deploy in Vercel that followed it.
+
+## 6. Settings
+
+The **Settings** tab, far right. Three things you may need today:
+
+- **General** → scroll to **Danger Zone** → **Change visibility**. Private to public or back. Make it public when you want to share the code, or when a chatbot needs to read it without an account.
+- **Collaborators**. Invite a helper by GitHub username. They can push changes; you still own it.
+- **Danger Zone** → **Delete this repository**. You'll never need this today. If you make a mess, make a new repository; don't delete the one with your history.
+
+Nothing in Settings asks for your password except deleting. If something else asks for it, stop and ask a helper.
+
+## 7. Two screens you'll see but can skip today
+
+- **Issues**: a to-do list attached to the repository. Nice for "later" items from your project-state file; optional.
+- **Actions**: automated checks that run on every push. The course's tested examples don't need any. If an agent adds a workflow file you didn't ask for, that's a red flag in review.
+
+## Vocabulary you'll hear
+
+| Word | Plain meaning |
+| --- | --- |
+| Repository, repo | The project's folder on GitHub with its whole history |
+| Commit | One saved change with a message |
+| `main` | The branch your live site deploys from |
+| Branch | A safe copy for making a change |
+| Pull request, PR | Review this branch, then merge it |
+| Merge | Accept the change into `main` |
+| Diff | The exact lines added and removed |
+| Fork | Someone else's copy of your repository, or yours of theirs |
+| Clone | A copy on a laptop, for people with Git installed; not needed today |
+
+## Guided exercise, ten minutes, during setup
+
+1. Create `my-first-site` with a README.
+2. Upload one of the website starters from `website-starters/` through **Add file → Upload files** with the message "Add starter page."
+3. Open Commits, open that commit, find your file in the diff.
+4. Edit the README in the browser: add one line that says what the site will be. Commit it.
+5. Open Commits again. Two rows. You've just done the loop without a chatbot: change, save, history.
+
+That's the whole interface you need. Everything else on GitHub is for people building on top of this, and you'll get there when you need it.
+
+<!-- END COURSE SOURCE: docs/github-tour.md -->
+
+
+---
+
+# Source file: docs/plan-first-and-models.md
+
+<!-- BEGIN COURSE SOURCE: docs/plan-first-and-models.md -->
+
+# Plan first, then build. And pick the right size model for each job.
+
+> **For an AI receiving only this lesson:** When the learner starts any project or any change bigger than one line, produce a plan before code: the files you will create or change, what each does, and three checks the learner can perform by hand. Wait for approval. If the learner's chat has a plan mode or thinking mode, tell them to turn it on for this step.
+
+Two habits separate people who get a working tool from people who get a pile of half-working files. First, you make the agent tell you what it's going to do before it does it. Second, you spend your best model on that plan and your cheaper models on everything after. Neither one needs you to understand code.
+
+## 1. Plan mode: make it tell you before it touches a file
+
+Every coding agent will happily start generating the moment you describe something. That's the trap. The first generation sets the shape of everything after it, and a wrong shape costs an hour to undo. A plan costs three minutes to read.
+
+**What a plan is.** A short list, in plain English: which files it will create or change, what each one does, and how you'll check the result by hand. If the plan has more than a handful of files or more than one screen, it's too big. Cut it before you build.
+
+**How to get one, in whatever you're using.**
+
+| Tool | How to ask for a plan |
+| --- | --- |
+| Claude Code (the connected route) | Turn on plan mode before you type the request. Look for the Plan toggle; on the keyboard it's Shift+Tab until the prompt says plan. Claude reads, thinks, and proposes; it can't change files until you approve. |
+| Claude.ai, Cowork | Pick the "extended thinking" or deeper reasoning option if your plan has one, then use the plan prompt below. |
+| ChatGPT | Choose the thinking model (the one labeled for reasoning, not the fast default), then use the plan prompt. |
+| v0 | Use the plan prompt as your first message. Ask it to list components and files before generating. Read the list, then say "build it." |
+| Gemini and others | Same: strongest or "thinking" model, then the plan prompt. |
+
+Labels move around. The habit doesn't. If you can't find a toggle, the prompt alone does the job.
+
+**The plan prompt.** Paste it with your brief, scope, and wireframe:
+
+> Before you write any code, give me the plan: the files you will create or change, one line on what each does, the order you'll do them in, and three checks I can perform by hand to know it worked. Flag anything in my brief that is bigger than one screen, one input, one result. Do not build yet.
+
+**How to read the plan.** Like a contractor's quote. Does the file list match the wireframe? Is there anything you didn't ask for (a database, a login, a "utility" folder)? Are the three checks things you can actually see? Cut what you don't need, then say "build exactly this plan."
+
+**When to plan again.** Any time a change touches more than one file, any time you're about to add a feature from the skills menu, and any time you've been stuck for more than ten minutes. "Stop. Tell me the plan for fixing this before you change anything" is the most useful sentence you'll say all day.
+
+Checkpoint: before your first build, you have a plan with a file list you understand and three hand checks written in your project-state file.
+
+## 2. The right size model for each job
+
+Model names change every few months. The sizes don't. Every vendor sells roughly three: a big, slow, careful one; a middle one that's fast and good; and a small, cheap one for chores. The mistake most people make is using one model for everything. Use the expensive thinking where a mistake is expensive to undo, and the cheap one where it isn't.
+
+| Job | Size | Why | Examples of the tier (names will drift) |
+| --- | --- | --- | --- |
+| **Planning and judgment.** The brief, the scope, the plan, reviewing a diff, deciding what to cut, getting unstuck after ten minutes | **Biggest, "thinking" or "reasoning" model** | A bad plan poisons everything after it. This is where a wrong answer costs you an hour. | Claude Opus-class; ChatGPT's thinking or pro tier; Gemini Pro |
+| **Building.** Generate the files, make one change, add one feature from a skill | **Middle model** | Fast enough to keep your loop tight, good enough that your checks catch what's left. | Claude Sonnet-class; the standard ChatGPT model; Gemini Flash with thinking on |
+| **Chores.** Rename things, write alt text, summarize an error message, draft a commit message, reformat a list | **Smallest, fastest model** | The answer is easy to check at a glance and cheap to redo. | Claude Haiku-class; the mini tier of ChatGPT; Gemini Flash-Lite |
+
+Three rules of thumb:
+
+1. **Plan with the biggest, build with the middle, tidy with the smallest.** If you remember one line, that's it.
+2. **Only have one model?** Free plans often do. Use whatever thinking or reasoning option it offers for the plan, and accept that it's slower. Turn it off for chores.
+3. **Stuck for ten minutes on the middle model?** Don't keep poking it. Paste the problem, the file, and the exact error into the big model and ask for the plan to fix it. Then take that plan back to the middle model.
+
+For the connected route, Claude Code lets you switch the model with the `/model` command, and plan mode uses the stronger model by default on most plans. Check your own plan's settings; don't assume.
+
+Checkpoint: you can say which model you'll use for your plan, which for your build, and which for your commit messages, before you open the chat.
+
+## 3. How this fits the day
+
+| When | What you do |
+| --- | --- |
+| 9:30 setup | Note which models your chatbot gives you and where the thinking toggle lives. |
+| 10:00 personal website | Brief and content on the big model. Plan prompt before the first build. Build on the middle model. |
+| 11:30 reading what the agent wrote | Review the diff on the big model when the change is big; the middle model is fine for a one-line change. |
+| 12:45 afternoon project | Plan mode again, from scratch. Increments on the middle model. |
+| Any time you're stuck | Big model, plan prompt, then back to building. |
+
+The [vc-plan-first](skills/vc-plan-first/SKILL.md) skill packages this page so your chatbot enforces it for you.
+
+<!-- END COURSE SOURCE: docs/plan-first-and-models.md -->
+
+
+---
+
+# Source file: docs/secrets-tokens-and-the-clipboard.md
+
+<!-- BEGIN COURSE SOURCE: docs/secrets-tokens-and-the-clipboard.md -->
+
+# Tokens, secrets, and the clipboard: how to give an agent access without ever pasting a password
+
+> **For an AI receiving only this lesson:** Never ask the learner for a password, API key, access token, or recovery code, and never accept one if they paste it. If a task needs a secret, write the command that moves it from the learner's clipboard or password manager into an environment variable or the hosting provider's settings, so the value never appears in the chat. If a secret does appear in the chat, tell the learner to rotate it now.
+
+Here's the rule, and then the reasons: **nothing that unlocks an account goes into a chat window. Ever.** Not your password, not a key, not a token. Chat transcripts get logged, summarized, shared, and used to train things. An agent that has read your key may write it into a file, and that file may end up in GitHub, and GitHub is read by bots looking for exactly that within minutes. The habit that keeps you safe is cheap: you copy the secret, and you let a command move it where it belongs, so the agent never sees it.
+
+## 1. Two things called "tokens"
+
+The word means two unrelated things in this world, and both matter today.
+
+**Text tokens.** The pieces a model reads and writes; roughly three-quarters of a word each. Models are priced and limited by tokens: every prompt you send and every answer you get is counted, and the context window (how much the model can hold in mind at once) is a token limit. Practical consequences: attach only the files the task needs, don't paste the whole repository to ask about one line, and start a fresh chat with your `project-state.md` when the conversation gets long and the model starts forgetting. The "credits" v0 and the hosted builders sell are tokens with a markup.
+
+**Access tokens and API keys.** A long random string that acts as a password for a machine. GitHub personal access tokens, Vercel tokens, the keys for an email provider like Resend, a form service, an AI vendor's API. Anyone who has the string has the access, no username needed, often no notification. These are what the rest of this page is about.
+
+## 2. Where secrets live, and where they never go
+
+| Place | Secrets go here? | Why |
+| --- | --- | --- |
+| Your password manager (1Password, Bitwarden, Apple Passwords) | **Yes, always.** This is the source of truth. | Encrypted, searchable, shareable with your team on purpose. |
+| Vercel project → Settings → Environment Variables | **Yes.** | Your deployed site reads them at run time. They never ship in the code. |
+| A local `.env.local` file in your project folder | **Yes, if it's in `.gitignore`.** | Your laptop reads it when you run things. The `.gitignore` line keeps it out of GitHub. |
+| Your shell profile or the agent tool's environment settings | Yes, for tools you run locally. | Claude Code and Codex read the environment they're started in. |
+| A chat window | **Never.** | Logged, summarized, possibly trained on, and the agent may write it into a file. |
+| The code, a README, a commit message, an issue | **Never.** | GitHub is scanned by bots. A key in a public repo is used within minutes; in a private one, by anyone you ever invite. |
+| A screenshot, a slide, a shared doc | Never. | Same reasons, slower. |
+
+Today's class needs almost no secrets. GitHub and Vercel sign you in through the browser, and v0 connects to GitHub through an **Authorize** screen, which is the safe pattern: you approve, the services exchange tokens between themselves, and you never touch one. The first time you'll need a real key is when you add a contact form or email in the skills menu. Learn the clipboard move now, on a fake value, so it's a habit when it counts.
+
+## 3. The clipboard move
+
+The idea: the secret goes from your password manager to your clipboard, and a command reads the clipboard straight into the destination. Your eyes see it, the agent never does.
+
+On a Mac, the command that reads the clipboard is `pbpaste`. On Windows PowerShell it's `Get-Clipboard`. On Linux it's `wl-paste` or `xclip -o`. Everything below uses `pbpaste`; swap in yours.
+
+**Practice with a fake value first.** Copy the text `test-not-a-real-key` from this page. Then in a terminal:
+
+```bash
+pbpaste
+```
+
+It prints what you copied. That's the whole trick. Now put it somewhere useful instead of printing it.
+
+**Into a local `.env.local` file** (for a project you run on your laptop):
+
+```bash
+printf 'RESEND_API_KEY=%s\n' "$(pbpaste)" >> .env.local
+```
+
+Then make sure `.env.local` is listed in `.gitignore`; if the file doesn't exist, create it with that one line. Check with `cat .env.local` that the key landed, and with `git status` that `.env.local` is not waiting to be committed.
+
+**Into your Vercel project** (for the deployed site), with the Vercel CLI installed and logged in:
+
+```bash
+pbpaste | vercel env add RESEND_API_KEY production
+```
+
+Or do it in the browser: Vercel → your project → Settings → Environment Variables → paste into the value field. The browser form is also fine; it's a form, not a chat.
+
+**Into your shell, so Claude Code and Codex see it.** Both read the environment they were launched from. Add a line to your shell profile (`~/.zshrc` on a Mac):
+
+```bash
+printf 'export RESEND_API_KEY=%s\n' "$(pbpaste)" >> ~/.zshrc
+```
+
+Open a new terminal and start the tool from there. Claude Code can also carry variables in its own settings file; Codex reads your shell environment. Either way, the variable exists before the agent starts, and the agent uses it by name, never by value.
+
+**Have the agent write the command, not the value.** This is the part people miss. You don't type these commands from memory; you ask:
+
+> I have the Resend API key on my clipboard. Give me the one command that saves it into .env.local as RESEND_API_KEY using pbpaste, and the line to add to .gitignore. Do not ask me to paste the key.
+
+A good agent gives you the command. You run it. The key never passes through the chat. If the agent instead says "paste your key here," that's your cue to say no and ask again.
+
+## 4. When a secret leaks anyway
+
+It happens. You pasted it before you learned this, or an agent wrote it into a file. Don't debate it:
+
+1. **Rotate it now.** Go to the service that issued it, revoke the key, make a new one.
+2. **Remove it from the file** and commit that. Removing it from history is a job for someone with Git on their laptop; ask a helper. Rotation is what actually closes the hole; cleanup is hygiene.
+3. **Check where it went.** If the repository is public, assume the key was harvested. That's why step 1 comes first.
+
+GitHub's secret scanning will often email you when it sees a known key pattern in a public repository. That email is not an overreaction. Rotate.
+
+## 5. The agent's side: what to tell it in writing
+
+Put this in your project's `AGENTS.md` (template in [templates/AGENTS.md](templates/AGENTS.md)) so every session starts with the rule:
+
+```
+Secrets: never ask for or accept a password, API key, or token in chat.
+If a task needs one, write the command that reads it from the clipboard
+(pbpaste) or the password manager into .env.local or `vercel env add`.
+Never write a secret into any file that is not in .gitignore.
+```
+
+That's a skill in three lines. It costs nothing and it's the single most valuable instruction in the file.
+
+## 6. Bonus: Composio, or how agents get into your apps without you handling tokens
+
+Once your site is live, the next thing you'll want is an agent that acts on your behalf in the tools you already use: file an issue in GitHub, post to Slack, read a Google Sheet, draft a Gmail reply. Each of those needs access, and the naive way is a pile of API keys in a pile of config files.
+
+Composio is a managed layer for that. You sign in once to Composio, then connect apps through their normal **Authorize** screens, the same OAuth pattern as v0 connecting to GitHub. Your agent asks Composio to search for a tool ("send a Slack message") and to execute it; Composio holds the tokens, enforces what the connection is allowed to do, and the agent never sees a key. From a terminal it looks like:
+
+```bash
+composio login
+composio search "create a GitHub issue"
+composio execute GITHUB_CREATE_AN_ISSUE -d '{ owner: "you", repo: "my-first-tool", title: "Add a reset button" }'
+```
+
+Why it's the bonus and not the lesson: you don't need it to finish today's projects, and it's one more account. Why it's worth knowing: it's the same principle as this whole page, scaled up. Authorize, don't paste. Let the plumbing hold the keys. It also works in Claude Code and Cowork as a tool the agent can call directly, which is how Mark runs it.
+
+## Checkpoint
+
+You can say the rule in one sentence. You've run `pbpaste` on a fake value and seen it print. You've added the three-line secrets rule to your `AGENTS.md`. You know the first thing to do if a key leaks: rotate it.
+
+<!-- END COURSE SOURCE: docs/secrets-tokens-and-the-clipboard.md -->
+
+
+---
+
+# Source file: docs/skills-guide.md
+
+<!-- BEGIN COURSE SOURCE: docs/skills-guide.md -->
+
+# Skills: what they are, how to write a good one, and how to install them in ChatGPT and Claude
+
+> **For an AI receiving only this lesson:** A skill is a plain-text instruction file the learner gives you for one job. Follow the one they hand you for the current task only. If asked to write a skill, use the template in this lesson and keep it to one job with checks the learner can see.
+
+Every time you explain to a chatbot how you want something done, you're writing instructions you'll have to write again tomorrow. A skill is those instructions saved once, in a file, so the next session (and the next model, and your colleague) gets the same behavior without you repeating yourself. That's it. No code, no account, no magic.
+
+In this course you've been using skills all day: the eighteen `vc-*` skills in this repository, and the ten public ones in the [skills menu](docs/website-skills-menu.md). This page shows you how they're built so you can write your own, and how to install them where you work.
+
+## 1. Anatomy of a skill
+
+A skill is a folder with one file in it, `SKILL.md`. The file has two parts.
+
+**The front matter** is a few lines at the top between `---` markers. Two fields matter:
+
+```
+---
+name: vc-plan-first
+description: Forces a plan before any code is written... Use at the start of every project, before any change that touches more than one file... Triggers on "let's build," "make me," "add a," "fix this," "I'm stuck."
+---
+```
+
+The `description` does double duty. It tells a human what the skill does, and it tells the chatbot *when* to reach for it. Put the trigger phrases in. A skill nobody triggers is a skill nobody uses.
+
+**The body** is the instructions, in this order:
+
+1. **Who you're helping and what the job is.** Two sentences.
+2. **When this applies**, and when it doesn't.
+3. **Steps**, numbered, each ending in something observable.
+4. **Rules**: the short list of never-do-this. Secrets, scope, inventing facts.
+5. **One worked example**: a realistic request and the ideal response.
+6. **Checks that it worked**: how the learner knows, by looking.
+
+Open [`skills/vc-plan-first/SKILL.md`](skills/vc-plan-first/SKILL.md) and you'll see exactly that shape. Copy it from [`templates/SKILL-template.md`](templates/SKILL-template.md).
+
+## 2. What makes a skill good
+
+| Good | Bad |
+| --- | --- |
+| One job. "Write the brief." | Five jobs. "Handle the whole project." |
+| Triggers in the description. | A title and nothing else. |
+| Steps end in something you can see. | Steps end in "ensure quality." |
+| A rules list with the three ways it goes wrong. | No rules, or twenty. |
+| One worked example. | No example, or a dozen. |
+| Under about 300 lines. | A novel the model skims. |
+| Says what to do when input is missing. | Assumes everything is there. |
+| Never asks for secrets; never assumes tools it hasn't got. | "Connect to the database and..." |
+
+The test: hand the skill and a realistic request to two different chatbots. If you get the same shape of answer from both, the skill is doing the work. If you don't, the skill is relying on the model to guess.
+
+## 3. Write one in ten minutes
+
+Pick a job you've explained to a chatbot more than twice this month. Then use the biggest model you have (this is a planning step) and this prompt:
+
+> Write a SKILL.md for this job using the attached SKILL-template.md: [the job in one sentence]. The person using it is [who]. It goes wrong when [the two or three ways you've seen it go wrong]. Keep it to one job, put trigger phrases in the description, make every step end in something I can see, include one worked example, and list the checks. No code unless the job is code. Under 200 lines.
+
+Read it. Cut anything you wouldn't say out loud. Test it on a real request. Save it in a folder named after the skill.
+
+If you want a skill-writing skill, Mark's public `aie-skill-creator` in [aienterprise-skills](https://github.com/mrhinkle/aienterprise-skills/tree/main/plugins/aie-skill-creator) interviews you and writes it. The ten-minute prompt above is the training-wheels version.
+
+## 4. Install it where you work
+
+The portable truth: a skill is text. Any chatbot that can read a file or a paste can use one. The differences are about how *automatically* it loads. Menu names change; these are the shapes to look for, and the instructor demonstrates both routes live in sprint 1.
+
+### Claude
+
+| Where | How | What you get |
+| --- | --- | --- |
+| **Claude.ai, any plan** | Open a Project. Add the `SKILL.md` to the project's knowledge (the files area). Add one line to the project instructions: "Follow the attached skills when their trigger phrases apply." | The skill is available in every chat inside that project. |
+| **Claude.ai, plans with Skills** | Settings → Capabilities → Skills (the name varies). Upload the skill folder as a ZIP. Toggle it on. | Claude loads it on its own whenever the description matches. |
+| **Claude Code and Cowork (the connected route)** | Put the folder at `.claude/skills/<name>/SKILL.md` inside your project for a project skill, or `~/.claude/skills/<name>/` for all projects. | It appears as `/<name>` and loads itself when relevant. Nothing to upload. |
+| **Mark's public bundles** | In Claude Code or Cowork: `/plugin marketplace add mrhinkle/aienterprise-skills`, then `/plugin install aie-web@aienterprise-skills`. | A whole bundle, kept up to date. |
+
+**Live demo script (3 minutes).** Open Claude. Attach `skills/vc-project-brief/SKILL.md`. Type the brief prompt from the walkthrough. Show the shape of the answer: brief, scope, checks, no code. Then open a fresh chat without the skill, same prompt, and show the difference. That gap is what a skill buys you.
+
+### ChatGPT
+
+| Where | How | What you get |
+| --- | --- | --- |
+| **Any chat** | Paste the `SKILL.md` with: "Use the following instructions as a skill for my next request. Read them, confirm what you will and will not do, then wait for my task." | Works everywhere, including free plans. Lasts one conversation. |
+| **A Project** | Create a Project. Upload the `SKILL.md` files. In the project instructions write: "Follow the attached skills when their trigger phrases apply. Say which one you are using." | Every chat in the project has the skills. |
+| **A custom GPT** | Create a GPT. Upload the skills as Knowledge. Put the same line in its instructions. Share it with your team. | Colleagues get your skills without knowing what a skill is. |
+
+**Live demo script (3 minutes).** Same brief prompt, three ways: a plain chat with no skill, a plain chat with the skill pasted, and a Project with the skill uploaded. Point at the difference between the first and the other two, then at how the Project version didn't need the paste.
+
+### Everything else
+
+Gemini: a Gem with the files attached. Copilot: paste, or a Copilot agent with the files. v0: paste the skill at the top of the conversation. Any of them: the paste route always works.
+
+## 5. Keep the skills in this repository good
+
+The eighteen `vc-*` skills are the course's own. They're held to the checklist above: one job, triggers in the description, observable steps, rules, one example, checks, under 300 lines, no secrets, no assumed tools. When you find one that falls short in class, say so on the feedback form; that's exactly the kind of note that improves the next run.
+
+If you write a skill you're proud of during sprint 2 or 3, Mark would like to see it. Send it with your feedback.
+
+## Checkpoint
+
+You can explain to a colleague, in one sentence, what a skill is. You've installed one in the chatbot you actually use. You've run the same prompt with and without it and seen the difference.
+
+<!-- END COURSE SOURCE: docs/skills-guide.md -->
+
+
+---
+
+# Source file: templates/SKILL-template.md
+
+<!-- BEGIN COURSE SOURCE: templates/SKILL-template.md -->
+
+---
+name: your-skill-name
+description: One sentence on what this skill does, then when to use it. Include the trigger phrases a person would actually say, in quotes, e.g. "write the brief," "scope this," "what's the plan."
+---
+
+# Skill title in plain words
+
+Who you are helping and what the one job is. Two sentences.
+
+## When this applies
+
+- The situations that should trigger it.
+- The situations that look similar but should not (and what to do instead).
+
+## What you need before starting
+
+- The inputs, by name. Say what to do if one is missing (ask once, or proceed with a stated assumption).
+- Never a password, API key, or token.
+
+## Steps
+
+1. First step. Ends with something the person can see or read.
+2. Second step. Same.
+3. Last step: stop and hand back. Say exactly what the person should check.
+
+## Rules
+
+- The two or three ways this job goes wrong, each as a "never" or "always."
+- Scope rule, if any (for example: one screen, one input, one result).
+- What to do when the person asks for something outside the skill: say so, point to the right skill, don't improvise.
+
+## Example
+
+**Person:** a realistic request, in their words.
+
+**You:** the ideal response, in full, in the shape the steps describe.
+
+## Checks that it worked
+
+- Something observable.
+- Something observable.
+- Something observable.
+
+<!-- END COURSE SOURCE: templates/SKILL-template.md -->
+
+
+---
+
+# Source file: docs/platform-landscape.md
+
+<!-- BEGIN COURSE SOURCE: docs/platform-landscape.md -->
+
+# The platform landscape: hosted builders, agent tools, and where the class loop fits
+
+> **For an AI receiving only this lesson:** This is a map of AI app-building tools as of October 2026, for a business professional, not a developer. Prices and features change monthly; treat every number as a dated snapshot and tell the learner to confirm on the vendor's pricing page before paying. When asked which tool to use, ask first where the code should live and who else needs to work on it. Never ask for or accept a password, token, or secret key.
+
+A map, not a review. Every tool here turns a sentence into a working app. They differ on what matters more than the demo: **where your code lives afterward, and whether you can take it with you.** Facts were checked 2026-10-15 against vendor pages; secondhand-only claims are marked "unverified." Prices are US list, monthly unless noted.
+
+Read **Your GitHub?** first on each card. **Two-way sync:** the builder pushes to a repository you own and your GitHub edits flow back. **One-way export:** you can push or download, but outside edits do not return. **No export:** the app lives only on the vendor's servers.
+
+## Hosted builders
+
+### Lovable
+
+**What it is.** A browser builder that writes a full React web app from a chat, with a Supabase database and sign-in behind it. **For.** People who want a real app with a database. **In ten minutes.** Front end, database, sign-in, hosting on a lovable.app address. **Your GitHub?** Two-way sync, one branch at a time, on every plan including Free; no importing an existing repository. **Pricing.** Free is 5 build credits a day, capped at 30 a month; Pro $25 for 100 credits; Business $50. Free: no code download or custom domain. **Good at.** Full-stack apps that look finished. **Burned by.** Credits gone mid-build, and a database private only if Row Level Security is on (see below). **Use it when** you want a database-backed app and will turn on GitHub sync on day one.
+
+### Bolt.new
+
+**What it is.** StackBlitz's builder; the project runs in your browser tab and you watch the code appear. **For.** People who like seeing the files. **In ten minutes.** Front end and Bolt hosting; database and sign-in through the Supabase integration. **Your GitHub?** Two-way: Bolt commits each non-breaking change, polls GitHub every 30 seconds for outside edits, and imports existing repositories. Its docs warn Bolt wins if both sides change at once. No plan requirement stated. **Pricing.** Free is 1M tokens a month with a 300K daily cap; Pro $25 for 10M tokens and custom domains. **Good at.** Fast, visible iteration. **Burned by.** Tokens: a big project spends them on every message. **Use it when** you want to watch the code and have GitHub kept in sync for you.
+
+### Base44
+
+**What it is.** A plain-language builder with its own managed backend (NoSQL database, sign-in, serverless functions), owned by Wix since June 2025. **For.** Small businesses that want internal tools and no code on screen. **In ten minutes.** The most complete whole app here: front end, database, sign-in, hosting. **Your GitHub?** Two-way sync on Builder and above; the old one-way export is being retired. The repository holds the React front end and definitions of your entities and functions; data and the backend stay on Base44. **Pricing.** Free is 25 message credits a month; Starter $16, Builder $40, Pro $80, Elite $160, billed annually (monthly is about 20 percent more). **Good at.** Internal tools for non-technical teams. **Burned by.** The backend is the lock-in: code comes out, data and services do not. **Use it when** the app is for your team and one vendor is fine.
+
+### Replit
+
+**What it is.** A cloud development environment with an autonomous Agent that plans, builds, tests, and publishes. **For.** People who want an engineering workflow without installing anything. **In ten minutes.** Front end, a built-in database with separate development and production copies, sign-in, Replit hosting. **Your GitHub?** Two-way through a Git pane: push, pull, resolve conflicts; no plan restriction for github.com. **Pricing.** No free plan is listed today. Core is $20 a month ($18 annually) with $20 of credits; Pro $100. A free Starter plan was removed in September 2026 (tracker data; unverified). **Good at.** Real backends; the most autonomous agent here. **Burned by.** Usage credits on top of the subscription; autonomy cuts both ways (see below). **Use it when** you want an agent that runs the whole loop and you will read what it did.
+
+### v0 (Vercel)
+
+**What it is.** Vercel's builder and the class's own tool. It writes a Next.js app and deploys to your Vercel account. **For.** Anyone who wants a repository and live URL they own. **In ten minutes.** Front end and Vercel hosting. No database of its own; attach one to your Vercel project from the Marketplace (Neon, Supabase, others). **Your GitHub?** Two-way, built for review: v0 commits to a working branch, opens a pull request, and merges on Publish; Pull Changes brings outside commits in. Included on Free. **Pricing.** Free is $0 with 7 messages a day; Plus $30 a user; Business $100. **Good at.** Design-first pages and the loop this course teaches. **Burned by.** Credits spent on tokens, so large projects cost more per message; the database is your job. **Use it when** you want the class loop with the fewest moving parts.
+
+### Google AI Studio (Build mode)
+
+**What it is.** Google's free-to-start builder and the successor to Firebase Studio, which closed to new users on June 22, 2026 and shuts down March 22, 2027. **For.** Google users and anyone curious about Android. **In ten minutes.** A React front end with a Node backend, deployable to Cloud Run; since May 2026, native Android apps. Database and sign-in: unverified. **Your GitHub?** Push to your own repository, import an existing one, or download a ZIP; Google calls Build-mode pushes two-way sync. **Pricing.** Your first two apps deploy free with no credit card; paid models and Cloud Run usage can cost after that. **Good at.** Free experiments, Android. **Burned by.** Churn: Google's second builder in two years. **Use it when** you want to try something free and will export to GitHub before depending on it.
+
+### Emergent
+
+**What it is.** A newer agentic builder growing fast with non-developers (Sacra reports more than 6 million users; secondhand). **For.** People who want a Replit-style agent at a lower entry price. **In ten minutes.** Front end, backend, private hosting on paid plans. **Your GitHub?** Integration on Standard and above; one-way or two-way is unverified. **Pricing.** Free is 10 credits a month; Standard $20 ($17 annually) for 100 credits; Pro $200. **Good at.** Fast end-to-end builds. **Burned by.** Unpredictable credit cost per feature (user reviews, unverified). **Use it when** you will test the GitHub export on a throwaway first.
+
+### Also on the radar
+
+**Bubble** is the classic visual no-code tool with AI added; it does not export code. **Rork** builds iOS and Android apps with React Native from a prompt; its official pricing page was unreachable, so its numbers are unverified.
+
+## The developer end: agents in an editor or terminal
+
+Past the hosted builders sit tools that work on code already on your machine. They assume a repository and a terminal, so the class reaches them last. **Claude Code** comes with Anthropic's Pro plan ($20 a month, $17 annually) and Max (from $100). **OpenAI Codex** comes with ChatGPT Plus ($20), with $100 and $200 Pro tiers. **Cursor** is an editor with the agent built in: Free, Plus $8, Premium $30, Super $100, Ultra $200. **GitHub Copilot** lives inside GitHub and most editors: Free, Pro $10, Pro+ $39. All four edit a folder you control and leave the commit to you.
+
+## Comparison table
+
+| Tool | Builds what | Your GitHub? | Database included? | Deploys where | Free tier? | Best for |
+| --- | --- | --- | --- | --- | --- | --- |
+| Lovable | Full-stack React web app | Two-way sync, all plans | Yes (Supabase) | lovable.app | Yes, 5 credits/day | Database-backed apps with a finished look |
+| Bolt.new | Web app, code visible | Two-way sync + import | Via Supabase integration | Bolt hosting or your Netlify | Yes, 1M tokens/mo | Watching the code while it builds |
+| Base44 | Whole app on a managed backend | Two-way sync, Builder+ (code, not data) | Yes (managed NoSQL) | Base44 | Yes, 25 credits/mo | Internal tools for non-technical teams |
+| Replit | Full app with agent-run loop | Two-way via Git pane | Yes (dev + prod copies) | Replit | No free plan listed | Autonomous agent, real backends |
+| v0 | Next.js front end | Two-way via branch + PR, Free included | No; attach via Vercel Marketplace | Your Vercel account | Yes, 7 messages/day | The class loop |
+| Google AI Studio | React + Node web, Android | Push, import, ZIP | Unverified | Cloud Run | Yes, 2 free deploys | Free experiments, Android |
+| Emergent | Full app, agent-built | Integration on Standard+; direction unverified | Yes | Emergent | Yes, 10 credits/mo | Low-cost agent builder |
+| Bubble | Visual no-code web/mobile | No export | Yes | Bubble | Yes | Classic no-code with lock-in accepted |
+| Claude Code / Codex / Cursor / Copilot | Any code, your machine | It is your repo | Bring your own | Wherever you deploy | Copilot and Cursor have free tiers | After you own a repository |
+
+## What the class's loop gives you that a builder doesn't
+
+The course's loop is GitHub as the system of record, Vercel to deploy, and a chatbot or v0 to write the code. The builders above reach a first screen faster; the loop costs ten more minutes and buys five things.
+
+1. **You own the repository and the history.** Every version is a commit you can open, compare, and restore.
+2. **Every agent change is a reviewable commit or pull request.** The [agent-loop page](docs/agent-loop-and-pull-requests.md) teaches you to read the diff before it ships.
+3. **You can move to another tool without losing the code.** Point Claude Code, Cursor, Bolt, or another chatbot at the same repository tomorrow. A one-way export or a managed backend makes that a rebuild.
+4. **Secrets live in your Vercel project, not in a vendor's defaults.** The database connection string goes into environment variables you control.
+5. **The vendor can change price or shut a product down and you keep the code.** Replit dropped its free plan, Google is retiring Firebase Studio, and Base44 changed owners. None of it touches a repository you hold.
+
+## Three cautionary facts, verified
+
+Receipts, with primary sources. They argue for GitHub, your own secrets, and reading the diff, not for avoiding these tools.
+
+**Replit's agent deleted a production database, July 2025.** On July 18, 2025 (UTC), Jason Lemkin posted that Replit's agent had, during a declared code freeze, run a destructive command against his live database; the agent's own summary put the loss at records for 1,206 executives and 1,196 companies. The agent said rollback would not work; it did. On Monday, July 21, CEO Amjad Masad called it "Unacceptable and should never be possible" and said Replit was rolling out automatic separation of development and production databases. Replit's docs now read: "Agent is not able to modify the production database." Fairness note: the counts are Lemkin's account, and The Stack questioned whether "production" fit a project built in days.
+
+**One in ten scanned Lovable apps had an open database, May 2025.** CVE-2025-48757, published May 30, 2025, describes Row Level Security gaps in Lovable-generated apps that let anyone read or write database tables. Researcher Matt Palmer scanned 1,645 Lovable "Launched" sites and found 303 exposed endpoints across 170 projects (10.3 percent), checking homepages only. He reported it March 21; Lovable shipped a security scan with Lovable 2.0 on April 24 and on June 9 added an automatic pre-publish RLS scan. Fairness notes: Palmer worked at Replit, a competitor, and the CVE record says Lovable disputes it, holding each customer responsible for its own data. The checkbox is still yours to check.
+
+**Wix acquired Base44, June 2025.** Wix announced on June 18, 2025 that it had acquired Base44, then a six-month-old bootstrapped company, for about $80 million plus earn-outs through 2029 (price from Globes and SiliconANGLE; the Wix release omits it). Base44 continues as a distinct product. It is listed because a product you might build on was sold six months after launch; that is normal now.
+
+## Sources
+
+- Lovable subscription plans: https://docs.lovable.dev/introduction/subscription-plans (checked 2026-10-15)
+- Lovable plans and credits: https://docs.lovable.dev/introduction/plans-and-credits (checked 2026-10-15)
+- Lovable GitHub integration: https://docs.lovable.dev/integrations/github (checked 2026-10-15)
+- Lovable, "Secure Vibe Coding," June 9, 2025: https://lovable.dev/en/blog/secure-vibe-coding (checked 2026-10-15)
+- Bolt pricing: https://bolt.new/pricing (checked 2026-10-15)
+- Bolt GitHub docs: https://support.bolt.new/integrations/git (checked 2026-10-15)
+- Bolt Supabase docs: https://support.bolt.new/integrations/supabase (checked 2026-10-15)
+- Bolt Netlify docs: https://support.bolt.new/integrations/netlify (checked 2026-10-15)
+- Base44 pricing: https://base44.com/pricing (checked 2026-10-15)
+- Base44 GitHub two-way sync docs: https://docs.base44.com/developers/app-code/local-development/github (checked 2026-10-15)
+- Replit pricing: https://replit.com/pricing (checked 2026-10-15)
+- Replit Git pane docs: https://docs.replit.com/references/workspace-tools/git-interface (checked 2026-10-15)
+- Replit development and production databases: https://docs.replit.com/features/data-and-storage/development-and-production (checked 2026-10-15)
+- Replit free Starter plan removal (tracker, unverified): https://pricingsaas.com/companies/replit/diffs/2026W38 (checked 2026-10-15)
+- v0 pricing: https://v0.app/pricing (checked 2026-10-15)
+- v0 GitHub docs: https://v0.app/docs/github (checked 2026-10-15)
+- Vercel storage and Marketplace databases: https://vercel.com/docs/storage (checked 2026-10-15)
+- Google AI Studio Build mode docs: https://ai.google.dev/gemini-api/docs/aistudio-build-mode (checked 2026-10-15)
+- Google AI Studio at I/O 2026, May 19, 2026: https://blog.google/innovation-and-ai/technology/developers-tools/google-ai-studio-io-2026/ (checked 2026-10-15)
+- Firebase Studio sunset: https://firebase.google.com/docs/studio/oss (checked 2026-10-15)
+- Emergent pricing: https://emergent.sh/pricing (checked 2026-10-15)
+- Emergent user figures (secondhand): https://sacra.com/c/emergent (checked 2026-10-15)
+- Bubble pricing and no code export (secondhand): https://allaboutcookies.org/bubble-pricing (checked 2026-10-15)
+- Claude pricing: https://claude.com/pricing (checked 2026-10-15)
+- OpenAI Codex plan tiers, VentureBeat, April 9, 2026: https://venturebeat.com/orchestration/openai-introduces-chatgpt-pro-usd100-tier-with-5x-usage-limits-for-codex (checked 2026-10-15)
+- Cursor pricing: https://cursor.com/pricing (checked 2026-10-15)
+- GitHub Copilot plans: https://github.com/features/copilot/plans (checked 2026-10-15)
+- Lemkin's post, July 18, 2025 (UTC): https://x.com/jasonlk/status/1946069562723897802 (checked 2026-10-15)
+- The Register, July 21, 2025: https://www.theregister.com/2025/07/21/replit_saastr_vibe_coding_incident/ (checked 2026-10-15)
+- The Register on Masad's response, July 22, 2025: https://www.theregister.com/2025/07/22/replit_saastr_response/ (checked 2026-10-15)
+- Fortune, July 23, 2025: https://fortune.com/2025/07/23/ai-coding-tool-replit-wiped-database-called-it-a-catastrophic-failure/ (checked 2026-10-15)
+- The Stack on the Replit incident: https://www.thestack.technology/vibe-coding-ceo-deletes-production-database/ (checked 2026-10-15)
+- CVE-2025-48757 record (MITRE): https://cveawg.mitre.org/api/cve/CVE-2025-48757 (checked 2026-10-15)
+- Matt Palmer, CVE write-up, May 29, 2025: https://mattpalmer.io/posts/CVE-2025-48757/ (checked 2026-10-15)
+- Matt Palmer, statement with scan figures, May 29, 2025: https://mattpalmer.io/posts/statement-on-CVE-2025-48757/ (checked 2026-10-15)
+- Wix press release, June 18, 2025: https://www.wix.com/press-room/home/post/wix-further-expands-into-vibe-coding-with-acquisition-of-base44-a-hyper-growth-startup-that-simplif (checked 2026-10-15)
+- Globes on the Base44 price: https://en.globes.co.il/en/article-1001513267 (checked 2026-10-15)
+- SiliconANGLE on the Base44 price, June 18, 2025: https://siliconangle.com/2025/06/18/base44-joins-wix-80m-deal-support-natural-language-software-development (checked 2026-10-15)
+
+<!-- END COURSE SOURCE: docs/platform-landscape.md -->
+
+
+---
+
+# Source file: docs/v0-route.md
+
+<!-- BEGIN COURSE SOURCE: docs/v0-route.md -->
+
+# The v0 route: describe, v0 builds, GitHub records, Vercel ships
+
+> **For an AI receiving only this lesson:** This describes the v0 → GitHub → Vercel loop in general terms. Product menus change; tell the learner what to look for rather than claiming exact button names. Never ask for or accept a password, token, or secret key. Return complete files when the learner is on the portable route instead.
+
+The workshop listing names three accounts and one loop: **GitHub** is the system of record, **v0** writes the code, **Vercel** ships it to a live URL on every push. This page is the v0 version of the loop. The [setup guide](setup-guide.md) covers the portable route, where any chatbot returns files and you upload them to GitHub yourself. Both routes end in the same place: a repository you own and a live URL.
+
+Pick v0 if you want the fastest path from a sentence to a live page and you are comfortable with a React app you did not write line by line. Pick the portable route if you want one HTML file you can read top to bottom, or if the tested [examples](examples) are the starting point you want. Switching later is allowed; the GitHub repository is what persists.
+
+## What v0 is, in one paragraph
+
+v0 is Vercel's generative builder at v0.app. You describe a page or app in plain English, it writes a React (Next.js) project, shows you a live preview, and keeps a version for every change. It comes with a free Vercel account; sign in with GitHub so all three accounts are the same identity. The free tier has a monthly credit allowance; a day of class fits, but do not burn it on redesigns before the first version works.
+
+## Set up the loop (10 minutes, during the setup block)
+
+1. **GitHub first.** You already have an account from prep. If not, create one now at github.com; you will use the same email for everything today.
+2. **Vercel, signed in with GitHub.** At vercel.com choose "Continue with GitHub." Authorize it. You now have a Vercel account linked to your GitHub identity.
+3. **v0, signed in with Vercel.** At v0.app, sign in; it uses your Vercel account. Open a new chat.
+4. **Connect v0 to GitHub.** Look in the project or chat menu for the GitHub option (it reads something like "Connect to GitHub," "Push to GitHub," or a GitHub icon). The first time, GitHub asks you to authorize v0 and choose which repositories it may touch. Choose "only select repositories" and let it create a new one named `my-first-site`. If the option is not there yet, come back to it after your first generation; some accounts only show it once a project exists.
+
+Checkpoint: you can see an empty or starter repository named `my-first-site` at github.com/your-name, and Vercel's dashboard lists a project with the same name.
+
+## Project 1 on v0: the personal website
+
+Do steps 1 to 3 of the [personal website walkthrough](docs/personal-website-walkthrough.md) first: export LinkedIn, privacy pass, fill `resume-template.md` with your chatbot. v0 needs content, not a PDF.
+
+**First generation.** Attach or paste your completed `resume-template.md` and, as a style reference, the tested [`examples/personal-website/index.html`](examples/personal-website/index.html). Then:
+
+> Build a one-page personal website from the attached resume-template.md. Use only the facts in it; invent nothing and leave blank fields out. Match the structure and restraint of the attached index.html: header with name and nav, hero with name, headline, city, and three link buttons, About, Experience, Skills, Education, optional Projects, Contact with a mailto link, footer. Use the "slate" palette from the reference as CSS variables so I can change colors later. No contact form yet. No images. Fits a phone. Readable code with short comments.
+
+Look at the preview. Check your name, your three roles, every link. Fix facts before you fix looks.
+
+**Second generation, one change at a time.** Colors, then layout, then nothing else until it is live:
+
+> Change only the colors: background #F6F3EE, text #1C2330, accent #0B6E4F. Change nothing else.
+
+**Deploy.** Press v0's Deploy button (or "Publish"). It deploys through your Vercel account and gives you a URL ending in `.vercel.app`. Open it on your phone.
+
+**Push to GitHub.** Use the GitHub option to push the project to `my-first-site`. Open the repository on github.com. You should see the files v0 wrote and a commit for them. That commit is the first line of your audit trail. From now on, every v0 version you push becomes a commit you can read, compare, and roll back. See [reading what the agent wrote](docs/agent-loop-and-pull-requests.md).
+
+Checkpoint: a live URL on a classmate's phone, and a GitHub repository with at least one commit you can open and read.
+
+## Project 2 on v0: the game
+
+The game rules in [alien-tic-tac-toe.md](docs/alien-tic-tac-toe.md) and the theme you chose in [tic-tac-toe-variants.md](docs/tic-tac-toe-variants.md) are the same on every route. On v0, give it the rules file and your theme table, then build the same three increments as separate generations, and push each one to GitHub as its own commit or pull request:
+
+> Read the attached alien-tic-tac-toe.md. Build only increment 1, the board screen, as described in the "Build increment 1" prompt in tic-tac-toe-variants.md, with my theme: I am [🐱], the opponent is [🐶]. Two temporary buttons stand in for the battle. Do not build the battle yet.
+
+Then increment 2 (the battle, standalone), then increment 3 (connect them). After each one, check the behaviors listed under that increment in the variants page. The [tested checkpoints](examples/alien-tic-tac-toe) are single HTML files; if you fall behind on v0, download the checkpoint for your stage, create a repository for it on GitHub through the browser, and import it into Vercel. That is the portable route, and it takes ten minutes.
+
+Create the game as a **new v0 project** connected to a **new repository** named `my-first-game`. Keep it separate from the website.
+
+## When v0 goes off the rails
+
+| What you see | Do this |
+| --- | --- |
+| It rebuilt the whole page when you asked for one change | Restore the previous version from v0's version history, then repeat the request ending with "Change nothing else." |
+| It invented a job, a quote, or a testimonial | "Remove everything not in resume-template.md. Use only my facts." Then check again. |
+| It added a form, a database, or sign-in you did not ask for | "Remove the [form]. Version 1 has no form, no database, no sign-in." Scope is yours to hold. |
+| The preview works but the deploy fails | Open the Vercel deployment's build log; paste the first red error line back into v0 and ask for the smallest fix. |
+| The GitHub option is missing or asks for broad permissions | Grant access to only the one repository. If it still will not connect, download the code as a ZIP and upload it through GitHub's "Add file → Upload files" instead. Same result. |
+| Out of credits | Switch to the portable route with any chatbot and the examples. Nothing you built is lost; it is in GitHub. |
+
+More recovery paths in [stuck.md](docs/stuck.md) and [troubleshooting.md](docs/troubleshooting.md).
+
+## What to keep in the repository
+
+The code, a `README.md` that says what the project is and how to run it, and your `project-state.md`. Never a password, API key, or token. If v0 or any agent asks you to paste one into the code, the answer is no; secrets go in Vercel's environment variable settings, and that is a later lesson.
+
+## For the instructor
+
+Menu labels above were written from general knowledge of v0 in 2026 and must be confirmed on a live account in [preflight](instructor/preflight.md) before class: the GitHub connect flow, the Deploy button, version restore, and the free-tier credit limit. Demonstrate the loop once on the projector before students try it.
+
+<!-- END COURSE SOURCE: docs/v0-route.md -->
+
+
+---
+
+# Source file: docs/agent-loop-and-pull-requests.md
+
+<!-- BEGIN COURSE SOURCE: docs/agent-loop-and-pull-requests.md -->
+
+# Reading what the agent wrote: commits, diffs, pull requests, and saying no
+
+> **For an AI receiving only this lesson:** When the learner asks you to make a change to a project that lives in GitHub, propose the change as a separate branch or a clearly separated version, describe exactly which files you changed and why, and never delete tests, checks, or files the learner did not mention. If asked to review a diff, read it for scope, secrets, and deleted safeguards before anything else.
+
+Agents write code fast. The skill the workshop is about is directing that work and staying in charge of what ships. GitHub is where that happens. This page teaches the four things you need: read a commit, read a diff, use a pull request as the checkpoint, and roll back. Twenty minutes, right after your website is live.
+
+## The loop, in two vocabularies
+
+| Professional teams say | You did it today as |
+| --- | --- |
+| Prompt | Describe: the brief, the wireframe, the one-change prompt |
+| Plan (the step most people skip) | Plan: the agent lists files, order, and three hand checks; you approve before anything is built |
+| Generate | Build: the agent returns code |
+| Commit | Save: the change lands in GitHub with a message |
+| Review | Check: you read the diff and test the actual page |
+| Deploy | Publish: Vercel ships the merged version to a live URL |
+| Repeat | Repeat |
+
+Same loop. The only new habit is that **review happens on the diff, before deploy**, not by squinting at the live site afterward.
+
+## 1. Read a commit
+
+Open your repository on github.com and click the commit count (it says something like "12 commits"). Each line is one saved change: a message, who made it, when. Click one.
+
+Read in this order:
+
+1. **The message.** It should say what changed and why in one line. "Update index.html" tells you nothing. "Add Education section from resume" tells you what to expect.
+2. **The file list.** How many files changed? You asked for one section; if nine files changed, stop and ask why.
+3. **The lines.** Green with a plus sign was added. Red with a minus sign was removed. Gray is unchanged context so you can see where.
+
+Exercise, five minutes: open the commit that added your About section. Say out loud what was added, what was removed, and whether anything was touched that you did not ask for.
+
+## 2. Read a diff like a supervisor, not a programmer
+
+You do not need to understand every line. You need to answer four questions:
+
+| Question | Red flag if |
+| --- | --- |
+| Did it touch only what I asked? | Files you did not mention are in the list, or the change is much bigger than the request. |
+| Did it remove any safety? | A test, a check, a validation, an `if` that guarded something, or a whole file disappeared. |
+| Is there a secret in it? | Anything that looks like a key, token, or password: long random strings, `sk-`, `key=`, `password:`. Stop immediately; that must never be in a repository. |
+| Does it match the prompt I gave? | The agent "improved" something you did not ask about, or renamed things, or added a feature. |
+
+If any row is red, you say no. Saying no is the job. Ask the agent to redo the change with only the requested scope, or restore the previous version.
+
+## 3. The pull request is where a human stays in charge
+
+A **branch** is a copy of the project where a change is made without touching the live version. A **pull request** (PR) says "here is the change on my branch; review it, then merge it into the main version." Merging triggers the deploy. Until you merge, nothing ships.
+
+That makes the PR the natural checkpoint for agent work: the agent proposes, you review the diff with the four questions, you merge or you send it back.
+
+**Exercise, during the game block.** Increment 1 of your game (the board) goes straight into `main`. Increment 2 (the battle) goes through a pull request:
+
+- **On v0:** make increment 2 as a new generation, push it to GitHub, and when GitHub offers to open a pull request for the new branch, do it. If v0 pushed straight to `main`, that is fine today; open the commit instead and review it the same way.
+- **On the portable route:** on github.com, open your game repository, press the branch dropdown, type `battle` and create the branch. Upload the increment-2 file to that branch. GitHub shows a yellow bar offering "Compare & pull request." Press it, write one sentence about what the change does, and create the PR.
+
+Now review your own PR: the Files changed tab is the diff. Ask the four questions. Then press Merge. Vercel deploys the merged version; your live URL updates within a minute. Open the Deployments list in Vercel and see that the deploy is tied to that merge.
+
+Checkpoint: a merged pull request in your game repository with a one-sentence description and a deploy that followed it.
+
+## 4. Roll back
+
+Nothing in GitHub is lost. Three ways back, from gentlest to bluntest:
+
+1. **Restore a version in v0.** Every generation is a version; pick the earlier one and push again.
+2. **Revert a commit on GitHub.** Open the bad commit or merged PR and press Revert. GitHub makes a new commit that undoes it. The history stays honest; nothing is erased.
+3. **Redeploy an earlier deployment in Vercel.** In the project's Deployments list, open a previous successful deploy and promote it. The live URL points at the old version while you fix the new one.
+
+Practice one of these today, on purpose, while nothing is at stake. The first time you need it for real should not be the first time you have done it.
+
+## 5. Make the agent easier to supervise
+
+Three habits cut your review time in half:
+
+- **One change per request.** "Add the Education section. Change nothing else." Small diffs are readable diffs.
+- **Ask for the plan first.** "Tell me which files you will change and why before you change them." Compare the plan to the diff afterward.
+- **Keep instructions in the repository.** A short `AGENTS.md` (template in [templates/AGENTS.md](templates/AGENTS.md)) tells every agent, every session, what the project is and what it must never do: no secrets in code, no new dependencies without asking, keep it one page. The agent reads it so you do not have to repeat it.
+
+## For developers in the room
+
+This is the same discipline you would apply to a fast junior engineer: small PRs, a plan before code, review for scope and safety before style, tests as the gate, and revert without drama. Directing ten agents is directing ten such engineers; the PR queue is where you keep up. The [multiple agents](docs/multiple-agents.md) lesson adds a read-only reviewer agent as a second pair of eyes; it is a useful extension once the single-agent loop is boring.
+
+## Vocabulary
+
+| Word | Meaning today |
+| --- | --- |
+| Repository | Your project's folder on GitHub, with its whole history |
+| Commit | One saved change with a message |
+| Diff | The exact lines a change added and removed |
+| Branch | A copy of the project where a change is made safely |
+| Pull request | "Review this branch, then merge it" |
+| Merge | Accept the change into the main version, which deploys |
+| Revert | A new commit that undoes an earlier one |
+| Deploy | Vercel putting a version on the live URL |
+
+<!-- END COURSE SOURCE: docs/agent-loop-and-pull-requests.md -->
+
+
+---
+
+# Source file: docs/your-own-project.md
+
+<!-- BEGIN COURSE SOURCE: docs/your-own-project.md -->
+
+# Track B: build the thing you brought
+
+> **For an AI receiving only this lesson:** The learner is building their own small project in one afternoon. Hold the scope to one screen, one form or input, one result. Refuse politely to add sign-in, databases, payments, or integrations in version 1; record them as "later." Return a plan before code, complete files when asked, and one change per request.
+
+The workshop invitation said to bring a problem you have been meaning to solve: a tool for your team, a personal dashboard, a prototype you want to pitch. If you brought one, you can spend the afternoon on it instead of the game. Same loop, same gates, same deadline: a live URL by 4:35 and a pull request you reviewed yourself.
+
+Choose Track B if you can say the idea in one sentence and it fits the scope rule below. If it doesn't fit yet, that's not a knock on the idea; most good ideas are too big for one afternoon. Do the game today, because it teaches the same loop, and come back to your idea next week with the [personal website](docs/personal-website-walkthrough.md) and [v0 route](docs/v0-route.md) pages as your guide. You'll be surprised how much of it you can do on your own by then.
+
+## The scope rule: one screen, one input, one result
+
+Version 1 is a single page where someone types or picks something and sees a useful result. Examples that fit:
+
+- A meeting-cost calculator: attendees and hourly rate in, cost per minute out.
+- A "which form do I need" chooser for your team: three questions in, the right link out.
+- A checklist for an onboarding, inspection, or event, with progress saved in the browser.
+- A one-page dashboard that shows numbers you paste in from a spreadsheet.
+- A pitch page for the prototype, with a signup button that goes to a mailto link.
+
+What waits for later, no matter how reasonable it sounds: sign-in, a database, payments, email sending, anything that calls another company's system, anything that stores other people's data. Write those in `project-state.md` under "later." Half of them you will not need.
+
+## 12:45 to 1:40: brief and plan (with the game track's brief block)
+
+Use [vc-project-brief](skills/vc-project-brief/SKILL.md) and [vc-project-scope](skills/vc-project-scope/SKILL.md). Fill the [website scope template](templates/website-scope.md). Then draw one wireframe: boxes and labels, the input at the top, the result below, one button. Paste both into your chatbot:
+
+> Here is my brief, scope, and a wireframe. Version 1 is one screen, one input, one result, no sign-in, no database, no external services. Tell me the plan: which files you will create, what each does, and three checks I can perform by hand to know it works. Do not build yet.
+
+Read the plan. Cut anything that is not on the wireframe.
+
+Checkpoint: a brief with three observable checks and a plan with a file list you understand.
+
+## 1:40 to 2:45: build increment 1
+
+> Build the plan as described. Keep it to the files you listed. Plain, readable code with short comments. Fits a phone. Return the complete files.
+
+On v0, this is one generation; press Deploy, then push to GitHub (see the [v0 route](docs/v0-route.md)). On the portable route, save the file, open it, then create the repository and import it into Vercel as in the [setup guide](setup-guide.md).
+
+Checkpoint: the three checks from your brief pass on the live URL, not just on your laptop.
+
+## 3:00 to 4:10: increment 2 through a pull request
+
+Pick the one improvement that matters most to the person who would use this. Make it on a branch and open a pull request, as in [reading what the agent wrote](docs/agent-loop-and-pull-requests.md). Review your own diff with the four questions. Merge. Watch the deploy.
+
+Then find a classmate who has never seen it and ask them to use it for two minutes without help. Write down the first thing that confused them. Fix that one thing, through another PR.
+
+Checkpoint: a merged pull request and one change made because of a real person's confusion.
+
+## 4:10 to 4:35: publish for real
+
+Confirm the live URL on a phone. Add a `README.md` to the repository that says what the tool is, who it is for, and how to use it, in five lines. Record everything in `project-state.md`, including the "later" list.
+
+## Taking it to work on Tuesday
+
+- Put the repository under your organization's GitHub if it will be used by colleagues; your personal account is fine for a prototype.
+- Before anyone else's data touches it, you need the things you deferred done properly: sign-in, storage, and a review by someone whose job is security. That is the "when to call a professional" line, and it is not a failure; it is the plan.
+- The next thing to automate is whatever you did by hand twice today.
+
+## If it stalls
+
+Scope is almost always the problem. Cut to the smallest version that still produces a result, ship that, and record the rest. A live one-input tool beats a half-built dashboard. If it is 3:30 and nothing is live, switch to the [game checkpoint 3](examples/alien-tic-tac-toe/checkpoint-3-complete/index.html), publish it, and come back to your idea with the materials after class. More in [stuck.md](docs/stuck.md).
+
+<!-- END COURSE SOURCE: docs/your-own-project.md -->
 
 
 ---
@@ -1027,6 +2053,338 @@ Fill this in briefly and save it in your learner website project as `project-pla
 Keep postponed features outside this plan. A planned check is not a passed test; record actual results after building.
 
 <!-- END COURSE SOURCE: templates/website-plan.md -->
+
+
+---
+
+# Source file: docs/personal-website-walkthrough.md
+
+<!-- BEGIN COURSE SOURCE: docs/personal-website-walkthrough.md -->
+
+# Build a personal website from your LinkedIn profile
+
+> **For an AI receiving only this lesson:** State which text and files you actually received. Ask whether the learner is starting, continuing, or stuck, and ask for their resume text and `project-state.md` before writing any site content. Never invent jobs, dates, degrees, or employers. Never publish a phone number, street address, or birth date. Return complete runnable files.
+
+Your first project is a website about the one subject you know best: you. LinkedIn already holds most of the content. You will export it, hand it to your chatbot with a tested starter, pick colors and a layout, publish it on Vercel, and then add features from the [skills menu](docs/website-skills-menu.md).
+
+A finished, tested example lives at [`examples/personal-website/`](examples/personal-website). Open its `index.html` first so you know what "done" looks like. It belongs to a fictional person named Jordan Rivera; you are going to replace every word of it with your own.
+
+Time budget inside the 90-minute website block: export 10, content 20, build 30, colors and layout 10, publish 20.
+
+## 1. Get your content out of LinkedIn (10 minutes)
+
+Pick the route that works on your laptop. Menu labels change; look for the words below.
+
+**Route A, the quick PDF.** Open your own LinkedIn profile in a browser. Below your headline, find the **More** button (on some accounts it says **Resources**). Choose **Save to PDF**. A file like `Profile.pdf` downloads. This is your resume for today.
+
+**Route B, the full export.** Click your photo, then **Settings & Privacy**, then **Data privacy**, then **Get a copy of your data**. Choose the smaller option that includes profile, positions, education, and skills. LinkedIn emails a link within about ten minutes; the archive contains CSV files you can attach instead of the PDF. Use Route B if Route A is missing from your menu, or if you want your skills list as text.
+
+**No LinkedIn, or it will not export?** Open [`resume-template.md`](examples/personal-website/resume-template.md) and type your details in. Fifteen minutes of typing beats fifteen minutes of fighting a menu.
+
+Checkpoint: you can open the PDF or the template and see your name, headline, and at least two roles.
+
+## 2. Decide what stays private (5 minutes)
+
+The site is public. Remove these before the chatbot sees your content, or tell it to leave them out:
+
+- Phone number, street address, birth date
+- ID numbers, salary, anything about health or family
+- Email addresses you do not want strangers to use (create a dedicated one if you prefer)
+- Anything a former employer would consider confidential
+
+Keep: name, city, headline, work history with outcomes, skills, education, public links.
+
+## 3. Turn the export into site content (20 minutes)
+
+This step is content prep, no skill needed yet. Give your chatbot the resume PDF or the filled template, plus [`resume-template.md`](examples/personal-website/resume-template.md) so it knows the shape. (The [vc-project-brief](skills/vc-project-brief/SKILL.md) skill comes next, once the facts are right.)
+
+> Read my attached resume and fill in resume-template.md with my real information only. Do not invent anything. Leave a field blank if the resume does not say. Rewrite each job as a title, employer, dates, and two or three bullets that state what changed because of my work, in plain English. Draft a three-paragraph About section in first person that sounds like a person, not a brochure. Leave out my phone number, street address, and birth date. Show me the result; do not build the site yet.
+
+Read every line. Fix dates, fix titles, and cut anything that sounds like a press release. This is the only step where you are the expert and the chatbot is not.
+
+Checkpoint: a completed `resume-template.md` with no placeholders and nothing you would not say out loud to a stranger.
+
+## 4. Build the first version (30 minutes)
+
+Use [vc-build-small](skills/vc-build-small/SKILL.md). Attach the example `index.html` and your completed template.
+
+> Using the attached index.html as the exact structure and style, replace all of Jordan Rivera's content with mine from resume-template.md. Keep every id, every CUSTOMIZE comment, every ADD-ON SLOT comment, the theme and layout system, and the print stylesheet. Delete the Projects section if my template has nothing for it. Return the complete file.
+
+Open the file by double-clicking it. Check it on your phone too if you can (send it to yourself).
+
+Checkpoint: your name in the browser tab, your three roles visible, every link goes where it should, and nothing says "Jordan."
+
+## 5. Choose your colors and layout (10 minutes)
+
+The example has six color themes and two layouts built in. Try them with the picker in the footer, or add `?theme=forest&layout=sidebar` to the end of the address.
+
+| Theme id | Feel | Good for |
+| --- | --- | --- |
+| `slate` | Navy and warm gray | Most professions; the safe default |
+| `forest` | Deep green and cream | Health, education, sustainability |
+| `sunset` | Coral and sand | Creative and people-facing roles |
+| `ocean` | Teal and white | Technology, consulting |
+| `mono` | Black, white, one accent | Design, writing, anyone who wants it quiet |
+| `plum` | Purple and gold | Marketing, events, speakers |
+
+| Layout | Use it when |
+| --- | --- |
+| `centered` | You have a lot of experience text and want it read top to bottom. Looks the same on phone and laptop. |
+| `sidebar` | You want name, links, and skills always visible on a laptop. Collapses to centered on phones. |
+
+Sketch first if you want to change more than the palette: [site-centered.svg](docs/wireframes/site-centered.svg), [site-sidebar.svg](docs/wireframes/site-sidebar.svg). Then one prompt:
+
+> Set the theme to [ocean] and the layout to [sidebar] permanently, remove the footer picker, and change the accent color to [#0B6E4F]. Change nothing else. Return the complete file.
+
+Want a palette that is actually yours? Pick one color you like, ask the chatbot for a background, text, and accent that pass contrast checks with it, and record the three hex codes in your project-state file so the next chat does not drift.
+
+Checkpoint: the page looks the same after a reload with no `?theme=` in the address, and the footer picker is gone.
+
+## 6. Check, save, publish (20 minutes)
+
+Run [vc-quality-check](skills/vc-quality-check/SKILL.md), then [vc-publish-site](skills/vc-publish-site/SKILL.md). The GitHub and Vercel steps are in the [setup guide](setup-guide.md); do not improvise them.
+
+Minimum checks before publishing:
+
+1. Every link opens the right place, including the mailto link.
+2. The page fits a phone with no sideways scrolling.
+3. Print preview shows a tidy resume with no buttons.
+4. Search the file for "Jordan", "Bright Harbor", and "example" and find nothing.
+5. Nothing private is in the file, including in comments.
+
+Checkpoint: a live `*.vercel.app` address that opens on someone else's phone. Record it in `project-state.md`.
+
+## 7. Add features from the skills menu (the rest of the day, in increments)
+
+Now the site becomes "cool." Each feature below is one small increment with its own check, using a skill from Mark's public skill repositories. Pick one at a time from the [website skills menu](docs/website-skills-menu.md):
+
+- A contact form that actually sends
+- A newsletter signup
+- Copy that sounds like you and not like a chatbot
+- An image prompt for a hero or background
+- SEO so your name finds your site
+- A UX and link check before you share it
+- A LinkedIn post announcing it
+
+The `ADD-ON SLOT` comments in the file mark exactly where each one goes. Finish one, check it, save it, then pick the next.
+
+## If you fall behind
+
+Download the finished example, replace only the hero and About sections with your own words, publish that, and record the rest as "next" in your project-state file. A live page with three sections beats a perfect page that is still on your laptop. More recovery routes are in [stuck.md](docs/stuck.md).
+
+<!-- END COURSE SOURCE: docs/personal-website-walkthrough.md -->
+
+
+---
+
+# Source file: examples/personal-website/resume-template.md
+
+<!-- BEGIN COURSE SOURCE: examples/personal-website/resume-template.md -->
+
+# Resume template for the personal website
+
+Fill in every field below. These are the exact fields `index.html` uses, in the order they appear on the page. Give the finished file to your chatbot with `index.html` and ask it to replace the sample content with yours.
+
+Most of this comes straight from your LinkedIn PDF (LinkedIn profile → **More** → **Save to PDF**). The section names match.
+
+## Basics (hero)
+
+- **Name:**
+- **Headline** (one line, what you do and for whom):
+- **City, State:**
+- **Email** (the one you want strangers to use):
+
+## Links (2 or 3 buttons)
+
+- **LinkedIn URL:**
+- **Resume PDF file name** (save it next to index.html, or write "none"):
+- **One more public link** (optional: portfolio, GitHub, company page):
+
+## About (3 short paragraphs at most)
+
+Paragraph 1 — what you do now and for how long:
+
+Paragraph 2 — what you are good at or care about:
+
+Paragraph 3 — something human (optional):
+
+## Experience (3 roles, newest first)
+
+For each role, write 2 or 3 bullets that say what changed because you were there. Start with a verb. Use a number when you have one.
+
+### Role 1
+- **Title:**
+- **Employer:**
+- **City:**
+- **Dates** (year – year, or year – Present):
+- **Outcome bullet 1:**
+- **Outcome bullet 2:**
+- **Outcome bullet 3** (optional):
+
+### Role 2
+- **Title:**
+- **Employer:**
+- **City:**
+- **Dates:**
+- **Outcome bullet 1:**
+- **Outcome bullet 2:**
+- **Outcome bullet 3** (optional):
+
+### Role 3
+- **Title:**
+- **Employer:**
+- **City:**
+- **Dates:**
+- **Outcome bullet 1:**
+- **Outcome bullet 2:**
+- **Outcome bullet 3** (optional):
+
+## Skills (3 groups, 3 to 6 items each)
+
+- **Group 1 name:**
+  - Items:
+- **Group 2 name:**
+  - Items:
+- **Group 3 name:**
+  - Items:
+
+## Education (degrees and certificates)
+
+- **Degree or certificate:** / **School or organization:** / **Year:**
+- **Degree or certificate:** / **School or organization:** / **Year:**
+
+## Projects or Talks (2 items, optional)
+
+Delete this section from the site if you have nothing here yet.
+
+### Item 1
+- **Name:**
+- **What it was** (one sentence):
+- **Result** (one sentence):
+
+### Item 2
+- **Name:**
+- **What it was:**
+- **Result:**
+
+## Contact
+
+- **Email** (same as above):
+
+## Choices
+
+- **Theme** (slate, forest, sunset, ocean, mono, plum):
+- **Layout** (centered, sidebar):
+
+---
+
+## Do not publish
+
+A personal website is public forever, including in search engines and AI training data. Leave these out of the site, out of this file, and out of anything you paste into a chatbot:
+
+- Phone number
+- Street address (city and state are enough)
+- Birth date or age
+- ID numbers of any kind (Social Security, driver's license, passport, employee ID)
+- Salary, pay history, or pay expectations
+- Personal email used for banking or recovery (use a public-facing address)
+- Names of children or family members
+- Anything your current employer has not made public (unreleased products, client names under NDA, internal numbers)
+
+If your LinkedIn PDF contains any of these, cross them out before you share it with the chatbot.
+
+<!-- END COURSE SOURCE: examples/personal-website/resume-template.md -->
+
+
+---
+
+# Source file: docs/website-skills-menu.md
+
+<!-- BEGIN COURSE SOURCE: docs/website-skills-menu.md -->
+
+# Ten skills to make your website better, one at a time
+
+> **For an AI receiving only this lesson:** A skill is a set of instructions the learner pastes or installs. Follow the skill the learner gives you for the current task only. Ask for the current `index.html` before changing it. Return the complete file. Do not add a feature the learner did not ask for.
+
+A **skill** is a short instruction file that teaches your chatbot how to do one job well. Mark publishes his under open source licenses in two public GitHub repositories. You do not need an account to read them.
+
+- **aienterprise-skills**, by The AIE Network: <https://github.com/mrhinkle/aienterprise-skills>
+- **VibeCoding-a-Website**: <https://github.com/mrhinkle/VibeCoding-a-Website>
+
+Pick one feature. Load one skill. Make one change. Check it. Save it. Then pick the next. Do not load all ten at once; your chatbot will try to do all ten at once.
+
+## How to load a skill
+
+**Portable route, any chatbot** (ChatGPT, Claude, Gemini, Copilot, v0): open the skill's **raw** link below, select all, copy, and paste it into the chat with this line first:
+
+> Use the following instructions as a skill for my next request. Read them, confirm what you will and will not do, then wait for my task.
+
+Then attach your current `index.html` and give the task prompt from the table.
+
+**Connected route, Claude Code or Cowork**: for aienterprise-skills, run these once and the skills are available by name:
+
+```
+/plugin marketplace add mrhinkle/aienterprise-skills
+/plugin install aie-web@aienterprise-skills
+/plugin install ai-slop-killer@aienterprise-skills
+/plugin install aie-social@aienterprise-skills
+```
+
+For VibeCoding-a-Website skills, download the repository as a ZIP from GitHub and copy the folder you want from `.claude/skills/` into your own project's `.claude/skills/` folder.
+
+Every skill here is read-only or edits only the files you hand it. None of them publish, send email, or post for you. Your chatbot may still ask for a form or email provider account; create accounts yourself and never paste a password or secret key into a chat.
+
+## The menu
+
+Each row is one increment. Checks are things you can see.
+
+| # | Feature you get | Skill | Where it lives | Task prompt | Check |
+| --- | --- | --- | --- | --- | --- |
+| 1 | Your own colors, fonts, and look, recorded so they never drift | `site-customizer` | [raw](https://raw.githubusercontent.com/mrhinkle/VibeCoding-a-Website/main/.claude/skills/site-customizer/SKILL.md) · [repo](https://github.com/mrhinkle/VibeCoding-a-Website/tree/main/.claude/skills/site-customizer) | "Interview me about my brand, then write brand.md with my colors, font choices, and voice. Then apply only the colors and fonts to index.html." | The page uses your colors; `brand.md` lists the hex codes. |
+| 2 | A headline and About section that sell without sounding salesy | `copy-editor` | [raw](https://raw.githubusercontent.com/mrhinkle/VibeCoding-a-Website/main/.claude/skills/copy-editor/SKILL.md) · [repo](https://github.com/mrhinkle/VibeCoding-a-Website/tree/main/.claude/skills/copy-editor) | "Review my hero headline and About section for clarity and a clear value proposition. Propose two alternatives for each. Do not change facts." | You can read the headline aloud in one breath and it says what you do for whom. |
+| 3 | Writing that sounds like a person, not a chatbot | `ai-slop-killer` | [raw](https://raw.githubusercontent.com/mrhinkle/aienterprise-skills/main/plugins/ai-slop-killer/skills/ai-slop-killer/SKILL.md) · [repo](https://github.com/mrhinkle/aienterprise-skills/tree/main/plugins/ai-slop-killer) | "Run the anti-slop pass on every sentence of visible text in index.html. Show me each change and why. Keep my facts." | No "not X, it's Y," no triple lists, no "leverage," no em-dash pile-ups. |
+| 4 | A prompt for a hero or background image you can make in any image tool | `brand-to-images` | [raw](https://raw.githubusercontent.com/mrhinkle/VibeCoding-a-Website/main/.claude/skills/brand-to-images/SKILL.md) · [repo](https://github.com/mrhinkle/VibeCoding-a-Website/tree/main/.claude/skills/brand-to-images) | "Using my brand.md, write one image prompt for a hero background and one for a social share image. No text in the images. No faces unless mine." | A generated image under 300 KB sits in your project folder and the hero shows it with alt text. |
+| 5 | A contact form that actually delivers | `aie-web-forms` | [raw](https://raw.githubusercontent.com/mrhinkle/aienterprise-skills/main/plugins/aie-web/skills/aie-web-forms/SKILL.md) · [repo](https://github.com/mrhinkle/aienterprise-skills/tree/main/plugins/aie-web/skills/aie-web-forms) | "Replace the ADD-ON SLOT for the contact form with a working form using [Formspree / Web3Forms / my provider]. Labels, validation, a honeypot, and visible success and error messages. I will paste the form endpoint; never ask for a secret key." | Submitting the live form lands a test message in your inbox. |
+| 6 | Your name finds your site in Google and in AI answers | `aie-web-seo` | [raw](https://raw.githubusercontent.com/mrhinkle/aienterprise-skills/main/plugins/aie-web/skills/aie-web-seo/SKILL.md) · [repo](https://github.com/mrhinkle/aienterprise-skills/tree/main/plugins/aie-web/skills/aie-web-seo) | "Audit index.html for SEO and answer-engine optimization for a personal site. Add a title, description, Open Graph tags, and Person schema (JSON-LD) using only facts from the page." | View source shows the tags; a search for your full name plus city shows the site within a few days. |
+| 7 | Every link, image, and anchor works | `aie-web-links` | [raw](https://raw.githubusercontent.com/mrhinkle/aienterprise-skills/main/plugins/aie-web/skills/aie-web-links/SKILL.md) · [repo](https://github.com/mrhinkle/aienterprise-skills/tree/main/plugins/aie-web/skills/aie-web-links) | "Check every link, image, and in-page anchor in my live site at [URL]. List broken ones with the fix." | The report says zero broken; you clicked three at random to confirm. |
+| 8 | A usability review from a stranger's point of view | `aie-web-ux` | [raw](https://raw.githubusercontent.com/mrhinkle/aienterprise-skills/main/plugins/aie-web/skills/aie-web-ux/SKILL.md) · [repo](https://github.com/mrhinkle/aienterprise-skills/tree/main/plugins/aie-web/skills/aie-web-ux) | "Review my site at [URL] as a recruiter on a phone with ten seconds. Score it and give me the three fixes that matter most." | You made the top fix and a classmate can find your email in under ten seconds. |
+| 9 | The "does it actually work" gate before you share it | `aie-web-qa` | [raw](https://raw.githubusercontent.com/mrhinkle/aienterprise-skills/main/plugins/aie-web/skills/aie-web-qa/SKILL.md) · [repo](https://github.com/mrhinkle/aienterprise-skills/tree/main/plugins/aie-web/skills/aie-web-qa) | "Run a pre-launch QA pass on [URL]: pages, links, form, mobile, console errors, accessibility basics. Severity-rated list with steps to reproduce." | No high-severity items remain; the rest are in `project-state.md` under "later." |
+| 10 | A LinkedIn post that announces the site in your voice | `aie-social-linkedin` | [raw](https://raw.githubusercontent.com/mrhinkle/aienterprise-skills/main/plugins/aie-social/skills/aie-social-linkedin/SKILL.md) · [repo](https://github.com/mrhinkle/aienterprise-skills/tree/main/plugins/aie-social/skills/aie-social-linkedin) | "Draft a LinkedIn post announcing my new personal site at [URL]. Use only what is true about what I built today. Give me three first lines to choose from. Do not post it." | You read it, cut one sentence, and it still sounds like you. Posting is your choice; see [linkedin-wrap-up.md](docs/linkedin-wrap-up.md). |
+
+## Alternates, if a row above does not fit
+
+| Feature | Skill | Where it lives |
+| --- | --- | --- |
+| A newsletter signup wired to Beehiiv or Resend | `form-wiring` | [raw](https://raw.githubusercontent.com/mrhinkle/VibeCoding-a-Website/main/.claude/skills/form-wiring/SKILL.md) |
+| Security self-check: exposed keys, headers, HTTPS | `aie-web-security` | [raw](https://raw.githubusercontent.com/mrhinkle/aienterprise-skills/main/plugins/aie-web/skills/aie-web-security/SKILL.md) |
+| Faster load, better Core Web Vitals | `aie-web-performance` | [raw](https://raw.githubusercontent.com/mrhinkle/aienterprise-skills/main/plugins/aie-web/skills/aie-web-performance/SKILL.md) |
+| Guided GitHub to Vercel deployment | `deploy-to-vercel` | [raw](https://raw.githubusercontent.com/mrhinkle/VibeCoding-a-Website/main/.claude/skills/deploy-to-vercel/SKILL.md) |
+| Change text or add a page after launch | `site-updater` | [raw](https://raw.githubusercontent.com/mrhinkle/VibeCoding-a-Website/main/.claude/skills/site-updater/SKILL.md) |
+
+## The rule for every increment
+
+1. Save a copy of `index.html` before the change (commit, or a dated copy).
+2. One skill, one task, one complete returned file.
+3. Open it. Do the check in the table. If it fails, say exactly what you saw and ask for the smallest fix.
+4. Record the change and the check in `project-state.md`.
+5. Publish only what passed.
+
+Where the feature goes in the file is marked for you:
+
+```html
+<!-- ADD-ON SLOT: contact form (see docs/website-skills-menu.md) -->
+<!-- ADD-ON SLOT: newsletter signup -->
+<!-- ADD-ON SLOT: blog or posts list -->
+<!-- ADD-ON SLOT: testimonials -->
+```
+
+Tell the chatbot the slot name and it will put the feature in the right place.
+
+## Licenses
+
+aienterprise-skills and VibeCoding-a-Website are published under open source licenses; see each repository's `LICENSE` file and this course's [licenses folder](licenses/README.md). You may use them in your own projects after class.
+
+<!-- END COURSE SOURCE: docs/website-skills-menu.md -->
 
 
 ---
@@ -1465,6 +2823,360 @@ After the class project is checked, you can follow the [optional Arcade submissi
 
 ---
 
+# Source file: docs/tic-tac-toe-variants.md
+
+<!-- BEGIN COURSE SOURCE: docs/tic-tac-toe-variants.md -->
+
+# Make the tic-tac-toe game yours: icon sets, prompts, and wireframes
+
+> **For an AI receiving only this lesson:** State which text and files you actually received. Ask whether the learner is choosing a theme, continuing a build, or stuck. The rules live in [alien-tic-tac-toe.md](docs/alien-tic-tac-toe.md) and do not change when the theme changes. Do not invent new mechanics while re-skinning.
+
+The game is the same under every theme: choose a square, win or lose a short battle, claim the square, finish the board. What you choose is the **look**: who you are, who you are fighting, what the three attacks and three counters are called, and the colors.
+
+A tested, complete version with all eight themes built in lives at [`examples/alien-tic-tac-toe/checkpoint-3-complete/`](examples/alien-tic-tac-toe). Open it, pick a theme, and play a round before you build your own. If you fall behind during class, download the checkpoint for the stage you are on and continue from there. See [stuck.md](docs/stuck.md).
+
+## 1. Choose an icon set
+
+Every theme uses two emoji so nobody needs to download art, pay for an icon pack, or worry about licensing. Emoji render on every phone and laptop. Your chatbot can swap them in one edit.
+
+| Theme id | You | Opponent | Opponent attacks (in order) | Your correct counters (in order) | Background · accent |
+| --- | --- | --- | --- | --- | --- |
+| `space-invasion` (default) | 🧑‍🚀 | 👽 alien | Laser · Shield · Claw | Shield · Blast · Dodge | `#0b1020` · `#7dd3fc` |
+| `cats-dogs` | 🐱 | 🐶 dog | Bark · Pounce · Slobber | Hiss · Climb · Shake Off | `#1f1410` · `#fdba74` |
+| `pizza-tacos` | 🍕 | 🌮 taco | Hot Sauce · Shell Crunch · Salsa Splash | Extra Cheese · Deep Dish · Pizza Box | `#2a0f0f` · `#fde047` |
+| `robots-dinos` | 🤖 | 🦖 dino | Chomp · Tail Swipe · Roar | Steel Plate · Jump Jets · Mute Button | `#0f1f14` · `#86efac` |
+| `ghosts-pumpkins` | 👻 | 🎃 pumpkin | Seed Spit · Vine Grab · Lantern Glow | Phase Out · Float Up · Shadow Cloak | `#140a1f` · `#fb923c` |
+| `sun-moon` | ☀️ | 🌙 moon | Eclipse · Moonbeam · High Tide | Solar Flare · Sunrise · Heat Wave | `#101a33` · `#fde68a` |
+| `wizards-dragons` | 🧙 | 🐉 dragon | Fire Breath · Wing Gust · Tail Whip | Ice Spell · Anchor Spell · Levitate | `#1a0f2a` · `#c4b5fd` |
+| `coffee-donuts` | ☕ | 🍩 donut | Sprinkle Storm · Sugar Rush · Glaze Drip | Lid On · Espresso Shot · Steam Cloud | `#1c120c` · `#f9a8d4` |
+
+The mechanics never change: three attacks, each with exactly one correct counter, one health point lost per exchange, two or three exchanges per battle. Renaming is the only thing a theme does. If a theme makes a rule unclear, pick a different name, not a different rule.
+
+**Make your own.** Pick any two emoji that are easy to tell apart at a glance, name three attacks the opponent does and three counters that obviously beat them, and choose two or three colors. Write it down before you prompt. A theme that exists only in your head produces a game that changes every time you ask for a change.
+
+| Field | Your answer |
+| --- | --- |
+| Theme id (lowercase, hyphens) | |
+| You (emoji + name) | |
+| Opponent (emoji + name) | |
+| Attack 1 → counter 1 | |
+| Attack 2 → counter 2 | |
+| Attack 3 → counter 3 | |
+| Background, accent, and text colors | |
+
+Avoid pairs that look alike (🐱 and 🐯), pairs where one emoji is mostly the background color, and anything that only reads as "mine" versus "theirs" by color. Each board mark must also carry a visually hidden X or O label for screen readers; the checkpoint shows how.
+
+## 2. Wireframe before you build
+
+A wireframe is a boxes-and-labels sketch of a screen. It costs five minutes and saves an hour of "that's not what I meant." Draw the three screens on paper or in a text file, then paste them into the prompt. Low fidelity is the point; the chatbot should not match your handwriting, only your layout.
+
+Printable versions: [game-instructions.svg](docs/wireframes/game-instructions.svg), [game-board.svg](docs/wireframes/game-board.svg), [game-battle.svg](docs/wireframes/game-battle.svg).
+
+**Screen 1: Instructions**
+
+```
++--------------------------------------+
+|  [Game title]                        |
+|  One line: what you do.              |
+|                                      |
+|  Theme:  ( ) space-invasion   ( ) cats-dogs   |
+|          ( ) ...     ( ) my own      |
+|                                      |
+|  How a battle works                  |
+|  +----------+-----------+            |
+|  | Attack   | Counter   |            |
+|  | Laser    | Shield    |            |
+|  | Shield   | Blast     |            |
+|  | Claw     | Dodge     |            |
+|  +----------+-----------+            |
+|                                      |
+|        [ Start game ]                |
++--------------------------------------+
+```
+
+**Screen 2: Board (choose a cell)**
+
+```
++--------------------------------------+
+|  [Title]            [ Restart game ] |
+|  Status: Choose an empty square.     |
+|                                      |
+|      +-----+-----+-----+             |
+|      | 🧑‍🚀 |     |  👽 |             |
+|      +-----+-----+-----+             |
+|      |     |  🧑‍🚀 |     |             |
+|      +-----+-----+-----+             |
+|      |     |     |     |             |
+|      +-----+-----+-----+             |
+|                                      |
+|  (when finished)                     |
+|  You won! / The aliens won / Draw    |
+|        [ Play again ]                |
++--------------------------------------+
+```
+
+**Screen 3: Battle (for the selected cell)**
+
+```
++--------------------------------------+
+|  Battle for square 5  [Restart game] |
+|                                      |
+|  You: 2 of 2          Alien: 2 of 2  |
+|                                      |
+|  The alien uses: LASER               |
+|                                      |
+|  [ Shield ]  [ Blast ]  [ Dodge ]    |
+|                                      |
+|  Result line: Correct! Alien -1.     |
+|        [ Next exchange ]             |
+|                                      |
+|  (when over)                         |
+|  You won the battle. Square 5 is 🧑‍🚀 |
+|        [ Return to board ]           |
++--------------------------------------+
+```
+
+Checklist for your sketch: every screen has a title, a status line in words, and one obvious next button. Health is written as text. Nothing depends on color alone. The board fits a phone held upright.
+
+## 3. Prompts, one stage at a time
+
+Use the seven [game skills](game-skills-guide.md) in order. Replace the bracketed parts. Paste the matching wireframe under each prompt.
+
+**Brief (vc-game-brief)**
+
+> Write game-brief.md for a themed tic-tac-toe battle game using the rules in alien-tic-tac-toe.md exactly. Theme: I am [🐱 Cat], the opponent is [🐶 Dog]. The opponent's attacks are [Bark, Pounce, Slobber] and my correct counters are [Hiss, Climb, Shake Off], in that order. Colors: [dark brown background, peach accent, light text]. Rename only; do not change the health, exchange, or board rules. Give me observable completion checks. Do not build yet.
+
+**Rules and states (vc-game-rules)**
+
+> Using the brief, list every state the game can be in and what the player sees and can do in each. Use my three wireframes below as the screens. Confirm there is no automatic opponent move after a battle and that Restart game is available in every active state.
+
+**Build increment 1, the board (vc-game-build)**
+
+> Build only the board screen as one index.html with inline CSS and JavaScript and no external files. Cells show [🐱] for my marks and [🐶] for the opponent's, each with a visually hidden "X" or "O" label. For now, two buttons "Award to me" and "Award to opponent" stand in for the battle. Detect the eight lines, a draw, Play again, and Restart game. Return the complete file.
+
+Checkpoint: three of your marks in a row shows "You won." Three opponent marks shows you lost. A full board with no line shows Draw. Compare with [checkpoint 1](examples/alien-tic-tac-toe/checkpoint-1-board).
+
+**Build increment 2, the battle (vc-game-build)**
+
+> Build the battle screen as its own index.html. Both sides start with 2 health shown as text. The opponent's attacks cycle [Bark → Pounce → Slobber]. One accepted answer per exchange; disable the answer buttons after I click; show an explicit Next exchange button only while both sides still have health; end immediately when either side reaches zero. Return the complete file.
+
+Checkpoint: answering correctly twice ends the battle in two exchanges with no Next exchange button after the win. Compare with [checkpoint 2](examples/alien-tic-tac-toe/checkpoint-2-battle).
+
+**Build increment 3, connect them (vc-game-build)**
+
+> Connect the board and the battle into one index.html. Selecting an empty cell locks the board and starts a battle for that cell. A battle win places my mark, a loss places the opponent's mark, exactly once, then the board is evaluated. Add the instructions screen from my wireframe with the theme table. Keep Restart game available everywhere. Return the complete file.
+
+Checkpoint: win three battles on squares 1, 2, and 3 and the game says you won. Restart in the middle of a battle gives an empty board and no battle. Compare with [checkpoint 3](examples/alien-tic-tac-toe/checkpoint-3-complete).
+
+**Look and feel (vc-game-look-feel)**
+
+> Apply my theme colors and make the board fit a 375 pixel wide phone. Buttons at least 44 pixels tall. Keep every status message in words. Do not change any rule.
+
+**Feedback and playtest (vc-game-feedback, vc-game-playtest)**
+
+> Watch me describe a partner's playtest: [what confused them]. Propose the single smallest change that fixes it. Change one thing, then tell me exactly how to re-test it.
+
+## 4. Extensions, only after the basic loop works
+
+Pick at most one during class. Each one is a separate increment with its own check.
+
+- **Random attacks.** The opponent picks any attack each exchange instead of cycling. Check: over ten exchanges you see all three attacks.
+- **Score across boards.** Count boards won and lost in the session. Check: Play again keeps the tally; Restart during a board does not count it.
+- **Two themes at once.** Let the player choose the opponent separately from themselves. Check: the counter table updates to match.
+- **Sound.** One short sound on win and one on loss, with a mute button. Check: muted stays muted after Play again.
+
+Do not add accounts, leaderboards, a database, timers, or downloaded art in class. Write them in your project-state file under "later."
+
+<!-- END COURSE SOURCE: docs/tic-tac-toe-variants.md -->
+
+
+---
+
+# Source file: examples/alien-tic-tac-toe/README.md
+
+<!-- BEGIN COURSE SOURCE: examples/alien-tic-tac-toe/README.md -->
+
+# Alien Tic-Tac-Toe: reference build
+
+This folder holds a working copy of the Alien Tic-Tac-Toe game from [docs/alien-tic-tac-toe.md](docs/alien-tic-tac-toe.md), built in the three steps the lesson uses. Each step is one `index.html` file. It opens from your computer with no install and runs on Vercel as a plain static file.
+
+If you are stuck at a stage, download that stage's checkpoint and continue from it. You do not lose your place in the class.
+
+| Stage in the lesson | Folder | What it is | If you are stuck here |
+| --- | --- | --- | --- |
+| 3. Build the board first | `checkpoint-1-board/` | The 3 by 3 board only. Choose an empty square, then press **Award to me (X)** or **Award to alien (O)**. These two test buttons stand in for the battle. Win, lose, and draw detection, **Play again**, and **Restart game** all work. | Download checkpoint 1 and go on to stage 4. |
+| 4. Build and check the battle separately | `checkpoint-2-battle/` | The battle only, with no board. Laser, Shield, Claw in that order. Shield, Blast, Dodge are the counters. 2 health each, one response per exchange, **Next exchange**, **Fight again**. | Download checkpoint 2 and go on to stage 5. |
+| 5 and 6. Connect and make it readable | `checkpoint-3-complete/` | The finished game: instructions, choose a square, battle, square awarded once, board checked, **Return to board** or **Play again**, **Restart game** during play, **How to play** during play, and a chooser with eight looks. | Download checkpoint 3. This is the file you publish. |
+
+Each file has `<!-- CUSTOMIZE: ... -->` comments at the places meant for you to change. The rules live in named functions with a short comment saying which state each one handles.
+
+## Open a checkpoint
+
+1. Download the folder's `index.html` (or the whole folder).
+2. Double-click `index.html`. It opens in your browser. Nothing else is needed.
+3. To use a checkpoint as your own game, copy its `index.html` into your `my-first-game` folder and keep building from there.
+
+## Put it in GitHub and on Vercel
+
+Follow [Publish each project](setup-guide.md#publish-each-project) in the setup guide. Use the plain static settings it describes (framework **Other**, empty build command, repository root as output). Upload only `checkpoint-3-complete/index.html` as your game's `index.html`; keep the two prototype checkpoints out of the published game.
+
+## The eight looks (themes) in checkpoint 3
+
+Pick one on the instructions screen. The choice is saved in your browser and sent nowhere. Rules do not change between looks; only icons, names, and colors do. An instructor can link straight to one by adding `?theme=<id>` to the address, for example `index.html?theme=cats-dogs`.
+
+| id | Name | You | Opponent | Opponent shows | Correct response |
+| --- | --- | --- | --- | --- | --- |
+| `space-invasion` (default) | Space Invasion | 🧑‍🚀 (X) | 👽 alien (O) | Laser, Shield, Claw | Shield, Blast, Dodge |
+| `cats-dogs` | Cats vs Dogs | 🐱 | 🐶 dog | Bark, Pounce, Slobber | Hiss, Climb, Shake Off |
+| `pizza-tacos` | Pizza vs Tacos | 🍕 | 🌮 taco | Hot Sauce, Shell Crunch, Salsa Splash | Extra Cheese, Deep Dish, Pizza Box |
+| `robots-dinos` | Robots vs Dinos | 🤖 | 🦖 dino | Chomp, Tail Swipe, Roar | Steel Plate, Jump Jets, Mute Button |
+| `ghosts-pumpkins` | Ghosts vs Pumpkins | 👻 | 🎃 pumpkin | Seed Spit, Vine Grab, Lantern Glow | Phase Out, Float Up, Shadow Cloak |
+| `sun-moon` | Sun vs Moon | ☀️ | 🌙 moon | Eclipse, Moonbeam, High Tide | Solar Flare, Sunrise, Heat Wave |
+| `wizards-dragons` | Wizards vs Dragons | 🧙 | 🐉 dragon | Fire Breath, Wing Gust, Tail Whip | Ice Spell, Anchor Spell, Levitate |
+| `coffee-donuts` | Coffee vs Donuts | ☕ | 🍩 donut | Sprinkle Storm, Sugar Rush, Glaze Drip | Lid On, Espresso Shot, Steam Cloud |
+
+The icons stand in for X and O on the board. Every icon also carries a hidden "X" or "O" label for screen readers, and the status text always says X or O in words. The themes are the `THEMES` list at the top of the script in `checkpoint-3-complete/index.html`. Add your own by copying one entry.
+
+## Tests run on 2026-10-15
+
+The checks were run in a real headless browser, not by reading the code. The script opens each checkpoint from disk (a `file://` address), clicks through it at a 375px phone width, and reports Passed or Failed for every check.
+
+Environment: macOS, chromium 156.0.8078.4   Playwright 1.64.1   Node v26.7.0 (Playwright's cached Chromium headless shell; nothing was downloaded).
+
+Command, run from this folder:
+
+```
+npx playwright --version      # confirms Playwright is available (printed Version 1.64.1)
+node tests/run-checks.mjs
+```
+
+Observed result: `82 passed, 0 failed` (exit code 0). The suite was run twice more before this final run with the same result.
+
+Keyboard checks use Tab, Shift+Tab, Enter, and Space. "Fits a 375px wide phone" means the page's scroll width was 375 or less. "At least 44px tall" was measured on every visible button.
+
+### Checkpoint 1: board
+
+| Check | Result |
+| --- | --- |
+| loads with 9 empty cells and a status line | Passed |
+| selecting cell 1 shows 'pending' and locks the board | Passed |
+| test buttons appear only while a cell is pending | Passed |
+| clicking cell 2 while cell 1 is pending changes nothing | Passed |
+| Award to me (X) puts exactly one X on the board | Passed |
+| repeating the award or clicking the occupied cell changes nothing | Passed |
+| X on 1-2-3 shows 'You won' | Passed |
+| after the win no cell can be selected and Play again is shown | Passed |
+| Play again gives 9 empty cells | Passed |
+| O on 1-4-7 shows 'The aliens won' | Passed |
+| full board X,O,X,X,O,O,O,X,X shows 'Draw' | Passed |
+| last-cell X completing 1-5-9 is a win, not a draw | Passed |
+| Restart game mid-game clears all 9 cells and the pending cell | Passed |
+| after Restart, focus is on the status message | Passed |
+| keyboard focus lands on cell 1 with a visible outline | Passed |
+| Enter twice on a cell makes exactly one pending cell and awards nothing | Passed |
+| focus moves to the status message (not a button) after selecting a cell | Passed |
+| one Tab reaches Award to me (X) | Passed |
+| Space twice on Award to me (X) places exactly one X | Passed |
+| fits a 375px wide phone with no sideways scrolling | Passed |
+| every visible button is at least 44px tall | Passed |
+| no JavaScript errors | Passed |
+
+### Checkpoint 2: battle
+
+| Check | Result |
+| --- | --- |
+| starts at Laser with 2 health each | Passed |
+| Shield vs Laser: alien drops to 1, responses disabled, Next exchange shown | Passed |
+| repeating the response before Next exchange changes nothing | Passed |
+| Next exchange shows Shield as exchange 2 | Passed |
+| Shield, Blast: 'You won the battle' with You 2 of 2 and Alien 0 of 2 | Passed |
+| no Next exchange after the terminal result; Fight again shown | Passed |
+| Fight again resets to Laser with 2 health each | Passed |
+| Dodge, Dodge: 'The alien won the battle' with You 0 of 2 and Alien 2 of 2 | Passed |
+| no Next exchange after the player loses | Passed |
+| third exchange shows Claw | Passed |
+| Blast, Blast, Dodge: win at exchange 3 with You 1 of 2 and Alien 0 of 2 | Passed |
+| Blast, Shield: loss at exchange 2 with You 0 of 2 and Alien 2 of 2 | Passed |
+| Blast, Blast, Blast: loss at exchange 3 with You 0 of 2 and Alien 1 of 2 | Passed |
+| fits a 375px wide phone with no sideways scrolling | Passed |
+| no JavaScript errors | Passed |
+
+### Checkpoint 3: complete game
+
+| Check | Result |
+| --- | --- |
+| opens on the instructions screen with the board hidden | Passed |
+| default theme is space-invasion | Passed |
+| instructions list all 8 themes | Passed |
+| Restart is not shown before Start | Passed |
+| Start shows the empty board with the legend | Passed |
+| after Start, focus is on the board status message | Passed |
+| keyboard focus lands on cell 1 with a visible outline | Passed |
+| Enter twice on cell 1 opens one battle with no damage; focus is on the attack message | Passed |
+| one Tab reaches Shield | Passed |
+| Enter twice on Shield is one damage event (Alien 1 of 2, You 2 of 2, exchange 1) | Passed |
+| choosing cell 1 opens the battle with 2 health each at exchange 1 | Passed |
+| default responses are Shield, Blast, Dodge | Passed |
+| one response accepted; responses disabled; Next exchange shown | Passed |
+| winning the battle places exactly one X and shows the summary | Passed |
+| the placed icon carries a hidden 'X' label for screen readers | Passed |
+| Return to board (pressed twice) places no second mark and adds no O | Passed |
+| the occupied cell is disabled; 8 cells remain selectable | Passed |
+| losing the battle places exactly one O (alien icon) on cell 2 | Passed |
+| the O cell shows the alien icon with a hidden 'O' label | Passed |
+| wrong answer costs the player 1 health | Passed |
+| Restart mid-battle clears all 9 cells and returns to the board | Passed |
+| the next battle starts fresh with 2 health each at exchange 1 | Passed |
+| How to play during a battle shows instructions with Back to game and Restart | Passed |
+| closing help returns to the same battle, unchanged | Passed |
+| three won battles on 1, 2, 3 shows 'You won' with Play again | Passed |
+| Restart is hidden once the board is finished (Play again replaces it) | Passed |
+| Play again gives 9 empty cells and no battle | Passed |
+| three lost battles on 1, 5, 9 shows 'The alien won' | Passed |
+| choosing Cats vs Dogs sets data-theme on <html> | Passed |
+| the counter table now shows the dog's attacks | Passed |
+| the legend shows the cat and dog icons | Passed |
+| battle uses the theme's attack and counter names | Passed |
+| a won battle in the cat theme places the cat icon with hidden 'X' | Passed |
+| the theme's color variables are applied | Passed |
+| the chosen theme is remembered after reload (localStorage) | Passed |
+| fits a 375px wide phone with no sideways scrolling | Passed |
+| every visible button on the board screen is at least 44px tall | Passed |
+| no JavaScript errors | Passed |
+| ?theme=cats-dogs applies on load | Passed |
+| ?theme= page has no JavaScript errors | Passed |
+| an unknown ?theme falls back to space-invasion | Passed |
+| all 8 themes have 3 attacks, 3 counters, two icons, a name, and 2+ colors | Passed |
+| every theme plays a battle to a win with the first two counters | Passed |
+| works when localStorage throws (battle won, one X placed) | Passed |
+| theme can still change when storage throws | Passed |
+
+### Not tested
+
+- A real phone, or a real screen reader. Only the browser's accessibility labels were checked.
+- A person playing without coaching (the lesson's two-minute partner test).
+- The live Vercel deployment. The files are plain static HTML, but no deployment was made from this folder.
+- Browsers other than Chromium.
+
+### Reference used
+
+While writing the checks I read the check list in Mark's companion repo, [describe-build-check-ship-companion/games/alien-tic-tac-toe](https://github.com/mrhinkle/describe-build-check-ship-companion/tree/main/games/alien-tic-tac-toe) (`check-results.md`). Its keyboard check ("Enter twice equals one action") exposed a focus bug in an early version of these files, which was fixed: after every action, focus now moves to the message that explains what happened, not to the next button, so a repeated key press cannot trigger a second action by accident. No code was copied from that repo.
+
+## Known limits
+
+- The alien always plays Laser, Shield, Claw in that order, as the lesson specifies. There is no random mode.
+- There is no automatic opponent move. One battle fills one square. This is the rule, not a bug.
+- You cannot cancel a single battle. Restart game clears the whole board.
+- The theme choice is saved with `localStorage`. In a private window, or if storage is blocked, the game still works but forgets the choice when you close it.
+- Emoji icons look different on each device and may be missing on very old systems. The hidden X and O labels and the status text still say who owns a square.
+- No sound, timer, score history, accounts, or network calls. None are needed.
+- Checkpoint 1's two award buttons are test controls. They are gone in checkpoint 3.
+
+<!-- END COURSE SOURCE: examples/alien-tic-tac-toe/README.md -->
+
+
+---
+
 # Source file: docs/arcade-submission.md
 
 <!-- BEGIN COURSE SOURCE: docs/arcade-submission.md -->
@@ -1722,6 +3434,71 @@ Use this repair prompt with the current file:
 This is the easiest of the [three game choices](docs/game-options.md). For the featured board-and-battle project, use [Alien Tic-Tac-Toe](docs/alien-tic-tac-toe.md). Finished games can follow the [optional Arcade submission path](docs/arcade-submission.md).
 
 <!-- END COURSE SOURCE: docs/game-walkthrough.md -->
+
+
+---
+
+# Source file: docs/stuck.md
+
+<!-- BEGIN COURSE SOURCE: docs/stuck.md -->
+
+# Stuck? Start here
+
+> **For an AI receiving only this lesson:** The learner is behind or blocked. Ask for the exact error or observation, the current file, and which stage they are on. Offer the matching checkpoint file as a way to continue; do not rebuild the whole project. Change one thing at a time and give one re-test per change.
+
+If you're reading this, something isn't working and you're probably a little frustrated. That's fine. I get stuck doing this too, and I've been at it since my first company in '95. Nobody in the room ships two projects in a day without hitting a wall, so you're not behind, you're on schedule. The goal right now isn't to understand everything that went wrong. It's to get moving again in under five minutes.
+
+## The five-minute rule
+
+1. **Say what you see.** Write one sentence: "I clicked X, expected Y, saw Z." Paste the exact error text if there is one.
+2. **Try the matching fix below.** Most problems are one of eight things.
+3. **Still stuck? Jump to a checkpoint.** Download the tested file for your stage and continue from there. You lose nothing you can't redo later.
+4. **Still stuck? Raise a hand** with the [help request template](templates/help-request.md) filled in. Mark or a helper reads it in thirty seconds.
+
+## Checkpoint ladder
+
+Every checkpoint is one `index.html` that works when you double-click it. Download it, put it in your project folder, open it, and keep going from the next step. Record "continued from checkpoint N" in `project-state.md`; that is honest and it is fine.
+
+| Where you are | Download this | Then continue with |
+| --- | --- | --- |
+| Website: nothing works yet | [personal-website/index.html](examples/personal-website/index.html) | Replace Jordan Rivera's content with yours, section by section. [Walkthrough step 4](docs/personal-website-walkthrough.md#4-build-the-first-version-30-minutes) |
+| Website: content in, but the look is broken | Same file | Paste your text into the fresh file instead of fixing the broken one. |
+| Website: looks fine, cannot publish | Your own file | Skip to [setup guide: recover from common setup failures](setup-guide.md#recover-from-common-setup-failures). |
+| Game: board does not detect wins | [checkpoint-1-board](examples/alien-tic-tac-toe/checkpoint-1-board/index.html) | Build the battle next. [Variants step 3](docs/tic-tac-toe-variants.md#3-prompts-one-stage-at-a-time) |
+| Game: battle logic is wrong | [checkpoint-2-battle](examples/alien-tic-tac-toe/checkpoint-2-battle/index.html) | Connect it to the board. |
+| Game: board and battle will not connect | [checkpoint-3-complete](examples/alien-tic-tac-toe/checkpoint-3-complete/index.html) | Pick your theme with `?theme=` and go straight to look-and-feel and playtest. |
+| Game: everything works but it is 4:30 | checkpoint-3-complete | Change the theme, publish it, and record the rest as "later." |
+
+Checkpoints are complete working games and sites. Using one isn't cheating, and it isn't giving up. Professionals start from working code every day; the smart move when you're stuck is to grab the thing that works and keep going. What you're here to learn is the loop: describe, plan, build, check, save, publish. You still learn it from a checkpoint.
+
+## The eight usual suspects
+
+| What you see | What it usually is | Do this |
+| --- | --- | --- |
+| The chatbot describes the change but returns no file, or a fragment | It forgot the rule | "Return the complete index.html file, every line, nothing omitted." |
+| The page is blank or shows raw code | Saved as `.txt`, or pasted into the wrong place | Save as `index.html` with "All files" type. Open it from the folder, not the chat. |
+| It worked, then a later change broke everything | The chatbot rewrote more than you asked | Go back to your last saved copy. Ask for one change. Add "Change nothing else." |
+| The chatbot says it cannot read your repository or link | It cannot; only you can see it | Attach the file or paste its contents. Say which files you attached. |
+| The chatbot invents jobs, dates, or features | It fills gaps with guesses | "Use only facts from my resume. Leave blanks blank. Do not invent." |
+| Vercel shows 404 | The file is not at the root, or not named `index.html` | Check the repository: `index.html` at the top level, lowercase. |
+| Vercel shows the old version | The new file was not saved to GitHub, or the deploy is still running | Refresh GitHub and look for your change. Wait one minute. Hard refresh (Shift and reload). |
+| It is right on your laptop, wrong on your phone | Width or font assumptions | "Make it fit a 375 pixel wide screen with no sideways scrolling. Change nothing else." |
+
+Thirty more, with exact steps, are in [troubleshooting.md](docs/troubleshooting.md).
+
+## Switching chats or chatbots without losing your place
+
+Fill in [project-state.md](templates/project-state.md), attach your current files, and start the new chat with its prompt. The new chat knows nothing about the old one; your file and your notes are the only memory.
+
+## What to say when you ask for help
+
+Not: "It doesn't work."
+
+Yes: "I'm on game checkpoint 2. I click Shield when it shows Laser and the alien's health doesn't change. Here's the file and the exact message."
+
+That second sentence gets you unstuck in one visit. And if you can't put it into words yet, raise your hand anyway. "I'm lost" is a complete sentence, and it's the one I'd most like to hear early rather than late.
+
+<!-- END COURSE SOURCE: docs/stuck.md -->
 
 
 ---
@@ -2227,6 +4004,10 @@ The final sentence makes the endorsement offer clear to readers. Keep your own v
 
 > Help me draft a short LinkedIn post about this class using only these facts: [what I built, what works, what I learned, and a challenge]. Keep my voice. Mention that Mark offered a skill endorsement to participants who post about their experience. Do not invent outcomes, praise, or expertise. Give me a draft to review; do not publish it or message anyone.
 
+## Everyone gets the slides; reviewers get the book
+
+Separate from the LinkedIn post, and open to everyone: every attendee gets the slides and all course files in the course repository (https://github.com/mrhinkle/Vibe-Coding-for-Non-Technical-Professionals). Tell Mark what worked and what did not, and he will also send you the preview release edition of his upcoming book, *Software Development for Non-Programmers: Beyond Vibecoding*. Good or bad; critical feedback is the most useful kind. Use the [feedback template](templates/feedback.md): copy it into an email to mrhinkle@allthingsai.org with the subject "ATO workshop feedback," or hand Mark a filled-in printout before you leave.
+
 ## Your handoff note
 
 - My LinkedIn profile URL:
@@ -2235,10 +4016,47 @@ The final sentence makes the endorsement offer clear to readers. Keep your own v
 - Connection with Mark: connected / request pending
 - Links sent to Mark on:
 - Endorsement: pending / received
+- Feedback sent for the preview edition of the book: yes / not yet
 
 Course assistants may help draft the post and organize these links. The learner chooses what to publish and sends their request; the course materials do not initiate posts, connection requests, messages, or endorsements.
 
 <!-- END COURSE SOURCE: docs/linkedin-wrap-up.md -->
+
+
+---
+
+# Source file: templates/feedback.md
+
+<!-- BEGIN COURSE SOURCE: templates/feedback.md -->
+
+# Workshop feedback: everyone gets the slides, reviewers get the book
+
+Everyone who attended gets the slides and every course file: they're in the course repository, https://github.com/mrhinkle/Vibe-Coding-for-Non-Technical-Professionals, under `presentations/ato-2026-workshop/`. Tell me what worked and what didn't, and I'll also send you the preview release edition of my upcoming book, *Software Development for Non-Programmers: Beyond Vibecoding*, a practical guide to using AI to build useful software without having to write code. Good or bad, specific or short, it all counts. The critical notes are the ones that make the next class better, so don't hold back.
+
+Copy the block below into an email to **mrhinkle@allthingsai.org** with the subject line **ATO workshop feedback**, or hand me a filled-in printout before you leave. Answer what you can; blank lines are fine.
+
+```
+Name (as you want it in the book's thank-you list, or "anonymous"):
+Email to send the book to:
+
+1. What did you build today? (URLs welcome)
+
+2. The moment it clicked:
+
+3. The moment you were most stuck, and what got you unstuck:
+
+4. One thing to cut or change next time:
+
+5. One thing to keep exactly as it is:
+
+6. Would you recommend this to a colleague? Who, and why or why not?
+
+7. Anything else:
+```
+
+What happens next: I read every reply myself. The preview edition goes out to the email above within a couple of weeks of the workshop, and you'll get the finished book when it ships. Your feedback may be quoted anonymously in the course materials unless you say otherwise here.
+
+<!-- END COURSE SOURCE: templates/feedback.md -->
 
 
 ---
@@ -2404,7 +4222,7 @@ Platform interfaces and access rules change. Use the [setup guide](setup-guide.m
 
 # Skills for the vibe coding class
 
-These ten short skills adapt the workflow in Mark Hinkle's VibeCoding-a-Website repository for the foundations and website project in a six-hour, two-project business workshop. Seven additional game skills are in the [game skill guide](game-skills-guide.md). Each accepts a specific input and produces an inspectable result. They are draft instruction files, not installed plugins or a promise that every chatbot has the same tools.
+These eleven short skills (ten stages plus plan-first) adapt the workflow in Mark Hinkle's VibeCoding-a-Website repository for the foundations and website project in a six-hour, two-project business workshop. Seven additional game skills are in the [game skill guide](game-skills-guide.md). Each accepts a specific input and produces an inspectable result. They are draft instruction files, not installed plugins or a promise that every chatbot has the same tools.
 
 ## Use a skill
 
@@ -2413,6 +4231,10 @@ For the portable route, open the relevant SKILL.md, paste or attach its contents
 For native installation, use the chosen platform's current supported skill workflow and verify that the skill appears. The original repository uses .claude/skills. Do not assume placing this package in a folder automatically installs it in ChatGPT, Claude chat, or another product. In supported OpenAI surfaces, installed skills can be selected with @ in ChatGPT or $ in Codex. [Official skill guidance](https://learn.chatgpt.com/docs/skills-and-plugins)
 
 The skills are deliberately self-contained. No scripts, API keys, or original skill installation are required to read them. An ordinary chatbot may supply complete files for the learner to save, test, and upload. Automatic editing, testing, repository changes, and deployment require the corresponding tools and authorized connections.
+
+## Plan first, every time
+
+Before any stage that produces files, load [vc-plan-first](skills/vc-plan-first/SKILL.md). It makes the chatbot give you a plan (files, order, three hand checks) and wait for your approval, and it tells you which size of model to use for the step. See [plan first and models](docs/plan-first-and-models.md). To write your own skill, see the [skills guide](docs/skills-guide.md) and the [template](templates/SKILL-template.md).
 
 ## Stage prompts
 
@@ -2476,7 +4298,7 @@ Choose a [starter or your own idea](website-starters/README.md). The [scope-and-
 
 [vc-project-handoff](skills/vc-project-handoff/SKILL.md)
 
-> Create a concise handoff and a two-minute demo from the actual project records. Make unfinished or untested work clear.
+> Fill in project-state.md for each project from the actual records, list both live URLs, and write a two-minute demo script. Make unfinished or untested work clear.
 
 ## What was checked
 
@@ -2507,7 +4329,7 @@ Keep the game in its own folder and repository. Request complete runnable HTML, 
 | --- | --- | --- |
 | vc-game-brief | Idea and preferred theme | game-brief.md |
 | vc-game-rules | Agreed brief | game-rules.md and observable checks |
-| vc-game-build | Brief and rules | Runnable game files |
+| vc-game-build | Brief and rules | Runnable game files Recovery route: the three tested checkpoints in `examples/alien-tic-tac-toe/`. |
 | vc-game-look-feel | Playable game | Clear visual treatment and game-style.md |
 | vc-game-feedback | Working outcomes | Result messages, replay, and game-feedback.md |
 | vc-game-playtest | Exact build and rules | game-test-report.md and focused repairs |
@@ -3107,22 +4929,78 @@ The coordinator must inspect the actual version, integrate only approved work, a
 
 ---
 name: vc-game-brief
-description: "Turn a nontechnical learner's game idea into a small classroom project with a clear goal, main action, and completion checks."
+description: Helps a non-programmer pick one small game they can finish in class and writes game-brief.md with the goal, the main action, the theme, and five completion checks. Use when a learner says "help me choose a game," "which game should I make," "write the game brief," "I want a cat-themed tic-tac-toe," or "what can I finish today."
 ---
 
 # Choose a small game
 
-Ask for the player's goal, preferred theme, and the kind of interaction they enjoy. Offer Alien Tic-Tac-Toe (featured), a five-question quiz (easiest), or a one-button space dodger; read docs/game-options.md and the chosen walkthrough. Preserve the learner's choice; an educational purpose is optional.
+You are helping a non-programmer choose one small browser game and describe it before anything is built. Your one job is game-brief.md: the concept, the player, the one main action, the theme, what is left out, and five checks a partner can perform.
 
-Write game-brief.md with a one-sentence concept, intended player, one main action, a short round, scoring, win or loss conditions, restart, controls, and first-version exclusions. Define five observable completion checks. Keep the initial build to one scene or board and one mechanic that can be finished within the class period.
+## When this applies
 
-Separate fictional scoring and metaphors from factual claims. Do not invent an AI lesson or business objective if the learner wants a game for fun. Put multiplayer, logins, payments, global leaderboards, daily challenges, and large asset libraries in a later list unless explicitly required and feasible.
+- The learner is starting project 2 and has not chosen, or has an idea that needs to be made small.
+- The learner wants to re-theme Alien Tic-Tac-Toe (cats vs dogs, pizza vs tacos, their own pair).
+- Not for the rules and state table. That is vc-game-rules.
+- Not for the website or a Track B tool. That is vc-project-brief.
+- Not for building. That is vc-game-build.
 
-Summarize the playable first version for review. End with the brief; do not build or publish yet.
+## What you need before starting
 
-For Alien Tic-Tac-Toe, the bounded exception to one mechanic is one board plus one small turn-based battle. Use docs/alien-tic-tac-toe.md; exclude separate bot turns, timers, inventories, and additional levels.
+- docs/game-options.md (the three choices) and, for the featured game, docs/alien-tic-tac-toe.md. If either did not arrive, say so and ask for its text; never invent rules.
+- The learner's theme and the kind of play they enjoy (board, quiz, action). If missing, ask once and offer Alien Tic-Tac-Toe as the default.
+- Never a password, API key, or token.
 
-If a referenced course file is unavailable, request its text or the relevant course-pack section. Do not invent missing rules or submission instructions.
+## Steps
+
+1. Say what you received. Offer the three choices in one line each: Alien Tic-Tac-Toe (featured; a board plus a short battle), five-question quiz (easiest), one-button space dodger (action). The learner picks one.
+2. Ask only what changes the brief, in one message: the theme (you, the opponent, three attacks and their three counters, two colors), and whether it is for fun or teaches something. Offer the default theme so "yes" is an answer.
+3. Write game-brief.md and show it in full:
+   - Concept in one sentence, and the intended player.
+   - Main action (featured game: choose an empty square, then answer the opponent's move).
+   - A round. For Alien Tic-Tac-Toe: every battle starts at 2 health each; one response is accepted per exchange; an explicit Next exchange button advances; a finished battle fills exactly one cell; no automatic opponent move; X line wins, O line loses, full board draws; Restart game is available throughout play.
+   - Theme table: you, opponent, attacks 1 to 3, counters 1 to 3, colors.
+   - Left out of version 1: timers, sound, random opponent, logins, leaderboards, downloaded art, extra levels.
+   - Five completion checks a partner can perform.
+4. Name the recovery route: the three tested checkpoints in examples/alien-tic-tac-toe/ (checkpoint-1-board, checkpoint-2-battle, checkpoint-3-complete). If the build stalls, the learner continues from the one for their stage.
+5. Hand back. Say: "Read it. Fix any rule you did not mean. Then vc-game-rules turns it into the state table." Do not build.
+
+## Rules
+
+- Never change the mechanics when the theme changes. Renaming attacks and counters is the only thing a theme does.
+- Never add a second mechanic to version 1. The one bounded exception is the featured game: one board plus one short battle.
+- Never invent a lesson or business purpose for a game the learner wants for fun.
+- Scope rule: one screen or board, one mechanic, finishable today.
+- If asked to build, write rules, or pick a font, say the brief comes first and name vc-game-rules.
+
+## Example
+
+**Learner:** "I want the tic-tac-toe one but with cats and dogs. I'm the cat. Write the brief."
+
+**You:** "Received: docs/game-options.md and docs/alien-tic-tac-toe.md. Choice: Alien Tic-Tac-Toe, cats-dogs theme, for fun.
+
+game-brief.md
+
+Concept: a solo tic-tac-toe where you fight a short cat-versus-dog battle for every square. Player: anyone with a phone and two minutes.
+Main action: choose an empty square, then answer the dog's move with the right counter.
+A round: every battle starts at You 2, Dog 2. The dog shows Bark, then Pounce, then Slobber. One response is accepted per exchange; a correct one takes 1 from the dog, a wrong one takes 1 from you. A Next exchange button appears only while both sides have health. At zero, the battle ends at once: a win puts your cat (X) in the chosen square, a loss puts the dog (O) there. Exactly one square per battle; the dog never takes an extra turn. Three cats in a line wins, three dogs loses, a full board with no line draws. Restart game is on screen during any board or battle and clears everything.
+Theme: You 🐱 cat. Opponent 🐶 dog. Bark → Hiss. Pounce → Climb. Slobber → Shake Off. Background #1f1410, accent #fdba74.
+Left out of version 1: timers, sound, random dog moves, logins, leaderboards, downloaded art, levels.
+Checks a partner can perform:
+1. Open the game; the instructions show the three counters before Start.
+2. Choose square 1, answer Hiss, Next exchange, Climb; exactly one cat appears in square 1 and no dog appears anywhere.
+3. Answer Climb, Next exchange, Hiss on another square; exactly one dog appears there.
+4. Win squares 1, 2, 3; 'You won' shows and no other square can be chosen.
+5. Start a battle, answer once, press Restart game; all nine squares are empty and the next battle starts at 2 and 2.
+
+Recovery: examples/alien-tic-tac-toe/ has checkpoint-1-board, checkpoint-2-battle, and checkpoint-3-complete. If you stall, continue from the one for your stage; checkpoint 3 already has the cats-dogs theme built in.
+
+Read it. Fix any rule you did not mean. Then vc-game-rules turns it into the state table."
+
+## Checks that it worked
+
+- game-brief.md names one game, one main action, and a theme table with three attacks and three counters.
+- The round description matches docs/alien-tic-tac-toe.md: 2 health each, one response per exchange, Next exchange, one cell per battle, Restart game.
+- Five checks are written as things a partner can do and see.
 
 <!-- END COURSE SOURCE: game-skills/vc-game-brief/SKILL.md -->
 
@@ -3135,22 +5013,74 @@ If a referenced course file is unavailable, request its text or the relevant cou
 
 ---
 name: vc-game-build
-description: "Create a small playable browser game from an agreed brief and rules, including a complete start to restart loop."
+description: Builds one increment of a small browser game from the brief and rules as a complete index.html the learner can double-click, board first, battle second, connected third. Use when a learner says "build the board," "build the battle," "connect them," "make it playable," or "build the first version of my game."
 ---
 
 # Build the first playable version
 
-Read the brief, rules, and actual project files. Implement one complete loop before visual polish: start, player action, feedback, score or progress, round result, and restart. Use simple shapes or text first. Keep rules and adjustable difficulty values separate from rendering so changes are understandable.
+You are helping a non-programmer get a working game one increment at a time. Your one job is the next increment as one complete runnable file, with the exact checks to run before the next increment starts.
 
-For the portable class route, favor a complete index.html with included CSS and JavaScript or a few static files that work together without a server build. Use an existing framework only when the learner's environment already supports it or the requirement justifies it. Provide complete exportable files; a chatbot preview alone is not the deliverable.
+## When this applies
 
-For animated games, use elapsed-time or fixed-step updates and handle long background-tab gaps so returning does not cause an unavoidable loss. Prevent duplicated animation loops, event listeners, or score updates after restart. Use repeatable starting conditions when testing random behavior.
+- game-brief.md and game-rules.md exist and name the increment: 1 board, 2 battle, 3 connected.
+- A previous increment passed its checks and the learner asks for the next.
+- Not before the rules. If there are none, use vc-game-rules first. If a change touches more than one file, plan it with ../../skills/vc-plan-first/SKILL.md first.
+- Not for looks. That is vc-game-look-feel. Not for result messages. That is vc-game-feedback.
+- Not for testing with a partner. That is vc-game-playtest.
 
-Keep controls from capturing typing in unrelated inputs. If storage is optional, catch failures and continue playing. Do not call ATA services or add accounts. Show checked behavior and untested behavior separately; ask the learner to perform browser checks when you cannot.
+## What you need before starting
 
-For Alien Tic-Tac-Toe, build and check the plain board and battle separately before integration. Lock occupied squares and the board during battle; allow one answer per exchange and one square assignment per fight. Clear pending square, health, turn feedback, and board on restart. Follow docs/alien-tic-tac-toe.md.
+- game-brief.md and game-rules.md. If missing, ask; never build from memory of the rules.
+- The previous increment's file, if there is one. For increment 3, both prototypes. If a file did not arrive, ask for it.
+- Which increment to build. If unclear, propose the next one in order and wait.
+- Never a password, API key, or token.
 
-If a referenced course file is unavailable, request its text or the relevant course-pack section. Do not invent missing rules or submission instructions.
+## Steps
+
+1. Say what you received, which increment you are building, and that you will return one complete index.html. The learner sees the scope before code.
+2. Build only that increment, with plain shapes and text, ordinary buttons, no sound, no timers, no outside files:
+   - Increment 1, board: nine cells; select one pending cell and lock the board; two temporary buttons (Award to me, Award to alien) stand in for the battle; all eight lines detected before a full-board draw; Play again; Restart game.
+   - Increment 2, battle: 2 health each shown as text; moves in the fixed order; one response accepted per exchange, then responses lock; Next exchange only while both have health; immediate end at zero; Fight again.
+   - Increment 3, connected: the pending cell is the only destination; fresh health every battle; the cell is filled exactly once; no automatic opponent move; Return to board places nothing; temporary buttons removed; Restart game in every active state.
+3. Return the complete file, first line to last, ready to save as index.html. Never a fragment.
+4. Say how to save and open it (plain text editor, no .txt, double-click), and in which folder: prototypes in their own folders; increment 3 in my-first-game.
+5. Give the checks for this increment from game-rules.md as "press X, you should see Y," and say which behaviors you did not check yourself.
+6. Hand back. Say: "Run the checks. Save a copy named for this checkpoint before anything else changes. If it fails and one repair does not fix it, continue from examples/alien-tic-tac-toe/checkpoint-1-board, checkpoint-2-battle, or checkpoint-3-complete, whichever matches your stage."
+
+## Rules
+
+- Always return the whole file. A chatbot preview is not the deliverable; the saved file that opens is.
+- Never let one click do two things: the answer click never advances the exchange; Next exchange does. Never fill a cell twice; never add an opponent move.
+- Never claim a browser check you did not run. Say what you inspected and what the learner must press.
+- Scope rule: one increment, one file, one set of checks. Looks, sound, random moves, and levels wait.
+- If the rules turn out to be unclear mid-build, stop, say which rule, and return to vc-game-rules.
+
+## Example
+
+**Learner:** "Board and battle prototypes both pass. Here are both files, the brief, and the rules. Connect them."
+
+**You:** "Received: alien-board-checkpoint-01/index.html, alien-battle-checkpoint-02/index.html, game-brief.md, game-rules.md (cats-dogs theme). Increment 3: the connected game. One complete index.html for my-first-game.
+
+Built: choosing an empty cell locks the board and opens the battle for that cell only; every battle starts You 2, Dog 2 at Bark; one response accepted per exchange, then responses lock and Next exchange appears only while both have health; at zero the battle ends and the cell is filled exactly once, cat for a win, dog for a loss; the board is checked at once, lines before draw; Return to board dismisses the summary and places nothing; no automatic dog move; Play again clears the board; Restart game is on screen in every board and battle state and clears everything. Removed: Award to me, Award to alien, Fight again.
+
+[complete index.html, first line to last]
+
+Save as index.html in my-first-game. Leave both prototype folders as they are. Double-click to open.
+
+Checks
+1. Choose cell 1, press Hiss, Next exchange, Climb; exactly one cat in cell 1, no dog anywhere.
+2. Choose cell 2, press Climb, Next exchange, Hiss; exactly one dog in cell 2.
+3. Choose cell 1 again, and click other cells during a battle; nothing changes.
+4. Win cells 1, 2, 3; 'You won', no cell can be chosen, Play again clears all nine.
+5. Start a battle, answer once, press Restart game; all nine cells empty, the next battle starts at 2 and 2.
+
+I inspected the code; you run the presses. Save a copy named game-checkpoint-03 before anything else changes. If a check fails and one repair does not fix it, continue from examples/alien-tic-tac-toe/checkpoint-3-complete."
+
+## Checks that it worked
+
+- The learner double-clicked one saved file and it opened and played with nothing missing.
+- Each check for the increment passed in the learner's own words, including one cell per battle and Restart game during a battle.
+- A named checkpoint copy exists before the next increment starts.
 
 <!-- END COURSE SOURCE: game-skills/vc-game-build/SKILL.md -->
 
@@ -3163,18 +5093,77 @@ If a referenced course file is unavailable, request its text or the relevant cou
 
 ---
 name: vc-game-feedback
-description: "Add clear outcomes, replay, and an optional verified learning moment to a small browser game."
+description: Improves what a game says when an exchange, a battle, or a board ends so the player knows what happened and can play again at once, recorded in game-feedback.md. Use when a learner says "players don't know why they lost," "improve the result screen," "make the end clearer," "add Play again," or "explain the outcome."
 ---
 
 # Explain results and invite replay
 
-Read the game rules and inspect actual outcomes. Build a concise result display with score or progress, an understandable reason the round ended, and an obvious Play again action. Optional best-score or near-miss context must come from actual game state, not invented encouragement or fake scarcity.
+You are helping a non-programmer make the moments after an exchange, a battle, and a board end make sense. Your one job is clear result messages and a Play again that resets everything, returned as a complete file with a short game-feedback.md.
 
-Make replay reset the correct state promptly. Keep separate start instructions and result screens from competing for focus. If the learner wants an educational game, add one short explanation at the relevant moment or after a round, with a reputable source for factual claims. Keep facts, examples, and references separate from game logic. Verify numbers and claims; do not present game metaphors such as increasing a model's size as a scientific formula for achieving AGI.
+## When this applies
 
-If the game is purely recreational, provide useful gameplay feedback without adding an unwanted lesson. Local best scores are optional; label them as stored on this browser, handle storage failures, and do not imply cross-device synchronization.
+- The game works and looks fine, but testers ask "what just happened?" or cannot find replay.
+- The learner wants a short lesson line in an educational game.
+- Not for the look of the board. That is vc-game-look-feel.
+- Not for changing when a battle ends. That is vc-game-rules.
+- Not for a partner test. That is vc-game-playtest.
 
-Return game-feedback.md with the result messages, optional fact and source, replay behavior, and verification steps. Do not add ATA event, registration, newsletter, or score endpoints.
+## What you need before starting
+
+- The working index.html and game-rules.md. If the file did not arrive, ask.
+- The theme's attack and counter names from game-brief.md.
+- Whether the game is for fun or teaches something. If it teaches, the fact and its source, supplied by the learner. If missing, treat it as for fun.
+- Never a password, API key, or token.
+
+## Steps
+
+1. Say what you received and list the four moments that need a message: after each exchange, after a battle, after the board ends, and after Restart game. The learner sees the list before changes.
+2. Write the messages, each naming cause and effect in one line: "Hiss counters Bark. Dog loses 1." "Climb does not counter Bark. You lose 1." "You won the battle. Square 1 is yours." "The dog won the battle. Square 2 is the dog's." "You won the board: 1, 2, 3." "The dogs won." "Draw." "Board cleared. Choose an empty square." Battle won and board won must read differently.
+3. Make the next step obvious at each moment: Next exchange only while both have health; Return to board after a battle; Play again after a board; nothing else clickable at that moment except Restart game where the rules allow it.
+4. Confirm Play again resets the whole board, pending cell, health, exchange, and feedback, and that pressing it twice does nothing extra.
+5. Return the complete file and game-feedback.md: the messages, what each button does at each moment, and the checks for the learner. If a lesson line was added, include its source.
+6. Hand back. Say: "Play one battle each way and one full board. At every stop you should know what happened and what to press. Re-run the rules checks; the words changed, not the rules. If a message change broke a rule and one repair does not fix it, continue from examples/alien-tic-tac-toe/checkpoint-3-complete, which already has these messages."
+
+## Rules
+
+- Never invent encouragement, scarcity, or a fact. Messages state what the game did; a lesson line needs a source the learner supplied.
+- Always distinguish winning a battle from winning the board, in words.
+- Never let a result message change a rule: no extra damage, no second mark, no new button that advances play.
+- Scope rule: messages and replay only, one complete file. Local best scores are optional and must say "saved on this browser."
+- If asked for leaderboards, accounts, or sharing, say those are out of scope for version 1 and point to vc-game-brief's Later list.
+
+## Example
+
+**Learner:** "Testers keep asking why the dog won. Fix the messages. Here is index.html and the rules. It's just for fun."
+
+**You:** "Received: index.html and game-rules.md, cats-dogs theme, for fun. Four moments need a message: after each exchange, after a battle, after the board, after Restart game.
+
+Messages
+- Correct: 'Hiss counters Bark. Dog loses 1. Dog: 1 of 2.'
+- Wrong: 'Climb does not counter Bark. You lose 1. You: 1 of 2.'
+- Battle won: 'You won the battle. Square 1 is your cat's.' Button: Return to board.
+- Battle lost: 'The dog won the battle. Square 2 is the dog's.' Button: Return to board.
+- Board won: 'You won the board with 1, 2, 3.' Button: Play again.
+- Board lost: 'The dogs won with 4, 5, 6.' Button: Play again.
+- Draw: 'Draw. Nine squares, no line.' Button: Play again.
+- Restart: 'Board cleared. Choose an empty square.'
+
+At each stop only the named button is active, plus Restart game during play. Next exchange shows only while both have health. Play again resets board, pending cell, health, exchange, and feedback; a second press does nothing.
+
+[complete index.html, first line to last]
+
+game-feedback.md
+- Messages: as above, one line each, cause then effect.
+- Buttons by moment: exchange, Next exchange; battle end, Return to board; board end, Play again; during play, Restart game.
+- Checks: lose a battle and read why without asking; win a battle and see 'battle', not 'board'; press Play again twice, nothing extra happens.
+
+Play one battle each way and one full board. At every stop you should know what happened and what to press. Re-run the rules checks; the words changed, not the rules."
+
+## Checks that it worked
+
+- A tester who loses a battle can say why without asking.
+- "Battle won" and "Board won" read as different messages, and only the right button is active at each stop.
+- Play again and Restart game clear everything; pressing either twice does nothing extra.
 
 <!-- END COURSE SOURCE: game-skills/vc-game-feedback/SKILL.md -->
 
@@ -3187,18 +5176,67 @@ Return game-feedback.md with the result messages, optional fact and source, repl
 
 ---
 name: vc-game-look-feel
-description: "Improve the readability and visual feedback of a working classroom game on phones and laptops."
+description: Makes a working game readable on a phone and a laptop without changing a single rule, and records what changed in game-style.md. Use when a learner says "make it look better," "I can't tell whose turn it is," "polish the game," "apply my theme," or "make it readable on my phone."
 ---
 
 # Make the game clear and readable
 
-Inspect the playable version and preserve its rules. Propose a small theme with distinct appearances for player, goals, hazards, and background. Favor legible shapes and restrained colors over gradients, glow, or decorative complexity that hides the action. The learner chooses the theme; ATA branding and assets are not required.
+You are helping a non-programmer make a game that already works easy to read. Your one job is a visual pass that leaves every rule as it was, returned as a complete file with a short game-style.md.
 
-Check a phone-width and laptop-width view while the game is in progress. Make player, targets, score, and controls easy to identify. For canvas games, keep rendering crisp on high-density displays and map pointer coordinates correctly after scaling or resizing.
+## When this applies
 
-Add only feedback that helps a player understand an action: a clear hit, a score change, or a result transition. Respect reduced-motion preferences and avoid relying only on color or sound to convey meaning. Optional audio starts after a user action, has a visible mute option, and must not be required for success.
+- The connected game passes its checks and players squint at it.
+- The learner wants their theme's icons, names, and colors applied.
+- Not before the game works. If a rule fails, go back to vc-game-build.
+- Not for result messages and replay wording. That is vc-game-feedback.
+- Not for choosing a theme. That is vc-game-brief.
 
-Use supplied, generated, original, or appropriately licensed assets, with simple fallbacks so a missing asset does not prevent play. Record the visible changes and remaining checks in game-style.md. Do not replace the whole game to change its appearance.
+## What you need before starting
+
+- The working index.html and game-rules.md. If the file did not arrive, ask; never restyle from memory.
+- The theme table from game-brief.md (icons, attack and counter names, colors). If missing, keep the current names and ask once.
+- Never a password, API key, or token. Never a downloaded asset pack; emoji and simple shapes only.
+
+## Steps
+
+1. Say what you received and list what must stay readable: the X and O marks, the pending cell, the opponent's current move, both health values as text, the counter table, and which buttons are available now. The learner sees the checklist before any change.
+2. Apply the theme: the two icons on the board with a hidden X or O label for screen readers; the attack and counter names in the table and the battle; the background and accent colors. Words or symbols as well as color, every time.
+3. Check the two widths: phone (about 375 pixels wide, no sideways scroll, every button at least 44 pixels tall) and laptop. Keep focus outlines visible. Respect reduced-motion settings; no effect may block play.
+4. Return the complete file. Then write game-style.md: what changed on screen, what did not change (the rules), and which checks remain for the learner.
+5. Hand back. Say: "Re-run the five checks from game-rules.md; the rules must behave exactly as before. If anything behaves differently, that is a bug in my change, not a new rule. examples/alien-tic-tac-toe/checkpoint-3-complete has all eight themes to compare against, and is the file to continue from if this pass breaks something."
+
+## Rules
+
+- Never change a rule, a number, a button's job, or the order of states while restyling. Appearance only.
+- Never rely on color alone for meaning. Health is text; marks carry a hidden X or O.
+- Never add sound, timers, outside images, or effects that block input. Optional later, never in this pass.
+- Scope rule: one visual pass, one complete file. If the learner lists five looks, do the one they rank first.
+- If asked to change how a battle works, say that is a rules change and point to vc-game-rules.
+
+## Example
+
+**Learner:** "The game works but it's gray boxes. Apply my cats-dogs theme and make it readable on my phone. Here is index.html and the brief."
+
+**You:** "Received: index.html (connected game, passes its checks) and game-brief.md with the cats-dogs theme. Must stay readable: cat and dog marks, the pending cell, the dog's current move, You and Dog health as text, the counter table, the available buttons.
+
+Changes: board marks are 🐱 and 🐶, each with a hidden 'X' or 'O' label; the pending cell has a thick accent border and the status says 'Battle for row 1, column 1'; the dog's move is a large label 'Dog: Bark'; health reads 'You: 2 of 2' and 'Dog: 2 of 2'; the counter table sits under the battle on phones and beside it on laptops; background #1f1410, accent #fdba74, near-white text; buttons at least 44 pixels tall; focus outline visible; animation off when the device asks for reduced motion.
+
+Not changed: every rule, number, and button job.
+
+[complete index.html, first line to last]
+
+game-style.md
+- Changed: theme icons and names, pending-cell border, health text, phone layout, colors, focus outline.
+- Unchanged: rules, health numbers, Next exchange, Restart game, one cell per battle.
+- Learner checks: open on a phone, no sideways scroll; say whose health changed without reading the explanation; re-run the five rules checks.
+
+Re-run the five checks from game-rules.md; the rules must behave exactly as before. examples/alien-tic-tac-toe/checkpoint-3-complete has all eight themes if you want to compare."
+
+## Checks that it worked
+
+- At phone width nothing scrolls sideways, and a first-time player can say which cell is in play and whose health changed.
+- The five rules checks pass exactly as they did before the restyle.
+- game-style.md lists what changed and states that the rules did not.
 
 <!-- END COURSE SOURCE: game-skills/vc-game-look-feel/SKILL.md -->
 
@@ -3211,22 +5249,79 @@ Use supplied, generated, original, or appropriately licensed assets, with simple
 
 ---
 name: vc-game-playtest
-description: "Playtest and tune a small game against its rules using observed results and another person's first attempt."
+description: Runs a partner playtest and the rules checks against one exact build, writes game-test-report.md with Passed, Failed, and Not tested, and fixes the biggest problem one change at a time. Use when a learner says "playtest this," "my partner got confused," "test the game," "something is off with the health," or "what should I fix first."
 ---
 
 # Playtest and change one thing at a time
 
-Read the brief, rules, and exact build or URL. Ask another person to play for two minutes without coaching. Record where they hesitate, whether controls respond, why they think they lost or won, and whether they choose to replay. A chatbot adopting several roles is not an independent human playtest.
+You are helping a non-programmer find out whether this exact build follows its rules and whether a stranger can play it. Your one job is game-test-report.md with real observations, then the single most important repair, then a re-test.
 
-Use five perspectives as questions: player understanding, fair rules, accuracy of any teaching, visual readability, and implementation correctness. Check instructions before play, valid and invalid inputs, score boundaries, each outcome, repeated restart, keyboard and touch, resize, and help during play. For animated games check returning from a background tab. For saved scores check refresh and unavailable storage. Apply relevant checks rather than imposing action-game tests on a turn-based puzzle.
+## When this applies
 
-Write game-test-report.md with expected versus observed outcomes and Passed, Failed, or Not tested. Prioritize unplayable controls, incorrect scoring, unfair outcomes, and broken restart. Fix the largest problem, then retest it and adjacent behavior.
+- A build exists (file or URL) and game-rules.md has test cases.
+- A partner is available for two minutes, or the learner reports what they saw.
+- Not for writing the tests. That is vc-game-rules.
+- Not for a visual pass. That is vc-game-look-feel.
+- Not for publishing. That is vc-game-publish, after this report.
 
-Tune one setting at a time, such as speed, gap size, attempts, or opponent reaction. Compare equivalent starting conditions. Do not claim tests, browser observations, or player feedback that did not occur.
+## What you need before starting
 
-For Alien Tic-Tac-Toe, check X win, O win, draw, occupied-square rejection, board lock during fights, rapid repeated answers, a single square assignment per fight, and restart during and after battle. Verify health and pending square reset. Do not report these as passed without playing the actual build.
+- The exact file or URL and its version name. If missing, ask; never test a different build quietly.
+- game-rules.md with its test table and state table.
+- A partner who has not seen the game, or the learner's honest report of their own run.
+- Never a password, API key, or token.
 
-If a referenced course file is unavailable, request its text or the relevant course-pack section. Do not invent missing rules or submission instructions.
+## Steps
+
+1. Name the build under test in one line. The learner sees what the verdicts apply to.
+2. Partner test: two minutes, no coaching. Write down where they hesitate, whether they expect the opponent to take a turn, whether they find Next exchange and Restart game, and whether they replay.
+3. Rules checks from game-rules.md, each as press this, see that: win in two; lose in two; win on the third; lose on the third; repeat a response before Next exchange (one damage only); occupied cell rejected; board locked during a battle; one cell filled per battle and no extra mark; X line; O line; full-board draw; last-cell win; Play again clears all; Restart game during a battle clears all and the next battle starts at 2 and 2; help reopened during a battle changes nothing; one Tab-and-Enter equals one action.
+4. Write game-test-report.md: version, browser, device, then a row per check with expected, observed, who saw it, and Passed, Failed, or Not tested.
+5. Pick the one failure that matters most: unplayable controls, wrong health or mark, broken restart, then everything else. Make that one repair, return the complete file, and re-run the failed check plus its neighbors. One repair, one re-test.
+6. Hand back. Say: "If a second repair does not fix it, continue from examples/alien-tic-tac-toe/checkpoint-1-board, checkpoint-2-battle, or checkpoint-3-complete for your stage and re-run the report. When every row is Passed or an honest Not tested, go to vc-game-publish."
+
+## Rules
+
+- Never mark Passed without someone pressing the buttons. A chatbot playing several roles is not a partner test.
+- Always change one thing per repair, then re-test before the next.
+- Never fix a rule the partner misunderstood by changing the rule; fix the explanation and keep the rule.
+- Scope rule: one build, one report, one repair per round. Tuning (such as random moves) is a new round.
+- If asked to add a feature during testing, say no and point to vc-game-brief's Later list.
+
+## Example
+
+**Learner:** "Here is my game, version game-checkpoint-03. My partner played it. She kept waiting for the dog to move after she won a square. Also when she pressed Hiss twice fast the dog lost 2."
+
+**You:** "Under test: index.html, version game-checkpoint-03, Chrome on your laptop, partner run of two minutes.
+
+Partner notes: expected a dog turn after each won square (the rules say there is none; the explanation needs to say so). Found Next exchange. Did not notice Restart game. Replayed once.
+
+game-test-report.md, game-checkpoint-03
+| Check | Expected | Observed | Who | Verdict |
+| --- | --- | --- | --- | --- |
+| Hiss, Climb | Win at 2; You 2, Dog 0; one cat | As expected | Partner | Passed |
+| Climb, Hiss | Loss at 2; You 0, Dog 2; one dog | As expected | Partner | Passed |
+| Hiss twice before Next exchange | Dog 1, still exchange 1 | Dog 0, battle ended | Partner | Failed |
+| Occupied cell | Nothing happens | Nothing happened | Learner | Passed |
+| One cell per battle, no extra mark | One mark | One mark, no dog added | Partner | Passed |
+| Restart game during battle | All clear, next battle 2 and 2 | Not tried | none | Not tested |
+| X line, O line, draw, last-cell win | Per rules | Not tried | none | Not tested |
+
+Biggest failure: a second press before Next exchange is accepted. That breaks the one-response-per-exchange rule. Repair: disable all three responses the moment one is accepted, and move focus to the feedback message so a repeated key does nothing. One change.
+
+[complete index.html, first line to last]
+
+Re-run: press Hiss, then Hiss again fast, before Next exchange. Dog should stay at 1 of 2 and the exchange should still read 1. Also re-run Hiss, Climb to confirm a win still lands in two.
+
+For the dog-turn confusion: the rule is right; the instructions should say 'The dog never takes a turn. One battle, one square.' That is a vc-game-feedback change; record it for next.
+
+If a second repair does not fix the double press, continue from examples/alien-tic-tac-toe/checkpoint-3-complete and re-run the report. When every row is Passed or an honest Not tested, go to vc-game-publish."
+
+## Checks that it worked
+
+- game-test-report.md names the exact version and has a verdict and a witness for every row.
+- The failed check was re-run after one repair and its result recorded.
+- The partner's confusion is written down in their words, and the fix kept the rule.
 
 <!-- END COURSE SOURCE: game-skills/vc-game-playtest/SKILL.md -->
 
@@ -3239,22 +5334,82 @@ If a referenced course file is unavailable, request its text or the relevant cou
 
 ---
 name: vc-game-publish
-description: "Guide publication and verification of a checked classroom game in a separate learner-owned GitHub and Vercel project."
+description: Guides a non-programmer through putting a tested game in its own GitHub repository and Vercel project, verifying a full round at the live address, and writing game-release.md. Use when a learner says "publish my game," "put the game on Vercel," "make the game live," "give me the game link," or "ship the game."
 ---
 
 # Publish and hand off the game
 
-Read the actual files, rules, and test report. Confirm the game has its own repository and Vercel project, separate from the student's website. Identify the intended source version, project root, entry file, and build settings. Use current official deployment guidance and the learner's agreed hosting arrangement.
+You are helping a non-programmer put a game that passed its playtest at a public address, separate from their website. Your one job is a verified live URL where a full round and a restart work, and a game-release.md that records it.
 
-Prepare a concrete release showing destination and content before seeking any missing authorization. Do not purchase plans, change account permissions, or connect to ATA infrastructure as a side effect. The first Vercel deployment is production under the course's checked guidance; do not call it a preview. A private repository does not establish private hosting.
+## When this applies
 
-Use the supported connected deployment workflow, or guide the learner to upload the static files to GitHub and import the repository in Vercel. Distinguish actions you executed from steps the learner reports.
+- game-test-report.md shows the rules checks passed on the exact file to publish.
+- The learner has a second repository (my-first-game) and will create a second Vercel project.
+- Not for testing. That is vc-game-playtest; publish only after it.
+- Not for fixing. That is vc-game-build, one change, then re-test.
+- Not for the website. That is vc-publish-site.
+- Not for Arcade submission. That is docs/arcade-submission.md, a separate step after this one.
 
-At the actual URL, verify loading, instructions, start, one full round, result, and replay, including a second device when available. Record URL, version, observed results, limitations, and recovery target in game-release.md. Label browser-local scores accurately. Leave blocked or untested status visible and preserve the working files.
+## What you need before starting
 
-If the learner wants Arcade consideration, use docs/arcade-submission.md and templates/arcade-submission.md after checking the game. Prepare the instructor handoff; do not submit, integrate, or claim acceptance automatically.
+- The exact complete index.html to publish and its version name. Only the connected game; prototype folders and temporary test buttons stay out.
+- game-test-report.md for that version. If missing, stop and point to vc-game-playtest.
+- The game repository name and the Vercel account. If the repository does not exist yet, create it first (setup-guide.md).
+- Never a password, API key, or token. The learner signs in on GitHub's and Vercel's own pages.
 
-If a referenced course file is unavailable, request its text or the relevant course-pack section. Do not invent missing rules or submission instructions.
+## Steps
+
+1. Say what you received and show the publication card: repository my-first-game, branch, index.html at the root, version name, Vercel account, "this is production, public." The learner reads it before anything is uploaded.
+2. GitHub: in my-first-game, Add file, Upload files, choose only the final index.html, one-line commit message, commit. Check: index.html at the repository root on github.com; no prototype folders.
+3. Vercel: Add New Project, import my-first-game (a new project, not the website's). Framework preset Other; Build command override on, left empty; output the repository root. Deploy. Check: Ready, and a URL ending in .vercel.app.
+4. Live round at that URL, on a phone if possible: Start; win one battle in two (one mark, no extra mark); lose one battle (one mark); press a response twice fast (one damage); finish a board to a result; Play again (nine empty cells); Restart game during a battle (all clear, next battle at 2 and 2). Write what was seen.
+5. Write game-release.md: URL, repository and commit, version, date, the live checks and results, limits (fixed move order, no sound, no scores), recovery ("redeploy commit [name]; examples/alien-tic-tac-toe/checkpoint-3-complete is a known good file"). Return it in full.
+6. Hand back. Say: "Paste the URL and game-release.md into project-state.md. Have a partner open the URL on their own phone and play one round. If you want the Arcade, read docs/arcade-submission.md next; publishing here does not submit it."
+
+## Rules
+
+- Never publish an untested version, a prototype, or a file with test buttons still in it.
+- Never put the game in the website's repository or Vercel project. Two projects, two URLs.
+- Never call the first deployment a preview; it is production and public. Never buy a plan or change account settings.
+- Always separate what you did from what the learner reported. If you cannot open the URL, their phone is the evidence.
+- If the deploy fails, take the first red line of the build log, make one focused repair, return the complete file, redeploy. If the learner is out of time, publish examples/alien-tic-tac-toe/checkpoint-3-complete with their theme and record the rest as Later.
+
+## Example
+
+**Learner:** "Game passed the playtest. Publish it. Repo my-first-game exists and is empty except a README."
+
+**You:** "Received: index.html (version 'game-v1-tested', cats-dogs theme) and game-test-report.md, every row Passed or Not tested with a reason.
+
+Publication card
+- Repository: github.com/you/my-first-game, branch main
+- File at root: index.html, the connected game only; no prototype folders, no Award buttons
+- Vercel: a new project, separate from my-first-site
+- This is production. Anyone with the link can play.
+
+1. GitHub: open my-first-game, Add file, Upload files, drag index.html in, commit message 'Publish game v1', Commit changes. Tell me when it shows at the root.
+2. Vercel: Add New Project, import my-first-game. Framework preset Other. Build and Output Settings: Build Command override on, empty. Deploy. Tell me the URL at Ready."
+
+**Learner:** "my-first-game-xyz.vercel.app is Ready."
+
+**You:** "On your phone, open it and run the live round: Start; choose square 1, Hiss, Next exchange, Climb (one cat, no dog); square 2, Climb, Next exchange, Hiss (one dog); square 3, press Hiss twice fast (dog stays at 1); finish any board result and press Play again (nine empty); start a battle, answer once, Restart game (all clear, next battle 2 and 2). Tell me each."
+
+**Learner:** "All six as you said."
+
+**You:** "game-release.md
+- URL: https://my-first-game-xyz.vercel.app
+- Source: github.com/you/my-first-game, commit 'Publish game v1', version game-v1-tested
+- Date: today
+- Live checks (your phone): win in two, one mark, Passed; lose, one mark, Passed; double press, one damage, Passed; board result and Play again, Passed; Restart game mid-battle, Passed. Keyboard: Not tested live.
+- Limits: fixed move order; no sound; no scores; one theme.
+- Recover: redeploy commit 'Publish game v1'; examples/alien-tic-tac-toe/checkpoint-3-complete is a known good file.
+
+Paste the URL and this record into project-state.md. Have a partner play one round on their own phone. The Arcade is a separate step: docs/arcade-submission.md."
+
+## Checks that it worked
+
+- A full round, Play again, and Restart game during a battle work at the .vercel.app URL on a device other than the learner's laptop.
+- The game repository holds only the final index.html (and README), with no prototype folders or test buttons.
+- game-release.md names the URL, the commit, which checks ran live, and the recovery file.
 
 <!-- END COURSE SOURCE: game-skills/vc-game-publish/SKILL.md -->
 
@@ -3267,22 +5422,85 @@ If a referenced course file is unavailable, request its text or the relevant cou
 
 ---
 name: vc-game-rules
-description: "Define the rules, screen states, and keyboard and touch controls for an agreed beginner browser game."
+description: Turns an agreed game brief into game-rules.md with the goal, the controls, the scoring, and a state table that says what the player sees and what each action does. Use when a learner says "write the rules," "what are the states," "define the controls," "make the state table," or "what does Restart do."
 ---
 
 # Write rules and controls
 
-Read the game brief. Write game-rules.md with the goal, permitted actions, score changes, outcome conditions, and four visible states: instructions, playing, result, and restarting. State what is preserved or reset between rounds. Use a short transition table with action and expected result.
+You are helping a non-programmer write the rules a chatbot will build from and a partner will test against. Your one job is game-rules.md: goal, controls, numbers, a state table, what resets, and the test cases.
 
-Prepare a one-sentence goal and two to four how-to steps that name the actual keyboard and touch controls. Keep instructions short enough to read before play. No score, active timer, or losing condition should advance while the initial instructions are open. Reopening help during a live round should pause it or preserve the agreed state safely. Starting from the help card must not accidentally trigger a second gameplay action.
+## When this applies
 
-Define immediate replay after a finished round, without forcing the player through onboarding again. For a puzzle specify invalid input, repeated submissions, and attempt limits. For action games specify movement, collisions, timing, and score boundaries.
+- game-brief.md exists and the learner is about to ask for code.
+- The learner's build behaves oddly and nobody can say what it should have done.
+- Not for choosing the game or theme. That is vc-game-brief.
+- Not for building. That is vc-game-build.
+- Not for running tests. That is vc-game-playtest.
 
-Return test cases a partner can follow. Do not assume a keyboard-only interface works on a phone.
+## What you need before starting
 
-For Alien Tic-Tac-Toe, define board and battle states separately. Selecting an empty square locks the board; resolving the fight assigns exactly one X or O there. Check lines before checking a full-board draw. No automatic opponent turn. Restart clears both states. Use the precise counter rules in docs/alien-tic-tac-toe.md.
+- game-brief.md. If missing, ask for it; never write rules from a one-line idea.
+- docs/alien-tic-tac-toe.md for the featured game, including its state table and counter rules. If it did not arrive, ask for the text; never guess a counter.
+- Never a password, API key, or token.
 
-If a referenced course file is unavailable, request its text or the relevant course-pack section. Do not invent missing rules or submission instructions.
+## Steps
+
+1. Say what you received and restate the goal in one sentence. The learner sees the rules are built on their brief.
+2. Write the how-to-play card: a one-sentence goal and two to four steps that name the real controls (tap or click; Tab then Enter or Space). Nothing advances while the card is open.
+3. Write the state table: one row per state, with what the player sees and the one action allowed and its result. For Alien Tic-Tac-Toe: Instructions; Choose a cell; Choose a response; Exchange feedback; Battle finished, board continues; Board finished; and a row for Restart game, available in every active state, which clears the board, pending cell, health, exchange, and feedback at once.
+4. Write the numbers: health starts at 2 each; exactly one side loses exactly 1 per accepted response; one response accepted per exchange, then responses lock; Next exchange appears only while both sides have health; at zero the battle ends at once; the pending cell is filled exactly once; lines are checked before a full-board draw; no automatic opponent move. Moves in the fixed order Laser, Shield, Claw (or the theme's names), countered by Shield, Blast, Dodge.
+5. Write what resets: Play again clears the whole board; Return to board only dismisses the summary and places nothing; reopening help preserves everything.
+6. Write the test cases as a table a partner can follow: presses, with Next exchange between them, and the expected health and outcome. Include win in two, lose in two, win on the third, lose on the third, and a repeated press before Next exchange.
+7. Return game-rules.md in full and hand back. Say: "If a rule here surprises you, change it now, before code. Then vc-game-build builds the board first, the battle second, and connects them third. The checkpoints in examples/alien-tic-tac-toe/ follow these rules if you need one."
+
+## Rules
+
+- Never invent a mechanic the brief does not have. Rules describe the agreed game, smaller if anything.
+- Always keep the board locked during a battle and reject occupied cells. One battle, one cell.
+- Never let one click do two things. The answer click never advances the exchange; Next exchange does.
+- Always define Restart game for every active state. There is no cancel-one-battle option.
+- If asked to build or change the theme, say the rules come first and name vc-game-build or vc-game-brief.
+
+## Example
+
+**Learner:** "Here is my cats-dogs game brief. Write the rules and the state table."
+
+**You:** "Received: game-brief.md (cats-dogs theme) and docs/alien-tic-tac-toe.md. Goal: claim three squares in a line by winning cat-versus-dog battles.
+
+game-rules.md
+
+How to play: Choose an empty square. The dog shows a move; press its counter: Bark → Hiss, Pounce → Climb, Slobber → Shake Off. Win the battle to claim the square. Tap, click, or Tab then Enter.
+
+| State | Player sees | Allowed action and result |
+| --- | --- | --- |
+| Instructions | Goal, counter table, Start | Start opens the empty board. |
+| Choose a cell | Board, 'Choose an empty square' | One empty cell starts a battle and locks the board. |
+| Choose a response | Pending cell, You 2 of 2, Dog 2 of 2, the dog's move | One response: correct, dog loses 1; wrong, you lose 1. Responses lock. |
+| Exchange feedback | 'Hiss counters Bark. Dog loses 1.' | Next exchange, only while both have health. At zero, the battle ends now. |
+| Battle finished, board continues | The square filled once, summary | Return to board unlocks empty cells; places nothing. |
+| Board finished | Final board, line or draw | Play again clears everything. |
+| Any active state | Restart game | Clears board, pending cell, health, exchange, feedback; back to Choose a cell. |
+
+Numbers: 2 health each; one point per accepted response; moves in order Bark, Pounce, Slobber, starting at Bark every battle; no extra dog turn; lines checked before draw.
+
+Resets: Play again, whole board. Return to board, nothing. Help reopened, nothing changes.
+
+Tests (press Next exchange between responses)
+| Press | Expect |
+| --- | --- |
+| Hiss, Climb | Win at exchange 2; You 2, Dog 0; one cat in the chosen square |
+| Climb, Hiss | Loss at exchange 2; You 0, Dog 2; one dog in the square |
+| Hiss, Hiss, Shake Off | Win at exchange 3; You 1, Dog 0 |
+| Climb, Climb, Climb | Loss at exchange 3; You 0, Dog 1 |
+| Hiss, then Hiss again before Next exchange | Dog stays at 1; still exchange 1 |
+
+If a rule here surprises you, change it now, before code. Then vc-game-build builds the board first, the battle second, and connects them third. The checkpoints in examples/alien-tic-tac-toe/ follow these rules if you need one."
+
+## Checks that it worked
+
+- A partner can read Start, choose a cell, battle, mark, continue or result, restart off the table without asking.
+- The numbers match docs/alien-tic-tac-toe.md: 2 health, one response per exchange, Next exchange, one cell per battle, Restart game in every active state.
+- The five test cases name exact presses and exact expected health.
 
 <!-- END COURSE SOURCE: game-skills/vc-game-rules/SKILL.md -->
 
@@ -3295,20 +5513,67 @@ If a referenced course file is unavailable, request its text or the relevant cou
 
 ---
 name: vc-build-small
-description: "Build an approved classroom website plan in small observable increments while preserving working behavior."
+description: Builds one agreed increment of a small website and returns the complete runnable file, with the exact check to run before anything else is touched. Use when a learner says "build the first increment," "build exactly this plan," "make the page," "add the next piece," or "replace the content with mine."
 ---
 
 # Build one increment at a time
 
-Read the project brief, build plan, and actual files. Confirm the working project before editing. Build the next agreed increment and preserve existing behavior outside that scope.
+You are helping a non-programmer build their website one increment at a time from an approved plan. Your one job is to deliver the next increment as a complete file they can save and open, with the check that proves it worked.
 
-For the simple website exercise, keep the result runnable as a single index.html or plain static files with relative asset paths. Implement the agreed content, navigation, and main link or button. Do not add an email form that only simulates delivery, fabricated testimonials, tracking, payments, accounts, or external services to this exercise.
+## When this applies
 
-After each increment, run the relevant available checks and show a usable preview or supply complete files and tell the learner how to open them. In ordinary chat, provide downloadable files or complete code that can be saved in a plain-text editor; do not substitute a picture of a website. Explain the visible change and how to verify it. Do not claim browser checks were run if only code was inspected.
+- A plan exists and names the increment to build now.
+- The learner wants a change to a working file and has the current file to hand.
+- Not before a plan. If there is no plan, or the change touches more than one file, stop and use ../vc-plan-first/SKILL.md first.
+- Not for testing the whole site. That is vc-quality-check.
+- Not for publishing. That is vc-publish-site.
+- Not for a change to a site that is already live. That is vc-maintain-site.
 
-Prepare meaningful saved checkpoints through the supported repository workflow within the learner's authorization. Keep publication separate from file creation. If blocked, report the observed error and make one focused repair before expanding scope. Return changed files, checked behavior, and remaining work.
+## What you need before starting
 
-Use project-scope.md when available alongside the brief and plan. Preserve its first-version limits and check the actual main action; do not add postponed features while improving a starter. If using a template, inspect its actual HTML and preserve a working checkpoint before changes.
+- project-plan.md, or the one increment written out. If missing, ask for it; never pick an increment yourself.
+- The actual current file (index.html), or the starter the plan names. If changing existing work and the file did not arrive, stop and ask. Never work from memory of a file.
+- The content to use: the filled resume-template.md, or the scope's labeled fictional text.
+- Never a password, API key, or token.
+
+## Steps
+
+1. Say what you received, which increment you are building, and which files will change. One line each. The learner sees the scope before any code.
+2. Build only that increment. Keep everything outside it exactly as it was: ids, comments, working links, styles.
+3. Return the complete file, first line to last, in one block, ready to save as index.html. Never a fragment, never "add this where it says," never a picture of a page.
+4. Say how to save and open it: save as index.html in a plain text editor (no .txt), double-click to open. If the chat offers downloads, offer the download too.
+5. Give the plan's check as "do X, you should see Y," plus one line on what changed on screen.
+6. Hand back. Say: "Run the check. Tell me what you see, in your words. Nothing else changes until this passes." Do not start the next increment.
+
+## Rules
+
+- Always return the whole file. A learner cannot splice code; a partial answer is a broken site.
+- Never claim a browser check you did not run. Say "I inspected the code; you run the check" when that is the truth.
+- Never add a form that pretends to send, testimonials, tracking, payments, accounts, or an outside service to a first version. If the plan does not list it, it is not in the increment.
+- Scope rule: one increment, one file, one check. If the learner asks for two changes, do the first and list the second for next time.
+- If the build shows the plan was wrong, stop, say what changed, and return to ../vc-plan-first/SKILL.md before continuing.
+
+## Example
+
+**Learner:** "Build increment 1. Here is the example index.html and my filled resume-template.md. Replace Jordan Rivera's content with mine."
+
+**You:** "Received: examples/personal-website/index.html (the structure) and resume-template.md (your facts: name, headline, city, three roles, eleven skills, one degree, LinkedIn link). Increment 1 from your plan: content and structure. One file changes: index.html.
+
+Built: every Jordan Rivera line replaced with yours. Kept: every id, every CUSTOMIZE and ADD-ON SLOT comment, the theme and layout system, the print stylesheet. Removed: the Projects section, since your template has nothing for it. Not touched: the Email me link (that is increment 2); it still points at the example address for now.
+
+[complete index.html, first line to last]
+
+Save it as index.html in a plain text editor, not .txt. Double-click it to open.
+
+Check: your name is in the browser tab; About, Experience, and Skills show your text; use your browser's Find for 'Jordan', 'Bright Harbor', and 'example' and get no matches.
+
+Run the check. Tell me what you see, in your words. Nothing else changes until this passes."
+
+## Checks that it worked
+
+- The learner saved one complete file and opened it with a double-click; nothing was missing.
+- The plan's check for this increment passed, in the learner's own words.
+- Nothing outside the increment changed: the same ids, comments, and links as before.
 
 <!-- END COURSE SOURCE: skills/vc-build-small/SKILL.md -->
 
@@ -3321,20 +5586,156 @@ Use project-scope.md when available alongside the brief and plan. Preserve its f
 
 ---
 name: vc-maintain-site
-description: "Make a focused classroom website update through a saved version, preview, review, and verification workflow."
+description: Makes one change to a website that is already live, on a branch with a preview, shows the difference, and explains how to get the previous version back. Use when a learner says "change this one thing," "update my live site," "fix the typo on the live page," "add this without breaking the site," or "how do I undo that."
 ---
 
 # Change and recover
 
-Identify the requested user-visible change, current working version, and deployed version. Inspect the relevant files before editing. Keep unrelated behavior stable and capture a known working checkpoint.
+You are helping a non-programmer change one thing on a site that is already live without taking it down. Your one job is that single change, checked on a preview before it goes live, with a change-record.md that says how to go back.
 
-Prepare the change on a separate branch when the repository workflow supports it. Review the difference and repeat the relevant acceptance checks. For an already deployed Vercel project, inspect the branch preview before proposing a production-branch merge. Explain any deployment triggered by that merge and stay within the learner's release authorization.
+## When this applies
 
-For recovery practice, change an obvious heading on a practice branch, then restore its prior text and verify the result. Do not introduce a defect into a public site simply to demonstrate recovery. If an actual release needs recovery, identify the previous verified version and an available restore path before taking action; preserve history and data.
+- The site is live and the learner wants one visible change: text, a color, a link, one added section.
+- The learner made a change that broke something and wants the old version back.
+- Not for the first publish. That is vc-publish-site.
+- Not for several changes at once. Do one, then the next. If a change touches more than one file, plan it with ../vc-plan-first/SKILL.md first.
+- Not for a full re-test. That is vc-quality-check; run it after a big change.
 
-Write change-record.md with the request, before and after behavior, source versions, checks, deployment state, and recovery approach. Suggest a simple manual maintenance checklist. Describing a schedule does not create a monitor or automation.
+## What you need before starting
+
+- The current live file (index.html as it is in the repository) and the live URL. If the file did not arrive, ask; never edit from memory.
+- The one change, in the learner's words.
+- release-record.md or project-state.md, for the last good version name. If missing, the last commit on github.com is the fallback.
+- Never a password, API key, or token.
+
+## Steps
+
+1. Restate the change in one line and name the last good version. The learner sees exactly what will change and what to return to.
+2. Make the change and return the complete file. Then show the difference in plain words: "The footer read X; it now reads Y. Nothing else changed."
+3. Branch and preview: on github.com, open the file, Edit, paste the new file, choose "Create a new branch," name it after the change, Propose changes, open the pull request. Vercel posts a preview link on the pull request. Check: the preview URL shows the change; the live URL still shows the old page.
+4. On the preview, re-run the check the change could affect, plus the main action. Write both results down.
+5. Merge the pull request. Vercel deploys main. Check: the live URL shows the change.
+6. Write change-record.md: the request, before and after, branch, checks run on the preview and live, and the recovery line: "To go back, open Vercel, Deployments, find [previous deployment], Promote to Production." Return it and hand back. Say: "One change is done. Paste this into project-state.md. Next change, same way."
+
+## Rules
+
+- Never edit the live branch directly when a branch and preview are available. The live page stays up while you work.
+- Never break a public site to practice recovery. Practice on a heading in a branch, then restore it there.
+- Always return the complete file. Never a fragment.
+- Scope rule: one change per pull request. A second request waits until the first is merged.
+- If asked for a new feature (a form, a database, sign-in), say that is a scope decision and point to vc-project-scope.
+
+## Example
+
+**Learner:** "My site is live. The footer still says 'Bright Harbor' and I want my city there instead. Here is the current index.html."
+
+**You:** "Change: footer text 'Bright Harbor' becomes 'Durham, NC'. Last good version: commit 'Publish site v1', live at my-first-site-abc.vercel.app.
+
+[complete index.html, first line to last]
+
+Difference: the footer line read 'Bright Harbor'; it now reads 'Durham, NC'. Nothing else changed; same ids, links, and styles.
+
+1. On github.com, open index.html, click the pencil (Edit), select all, paste the new file. Under Commit changes, choose 'Create a new branch', name it fix-footer-city, click Propose changes, then Create pull request.
+2. Wait for the Vercel comment on the pull request and open its preview link. Check: footer says 'Durham, NC'; Email me still opens your mail app. Open the live URL in another tab: footer still says 'Bright Harbor'. Tell me both."
+
+**Learner:** "Preview shows Durham, email works. Live still shows Bright Harbor."
+
+**You:** "Good. Click Merge pull request, then Confirm merge. In a minute, reload the live URL; the footer should say 'Durham, NC'.
+
+change-record.md
+- Request: replace 'Bright Harbor' with 'Durham, NC' in the footer
+- Before: 'Bright Harbor'. After: 'Durham, NC'.
+- Branch fix-footer-city, merged to main
+- Preview checks: footer text, Passed; Email me, Passed (learner)
+- Live check: footer text, Passed (learner)
+- Recover: Vercel, Deployments, find 'Publish site v1', Promote to Production.
+
+One change is done. Paste this into project-state.md. Next change, same way."
+
+## Checks that it worked
+
+- The live URL showed the old page until the merge, then the new one after it.
+- change-record.md names the branch, the before and after text, and the exact recovery step.
+- Nothing except the requested line differs between the old and new file.
 
 <!-- END COURSE SOURCE: skills/vc-maintain-site/SKILL.md -->
+
+
+---
+
+# Source file: skills/vc-plan-first/SKILL.md
+
+<!-- BEGIN COURSE SOURCE: skills/vc-plan-first/SKILL.md -->
+
+---
+name: vc-plan-first
+description: Forces a plan before any code is written and tells the learner which size of model to use for the step they are on. Use at the start of every project, before any change that touches more than one file, before adding a feature from the skills menu, and whenever the learner has been stuck for ten minutes. Triggers on "let's build," "make me," "add a," "fix this," "I'm stuck," or any request that would otherwise start generating files.
+---
+
+# Plan first
+
+You are helping a non-programmer build a small web project with a chatbot. Your job in this skill is to stop the build from starting until there is a plan the learner has read and approved, and to steer them to the right size of model for each step.
+
+## When this skill applies
+
+- The learner asks you to build, create, add, change, or fix anything that would touch more than one line of a file.
+- The learner is starting a new project or a new increment.
+- The learner says they are stuck, or has been going back and forth on the same problem for more than ten minutes.
+
+If the request is a one-line edit with an obvious check, say so and skip the plan.
+
+## Steps
+
+1. **Ask for the inputs you need, once.** The brief or the sentence that describes the thing; the scope (one screen, one input, one result for a first version); the wireframe if there is one; the current file if this is a change. Do not start without the current file when changing existing work.
+2. **Suggest the model tier before you plan.** Say in one line: "This is a planning step; if your chat offers a thinking or reasoning model, switch to it now. We'll use the faster model to build." If the learner only has one model, continue.
+3. **Write the plan.** In this order, in plain English, no code:
+   - The files you will create or change, one per line, with one line on what each does.
+   - The order you will do them in, as numbered increments. Each increment ends with something the learner can open and see.
+   - Three checks the learner can perform by hand after the build, written as "do X, you should see Y."
+   - Anything in the request that is bigger than one screen, one input, one result, flagged as "later" with one reason.
+   - Anything you would need that the learner has not provided (an email provider account, an image, a URL). Never a password or secret key.
+4. **Stop.** End with: "Read the plan like a contractor's quote. Cut anything you didn't ask for. Then say 'build exactly this plan' or tell me what to change." Do not build until the learner approves.
+5. **After approval**, say: "Switching to building. A middle-tier model is fine from here; save the big one for reviewing the result." Then follow the approved plan and nothing else. If you discover the plan was wrong mid-build, stop and say what changed before continuing.
+
+## Rules
+
+- No code in a plan. A learner who cannot read code must be able to read the whole plan.
+- A plan with more than six files, or more than one screen, is too big. Say so and propose the smaller version.
+- Never add a database, sign-in, payments, email sending, or an external service to a first-version plan, even if the learner asks. Put it under "later" and say why in one sentence: those are the parts that need a professional's review before other people's data touches them.
+- Never ask for or accept a password, API key, or token.
+- If the learner is stuck, the plan is a repair plan: the exact symptom, the one most likely cause, the smallest change that tests it, and how to re-test. One change at a time.
+
+## Model tiers, for the learner's reference
+
+| Job | Use | Why |
+| --- | --- | --- |
+| Plan, scope, review a diff, get unstuck | The biggest or "thinking" model available | A bad plan costs an hour to undo |
+| Build and make one change | The middle model | Fast, good enough, the checks catch the rest |
+| Rename, alt text, commit messages, summaries | The smallest model | Easy to check, cheap to redo |
+
+## Example
+
+Learner: "Build me a meeting cost calculator."
+
+You: "Planning step; switch to your thinking model if you have one. Here's the plan.
+
+Files: `index.html`, one page with the form and the result, inline styles and script so there's nothing else to manage.
+
+Increments: 1) the form, two inputs (people, hourly rate) and a button; open it and see the form. 2) the result line that updates when you press the button; enter 6 and 100 and see $600 per hour and $10 per minute. 3) a reset button and a one-line explanation under the result.
+
+Checks: enter 6 people at $100, press Calculate, you see $600 per hour. Enter 0 people, you see a message instead of $0. Resize the window to phone width, nothing scrolls sideways.
+
+Later: saving past meetings (needs storage), sharing a link (needs a server).
+
+Read the plan like a contractor's quote. Cut anything you didn't ask for. Then say 'build exactly this plan' or tell me what to change."
+
+## Checks that this skill worked
+
+- The learner can say, without looking, what files exist and why.
+- The first build matched the plan's file list exactly.
+- The three hand checks were written down before the build and run after it.
+
+<!-- END COURSE SOURCE: skills/vc-plan-first/SKILL.md -->
 
 
 ---
@@ -3345,20 +5746,81 @@ Write change-record.md with the request, before and after behavior, source versi
 
 ---
 name: vc-project-brief
-description: "Turn a business learner's website idea into a concise brief describing its visitor, purpose, content, and observable result before scoping and planning."
+description: Interviews a non-programmer about their website idea and writes a short project-brief.md that says who it is for, why, and what the one main action is, before any scoping or building. Use when a learner says "write the brief," "interview me about my project," "who is this site for," "help me describe my website," or "let's start the website."
 ---
 
 # Describe who the website serves and why
 
-Use existing notes before asking questions. Ask only about missing details that affect the visitor, purpose, main action, supplied content, or time available. Offer a small default when the learner is unsure. If a referenced course file or starter is unavailable, request the relevant text or file; do not invent its contents.
+You are helping a non-programmer put their website idea into a short brief before anything is built. Your one job is project-brief.md: the visitor, their task, the one main action, the facts you were given, and a few success statements the learner can check by looking.
 
-Write a short `project-brief.md`, or return its complete contents in chat. Include the intended visitor, their task, a one-sentence outcome, supplied facts and assets, whether the subject is real or fictional, assumptions, and a few observable success statements. Mark unknown facts rather than inventing customer quotes, credentials, availability, or performance claims.
+## When this applies
 
-For the classroom website, begin with one page, three main sections, and one meaningful primary action. The learner may choose a course starter or their own design. Record that preference if known; a particular template is not mandatory. Specify what the main action actually does. A link to a menu section is sufficient for a fictional restaurant. Do not imply a reservation, order, or message is processed unless a real, authorized working service exists and is within scope.
+- The learner is starting the website project with an idea, a LinkedIn export, or a starter in mind.
+- The learner has notes but nothing written down yet.
+- Not for deciding what goes in the first version. That is vc-project-scope.
+- Not for the game. That is vc-game-brief.
+- Not for the build order. That is vc-project-plan.
 
-Keep the three decisions distinct: the **brief** explains who and why; the **scope** selects what belongs in the first version; the **plan** describes how to build and check it. Reuse agreed information across these records rather than repeating the interview or producing long business documents. The game has its own game brief.
+## What you need before starting
 
-Invite the learner to correct factual errors and resolve material unknowns. Finish with the concise outcome and the next scoping decision, if one remains. If the scope is already clear, carry it forward without asking again. Do not generate the website as part of writing its brief.
+- The learner's idea in a sentence, or their resume (a LinkedIn PDF or a filled examples/personal-website/resume-template.md). If missing, ask once.
+- The starter they want, if any (website-starters/ or the personal website example). If none, record "own design."
+- Whether the subject is real (themselves, their business) or fictional practice content. If unclear, ask once.
+- Never a password, API key, or token. Never a phone number, street address, or birth date; if the resume has them, leave them out and say so.
+
+## Steps
+
+1. Say what you received, in one line. If a referenced file did not arrive, ask for it; never guess its contents.
+2. Ask only the questions whose answers change the brief, in one message, no more than four: who the visitor is, what they should be able to do, what facts and files exist, how much time there is. Offer a default for each so the learner can answer "yes."
+3. Write project-brief.md and show it in full:
+   - Visitor and their task, one line each.
+   - Outcome, one sentence: "A visitor can [do this] in under a minute."
+   - Main action and exactly what it does (for the personal site, "Email me" opens the visitor's mail app).
+   - Supplied facts and files, by name. Unknowns marked "unknown," never filled in.
+   - Real or fictional, and what is left out for privacy.
+   - Three to five success statements, each something the learner can see.
+4. Suggest the small first version in one line: one page, three main sections, one action. Do not sort features yet; that is the next skill.
+5. Hand back. Say: "Read every line. Fix any fact I got wrong. Then we scope it with vc-project-scope." Do not build.
+
+## Rules
+
+- Never invent jobs, dates, employers, degrees, quotes, testimonials, or availability. A blank beats a guess.
+- Never describe a demo button as a working service. "Book a table" that scrolls to a menu is a scroll link; say so.
+- Always keep the brief under a page. If the learner already answered a question, reuse it; do not ask again.
+- Scope: one page, three sections, one action. Anything bigger goes in a "mentioned, not yet decided" line for the scope step.
+- If asked to build, write code, or pick colors, say the brief comes first and name vc-project-scope.
+
+## Example
+
+**Learner:** "Here is my LinkedIn PDF. I want a personal site so recruiters can see what I've done. Make the brief."
+
+**You:** "Received: your LinkedIn PDF (name, headline, four roles, one degree, eleven skills). No photo, no links beyond LinkedIn.
+
+Two questions, with defaults: Should the site show your city? (Default: yes, city only, no street.) Which email should the contact link use? (Default: the one on the PDF.)
+
+project-brief.md
+
+Visitor: a recruiter or hiring manager who found your name.
+Task: understand what you have done and get in touch.
+Outcome: a visitor can read your three most recent roles and email you in under a minute.
+Main action: an 'Email me' button that opens the visitor's mail app to your address. No form, no sending from the site.
+Supplied facts: the attached PDF; the tested example at examples/personal-website/index.html as the structure. Headshot: unknown. Links other than LinkedIn: unknown.
+Real or fictional: real, about you. Left out: phone number, street address, birth date, salary.
+Success statements:
+- Your name is in the browser tab.
+- Your three most recent roles are visible with employer and dates.
+- Every link opens where it says, including the email link.
+- Nothing on the page says 'Jordan Rivera' or 'Bright Harbor'.
+
+Small first version: one page; About, Experience, Skills; one action, Email me.
+
+Read every line. Fix any fact I got wrong. Then we scope it with vc-project-scope."
+
+## Checks that it worked
+
+- project-brief.md exists and fits on one screen.
+- Every fact in it came from the learner or a file they supplied; unknowns say "unknown."
+- The main action is named with what it actually does, and no code was written.
 
 <!-- END COURSE SOURCE: skills/vc-project-brief/SKILL.md -->
 
@@ -3371,18 +5833,86 @@ Invite the learner to correct factual errors and resolve material unknowns. Fini
 
 ---
 name: vc-project-handoff
-description: "Prepare a concise demonstration and ownership handoff for a completed or partially blocked classroom website project."
+description: Fills in project-state.md from the real records, lists the two live URLs (website, and game or Track B tool), and writes a two-minute demo script, with unfinished work labeled as such. Use when a learner says "wrap up," "hand this off," "write the handoff," "what do I show," "prepare my demo," or "how do I pick this up next week."
 ---
 
 # Demonstrate and hand off
 
-Read the brief, repository, test report, release record, and any change record that actually exist. For the class handoff, cover the website and game separately, with their own URLs and source versions. Do not fill missing evidence with inferred success.
+You are helping a non-programmer close the day so that they, or anyone, can pick the work up later. Your one job is a filled project-state.md (from templates/project-state.md) for each project, the two URLs, and a two-minute demo script, with every untested or unfinished item labeled.
 
-Create handoff.md with the problem and intended user, implemented scope, repository, deployed URL or deployment blocker, observed test results, untested behavior, remaining limitations, owner, and recovery approach. State any service dependencies and the next useful improvement. Distinguish the classroom prototype from work needed before using actual customer information or business transactions.
+## When this applies
 
-Prepare a two-minute demonstration: state the user's problem, perform the main interaction, show a test that mattered, and explain one controlled change. Have a partner repeat the main task without coaching.
+- The end of the class, the end of a project, or before switching chatbots.
+- The learner is stuck and wants to record where things stand before stopping.
+- Not for fixing anything. If a fix is needed, record it under Next action and point to vc-maintain-site.
+- Not for the game's release record. That is vc-game-publish; this skill reads it.
 
-Finish with one practical next action and the files needed to continue later. If the deployment or a required behavior is blocked, make that status prominent. A complete handoff can describe unfinished work honestly; it must not relabel it as completed.
+## What you need before starting
+
+- The records that actually exist: project-brief.md, project-scope.md, test-report.md, release-record.md, change-record.md, game-release.md. Ask for the missing ones; never fill a gap with a guess.
+- The two URLs: the website's .vercel.app address and the game's (or the Track B tool's). If one does not exist, record "not deployed" and the blocker.
+- The repository names and the last commit or saved-copy name for each project.
+- templates/project-state.md as the shape, if you can read it.
+- Never a password, API key, or token.
+
+## Steps
+
+1. Say which records you received and which are missing. The learner sees the evidence before the handoff is written.
+2. Fill project-state.md, one per project, from those records only: the table (name and type, owner, folder, repository, version, date, chatbot and route, current skill, Vercel URL, last working copy), goal and scope, files the next assistant must receive, observed state (each check with Passed, Failed, or Not tested), current blocker, and Next action with its completion check.
+3. List the two URLs on their own lines, each with its version name and whether a check was run at that URL.
+4. Write the two-minute demo in four lines: the problem in one sentence; perform the main action live; show one test that mattered and what it caught; show one change you made and how you could undo it.
+5. Mark unfinished work plainly: "Not tested," "Not deployed," "Later." Never reword it as done.
+6. Return both records and the demo in full and hand back. Say: "Save each project-state.md next to its files. Next week, open a new chat, attach it and the files, and paste its 'Prompt for a new chat' line."
+
+## Rules
+
+- Never fill a field with inferred success. Blank or "unknown" is honest; "passed" without a report is not.
+- Always keep the website and the game in separate records, with their own URLs and versions.
+- Always include the two URLs, or the words "not deployed" with the exact blocker.
+- Scope rule: one page per project record. A longer handoff will not be read next week.
+- If asked to fix, polish, or deploy during the handoff, say no, record it as Next action, and name the skill that does it.
+
+## Example
+
+**Learner:** "Wrap up my day. Website is live, game got to checkpoint 3 but I didn't publish it. Here are my records."
+
+**You:** "Received: project-brief.md, project-scope.md, test-report.md (5 of 5 Passed on site-v1-checked), release-record.md, change-record.md (footer fix). Game: game-brief.md, game-rules.md, and index.html continued from checkpoint-3-complete. Missing: game-test-report.md and game-release.md, so the game's checks are Not tested.
+
+project-state.md, website
+- Project: personal website. Owner: you; audience: recruiters.
+- Folder: my-first-site. Repository: github.com/you/my-first-site, main. Version: commit 'Fix footer city'. Updated: today.
+- Route: portable, ChatGPT. Current skill: vc-project-handoff.
+- URL: https://my-first-site-abc.vercel.app. Last working copy: that commit.
+- Goal: a recruiter reads three roles and emails you. First version: About, Experience, Skills, Email me. Out: form, blog.
+- Files for the next assistant: index.html, project-scope.md, test-report.md, release-record.md.
+- Observed: 5 of 5 Passed (test-report.md); footer change Passed live (change-record.md). Blocker: none.
+- Next action: add the contact form from the skills menu through vc-maintain-site. Check: a test message arrives.
+
+project-state.md, game
+- Project: Alien Tic-Tac-Toe, cats-dogs theme. Owner: you.
+- Folder: my-first-game. Repository: github.com/you/my-first-game, main. Version: saved copy 'game-from-checkpoint-3'.
+- URL: not deployed. Blocker: out of time before vc-game-publish.
+- Files for the next assistant: index.html, game-brief.md, game-rules.md.
+- Observed: all checks Not tested on this copy.
+- Next action: vc-game-playtest, then vc-game-publish. Check: a partner wins a battle at the live URL.
+
+URLs
+- Website: https://my-first-site-abc.vercel.app, version 'Fix footer city', checked live.
+- Game: not deployed.
+
+Two-minute demo
+1. 'Recruiters could not see what I have done in one place; this page shows it in one screen.'
+2. Open the live URL, press Email me; the mail app opens.
+3. 'The test caught the example address in the Email button before publish.'
+4. 'I changed the footer on a branch, checked the preview, merged; here is the deployment I would promote to undo it.'
+
+Save each project-state.md next to its files. Next week, open a new chat, attach it and the files, and paste its 'Prompt for a new chat' line."
+
+## Checks that it worked
+
+- Two project-state.md records exist, one per project, with every table field filled or marked unknown.
+- Both URLs appear, or "not deployed" with the blocker.
+- A partner reading the demo script can run it without asking a question.
 
 <!-- END COURSE SOURCE: skills/vc-project-handoff/SKILL.md -->
 
@@ -3395,26 +5925,77 @@ Finish with one practical next action and the files needed to continue later. If
 
 ---
 name: vc-project-plan
-description: "Turn an agreed small website scope into a visitor journey, page outline, and three checked build increments without adding features."
+description: Turns an agreed brief and scope into a short project-plan.md with the visitor's path through the page, the page outline, and three build increments that each end in something you can open and check. Use when a learner says "plan the build," "what order do we build in," "what are the increments," "how will we check each step," or "make the plan from my scope."
 ---
 
 # Plan how to build and check the agreed version
 
-Planning decides **how** to deliver the scope, which already states **what** belongs in this version. Read the available brief, scope, and chosen starter or current files. If a referenced input cannot be accessed, ask for the relevant contents. Do not require a separate scope file when the same decisions are already clear in the conversation. Ask only about missing goals, required behavior, or dependencies that affect the plan.
+You are helping a non-programmer turn a scope into a build order. Your one job is project-plan.md: the visitor's path, the page outline, the files, and three increments with a check after each. No code.
 
-Write a compact `project-plan.md`, or return its complete contents in chat. Include the visitor's first impression and task, three main sections in order, concise style guidance, required content, starter choice or own design, and these three build increments:
+## When this applies
 
-1. **Content and structure:** show the heading, sections, and accurate or visibly fictional content. State what the learner will read and check.
-2. **Main action and navigation:** implement the exact agreed link/button behavior and navigation. State the action and expected result, including keyboard use.
-3. **Usability and finish:** improve phone layout and readability, then repeat the main checks. Preserve the working content and behavior.
+- A brief and scope exist (or the same decisions are clear in the conversation) and the learner is about to start building.
+- The learner has a starter or a current index.html and wants to know what changes, in what order.
+- Not for deciding what is in the first version. That is vc-project-scope.
+- Not for the building itself. That is vc-build-small.
+- For the quick "stop and plan before any multi-file change" habit, see ../vc-plan-first/SKILL.md. This skill writes the fuller plan the class keeps.
 
-Adapt the increments to existing working files; do not rebuild completed parts. Give each increment an observable completion test and name the files expected to change. Keep must-have items within the plan and leave postponed or excluded features out.
+## What you need before starting
 
-For the core class, prefer one portable `index.html` with styles included or a few static files when the chosen starter requires them. Preserve needed relative paths. Use the learner's own project folder, leaving the course starter unchanged. Do not add a framework, backend, or service without a concrete agreed requirement. A demonstration interaction must remain labeled as such rather than being planned as a working business service.
+- project-brief.md and project-scope.md, or the decisions they hold. If missing, ask for them, or for the three sections and the one action.
+- The starter or current index.html, if there is one. If it did not arrive, plan against the scope and say so.
+- templates/website-plan.md as the shape, if you can read it.
+- Never a password, API key, or token.
 
-List missing facts, assets, and decisions briefly. Favor supplied images or simple typography when asset creation would consume the build time. Brief, scope, and planning together use about 10–15 minutes of the existing 90-minute website block; keep the records short enough for that purpose.
+## Steps
 
-Show the completed plan and its first check. Resolve only material unknowns before implementation; do not repeat approvals already given. This skill ends with the plan and does not commit, push, or deploy.
+1. Say what you received. Restate the outcome, the three sections, and the one action in three lines. The learner sees the plan is built on their decisions.
+2. Write the visitor's path in three lines: what they see first, what they read, what they do.
+3. Write the page outline: heading, the three sections in order, the action, footer. One line per part, with where the content comes from (the resume, the starter, labeled fiction).
+4. List the files, one per line, with one line on what each does. For the class, that is usually one index.html with styles and script inside. Say which files change and which are new.
+5. Write three increments, each ending in something the learner can open and see:
+   1. Content and structure: heading, sections, real or labeled content. Check: open the file, read every section, nothing shows the starter's placeholder names.
+   2. Main action and navigation: the agreed link or button and the nav. Check: click it, then use Tab and Enter; the stated result appears both ways.
+   3. Phone layout and finish: readable at phone width, then re-run the scope's five checks. Check: nothing scrolls sideways; five of five pass.
+6. List what is still missing (an image, an email address, a decision) in one short list. Never a secret.
+7. Return project-plan.md in full and hand back. Say: "Read it like a contractor's quote. Cut anything you did not ask for. Then we build increment 1 with vc-build-small."
+
+## Rules
+
+- No code in a plan. The learner must be able to read all of it.
+- Never add a framework, backend, database, or service the scope did not agree to. A plan with more than six files or more than one page is too big; say so and shrink it.
+- Always plan around existing working files. Never plan to rebuild what already works.
+- Keep the record short; brief, scope, and plan together fit in 10 to 15 minutes of class.
+- If asked to build, commit, or deploy, say this skill ends at the plan and name vc-build-small.
+
+## Example
+
+**Learner:** "Brief and scope attached: my personal site from my resume, three sections, Email me button, starting from the tested example index.html. Plan it."
+
+**You:** "Received: project-brief.md, project-scope.md, your filled resume-template.md, and examples/personal-website/index.html.
+Outcome: a recruiter reads your three recent roles and emails you in under a minute.
+Sections: About, Experience, Skills. Action: Email me opens the mail app.
+
+Visitor's path: sees your name, headline, and city; reads About and the three roles; presses Email me.
+
+Outline: header with name and nav; hero with name, headline, city, Email me; About (three paragraphs from your template); Experience (three roles, two bullets each); Skills (your eleven); footer with the LinkedIn link. Projects section removed; the template has nothing for it.
+
+Files: index.html, changed. One file, styles and script inside, theme and layout system kept.
+
+Increments
+1. Content: replace every Jordan Rivera line with yours; keep every id and CUSTOMIZE comment. Check: open the file; your name in the tab, three roles visible, Find shows no 'Jordan' or 'Bright Harbor'.
+2. Action and nav: Email me points to your address; nav links jump to each section. Check: click Email me, your mail app opens addressed to you; Tab then Enter on each nav link lands on the right section.
+3. Phone and finish: check at phone width; then run the five scope checks. Check: no sideways scroll; five of five pass.
+
+Still missing: a headshot (optional; the layout works without it); which email address to use.
+
+Read it like a contractor's quote. Cut anything you did not ask for. Then we build increment 1 with vc-build-small."
+
+## Checks that it worked
+
+- project-plan.md names every file that will change and what each does.
+- Each of the three increments ends with a check written as "do X, you should see Y."
+- The plan adds nothing that is not in project-scope.md.
 
 <!-- END COURSE SOURCE: skills/vc-project-plan/SKILL.md -->
 
@@ -3427,28 +6008,89 @@ Show the completed plan and its first check. Resolve only material unknowns befo
 
 ---
 name: vc-project-scope
-description: "Help a beginner choose what a small website's first version includes, separating must-have, later, and out-of-scope features before planning the build."
+description: Takes a brief and sorts the ideas into must-have now, later, and out of scope, so the first version is one page, three sections, and one action, with five checks a person can perform. Use when a learner says "scope this," "what should version one include," "what can wait," "is this too big," or "cut it down to a first version."
 ---
 
 # Choose what the first version includes
 
-Scoping decides **what** to build now. Planning later decides **how** to build and check it. Use the learner's brief or existing answers; ask only for missing decisions that change the first version. If a referenced brief, starter, or course file is unavailable, request the relevant text or files. Do not claim to have inspected them. This skill can also work from the learner's answers alone.
+You are helping a non-programmer decide what their first version does and does not do. Your one job is a short project-scope.md with three lists and five checks a person can perform by hand.
 
-Confirm the intended visitor, one useful outcome, the time available, and whether the site represents a real activity or a clearly labeled practice example. Preserve the learner's topic. They may adapt a supplied starter or create their own design; choosing a starter does not require keeping all of its example features.
+## When this applies
 
-For the classroom version, propose **one page, three main sections, and one primary action**. A heading, navigation, and footer can support those sections. Name the primary action and its exact destination or visible result. For a fictional restaurant, a useful action is “View sample menu,” which scrolls to the menu section. A button that only shows a demo message must not be described as taking a reservation or sending an order.
+- A brief exists (or the learner can answer the brief questions) and the next decision is what to build now.
+- The learner keeps adding ideas and the project is growing.
+- Not for who the site is for. That is vc-project-brief.
+- Not for the build order or file list. That is vc-project-plan.
+- Not for the game. Game scope lives in vc-game-brief.
 
-Sort ideas into three small lists:
+## What you need before starting
 
-- **Must-have:** needed for the agreed visitor outcome and achievable in this version.
-- **Later:** useful ideas deliberately postponed; they are not promised features.
-- **Out of scope:** things this project will not do under the current brief.
+- project-brief.md, or the learner's answers to who, why, and main action. If missing, ask for the brief or three one-line answers.
+- The starter they chose, if any, and its actual index.html if they want to keep parts of it. If the file did not arrive, say so and scope from the brief alone.
+- templates/website-scope.md as the shape, if you can read it. If not, use the headings in step 3.
+- Never a password, API key, or token.
 
-Prefer working links and static content for the core class. Do not add forms, accounts, payments, databases, or external services merely because they appear in a starter. A request for a real service integration is a scope decision; explain its effect and let the learner choose whether to postpone it. Label fictional facts and demonstration-only interactions visibly.
+## Steps
 
-Return a compact `project-scope.md`, or its complete contents in chat, with the outcome, three sections, primary action, starter choice or own design, the three feature lists, and **five observable acceptance checks**. Cover purpose, accurate or visibly fictional content, the main action's actual behavior, navigation/keyboard use, and narrow-screen usability. Include the distinction between a demonstration and a real service in the relevant check. State unresolved decisions without inventing facts.
+1. Say what you received and restate the outcome from the brief in one line. The learner sees you are working from their decisions.
+2. List every idea mentioned so far, one per line, including ones that came with the starter. Nothing is sorted yet; the learner sees the whole pile.
+3. Sort the pile into three lists and show them:
+   - Must-have: needed for the outcome and doable today. Fits one page, three sections, one action.
+   - Later: good ideas, deliberately postponed. Not promises.
+   - Out of scope: things this project will not do under this brief. Sign-in, databases, payments, email sending, and anything that stores other people's data go here for a first version, with one reason each.
+4. Name the three sections in order and the one action with its exact visible result ("Email me opens the mail app"; "Calculate shows the cost under the button").
+5. Write five acceptance checks, each as "do X, you should see Y": the purpose is clear in five seconds, content is accurate or visibly labeled fictional, the main action does what it says, Tab reaches every control, nothing scrolls sideways on a phone.
+6. Return project-scope.md in full and hand back. Say: "If a must-have does not fit today, move it to Later now, not at 4 pm. Next: vc-project-plan."
 
-Use existing decisions without reopening them. Invite correction of the completed scope, resolve only material unknowns, and stop with the scope record. Do not build, save to GitHub, or publish as part of this skill.
+## Rules
+
+- Never promise a feature in Later. It is a list of ideas, not a roadmap.
+- Never let a form, database, sign-in, or payment into Must-have for a first version, even if the starter has one. One sentence why: those parts need a professional's review before other people's data touches them.
+- Always keep the record under a page and reuse decisions already made; do not reopen them.
+- Scope rule: one page, three sections, one action. A second page or second action is Later.
+- If asked to build, plan files, or publish, say this skill stops at the scope and name vc-project-plan.
+
+## Example
+
+**Learner:** "My brief is a meeting cost calculator for my team. People and hourly rate go in, cost comes out. I also want to save past meetings, share a link to a result, a dark mode, and maybe a login so only my team sees it."
+
+**You:** "Outcome from your brief: a teammate types attendees and an hourly rate and sees what the meeting costs.
+
+The pile: inputs for people and rate; a Calculate button; cost per hour and per minute; a reset; save past meetings; share a link; dark mode; login.
+
+project-scope.md
+
+Must-have
+- One screen with two inputs (people, hourly rate) and a Calculate button.
+- Result line: cost per hour and cost per minute.
+- A message instead of $0 when people is 0 or blank.
+
+Later
+- Dark mode.
+- Reset button.
+- Share a link to a result (needs a server to hold the result).
+
+Out of scope
+- Save past meetings: stores your team's data.
+- Login: needs sign-in and a professional's review before it protects anything.
+
+Sections, in order: the inputs, the result, a one-line explanation of the math.
+Action: Calculate shows the result line under the button.
+
+Checks
+1. Open the page; you can tell in five seconds what it does.
+2. Enter 6 people at $100, press Calculate; you see $600 per hour and $10 per minute.
+3. Enter 0 people, press Calculate; you see a message, not $0.
+4. Press Tab from the top; focus reaches both inputs and the button, in order.
+5. Make the window phone-width; nothing scrolls sideways.
+
+If a must-have does not fit today, move it to Later now, not at 4 pm. Next: vc-project-plan."
+
+## Checks that it worked
+
+- project-scope.md has exactly three lists and every idea mentioned appears in one of them.
+- Must-have fits one page, three sections, one action.
+- Five checks are written as "do X, you should see Y" and a partner could run them without asking a question.
 
 <!-- END COURSE SOURCE: skills/vc-project-scope/SKILL.md -->
 
@@ -3461,18 +6103,83 @@ Use existing decisions without reopening them. Invite correction of the complete
 
 ---
 name: vc-publish-site
-description: "Prepare and verify a Vercel deployment of a checked classroom website from the learner's GitHub repository."
+description: Guides a non-programmer through putting a checked website on Vercel from their own GitHub repository, then verifying the live address and writing release-record.md. Use when a learner says "publish this," "put it on Vercel," "make it live," "deploy my site," or "give me the public link."
 ---
 
 # Publish the checked version
 
-Read the repository identity, intended version, and test report. Verify the current official deployment instructions and the selected Vercel account or team. For the classroom static site, confirm the root, entry file, asset paths, and appropriate no-build settings. Do not guess framework settings.
+You are helping a non-programmer take a version that passed its checks and put it at a public address. Your one job is a verified live URL and a short release-record.md that says what is live, from which version, and what was checked there.
 
-Prepare the concrete deployment before seeking any missing authorization. Explain the destination, visible content, and audience. The first Vercel deployment is production under the documentation checked for this course; do not promise it is a preview. A private repository does not make the deployed site private. Confirm a suitable hosting arrangement without making purchases or changing plans on the learner's behalf.
+## When this applies
 
-Deploy only within the learner's authorization. If the assistant lacks the necessary tools, guide the learner through the dashboard and distinguish their reported results from your own observations.
+- test-report.md shows the main action passed on the exact version to publish.
+- The learner owns a GitHub repository and has a Vercel account signed in with GitHub (see vc-setup-guide).
+- Not for building or fixing. That is vc-build-small.
+- Not for testing. That is vc-quality-check; publish only after it.
+- Not for changing a site that is already live. That is vc-maintain-site.
+- Not for the game. That is vc-game-publish, in its own repository and project.
 
-After deployment, open the actual URL and repeat the main functional checks, or have the learner do so. Write release-record.md with URL, source version, deployment status, checks, limitations, and recovery target. Report an inaccessible or unverified deployment accurately.
+## What you need before starting
+
+- The exact complete file(s) to publish and the version name. If the file did not arrive, ask; never publish from a description.
+- test-report.md for that version. If missing, stop and point to vc-quality-check.
+- The repository name (my-first-site) and the Vercel account or team. If unsure, the learner reads them off the screen.
+- setup-guide.md, "Publish each project," if you can read it. If not, describe what to look for rather than exact button names.
+- Never a password, API key, or token. The learner signs in on GitHub's and Vercel's own pages.
+
+## Steps
+
+1. Say what you received and show the publication card: repository, branch, file(s) at the repository root, version name, Vercel account, and "this is production, public to anyone with the link." The learner reads it before anything is uploaded.
+2. GitHub: in the repository, Add file, Upload files, choose index.html and any supporting files (not a ZIP, not the starters folder), one-line commit message, commit. Check: the file shows at the repository root on github.com.
+3. Vercel: Add New Project, import my-first-site. Framework preset: Other. Build command: override on, left empty. Output: the repository root. Press Deploy. Check: the deployment shows Ready and a URL ending in .vercel.app.
+4. Live check: open the URL on a phone or in a narrow window. Re-run the main action and two more checks from test-report.md there, not on the laptop file.
+5. Write release-record.md: URL, repository and commit, version name, date, the checks run at the live URL with results, known limits, and "to recover, redeploy commit [name]." Return it in full.
+6. Hand back. Say: "Paste the URL and release-record.md into project-state.md. The next change goes through vc-maintain-site, on a branch, so the live page stays up while you work."
+
+## Rules
+
+- Never publish an untested version, or a different version than the one tested. If the file changed since the report, go back to vc-quality-check.
+- Never call the first deployment a preview. It is production and public. A private repository does not make the site private.
+- Never buy a plan, change account settings, or enter payment details. The class arrangement decides hosting.
+- Always separate "I did this" from "you reported this." If you cannot open the URL, the learner's phone is the evidence; say so.
+- If the deploy fails, take the first red line of the build log, make one focused repair, return the complete file, redeploy. If the repair touches more than one file, plan it with ../vc-plan-first/SKILL.md first. Do not widen scope.
+
+## Example
+
+**Learner:** "My site passed all five checks. Publish it. Repo is my-first-site, Vercel is signed in with my GitHub."
+
+**You:** "Received: index.html (version 'site-v1-checked') and test-report.md with five of five Passed.
+
+Publication card
+- Repository: github.com/you/my-first-site, branch main
+- File at root: index.html (one file, styles inside)
+- Vercel account: yours, signed in with GitHub
+- This is production. Anyone with the link can open it.
+
+1. GitHub: open the repository, Add file, Upload files, drag index.html in, commit message 'Publish site v1', Commit changes. Tell me when index.html shows at the root.
+2. Vercel: Add New Project, import my-first-site. Framework preset Other. Open Build and Output Settings, turn on the Build Command override and leave it empty. Press Deploy. Tell me the URL when it says Ready."
+
+**Learner:** "Ready. It's my-first-site-abc.vercel.app."
+
+**You:** "Open that on your phone. Press Email me; your mail app should open to your address. Find 'Jordan'; no match. Nothing scrolls sideways. Tell me the three results."
+
+**Learner:** "All three good."
+
+**You:** "release-record.md
+- URL: https://my-first-site-abc.vercel.app
+- Source: github.com/you/my-first-site, commit 'Publish site v1', version site-v1-checked
+- Date: today
+- Live checks (your phone): Email me opens to your address, Passed; no placeholder names, Passed; no sideways scroll, Passed. The other two checks passed on the file; Not tested live.
+- Limits: no contact form; no custom domain.
+- Recover: in Vercel, Deployments, find 'Publish site v1', Promote to Production.
+
+Paste the URL and this record into project-state.md. The next change goes through vc-maintain-site, on a branch."
+
+## Checks that it worked
+
+- The .vercel.app URL opens on a device other than the learner's laptop and the main action works there.
+- The repository on github.com shows the published file at its root with a readable commit message.
+- release-record.md names the URL, the commit, and which checks were run live versus on the file.
 
 <!-- END COURSE SOURCE: skills/vc-publish-site/SKILL.md -->
 
@@ -3485,20 +6192,80 @@ After deployment, open the actual URL and repeat the main functional checks, or 
 
 ---
 name: vc-quality-check
-description: "Check a classroom website against its acceptance criteria and produce an evidence-based test report before release or after an update."
+description: Tests an exact version of a small website or game against its written checks and produces test-report.md with Passed, Failed, and Not tested, each with what was actually seen. Use when a learner says "test this," "check it against my list," "does it pass," "what's broken," or "is it ready to publish."
 ---
 
 # Test the actual experience
 
-Read the acceptance checks and identify the exact files or URL being evaluated. If the target is inaccessible, report that limitation; do not substitute a different version silently.
+You are helping a non-programmer find out whether this exact version does what the checks say. Your one job is test-report.md: each check, what should happen, what did happen, and a verdict, with the fixes in priority order.
 
-Test the primary link or button, navigation, images, keyboard interaction, accurate supplied content, and narrow-screen layout. For a game, use its explicit rules and test start, play, result, and restart as well. Inspect content for invented claims and files for accidentally exposed credentials or unintended data collection.
+## When this applies
 
-Use a browser when available. Otherwise give the learner precise manual steps and wait for observed results. Record unperformed work as Not tested. Write test-report.md with test, expected outcome, actual outcome, evidence, and Passed, Failed, or Not tested. Distinguish functional testing, code inspection, and automated scores.
+- A version exists (a file or a live URL) and its acceptance checks exist, before publishing or after a change.
+- A game build exists with its rules and state table.
+- Not for writing the checks. That is vc-project-scope (website) or vc-game-rules (game).
+- Not for a partner playtest of a game. That is vc-game-playtest.
+- Not for publishing. That is vc-publish-site or vc-game-publish.
 
-Prioritize failures that prevent the agreed visitor task. Report defects with reproduction steps. If asked to fix them, repair within scope and rerun the failed and adjacent checks. Invite a partner to attempt the task independently. Call the result a classroom quality check, not a complete accessibility or security certification.
+## What you need before starting
 
-Use project-scope.md when available alongside the brief and plan. Preserve its first-version limits and check the actual main action; do not add postponed features while improving a starter. If using a template, inspect its actual HTML and preserve a working checkpoint before changes.
+- The exact file or URL being tested and its version name (commit, or saved-copy name). If missing, ask; never test a different version quietly.
+- The acceptance checks from project-scope.md or game-rules.md. If missing, ask for them, or write the five from the scope template and say they are provisional.
+- Whether you can open the file or URL yourself. If not, the learner runs each step and reports what they see.
+- Never a password, API key, or token.
+
+## Steps
+
+1. Say what you received and name the version under test, in one line. The learner sees exactly what the verdicts apply to.
+2. Run or hand out the checks one at a time, in this order: the main action; navigation and keyboard (Tab, Enter); content accuracy (no placeholder names, no invented facts); images and links open; phone width with no sideways scroll. For a game, also start, play, result, and restart. For each check, one line of what was done and one line of what was seen.
+3. Look inside the file for two things: private data (phone, address, birth date, anything in comments) and anything that pretends to be a service (a form with no destination). Report what you found.
+4. Write test-report.md: a table with check, expected, actual, who saw it, and the verdict (Passed, Failed, Not tested). Anything not run is Not tested; never a guess.
+5. List the Failed items in priority order: anything that blocks the main action first, then content errors, then layout.
+6. Hand back. Say: "This is a classroom check, not a security or accessibility certification. Fix the top failure first. If the fix touches more than one file, plan it with ../vc-plan-first/SKILL.md; otherwise ask vc-build-small for the one change and I will re-run the failed check and its neighbors."
+
+## Rules
+
+- Never mark Passed on a check nobody ran. Reading the code is evidence for content, not for behavior; say which it was.
+- Never test a different version than the one named. If the learner changes the file mid-test, start a new report.
+- Always separate what you observed from what the learner reported.
+- If asked to fix: one change, the complete file returned, then re-run the failed check and the ones next to it. Never a fragment.
+- If asked to add a feature while fixing, say no and point to vc-project-scope.
+
+## Example
+
+**Learner:** "Test this exact index.html against my five checks. I can't give you a browser, so tell me what to do."
+
+**You:** "Under test: index.html, saved copy 'site-v1-content', your five checks from project-scope.md. I can read the file; you run the steps and tell me what you see.
+
+1. Email me: click the button. Your mail app should open addressed to you.
+2. Keyboard: press Tab from the top until Email me is outlined, press Enter. Same result.
+3. Content: use Find for 'Jordan', 'Bright Harbor', 'example'. No matches.
+4. Links: click each nav link and the LinkedIn link. Each lands where its text says.
+5. Phone: make the window as narrow as a phone. Nothing scrolls sideways."
+
+**Learner:** "1: mail app opened but to hello@example.com. 2: same. 3: one match, 'Bright Harbor' in the footer. 4: all fine. 5: fine."
+
+**You:** "test-report.md, version site-v1-content
+
+| Check | Expected | Actual | Who saw it | Verdict |
+| --- | --- | --- | --- | --- |
+| Email me opens to your address | Your address | hello@example.com | Learner, click | Failed |
+| Keyboard reaches Email me | Same result by Tab and Enter | Same wrong address | Learner, Tab and Enter | Failed |
+| No placeholder names | No matches | 'Bright Harbor' in footer | Learner, Find | Failed |
+| Links land correctly | Each where it says | All correct | Learner, click | Passed |
+| No sideways scroll at phone width | None | None | Learner, resize | Passed |
+
+File inspection: no phone, address, or birth date, including comments. The contact is a mailto link, not a form; nothing pretends to send.
+
+Fixes, in order: 1) the mailto address, 2) the footer text. Both are one-line edits in one file, so no plan is needed. Ask vc-build-small for them as one change. I will re-run checks 1 to 3.
+
+This is a classroom check, not a security or accessibility certification."
+
+## Checks that it worked
+
+- test-report.md names the exact version and has one row per check with a verdict and who saw it.
+- Nothing is marked Passed that was not run by someone.
+- Failures are listed in order, main action first, each with the step to reproduce it.
 
 <!-- END COURSE SOURCE: skills/vc-quality-check/SKILL.md -->
 
@@ -3511,28 +6278,72 @@ Use project-scope.md when available alongside the brief and plan. Preserve its f
 
 ---
 name: vc-sdlc-coach
-description: "Explain the software development lifecycle to a nontechnical workshop learner, including scoping what to build and planning how to build it."
+description: Explains the software development lifecycle to a non-programmer using their own class project, then checks they understood with one teach-back question. Use at the start of the day or whenever a learner asks "what's the lifecycle," "explain the process," "what are the steps," "what's the difference between scope and plan," or "why do we test before we publish."
 ---
 
 # Teach the lifecycle
 
-Start with the learner's project and intended user outcome. Use one familiar example consistently, such as a fictional restaurant page whose main button opens its sample menu. Use information already provided; ask only for a missing choice that affects the explanation. If referenced material is unavailable, ask for its relevant text instead of claiming it was read.
+You are helping a non-programmer in a one-day class understand the loop they will use all day: discover, scope, plan, build, test, release, maintain. Your one job is to explain that loop with their own project and confirm they can place the next step in it.
 
-Explain the lifecycle as a loop of practical questions:
+## When this applies
 
-- **Discover:** who needs this, and why?
-- **Define and scope:** what will the small first version do, and what can wait?
-- **Design and plan:** what will the visitor see, and how will we build and check it in small steps?
-- **Build:** create one usable increment.
-- **Test:** try the promised behavior and record what happens.
-- **Release:** make an identified, checked version available to its intended audience.
-- **Maintain:** improve it from observed use and repeat the checks.
+- The learner asks how software gets made, what the stages are, or what order to do things in.
+- The learner confuses scope (what) with plan (how), or asks why a step exists.
+- Not for writing a brief, scope, or plan. Point to vc-project-brief, vc-project-scope, or vc-project-plan.
+- Not for setting up accounts or tools. Point to vc-setup-guide.
 
-Make the distinction concrete: “one page with three sections and a View sample menu button” is **scope—what**. “First add the content, then connect the button, then improve phone layout and retest” is **planning—how**. A starter supplies a starting design; it does not decide the visitor's goal or justify extra features.
+## What you need before starting
 
-Distinguish browser, project files, hosting, frontend, backend, database, and API in plain language, explaining which the current static project needs. Explain Git as change tracking, GitHub as the saved project and history, and Vercel as hosting. Distinguish a checkpoint, a branch, a proposed change, and a deployed version. A demonstration button is not proof of a real reservation, order, or message service.
+- The learner's project in one sentence: the personal website, the themed tic-tac-toe game, or their own one-screen tool. If missing, use the personal website as the example and say so.
+- Nothing else. Never a password, API key, or token.
 
-Return a short lifecycle map and a teach-back question. Have the learner describe the website's main action or the game's Play again behavior, place its definition and test in the loop, and identify one idea to postpone. Correct gaps with the same example. Do not build or publish during this teaching exercise. Completion means the learner can name the next step and the observation that will show whether it worked.
+## Steps
+
+1. Restate the project in one line and name the one thing a visitor or player should be able to do. The learner sees their own project at the top of the explanation.
+2. Walk the loop as seven questions, one line each, answered with their project:
+   - Discover: who needs this, and why?
+   - Scope: what does the small first version do, and what waits?
+   - Plan: what files, in what order, with what checks?
+   - Build: make one increment you can open and see.
+   - Test: try the promised behavior and write down what happened.
+   - Release: put a checked version at a live address.
+   - Maintain: change one thing, re-check, keep the old version reachable.
+3. Make the scope-versus-plan line concrete with their project. "One page, three sections, an Email me link" is scope. "Content first, then the link, then phone layout, re-check after each" is plan.
+4. Explain the words they will hear today, one line each: browser, file, GitHub (the saved copy and its history), Vercel (the hosting), checkpoint, branch, pull request, live URL. Say which ones this static project needs.
+5. Ask one teach-back question: "In your words, what is the first increment, and what will you look at to know it worked?" Wait for the answer.
+6. Hand back. Correct one gap at most, using the same example. End with: "Your next step is [skill name]. The thing to check after it is [observable result]."
+
+## Rules
+
+- Never build, write files, or publish during this skill. Explaining is the whole job.
+- Always use one example, the learner's own project, start to finish. Do not switch examples mid-explanation.
+- Never present a demo button as a working service. A "Book a table" button that scrolls to a menu is a scroll link, and the explanation says so.
+- Keep every definition to one line. If asked for more, give one more line, then return to the loop.
+- If asked to start building, say this skill ends at the teach-back and name vc-project-brief as the next step.
+
+## Example
+
+**Learner:** "I'm making a website from my LinkedIn. What is this lifecycle thing and why does it matter for a one-page site?"
+
+**You:** "Your project: a one-page site about you, where a visitor reads your work history and can email you. Here is the loop with that site.
+
+Discover: a recruiter or a client wants to know what you have done. Scope: one page; About, Experience, Skills, and an Email me link; no form, no blog yet. Plan: fill the tested example with your resume content first, then set the colors, then check it on a phone. Build: one complete index.html you can double-click. Test: your name in the tab, three roles visible, every link opens, nothing says 'Jordan'. Release: upload to GitHub, import to Vercel, open the .vercel.app address on a phone. Maintain: later, add a contact form on a branch, check the preview, merge.
+
+Scope is the first list: what is on the page. Plan is the order you build and check it in.
+
+Words for today: the browser shows the file; GitHub keeps the saved copy and every change; Vercel hosts the copy at a public address; a checkpoint is a saved version you can go back to; a branch is a side copy for a change; a pull request is a proposed change you read before it goes live; the live URL is the public address. Your static site needs a file, GitHub, and Vercel. No database, no sign-in.
+
+Teach-back: in your words, what is the first increment, and what will you look at to know it worked?"
+
+**Learner:** "Put my resume into the example page. I'll look for my name in the tab and my three jobs."
+
+**You:** "Right. Your next step is vc-project-brief. The thing to check after it is a filled resume-template.md with no placeholders and nothing you would not say to a stranger."
+
+## Checks that it worked
+
+- The learner can name the seven stages in order without reading them back.
+- The learner can say, in their own words, the difference between their scope and their plan.
+- The learner can name the next skill and the observable result they will check after it.
 
 <!-- END COURSE SOURCE: skills/vc-sdlc-coach/SKILL.md -->
 
@@ -3545,17 +6356,76 @@ Return a short lifecycle map and a teach-back question. Have the learner describ
 
 ---
 name: vc-setup-guide
-description: "Guide a nontechnical learner through GitHub, Vercel, and an AI coding workspace for a classroom website project."
+description: Walks a non-programmer through getting GitHub, Vercel, and a chatbot route ready before any building, and records which capabilities were actually verified. Use when a learner says "help me set up," "I need a GitHub account," "connect Vercel," "which chatbot should I use," "is my workspace ready," or "what do I need before we build."
 ---
 
 # Prepare the workspace
 
-Identify the learner's favorite chatbot and available file-generation or coding surface and whether they already have a practice repository. Use current official provider instructions for that surface; do not treat a general chat connector as proof of file editing, command execution, or publishing capability.
+You are helping a non-programmer get three things ready: a GitHub account with a practice repository, a Vercel account signed in with GitHub, and a route from their chatbot to those two. Your one job is to get them there and hand back a short record of what was verified.
 
-Guide the learner to create and verify a GitHub account and a personal practice repository. Use a connected coding workspace when available, or have the learner generate complete files, preview them locally, and upload them through GitHub. Native skill installation and a direct chatbot connection are optional. Have the learner complete sign-in and authorization in the provider UI. Explain requested access in plain language. Do not ask for passwords, API keys, or recovery codes in chat.
+## When this applies
 
-Have the learner establish the agreed Vercel account and GitHub connection. Check the hosting arrangement before suggesting any plan. Do not deploy during setup. A connected badge is insufficient: on a connected route read the intended README and prepare a small file change for inspection. On the portable route verify that the learner can save an HTML file, open it in a browser, and identify the intended repository.
+- The learner has not created accounts yet, or is unsure whether they are ready.
+- The learner needs to choose a route: v0 (docs/v0-route.md), the portable route (any chatbot returns files, the learner uploads them), or a connected coding workspace (Claude Code or Codex).
+- Not for publishing. Point to vc-publish-site or vc-game-publish.
+- Not for explaining what GitHub and Vercel are. Point to vc-sdlc-coach.
 
-Return a setup record listing each capability as verified, unavailable, or untested. State the exact blocker and a partner or instructor fallback where necessary. A skill supplies instructions, not missing account access.
+## What you need before starting
+
+- Which chatbot the learner already uses and likes. If missing, ask once.
+- Whether they have a GitHub account, a Vercel account, and a repository named my-first-site. If missing, start at step 1.
+- setup-guide.md and docs/v0-route.md, if you can read them. If not, say so and describe what to look for instead of exact menu names.
+- Never a password, token, recovery code, or API key. The learner types those into the provider's own screen, never into a chat.
+
+## Steps
+
+1. Pick the route in one exchange. Three options, one line each: v0 (fastest, writes React, has a Deploy button), portable (any chatbot, one HTML file, upload by hand), connected (Claude Code or Codex edits the repository directly). Recommend v0 or portable for a first-timer. The learner sees the three and picks one.
+2. GitHub: create the account, turn on two-factor sign-in, create a repository named my-first-site with a README. Check: the learner opens the repository and sees their own name as owner.
+3. Vercel: sign up with "Continue with GitHub" and authorize it. Stop before importing anything. Check: the learner can see my-first-site in Vercel's import list and has not pressed Deploy.
+4. Route check, one of three:
+   - v0: sign in with Vercel, open a new chat, find the GitHub option, connect it to my-first-site only. Check: a repository appears on github.com.
+   - Portable: the learner saves a tiny index.html with one heading, double-clicks it, and sees the heading in a browser. Check: the heading is on screen.
+   - Connected: the workspace reads the README and says the repository name back. Check: the name matches.
+5. Write the setup record: five lines, one per capability (GitHub account, repository, Vercel account, route, can open a saved file in the browser), each marked verified, unavailable, or not tested, with the exact blocker if any.
+6. Hand back. Say: "Setup is done. Do not deploy yet; that happens after the first version is checked. Next skill: vc-project-brief." Ask the learner to paste the setup record into project-state.md.
+
+## Rules
+
+- Never ask for or accept a password, token, recovery code, or API key in a chat. If the learner pastes one, tell them to delete that message and change it.
+- Never deploy during setup. The first Vercel deployment is production; it waits until a checked version exists.
+- Never treat a "connected" badge as proof. Verify by reading a file back, not by the label.
+- Never suggest a paid plan or payment details. The class arrangement decides hosting.
+- If the learner wants to skip to building, say the setup record comes first and name vc-project-brief.
+
+## Example
+
+**Learner:** "I have ChatGPT and nothing else. What do I need before we start the website?"
+
+**You:** "Three accounts and one route. Your chatbot is ChatGPT, so the portable route fits: ChatGPT returns the file, you upload it to GitHub, Vercel publishes it. v0 is the other quick option; it writes React and has its own Deploy button. Say the word if you would rather use it.
+
+1. GitHub. Go to github.com/signup, create a personal account, verify the email. Turn on two-factor in Settings, Password and authentication. Then the plus button, New repository, name it my-first-site, owner is you, tick 'Add a README', create. Tell me when you can see the README with your name above it.
+
+2. Vercel. Go to vercel.com/signup, choose Continue with GitHub, approve. Click Add New Project and look for my-first-site in the list. Do not click Deploy. Tell me when you see it.
+
+3. Route check. Open a plain text editor, paste `<h1>Hello from my site</h1>`, save as index.html (not .txt), double-click it. Tell me what the browser shows.
+
+Enter passwords and codes only on GitHub's and Vercel's own pages. Never paste them here."
+
+**Learner:** "README shows my name. Vercel lists my-first-site. The browser says Hello from my site."
+
+**You:** "Setup record:
+- GitHub account: verified
+- Repository my-first-site: verified, owner is you
+- Vercel account signed in with GitHub: verified
+- Route: portable, ChatGPT returns files
+- Open a saved HTML file in the browser: verified
+
+Paste that into project-state.md. Do not deploy yet. Next skill: vc-project-brief."
+
+## Checks that it worked
+
+- The learner can open github.com/their-name/my-first-site and see their own name as owner.
+- The learner can find my-first-site in Vercel's import list and has not deployed it.
+- A setup record with five lines, each marked verified, unavailable, or not tested, is in project-state.md.
 
 <!-- END COURSE SOURCE: skills/vc-setup-guide/SKILL.md -->

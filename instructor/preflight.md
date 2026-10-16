@@ -24,6 +24,14 @@ This checklist is a rehearsal record, not a claim that rehearsal has happened. E
 | Arcade demonstrations can be opened without consuming lesson time on access | | |
 | Student workbook and all selected skill instructions are accessible | | |
 | Teaching timings rehearsed with the chosen routes and recipes | | |
+| LinkedIn "Save to PDF" works on a current account and the PDF attaches to the chatbots in the room | | |
+| `examples/personal-website/index.html` opens from disk; every theme and both layouts render; print preview is a tidy resume | | |
+| Personal website published to a fresh Vercel project through the browser upload route | | |
+| Game checkpoints 1, 2, 3 open from disk and pass the checks in their README | | |
+| `?theme=` deep links work from a published Vercel URL | | |
+| v0 export of a single-file site lands in GitHub and deploys | | |
+| One skills-menu row completed end to end on the portable route (suggest #5, the contact form) | | |
+| Feedback template printed; the book offer is on the last slide | | |
 
 Confirm the class's account and hosting arrangement before distributing the prerequisites. Use the [setup guide](../setup-guide.md) for current eligibility and account decisions. Learners complete their own sign-in and account authorization screens.
 

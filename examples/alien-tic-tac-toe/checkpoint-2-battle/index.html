@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Alien Tic-Tac-Toe, checkpoint 2: the battle only, with no board.">
+<title>Alien Tic-Tac-Toe: battle checkpoint</title>
+<style>
+/* CUSTOMIZE: colors live here. Keep text readable against the background. */
+:root {
+  --bg: #0b1020;
+  --panel: #161d33;
+  --text: #f4f6ff;
+  --accent: #7dd3fc;
+  --button-bg: #ffffff;
+  --button-text: #111111;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; font: 18px/1.5 Arial, sans-serif; color: var(--text); background: var(--bg); }
+button { font: inherit; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.skip { position: absolute; left: 16px; top: -100px; z-index: 20; background: #fff; color: #111; padding: 12px; }
+.skip:focus { top: 12px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+main { max-width: 480px; margin: 0 auto; padding: 16px; }
+h1 { font-size: 28px; line-height: 1.2; margin: 8px 0 4px; color: var(--accent); }
+h2 { font-size: 20px; margin: 16px 0 8px; }
+.note { margin: 0 0 12px; font-size: 16px; opacity: 0.9; }
+
+/* Health is always shown as words, never only as color. */
+.health { display: flex; gap: 10px; flex-wrap: wrap; }
+.health p { flex: 1 1 140px; margin: 0; background: var(--panel); border: 2px solid var(--accent); border-radius: 8px; padding: 10px; text-align: center; font-weight: bold; }
+
+.panel { background: var(--panel); border: 2px solid var(--accent); border-radius: 8px; padding: 12px; margin: 12px 0; }
+.alien-move { font-size: 22px; font-weight: bold; margin: 0; }
+.status { min-height: 52px; margin: 8px 0 0; }
+
+.actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 12px 0; }
+.action { min-height: 44px; padding: 10px 18px; border: 2px solid var(--button-text); border-radius: 8px; background: var(--button-bg); color: var(--button-text); cursor: pointer; }
+.action:disabled { opacity: 0.5; cursor: default; }
+.action.chosen { outline: 3px solid var(--accent); }
+
+table { border-collapse: collapse; width: 100%; font-size: 16px; }
+th, td { border: 1px solid var(--accent); padding: 6px 8px; text-align: left; }
+[hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<main id="main">
+  <h1>Alien battle</h1>
+  <p class="note">Checkpoint 2: the battle only. Each side starts with 2 health. One response per exchange.</p>
+
+  <div class="health">
+    <p id="player-health"></p>
+    <p id="alien-health"></p>
+  </div>
+
+  <div class="panel">
+    <p id="exchange-label" class="note"></p>
+    <p class="alien-move" id="alien-move" tabindex="-1"></p>
+    <!-- The three response buttons. They are disabled after one answer. -->
+    <div class="actions" id="responses">
+      <button class="action response" type="button" data-response="Shield">Shield</button>
+      <button class="action response" type="button" data-response="Blast">Blast</button>
+      <button class="action response" type="button" data-response="Dodge">Dodge</button>
+    </div>
+    <p class="status" id="status" role="status" aria-live="polite" tabindex="-1"></p>
+    <div class="actions">
+      <button class="action" id="next-exchange" type="button" hidden>Next exchange</button>
+      <button class="action" id="fight-again" type="button" hidden>Fight again</button>
+    </div>
+  </div>
+
+  <!-- The counter table stays visible. This game teaches a rule, not memory under pressure. -->
+  <h2>Counter table</h2>
+  <table>
+    <thead><tr><th scope="col">Alien shows</th><th scope="col">Correct response</th></tr></thead>
+    <tbody>
+      <tr><td>Laser</td><td>Shield</td></tr>
+      <tr><td>Shield</td><td>Blast</td></tr>
+      <tr><td>Claw</td><td>Dodge</td></tr>
+    </tbody>
+  </table>
+</main>
+
+<script>
+// ---------- Rules that never change ----------
+// CUSTOMIZE: rename the moves here if you like, but keep three of each.
+var ALIEN_SEQUENCE = ["Laser", "Shield", "Claw"];   // the alien always goes in this order
+var CORRECT_RESPONSE = { "Laser": "Shield", "Shield": "Blast", "Claw": "Dodge" };
+var STARTING_HEALTH = 2;
+
+// ---------- The battle state ----------
+// phase is one of: "respond" (waiting for the player's response),
+// "feedback" (one response accepted, waiting for Next exchange),
+// "won" or "lost" (the battle is over).
+var battle = {
+  playerHealth: STARTING_HEALTH,
+  alienHealth: STARTING_HEALTH,
+  exchange: 0,          // 0, 1, or 2: which alien move is showing
+  phase: "respond",
+  feedback: "",         // what happened on the last response
+  chosen: ""            // the response the player picked this exchange
+};
+
+// ---------- Actions ----------
+
+// State "respond": exactly one response is accepted, then responses lock.
+function respond(response) {
+  if (battle.phase !== "respond") return;   // already answered, or battle over
+  var alienMove = ALIEN_SEQUENCE[battle.exchange];
+  battle.chosen = response;
+
+  if (CORRECT_RESPONSE[alienMove] === response) {
+    battle.alienHealth = battle.alienHealth - 1;
+    battle.feedback = response + " counters " + alienMove + ". The alien loses 1 health.";
+  } else {
+    battle.playerHealth = battle.playerHealth - 1;
+    battle.feedback = response + " does not stop " + alienMove + ". You lose 1 health. (" +
+      CORRECT_RESPONSE[alienMove] + " would have worked.)";
+  }
+
+  // Zero health ends the battle right away. No extra exchange is offered.
+  if (battle.alienHealth === 0) {
+    battle.phase = "won";
+  } else if (battle.playerHealth === 0) {
+    battle.phase = "lost";
+  } else {
+    battle.phase = "feedback";
+  }
+  render();
+  // Focus the feedback text, not a button, so a repeated key press does nothing.
+  document.getElementById("status").focus();
+}
+
+// State "feedback": Next exchange shows the next alien move and fresh responses.
+function nextExchange() {
+  if (battle.phase !== "feedback") return;
+  battle.exchange = battle.exchange + 1;
+  battle.phase = "respond";
+  battle.feedback = "";
+  battle.chosen = "";
+  render();
+  document.getElementById("alien-move").focus(); // one Tab reaches the first response
+}
+
+// State "won" or "lost": Fight again starts over with fresh health at Laser.
+function fightAgain() {
+  battle.playerHealth = STARTING_HEALTH;
+  battle.alienHealth = STARTING_HEALTH;
+  battle.exchange = 0;
+  battle.phase = "respond";
+  battle.feedback = "";
+  battle.chosen = "";
+  render();
+  document.getElementById("alien-move").focus();
+}
+
+// ---------- Drawing ----------
+function render() {
+  document.getElementById("player-health").textContent = "You: " + battle.playerHealth + " of " + STARTING_HEALTH;
+  document.getElementById("alien-health").textContent = "Alien: " + battle.alienHealth + " of " + STARTING_HEALTH;
+
+  var battleOver = battle.phase === "won" || battle.phase === "lost";
+  document.getElementById("exchange-label").textContent = "Exchange " + (battle.exchange + 1) + " of up to 3";
+  document.getElementById("alien-move").textContent = battleOver
+    ? "The battle is over."
+    : "The alien uses " + ALIEN_SEQUENCE[battle.exchange] + "!";
+
+  // Response buttons work only while waiting for a response.
+  var buttons = document.querySelectorAll(".response");
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].disabled = battle.phase !== "respond";
+    buttons[i].classList.toggle("chosen", buttons[i].getAttribute("data-response") === battle.chosen);
+  }
+
+  document.getElementById("next-exchange").hidden = battle.phase !== "feedback";
+  document.getElementById("fight-again").hidden = !battleOver;
+  document.getElementById("status").textContent = statusText();
+}
+
+function statusText() {
+  if (battle.phase === "respond") return "Choose your response.";
+  if (battle.phase === "feedback") return battle.feedback + " Press Next exchange to continue.";
+  if (battle.phase === "won") return battle.feedback + " You won the battle!";
+  return battle.feedback + " The alien won the battle.";
+}
+
+// ---------- Wire up the buttons once ----------
+var responseButtons = document.querySelectorAll(".response");
+for (var i = 0; i < responseButtons.length; i++) {
+  responseButtons[i].addEventListener("click", makeResponseHandler(responseButtons[i].getAttribute("data-response")));
+}
+function makeResponseHandler(response) {
+  return function () { respond(response); };
+}
+document.getElementById("next-exchange").addEventListener("click", nextExchange);
+document.getElementById("fight-again").addEventListener("click", fightAgain);
+render();
+</script>
+</body>
+</html>

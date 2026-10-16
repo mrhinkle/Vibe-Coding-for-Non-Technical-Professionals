@@ -1,6 +1,6 @@
 {
   "title": "Vibe Coding for Non-Technical Professionals",
-  "edition": "2026-10-05",
+  "edition": "2026-10-15",
   "teaching_minutes": 360,
   "breaks_included": false,
   "read_first": [
@@ -24,21 +24,32 @@
       "skills": [
         "skills/vc-sdlc-coach/SKILL.md"
       ],
-      "completion": "Explain a stage and an observable check."
+      "completion": "Explain a stage and an observable check.",
+      "lessons": [
+        "instructor-guide.md",
+        "docs/platform-landscape.md"
+      ]
     },
     {
       "id": "setup",
       "minutes": 30,
       "lesson": "setup-guide.md",
       "skills": [
-        "skills/vc-setup-guide/SKILL.md"
+        "skills/vc-setup-guide/SKILL.md",
+        "skills/vc-plan-first/SKILL.md"
       ],
-      "completion": "Identify own project and verify a runnable-file workflow."
+      "completion": "Identify own project and verify a runnable-file workflow.",
+      "lessons": [
+        "setup-guide.md",
+        "docs/github-tour.md",
+        "docs/secrets-tokens-and-the-clipboard.md",
+        "docs/plan-first-and-models.md"
+      ]
     },
     {
       "id": "website",
       "minutes": 90,
-      "lesson": "docs/website-walkthrough.md",
+      "lesson": "docs/personal-website-walkthrough.md",
       "skills": [
         "skills/vc-project-brief/SKILL.md",
         "skills/vc-project-scope/SKILL.md",
@@ -47,7 +58,9 @@
         "skills/vc-quality-check/SKILL.md",
         "skills/vc-publish-site/SKILL.md"
       ],
-      "completion": "Checked website URL, or working files with a deployment blocker."
+      "completion": "Checked website URL, or working files with a deployment blocker.",
+      "alternate_lesson": "docs/website-walkthrough.md",
+      "example": "examples/personal-website/index.html"
     },
     {
       "id": "arcade-tour",
@@ -75,7 +88,9 @@
         "game-skills/vc-game-build/SKILL.md"
       ],
       "completion": "Complete and restart a plain round.",
-      "instruction": "Use the selected game choice lesson."
+      "instruction": "Use the selected game choice lesson.",
+      "checkpoints": "examples/alien-tic-tac-toe/",
+      "theme_lesson": "docs/tic-tac-toe-variants.md"
     },
     {
       "id": "game-polish",
@@ -119,6 +134,12 @@
   ],
   "optional_extensions": [
     {
+      "id": "website-skills-menu",
+      "lesson": "docs/website-skills-menu.md",
+      "included_in_core_minutes": false,
+      "introduction": "Live hacking sprints: one skill, one task, one check."
+    },
+    {
       "id": "multiple-agents",
       "lesson": "docs/multiple-agents.md",
       "included_in_core_minutes": false
@@ -146,8 +167,8 @@
   "pre_class": {
     "guide": "PRE-CLASS-PREP.md",
     "local_check": "prep/laptop-check.html",
-    "suggested_lead_time": "2\u20133 days",
-    "estimated_minutes": "30\u201345",
+    "suggested_lead_time": "2–3 days",
+    "estimated_minutes": "30–45",
     "included_in_teaching_minutes": false
   },
   "game_choices": [
@@ -173,5 +194,134 @@
     "optional": true,
     "own_idea_allowed": true
   },
-  "website_planning_lesson": "docs/scope-and-plan.md"
+  "website_planning_lesson": "docs/scope-and-plan.md",
+  "next_run": {
+    "event": "All Things Open 2026",
+    "date": "2026-10-19",
+    "room_time": "09:00-17:30",
+    "listing": "https://2026.allthingsopen.org/ai-agents-vibe-coding",
+    "run_of_show": "instructor/ato-2026-run-of-show.md",
+    "fluid_day": true
+  },
+  "stuck": "docs/stuck.md",
+  "feedback": {
+    "template": "templates/feedback.md",
+    "offer": "Everyone gets the slides. Feedback, good or bad, earns the preview release edition of Software Development for Non-Programmers: Beyond Vibecoding."
+  },
+  "examples": {
+    "personal_website": {
+      "path": "examples/personal-website/",
+      "entry": "examples/personal-website/index.html",
+      "resume_template": "examples/personal-website/resume-template.md",
+      "themes": [
+        "slate",
+        "forest",
+        "sunset",
+        "ocean",
+        "mono",
+        "plum"
+      ],
+      "layouts": [
+        "centered",
+        "sidebar"
+      ],
+      "lesson": "docs/personal-website-walkthrough.md"
+    },
+    "alien_tic_tac_toe": {
+      "path": "examples/alien-tic-tac-toe/",
+      "checkpoints": [
+        "examples/alien-tic-tac-toe/checkpoint-1-board/index.html",
+        "examples/alien-tic-tac-toe/checkpoint-2-battle/index.html",
+        "examples/alien-tic-tac-toe/checkpoint-3-complete/index.html"
+      ],
+      "themes": [
+        "space-invasion",
+        "cats-dogs",
+        "pizza-tacos",
+        "robots-dinos",
+        "ghosts-pumpkins",
+        "sun-moon",
+        "wizards-dragons",
+        "coffee-donuts"
+      ],
+      "lesson": "docs/tic-tac-toe-variants.md",
+      "rules": "docs/alien-tic-tac-toe.md"
+    }
+  },
+  "wireframes": {
+    "game": [
+      "docs/wireframes/game-instructions.svg",
+      "docs/wireframes/game-board.svg",
+      "docs/wireframes/game-battle.svg"
+    ],
+    "website": [
+      "docs/wireframes/site-centered.svg",
+      "docs/wireframes/site-sidebar.svg"
+    ]
+  },
+  "website_skills_menu": {
+    "lesson": "docs/website-skills-menu.md",
+    "sources": [
+      "https://github.com/mrhinkle/aienterprise-skills",
+      "https://github.com/mrhinkle/VibeCoding-a-Website"
+    ],
+    "count": 10
+  },
+  "presentations": {
+    "ato_2026": "presentations/ato-2026-workshop/",
+    "reference": "presentations/reference-six-hour-class/"
+  },
+  "routes": {
+    "featured": "v0",
+    "v0_lesson": "docs/v0-route.md",
+    "portable_and_connected": "setup-guide.md"
+  },
+  "agent_loop_lesson": {
+    "lesson": "docs/agent-loop-and-pull-requests.md",
+    "minutes": 15,
+    "placement": "after the website publishes, before lunch",
+    "exercise": "afternoon increment 2 goes through a pull request"
+  },
+  "afternoon_tracks": {
+    "A": {
+      "name": "Guided game",
+      "lesson": "docs/tic-tac-toe-variants.md"
+    },
+    "B": {
+      "name": "Your own project",
+      "lesson": "docs/your-own-project.md",
+      "scope_rule": "one screen, one input, one result"
+    }
+  },
+  "wrap_up": {
+    "tuesday_morning": [
+      "take it back to your team",
+      "what to automate next",
+      "where agents still need adult supervision"
+    ],
+    "feedback": "templates/feedback.md",
+    "linkedin": "docs/linkedin-wrap-up.md",
+    "all_things_ai": {
+      "dates": "2027-04-18 to 2027-04-20",
+      "venue": "Atlantic Union Bank Convention Center (formerly Raleigh Convention Center)",
+      "site": "https://allthingsai.org",
+      "note": "April 18 Agent Hackathon; April 21 separate Executive Summit"
+    }
+  },
+  "instructor_bio": "README.md#about-mark",
+  "contact_email": "mrhinkle@allthingsai.org",
+  "slides_distribution": {
+    "how": "course repository",
+    "path": "presentations/ato-2026-workshop/",
+    "repo": "https://github.com/mrhinkle/Vibe-Coding-for-Non-Technical-Professionals",
+    "note": "repo is private as of 2026-10-15; make public or invite attendees before 2026-10-19"
+  },
+  "lessons_added_2026_10_15": {
+    "github_tour": "docs/github-tour.md",
+    "plan_first_and_models": "docs/plan-first-and-models.md",
+    "skills_guide": "docs/skills-guide.md",
+    "secrets": "docs/secrets-tokens-and-the-clipboard.md",
+    "platform_landscape": "docs/platform-landscape.md",
+    "skill_template": "templates/SKILL-template.md"
+  }
 }

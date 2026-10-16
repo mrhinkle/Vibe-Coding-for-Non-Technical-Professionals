@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" width="640" height="420" font-family="Helvetica, Arial, sans-serif" font-size="13">
+<title>Website · Layout B · Sidebar (laptop)</title>
+<rect x="0.5" y="0.5" width="639" height="419" fill="#fff" stroke="#444" rx="10"/>
+<text x="16" y="24" font-size="11" fill="#888">WIREFRAME · Website · Layout B · Sidebar (≥900px; collapses to Layout A on phones)</text>
+<rect x="16" y="40" width="180" height="364" fill="#f3f3f3" stroke="#555"/>
+<rect x="40" y="60" width="132" height="100" fill="#f3f3f3" stroke="#555"/><text x="106.0" y="113.85" text-anchor="middle" font-size="11" fill="#222">[ photo or initials ]</text>
+<text x="106" y="185" font-size="16" fill="#222" text-anchor="middle">[ Name ]</text>
+<text x="106" y="204" font-size="12" fill="#444" text-anchor="middle">Headline</text>
+<text x="106" y="220" font-size="11" fill="#666" text-anchor="middle">City</text>
+<rect x="32" y="236" width="148" height="26" fill="#f3f3f3" stroke="#555"/><text x="106.0" y="252.85" text-anchor="middle" font-size="11" fill="#222">LinkedIn</text>
+<rect x="32" y="268" width="148" height="26" fill="#f3f3f3" stroke="#555"/><text x="106.0" y="284.85" text-anchor="middle" font-size="11" fill="#222">Email</text>
+<rect x="32" y="300" width="148" height="26" fill="#f3f3f3" stroke="#555"/><text x="106.0" y="316.85" text-anchor="middle" font-size="11" fill="#222">Resume PDF</text>
+<text x="32" y="350" font-size="11" fill="#222" text-anchor="start">SKILLS</text>
+<rect x="32" y="356" width="60" height="18" fill="#f3f3f3" stroke="#555"/><text x="62.0" y="368.15" text-anchor="middle" font-size="9" fill="#222">chip</text>
+<rect x="96" y="356" width="60" height="18" fill="#f3f3f3" stroke="#555"/><text x="126.0" y="368.15" text-anchor="middle" font-size="9" fill="#222">chip</text>
+<rect x="32" y="378" width="60" height="18" fill="#f3f3f3" stroke="#555"/><text x="62.0" y="390.15" text-anchor="middle" font-size="9" fill="#222">chip</text>
+<rect x="96" y="378" width="60" height="18" fill="#f3f3f3" stroke="#555"/><text x="126.0" y="390.15" text-anchor="middle" font-size="9" fill="#222">chip</text>
+<rect x="212" y="40" width="412" height="30" fill="#f3f3f3" stroke="#555"/><text x="418.0" y="58.85" text-anchor="middle" font-size="11" fill="#222">About · Experience · Education · Projects · Contact</text>
+<text x="212" y="96" font-size="13" fill="#222" text-anchor="start">ABOUT</text>
+<rect x="212" y="104" width="400" height="8" fill="#ddd"/>
+<rect x="212" y="118" width="360" height="8" fill="#ddd"/>
+<rect x="212" y="132" width="380" height="8" fill="#ddd"/>
+<text x="212" y="166" font-size="13" fill="#222" text-anchor="start">EXPERIENCE</text>
+<rect x="212" y="174" width="412" height="44" fill="#f3f3f3" stroke="#555"/>
+<text x="220" y="190" font-size="11" fill="#222" text-anchor="start">Title · Employer · Dates</text>
+<rect x="220" y="198" width="340" height="8" fill="#ddd"/>
+<rect x="220" y="208" width="300" height="8" fill="#ddd"/>
+<rect x="212" y="226" width="412" height="44" fill="#f3f3f3" stroke="#555"/>
+<text x="220" y="242" font-size="11" fill="#222" text-anchor="start">Title · Employer · Dates</text>
+<rect x="220" y="250" width="340" height="8" fill="#ddd"/>
+<rect x="220" y="260" width="300" height="8" fill="#ddd"/>
+<rect x="212" y="278" width="412" height="44" fill="#f3f3f3" stroke="#555"/>
+<text x="220" y="294" font-size="11" fill="#222" text-anchor="start">Title · Employer · Dates</text>
+<rect x="220" y="302" width="340" height="8" fill="#ddd"/>
+<rect x="220" y="312" width="300" height="8" fill="#ddd"/>
+<text x="212" y="350" font-size="13" fill="#222" text-anchor="start">CONTACT</text>
+<rect x="212" y="358" width="412" height="30" fill="#f3f3f3" stroke="#555"/><text x="418.0" y="376.85" text-anchor="middle" font-size="11" fill="#222">[ Email me ]  ← add-on slot: contact form</text>
+<text x="418" y="408" font-size="10" fill="#888" text-anchor="middle">footer · © year</text>
+</svg>

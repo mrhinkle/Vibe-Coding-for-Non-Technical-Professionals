@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 640" width="360" height="640" font-family="Helvetica, Arial, sans-serif" font-size="13">
+<title>Game · Screen 3 · Battle</title>
+<rect x="0.5" y="0.5" width="359" height="639" fill="#fff" stroke="#444" rx="18"/>
+<text x="16" y="24" font-size="11" fill="#888">WIREFRAME · Game · Screen 3 · Battle · low fidelity, layout only</text>
+<rect x="16" y="40" width="200" height="36" fill="#f3f3f3" stroke="#555"/><text x="116.0" y="62.9" text-anchor="middle" font-size="14" fill="#222">Battle for square 5</text>
+<rect x="228" y="40" width="116" height="36" fill="#f3f3f3" stroke="#555"/><text x="286.0" y="62.2" text-anchor="middle" font-size="12" fill="#222">[ Restart game ]</text>
+<rect x="16" y="92" width="160" height="34" fill="#f3f3f3" stroke="#555"/><text x="96.0" y="113.9" text-anchor="middle" font-size="14" fill="#222">You: 2 of 2</text>
+<rect x="184" y="92" width="160" height="34" fill="#f3f3f3" stroke="#555"/><text x="264.0" y="113.9" text-anchor="middle" font-size="14" fill="#222">Opponent: 2 of 2</text>
+<text x="16" y="150" font-size="11" fill="#555" text-anchor="start">Health is text, not just icons or color.</text>
+<rect x="16" y="170" width="328" height="44" fill="#f3f3f3" stroke="#555"/><text x="180.0" y="197.25" text-anchor="middle" font-size="15" fill="#222">The opponent uses: ATTACK 1</text>
+<rect x="16" y="230" width="104" height="48" fill="#f3f3f3" stroke="#555"/><text x="68.0" y="258.2" text-anchor="middle" font-size="12" fill="#222">[ Counter 1 ]</text>
+<rect x="128" y="230" width="104" height="48" fill="#f3f3f3" stroke="#555"/><text x="180.0" y="258.2" text-anchor="middle" font-size="12" fill="#222">[ Counter 2 ]</text>
+<rect x="240" y="230" width="104" height="48" fill="#f3f3f3" stroke="#555"/><text x="292.0" y="258.2" text-anchor="middle" font-size="12" fill="#222">[ Counter 3 ]</text>
+<text x="16" y="300" font-size="11" fill="#555" text-anchor="start">After one click: buttons disable, result appears.</text>
+<rect x="16" y="312" width="328" height="34" fill="#f3f3f3" stroke="#555"/><text x="180.0" y="333.55" text-anchor="middle" font-size="13" fill="#222">Correct! Opponent loses 1 health.</text>
+<rect x="80" y="360" width="200" height="44" fill="#f3f3f3" stroke="#555"/><text x="180.0" y="386.9" text-anchor="middle" font-size="14" fill="#222">[ Next exchange ]</text>
+<text x="16" y="420" font-size="11" fill="#555" text-anchor="start">Next exchange shows only while both still have health.</text>
+<text x="16" y="470" font-size="12" fill="#888" text-anchor="start">When the battle is over:</text>
+<rect x="16" y="480" width="328" height="34" fill="#f3f3f3" stroke="#555"/><text x="180.0" y="501.55" text-anchor="middle" font-size="13" fill="#222">You won the battle. Square 5 is yours.</text>
+<rect x="80" y="530" width="200" height="44" fill="#f3f3f3" stroke="#555"/><text x="180.0" y="556.9" text-anchor="middle" font-size="14" fill="#222">[ Return to board ]</text>
+<text x="180" y="600" font-size="11" fill="#888" text-anchor="middle">one battle resolves exactly one square</text>
+</svg>

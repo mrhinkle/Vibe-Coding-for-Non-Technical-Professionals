@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Alien Tic-Tac-Toe, checkpoint 1: the board only. Two test buttons stand in for the battle.">
+<title>Alien Tic-Tac-Toe: board checkpoint</title>
+<style>
+/* CUSTOMIZE: colors live here. Keep text readable against the background. */
+:root {
+  --bg: #0b1020;        /* page background */
+  --panel: #161d33;     /* boxes and cells */
+  --text: #f4f6ff;      /* main text */
+  --accent: #7dd3fc;    /* borders, pending cell, headings */
+  --button-bg: #ffffff; /* buttons are always light with dark text */
+  --button-text: #111111;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; font: 18px/1.5 Arial, sans-serif; color: var(--text); background: var(--bg); }
+button { font: inherit; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.skip { position: absolute; left: 16px; top: -100px; z-index: 20; background: #fff; color: #111; padding: 12px; }
+.skip:focus { top: 12px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+/* Visually hidden text for screen readers. */
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+main { max-width: 480px; margin: 0 auto; padding: 16px; }
+h1 { font-size: 28px; line-height: 1.2; margin: 8px 0 4px; color: var(--accent); }
+.note { margin: 0 0 12px; font-size: 16px; opacity: 0.9; }
+
+/* Status line: always tells the player what is happening. */
+.status { background: var(--panel); border: 2px solid var(--accent); border-radius: 8px; padding: 12px; margin: 12px 0; min-height: 52px; }
+
+/* The 3 by 3 board. It must fit a 375px wide phone. */
+.board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; max-width: 360px; margin: 0 auto; }
+.cell {
+  aspect-ratio: 1 / 1; min-height: 44px; border: 2px solid var(--accent); border-radius: 8px;
+  background: var(--panel); color: var(--text); font-size: clamp(32px, 10vw, 48px); font-weight: bold;
+  display: flex; align-items: center; justify-content: center; flex-direction: column; cursor: pointer;
+}
+.cell:disabled { cursor: default; opacity: 0.85; }
+.cell.pending { border-style: dashed; font-size: 16px; font-weight: normal; }
+.cell.winner { background: var(--accent); color: #111; }
+.cell small { font-size: 12px; font-weight: normal; }
+
+/* Action buttons: at least 44px tall. */
+.actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 16px 0; }
+.action { min-height: 44px; padding: 10px 18px; border: 2px solid var(--button-text); border-radius: 8px; background: var(--button-bg); color: var(--button-text); cursor: pointer; }
+.test-box { border: 2px dashed #fbbf24; border-radius: 8px; padding: 10px; margin: 12px 0; }
+.test-box p { margin: 0 0 8px; font-size: 16px; }
+[hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<main id="main">
+  <h1>Alien Tic-Tac-Toe</h1>
+  <p class="note">Checkpoint 1: the board only. Choose an empty square. The two yellow test buttons stand in for the battle.</p>
+
+  <!-- The status line is read aloud by screen readers when it changes. -->
+  <p class="status" id="status" role="status" aria-live="polite" tabindex="-1"></p>
+
+  <!-- The 9 cells are filled in by the script. -->
+  <div class="board" id="board" role="group" aria-label="Tic-tac-toe board"></div>
+
+  <!-- TEST CONTROLS: these stand in for the battle. They are removed in checkpoint 3. -->
+  <div class="test-box" id="test-box" hidden>
+    <p>Test controls (they replace the battle for now):</p>
+    <div class="actions">
+      <button class="action" id="award-x" type="button">Award to me (X)</button>
+      <button class="action" id="award-o" type="button">Award to alien (O)</button>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="action" id="play-again" type="button" hidden>Play again</button>
+    <button class="action" id="restart" type="button">Restart game (clears the whole board)</button>
+  </div>
+</main>
+
+<script>
+// ---------- Rules that never change ----------
+// Cells are numbered 1 to 9, left to right, top to bottom.
+// The script uses 0 to 8 inside, so cell 1 is index 0.
+var LINES = [
+  [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows 1-2-3, 4-5-6, 7-8-9
+  [0, 3, 6], [1, 4, 7], [2, 5, 8], // columns 1-4-7, 2-5-8, 3-6-9
+  [0, 4, 8], [2, 4, 6]             // diagonals 1-5-9, 3-5-7
+];
+
+// ---------- The game state ----------
+// phase is one of: "choose" (pick a cell), "pending" (a cell is waiting for its battle),
+// "finished" (someone won, or it is a draw).
+var state = {
+  board: ["", "", "", "", "", "", "", "", ""], // each cell is "", "X", or "O"
+  pendingCell: null,  // index of the cell waiting for a battle, or null
+  phase: "choose",
+  result: "",         // "", "win", "lose", or "draw"
+  winningLine: null   // the three indexes that made a line, or null
+};
+
+// ---------- Actions (each one changes the state, then redraws) ----------
+
+// State "choose": the player picks an empty cell. The board then locks.
+function chooseCell(index) {
+  if (state.phase !== "choose") return;      // board is locked
+  if (state.board[index] !== "") return;     // occupied cells are ignored
+  state.pendingCell = index;
+  state.phase = "pending";
+  render();
+  focusStatus();
+}
+
+// State "pending": the pending cell gets a mark exactly once, then the board is checked.
+function resolvePendingCell(mark) {
+  if (state.phase !== "pending") return;     // nothing is pending, so nothing happens
+  state.board[state.pendingCell] = mark;
+  state.pendingCell = null;
+  evaluateBoard();
+  render();
+  focusStatus();
+}
+
+// Check all 8 lines, then check for a full board.
+function evaluateBoard() {
+  for (var i = 0; i < LINES.length; i++) {
+    var a = LINES[i][0], b = LINES[i][1], c = LINES[i][2];
+    if (state.board[a] !== "" && state.board[a] === state.board[b] && state.board[a] === state.board[c]) {
+      state.winningLine = LINES[i];
+      state.result = state.board[a] === "X" ? "win" : "lose";
+      state.phase = "finished";
+      return;
+    }
+  }
+  var isFull = state.board.indexOf("") === -1;
+  if (isFull) {
+    state.result = "draw";
+    state.phase = "finished";
+    return;
+  }
+  state.phase = "choose"; // the board continues
+}
+
+// State "finished": Play again gives a fresh empty board.
+function playAgain() {
+  resetBoard();
+}
+
+// Any state: Restart game clears everything right away.
+function restartGame() {
+  resetBoard();
+}
+
+function resetBoard() {
+  state.board = ["", "", "", "", "", "", "", "", ""];
+  state.pendingCell = null;
+  state.phase = "choose";
+  state.result = "";
+  state.winningLine = null;
+  render();
+  focusStatus();
+}
+
+// After every action, focus moves to the status message, not to a button.
+// A repeated Enter or Space then does nothing; one Tab reaches the next button.
+function focusStatus() {
+  document.getElementById("status").focus();
+}
+
+// ---------- Drawing ----------
+// render() redraws the whole screen from the state. It never changes the rules.
+function render() {
+  var boardElement = document.getElementById("board");
+  boardElement.innerHTML = "";
+
+  for (var i = 0; i < 9; i++) {
+    var button = document.createElement("button");
+    button.type = "button";
+    button.id = "cell-" + i;
+    button.className = "cell";
+    button.setAttribute("data-cell", String(i + 1));
+    var row = Math.floor(i / 3) + 1;
+    var column = (i % 3) + 1;
+    var mark = state.board[i];
+    var label = "Row " + row + ", column " + column + ", ";
+
+    if (state.pendingCell === i) {
+      button.classList.add("pending");
+      button.textContent = "pending";
+      label += "pending battle";
+    } else if (mark !== "") {
+      button.textContent = mark;
+      label += mark;
+    } else {
+      label += "empty";
+    }
+    if (state.winningLine && state.winningLine.indexOf(i) !== -1) {
+      button.classList.add("winner");
+      label += ", part of the winning line";
+    }
+    button.setAttribute("aria-label", label);
+
+    // Cells can only be used while choosing, and only if empty.
+    button.disabled = !(state.phase === "choose" && mark === "");
+    button.addEventListener("click", makeCellHandler(i));
+    boardElement.appendChild(button);
+  }
+
+  // Show or hide the controls for the current phase.
+  document.getElementById("test-box").hidden = state.phase !== "pending";
+  document.getElementById("play-again").hidden = state.phase !== "finished";
+  document.getElementById("restart").hidden = state.phase === "finished";
+
+  document.getElementById("status").textContent = statusText();
+}
+
+function makeCellHandler(index) {
+  return function () { chooseCell(index); };
+}
+
+// One sentence that describes the current state.
+function statusText() {
+  if (state.phase === "choose") return "Choose an empty square.";
+  if (state.phase === "pending") return "Cell " + (state.pendingCell + 1) + " is waiting for its battle. Use a test button to award it.";
+  if (state.result === "win") return "You won! Three X in a row.";
+  if (state.result === "lose") return "The aliens won. Three O in a row.";
+  return "Draw. The board is full with no line.";
+}
+
+// ---------- Wire up the buttons once ----------
+document.getElementById("award-x").addEventListener("click", function () { resolvePendingCell("X"); });
+document.getElementById("award-o").addEventListener("click", function () { resolvePendingCell("O"); });
+document.getElementById("play-again").addEventListener("click", playAgain);
+document.getElementById("restart").addEventListener("click", restartGame);
+render();
+</script>
+</body>
+</html>
