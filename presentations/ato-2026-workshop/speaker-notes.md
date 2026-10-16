@@ -82,7 +82,7 @@ Each note: the clock window from instructor/ato-2026-run-of-show.md, what to say
 
 ## 20 / 85 · Block 1: four words you will hear all day
 
-9:18–9:19. Four words. Repository: the project folder and its whole history. Commit: a named checkpoint, like “Added my About section.” Branch: a separate line of changes you can try without touching the live one. Pull request: a proposed change for review, with a preview, before it goes live. Now I show one small heading change on the projector and the difference from the earlier version. That’s the whole mechanism. Everything else today is this, repeated. Watch for: eyes glazing at vocabulary. The projector demo is the fix; don’t skip it. Gate: everyone can say what GitHub is for and what Vercel is for.
+9:18–9:19. Four words. Repository: the project folder and its whole history. Commit: a named checkpoint, like “Added my About section.” Branch: a separate line of changes you can try without touching the live one. Pull request: a proposed change for review, with a preview, before it goes live. Now I show one small heading change on the projector and the difference from the earlier version. That’s the whole mechanism. Everything else today is this, repeated. Watch for: eyes glazing at vocabulary. The projector demo is the fix; don’t skip it. Gate: everyone can say what a commit and a pull request are, one sentence each.
 
 ## 21 / 85 · Block 1: where do these four go?
 
@@ -90,7 +90,7 @@ Each note: the clock window from instructor/ato-2026-run-of-show.md, what to say
 
 ## 22 / 85 · Block 1: is it finished?
 
-9:19–9:20. Then the question: a beautiful game with incorrect scoring, is it finished? No. Working beats pretty, every time today. I’ve shipped pretty things that didn’t work, and I’d rather not do it again in front of you. Close the block with the sentence on the slide, out loud, and we go look at the map of tools. Watch for: someone arguing for pretty. Pretty is this afternoon at 3:00; working comes first. Gate: everyone can place “test the restart” and “publish a checked version” on the loop.
+9:19–9:20. Then the question: a beautiful game with incorrect scoring, is it finished? No. Working beats pretty, every time today. I’ve shipped pretty things that didn’t work, and I’d rather not do it again in front of you. Close the block with the sentence on the slide, out loud, and we go look at the map of tools. Watch for: someone arguing for pretty. Pretty is this afternoon at 3:00; working comes first. Gate: the room says no, out loud, to the scoring question.
 
 ## 23 / 85 · The map of tools: where your code lives afterward
 
@@ -102,7 +102,7 @@ Each note: the clock window from instructor/ato-2026-run-of-show.md, what to say
 
 ## 25 / 85 · Setup: your three accounts, one loop
 
-9:30–9:32. Three accounts, and they chain together. GitHub keeps every version of every file, in your name. v0 writes the code: you describe, it generates a working app, and it comes with a free Vercel account, so sign in with GitHub and you’ve got it. Vercel ships: every push to GitHub becomes a live URL. The arrow runs left to right and loops back: v0 pushes to GitHub, GitHub triggers Vercel, you look at the URL and describe the next change. Most of you made these accounts in the prework; the next slides confirm each one works. Watch for: people with a Vercel account under a different email than GitHub. Sign in to Vercel with GitHub so the two are linked. Gate: everyone can point at the three tabs in their browser.
+9:30–9:32. Three accounts, and they chain together. GitHub keeps every version of every file, in your name. v0 writes the code: you describe, it generates a working app. It’s a Vercel product, so one GitHub sign-in covers both. Vercel ships: every push to GitHub becomes a live URL. The arrow runs left to right and loops back: v0 pushes to GitHub, GitHub triggers Vercel, you look at the URL and describe the next change. Most of you made these accounts in the prework; the next slides confirm each one works. Watch for: people with a Vercel account under a different email than GitHub. Sign in to Vercel with GitHub so the two are linked. Gate: everyone can point at the three tabs in their browser.
 
 ## 26 / 85 · Setup: GitHub repository
 
@@ -126,7 +126,7 @@ Each note: the clock window from instructor/ato-2026-run-of-show.md, what to say
 
 ## 31 / 85 · Setup: Vercel and v0
 
-9:43–9:48. Vercel hosts; v0 comes with it. Sign in to Vercel with GitHub so it can see your repository. Authorize the GitHub integration for my-first-site. Open v0.app, sign in with the same account; it’s included with the free plan. Then stop: don’t import, deploy, or generate anything yet. Hobby is for noncommercial personal use; a site about you is fine, a business site needs a paid plan. Watch for: Vercel asking for a team name or a plan. Personal account, Hobby, no card. v0 showing a different account than Vercel: sign out and back in with GitHub. If v0 stops generating on the free plan, that pair switches to the portable route for this project. Helpers know the pattern. Gate: signed in to Vercel and v0 with the same GitHub account; my-first-site visible in the import list; nothing deployed.
+9:43–9:48. Vercel hosts; v0 builds. Sign in to Vercel with GitHub so it can see your repository. Authorize the GitHub integration for my-first-site. Open v0.app, sign in with the same account; it has its own free tier. Then stop: don’t import, deploy, or generate anything yet. Hobby is for noncommercial personal use; a site about you is fine, a business site needs a paid plan. Watch for: Vercel asking for a team name or a plan. Personal account, Hobby, no card. v0 showing a different account than Vercel: sign out and back in with GitHub. If v0 stops generating on the free plan, that pair switches to the portable route for this project. Helpers know the pattern. Gate: signed in to Vercel and v0 with the same GitHub account; my-first-site visible in the import list; nothing deployed.
 
 ## 32 / 85 · Setup: two ways to build today
 
@@ -154,7 +154,7 @@ Each note: the clock window from instructor/ato-2026-run-of-show.md, what to say
 
 ## 38 / 85 · Step 3: turn the export into site content
 
-10:18–10:38. Twenty minutes. Open the vc-project-brief skill, attach your resume PDF or the typed template, attach resume-template.md for the shape, and type the prompt exactly. It fills the template; it doesn’t build the site yet. Then you read every line. Think of the chatbot as a new hire on day one: smart, fast, and it has never met you. You’d read everything they wrote about you before it went out. Fix dates. Fix titles. Cut anything that sounds like a press release. This is the one step today where you’re the expert and the chatbot is not. Watch for: invented jobs and dates. Stuck.md row five: “Use only facts from my resume. Leave blanks blank. Do not invent.” Gate: a completed resume-template.md with no placeholders and nothing you would not say to a stranger.
+10:18–10:38. Twenty minutes. A skill is a text file of instructions you paste in before the prompt; we name it at 11:45. For now, open skills/vc-project-brief/SKILL.md, paste it in, attach your resume PDF and resume-template.md, then type the prompt exactly. It fills the template; no site yet. Typed the template yourself at step 1? This step is done. Read it once with the slide 37 list in hand and move to step 4. Everyone else reads every line. The chatbot is a new hire: smart, fast, and it has never met you. Fix dates. Fix titles. Cut anything that sounds like a press release. Watch for: invented jobs and dates. Stuck.md row five: “Use only facts from my resume. Leave blanks blank. Do not invent.” Gate: a filled resume-template.md, no placeholders, nothing you wouldn’t say to a stranger.
 
 ## 39 / 85 · Step 4: build the first version
 
@@ -194,7 +194,7 @@ Each note: the clock window from instructor/ato-2026-run-of-show.md, what to say
 
 ## 48 / 85 · Step 6: save to GitHub
 
-11:20–11:30. Ten minutes and deliverable one. v0 route: click Deploy, accept v0’s offer to connect the project to GitHub, pick my-first-site, and you’re done with this slide. Portable route: follow the setup guide, don’t improvise. Open my-first-site. Add file, Upload files. Choose index.html itself, not a ZIP, not a folder. Commit message like “First version of my site,” commit to main. Refresh and make sure index.html sits at the top level, lowercase. That’s the save. Watch for: a ZIP or a folder uploaded instead of the file. index.html itself, at the top level. Gate: a live *.vercel.app address open on someone else’s phone, recorded in project-state.md.
+11:20–11:30. Ten minutes and deliverable one. v0 route: click Deploy, accept v0’s offer to connect the project to GitHub, pick my-first-site, and you’re done with this slide. Portable route: follow the setup guide, don’t improvise. Open my-first-site. Add file, Upload files. Choose index.html itself, not a ZIP, not a folder. Commit message like “First version of my site,” commit to main. Refresh and make sure index.html sits at the top level, lowercase. That’s the save. Watch for: a ZIP or a folder uploaded instead of the file. index.html itself, at the top level. Gate: my-first-site shows the save after a refresh: index.html at the top level, lowercase, or v0’s first push.
 
 ## 49 / 85 · Step 6: publish on Vercel
 
@@ -202,7 +202,7 @@ Each note: the clock window from instructor/ato-2026-run-of-show.md, what to say
 
 ## 50 / 85 · Reading what the agent wrote 1: a commit and a diff
 
-11:30–11:35. Your site’s live and GitHub holds at least one commit. Open it on the projector. A commit is a named checkpoint; a diff is what changed between two checkpoints. Green added, red removed. Read it in this order: the message first, does it say what you asked for; the file names second, did it touch only the files you expected; the lines last, and only the red ones closely, because deletions are where the surprises hide. You don’t need to understand every line. You need to notice when the shape of the change doesn’t match the size of your request. Watch for: developers skimming. Ask one of them to read a diff aloud to everyone. Gate: everyone has opened one commit in their own repository and found the green and red.
+11:30–11:35. You opened a diff this morning. Now we read one like a reviewer, because this afternoon the agent hands you one. Green added, red removed. Read it in this order: the message first, does it say what you asked for; the file names second, did it touch only the files you expected; the lines last, and only the red ones closely, because deletions are where the surprises hide. You don’t need to understand every line. You need to notice when the shape of the change doesn’t match the size of your request. Watch for: developers skimming. Ask one of them to read a diff aloud to everyone. Gate: everyone has opened one commit in their own repository and found the green and red.
 
 ## 51 / 85 · Reading what the agent wrote 2: the pull request
 
@@ -278,11 +278,11 @@ Each note: the clock window from instructor/ato-2026-run-of-show.md, what to say
 
 ## 69 / 85 · Build increment 1: the board
 
-13:40–14:00. First increment. Board only. Two buttons, Award to me and Award to opponent, stand in for the battle so you can test the board on its own. One index.html, inline CSS and JavaScript, no external files. Open it. Click three of your marks in a row: it says you won. Three of theirs: you lost. Fill the board with no line: Draw. Play again and Restart both work. Compare with checkpoint 1. If yours doesn’t detect wins by 2:00, download checkpoint 1 and keep going. Watch for: the diagonal lines not detected. “Detect the eight lines” is in the prompt; test 1-5-9 and 3-5-7 specifically. Gate: win, lose, and draw each observed once, with Restart in between.
+13:40–14:00. First increment. Board only. Two buttons, Award to me and Award to opponent, stand in for the battle so you can test the board on its own. One index.html, inline CSS and JavaScript, no external files. “Visually hidden” means a label only a screen reader hears, so a board made of emoji still reads as X and O. Open it. Click three of your marks in a row: it says you won. Three of theirs: you lost. Fill the board with no line: Draw. Play again and Restart both work. Compare with checkpoint 1. If yours doesn’t detect wins by 2:00, download checkpoint 1 and keep going. Watch for: the diagonal lines not detected. “Detect the eight lines” is in the prompt; test 1-5-9 and 3-5-7 specifically. Gate: win, lose, and draw each observed once, with Restart in between.
 
 ## 70 / 85 · Build increment 2: the battle
 
-14:00–14:15. Second increment, its own file, and the pull request exercise. Do it on a branch. v0: a new generation, push it, accept GitHub’s offer to open a pull request. Portable: branch dropdown, type battle, create it, upload the file to that branch, “Compare & pull request.” Health is text, two each. Attacks cycle in your order. One answer per exchange. Ends at zero. Test: two correct answers end it in two exchanges. Read the diff: message, files, lines. Merge. At 2:15, if I call cut two, everyone continues from checkpoint 2. Watch for: health not changing on a correct answer. The exact help sentence from stuck.md: “I click Shield when it shows Laser and the alien’s health does not change.” Gate: two correct answers end the battle in two exchanges with no Next exchange button after the win.
+14:00–14:15. Second increment, its own file, on a branch, and the pull request exercise. Portable: branch dropdown, type battle, create it, upload the file to that branch, “Compare & pull request.” v0: a new generation, push it, accept GitHub’s offer to open a pull request. If your v0 pushed straight to main, make the branch and the pull request on GitHub yourself, the portable steps. The review is the lesson, not which button made the branch. Read the diff: message, files, lines. Merge. At 2:15, if I call cut two, everyone continues from checkpoint 2. Watch for: health not changing on a correct answer. Use the exact stuck.md sentence: what you clicked, what it showed, what didn’t change. Gate: two correct answers end the battle in two exchanges with no Next exchange button after the win.
 
 ## 71 / 85 · Stuck? Grab a checkpoint
 
@@ -330,11 +330,11 @@ Each note: the clock window from instructor/ato-2026-run-of-show.md, what to say
 
 ## 82 / 85 · LinkedIn close: the optional post and endorsement
 
-17:23–17:26. Optional, and it doesn’t affect anything about today. Add Vibe Coding to your LinkedIn skills if the label exists; if not, ask me which accurate label to use. Connect with me; I’ll give you the exact profile, don’t guess it. Publish a post in your own words about something you built, learned, or worked through; honest beats flattering. Send me the profile URL, the post URL, and the exact skill name through the class contact channel and I endorse it personally. It’s recognition of a skill you practiced today, not a certification. The chatbot prompt on the slide drafts it; you decide whether to post. Watch for: posts that claim more than was built. Describe what you actually completed. Gate: none; optional.
+17:23–17:26. Optional, and it doesn’t affect anything about today. Add Vibe Coding to your LinkedIn skills if the label exists; if not, ask me which accurate label to use. Connect with me; I’ll give you the exact profile, don’t guess it. Publish a post in your own words about something you built, learned, or worked through; honest beats flattering. Email the profile URL, the post URL, and the exact skill name to mrhinkle@allthingsai.org, subject “Endorsement,” and I endorse it personally. It’s recognition of a skill you practiced today, not a certification. The chatbot prompt on the slide drafts it; you decide whether to post. Watch for: posts that claim more than was built. Describe what you actually completed. Gate: none; optional.
 
 ## 83 / 85 · Two offers: the slides and the book
 
-17:26–17:28. Two offers, open to everyone. First, everyone gets the slides and all the course materials. They’re in the repo on the screen, github.com/mrhinkle/Vibe-Coding-for-Non-Technical-Professionals; the PDF and the PPTX sit in presentations/ato-2026-workshop. The link is also on the hold slide and the thank-you slide. Second, reviewers get the book. Tell me what worked and what didn’t and I send you the preview release edition of Software Development for Non-Programmers: Beyond Vibecoding. Good or bad, specific or short, it all counts, and the critical stuff helps me most; tell me what to cut. Email mrhinkle@allthingsai.org, subject “ATO workshop feedback,” or hand me the printed sheet before you leave. I read every one myself. Watch for: people writing only nice things. Ask for the one thing to cut. Gate: everyone knows the email address and the subject line.
+17:26–17:28. Two offers, open to everyone. First, everyone gets the slides and all the course materials. They’re in the repo on the screen, github.com/mrhinkle/Vibe-Coding-for-Non-Technical-Professionals; the PDF and the PPTX sit in presentations/ato-2026-workshop. The link is also on the hold slide and the thank-you slide. Second, reviewers get the book. Tell me what worked and what didn’t and I send you the preview release edition of Software Development for Non-Programmers: Beyond Vibecoding. Good or bad, specific or short, it all counts, and the critical stuff helps me most; tell me what to cut. Email mrhinkle@allthingsai.org, subject “ATO workshop feedback,” or hand me the printed sheet before you leave. I read every one myself. Watch for: people writing only nice things. Ask for the one thing to cut. Gate: everyone has scanned the link or photographed this slide.
 
 ## 84 / 85 · See you in the spring: All Things AI
 

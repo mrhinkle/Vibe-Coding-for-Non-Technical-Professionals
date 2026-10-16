@@ -170,6 +170,8 @@ s.addImage({ path:ASSETS+'logo-h-white.png', x:M, y:0.5, w:3.2, h:0.41 });
 text(s, 'ALL THINGS OPEN 2026 · EXTENDED WORKSHOP\nATLANTIC UNION BANK CONVENTION CENTER (FORMERLY THE RALEIGH CONVENTION CENTER)', M, 1.02, CW, 0.5, { mono:true, size:11, bold:true, color:ORANGE, cs:1.5 });
 s.addText('AI Agents & Vibe Coding', { x:M, y:1.5, w:10, h:1.2, fontFace:SANS, fontSize:54, bold:true, color:WHITE, margin:0, isTextBox:true });
 s.addText('Doors 7:30  ·  We start at 9:00', { x:M, y:2.7, w:8, h:0.6, fontFace:MONO, fontSize:20, color:ORANGE, margin:0, isTextBox:true });
+s.addImage({ path:ASSETS+'qr-repo.png', x:W-M-1.7, y:0.5, w:1.7, h:1.7 }); // the repo, scannable for the 90 minutes this slide is up
+text(s, 'Scan for the slides', W-M-1.9, 2.25, 1.9, 0.3, { mono:true, size:11, color:'D6DEEA', align:'center' });
 label(s, 'Three things to do right now', M, 3.7, 6);
 numbered(s, ['Open github.com and make sure you’re signed in.','Open vercel.com and sign in with GitHub.','Open prep/laptop-check.html from the course folder. Green check means you’re ready.'], { y:4.1, w:7.3, h:1.9, size:17, color:WHITE, gap:8 });
 label(s, 'Wi-Fi', 8.9, 3.7, 3.5, { color:BLUE });
@@ -347,7 +349,7 @@ here(s, 'SAVE');
 
 // 20 Four words
 s = slide({ name:'Block 1: four words you will hear all day',
-  notes: NOTE('9:18–9:19', 'Four words. Repository: the project folder and its whole history. Commit: a named checkpoint, like “Added my About section.” Branch: a separate line of changes you can try without touching the live one. Pull request: a proposed change for review, with a preview, before it goes live. Now I show one small heading change on the projector and the difference from the earlier version. That’s the whole mechanism. Everything else today is this, repeated.', 'eyes glazing at vocabulary. The projector demo is the fix; don’t skip it.', 'everyone can say what GitHub is for and what Vercel is for.') });
+  notes: NOTE('9:18–9:19', 'Four words. Repository: the project folder and its whole history. Commit: a named checkpoint, like “Added my About section.” Branch: a separate line of changes you can try without touching the live one. Pull request: a proposed change for review, with a preview, before it goes live. Now I show one small heading change on the projector and the difference from the earlier version. That’s the whole mechanism. Everything else today is this, repeated.', 'eyes glazing at vocabulary. The projector demo is the fix; don’t skip it.', 'everyone can say what a commit and a pull request are, one sentence each.') });
 B1(s);
 title(s, 'Four words you’ll hear all day.');
 defs(s, [['Repository','The project folder and its whole history.'],['Commit','A named checkpoint. “Added my About section.”'],['Branch','A separate line of changes that never touches the live one.'],['Pull request','A proposed change for review, with a preview, before it goes live.']], { tw:3.4, pitch:0.85, mono:true, tcolor:ORANGE, tsize:18 });
@@ -364,7 +366,7 @@ loopHero(s, null, { y:4.35, h:0.9 });
 
 // 22 Is it finished?
 s = slide({ name:'Block 1: is it finished?',
-  notes: NOTE('9:19–9:20', 'Then the question: a beautiful game with incorrect scoring, is it finished? No. Working beats pretty, every time today. I’ve shipped pretty things that didn’t work, and I’d rather not do it again in front of you. Close the block with the sentence on the slide, out loud, and we go look at the map of tools.', 'someone arguing for pretty. Pretty is this afternoon at 3:00; working comes first.', 'everyone can place “test the restart” and “publish a checked version” on the loop.') });
+  notes: NOTE('9:19–9:20', 'Then the question: a beautiful game with incorrect scoring, is it finished? No. Working beats pretty, every time today. I’ve shipped pretty things that didn’t work, and I’d rather not do it again in front of you. Close the block with the sentence on the slide, out loud, and we go look at the map of tools.', 'someone arguing for pretty. Pretty is this afternoon at 3:00; working comes first.', 'the room says no, out loud, to the scoring question.') });
 B1(s);
 title(s, 'Is a beautiful game with wrong scoring finished?');
 label(s, 'The sentence for the day', M, 2.6, CW);
@@ -404,7 +406,7 @@ defs(s, [['July 18, 2025','Replit’s agent deleted a production database during
 const B2 = (s, time) => kicker(s, 'Block 2 · Setup', time||'9:30 – 9:55');
 // 25 Three accounts, one loop: three nodes, labeled arrows, and the return
 s = slide({ name:'Setup: your three accounts, one loop',
-  notes: NOTE('9:30–9:32', 'Three accounts, and they chain together. GitHub keeps every version of every file, in your name. v0 writes the code: you describe, it generates a working app, and it comes with a free Vercel account, so sign in with GitHub and you’ve got it. Vercel ships: every push to GitHub becomes a live URL. The arrow runs left to right and loops back: v0 pushes to GitHub, GitHub triggers Vercel, you look at the URL and describe the next change. Most of you made these accounts in the prework; the next slides confirm each one works.', 'people with a Vercel account under a different email than GitHub. Sign in to Vercel with GitHub so the two are linked.', 'everyone can point at the three tabs in their browser.') });
+  notes: NOTE('9:30–9:32', 'Three accounts, and they chain together. GitHub keeps every version of every file, in your name. v0 writes the code: you describe, it generates a working app. It’s a Vercel product, so one GitHub sign-in covers both. Vercel ships: every push to GitHub becomes a live URL. The arrow runs left to right and loops back: v0 pushes to GitHub, GitHub triggers Vercel, you look at the URL and describe the next change. Most of you made these accounts in the prework; the next slides confirm each one works.', 'people with a Vercel account under a different email than GitHub. Sign in to Vercel with GitHub so the two are linked.', 'everyone can point at the three tabs in their browser.') });
 B2(s);
 title(s, 'Three accounts, one loop.');
 lede(s, 'v0 writes, GitHub remembers, Vercel ships. Nothing is installed on your laptop.');
@@ -477,7 +479,7 @@ promptCard(s, 'I have the Resend API key on my clipboard. Give me the one comman
 
 // 31 Vercel + v0
 s = slide({ name:'Setup: Vercel and v0',
-  notes: NOTE('9:43–9:48', 'Vercel hosts; v0 comes with it. Sign in to Vercel with GitHub so it can see your repository. Authorize the GitHub integration for my-first-site. Open v0.app, sign in with the same account; it’s included with the free plan. Then stop: don’t import, deploy, or generate anything yet. Hobby is for noncommercial personal use; a site about you is fine, a business site needs a paid plan.', 'Vercel asking for a team name or a plan. Personal account, Hobby, no card. v0 showing a different account than Vercel: sign out and back in with GitHub. If v0 stops generating on the free plan, that pair switches to the portable route for this project. Helpers know the pattern.', 'signed in to Vercel and v0 with the same GitHub account; my-first-site visible in the import list; nothing deployed.') });
+  notes: NOTE('9:43–9:48', 'Vercel hosts; v0 builds. Sign in to Vercel with GitHub so it can see your repository. Authorize the GitHub integration for my-first-site. Open v0.app, sign in with the same account; it has its own free tier. Then stop: don’t import, deploy, or generate anything yet. Hobby is for noncommercial personal use; a site about you is fine, a business site needs a paid plan.', 'Vercel asking for a team name or a plan. Personal account, Hobby, no card. v0 showing a different account than Vercel: sign out and back in with GitHub. If v0 stops generating on the free plan, that pair switches to the portable route for this project. Helpers know the pattern.', 'signed in to Vercel and v0 with the same GitHub account; my-first-site visible in the import list; nothing deployed.') });
 B2(s);
 title(s, 'Vercel and v0: sign in with GitHub, then stop.');
 lede(s, 'Done when: Vercel and v0 both show your GitHub account, my-first-site is in the import list, nothing is deployed.');
@@ -556,7 +558,7 @@ here(s, 'DESCRIBE');
 
 // 38 Step 3: content prompt
 s = slide({ name:'Step 3: turn the export into site content',
-  notes: NOTE('10:18–10:38', 'Twenty minutes. Open the vc-project-brief skill, attach your resume PDF or the typed template, attach resume-template.md for the shape, and type the prompt exactly. It fills the template; it doesn’t build the site yet. Then you read every line. Think of the chatbot as a new hire on day one: smart, fast, and it has never met you. You’d read everything they wrote about you before it went out. Fix dates. Fix titles. Cut anything that sounds like a press release. This is the one step today where you’re the expert and the chatbot is not.', 'invented jobs and dates. Stuck.md row five: “Use only facts from my resume. Leave blanks blank. Do not invent.”', 'a completed resume-template.md with no placeholders and nothing you would not say to a stranger.') });
+  notes: NOTE('10:18–10:38', 'Twenty minutes. A skill is a text file of instructions you paste in before the prompt; we name it at 11:45. For now, open skills/vc-project-brief/SKILL.md, paste it in, attach your resume PDF and resume-template.md, then type the prompt exactly. It fills the template; no site yet. Typed the template yourself at step 1? This step is done. Read it once with the slide 37 list in hand and move to step 4. Everyone else reads every line. The chatbot is a new hire: smart, fast, and it has never met you. Fix dates. Fix titles. Cut anything that sounds like a press release.', 'invented jobs and dates. Stuck.md row five: “Use only facts from my resume. Leave blanks blank. Do not invent.”', 'a filled resume-template.md, no placeholders, nothing you wouldn’t say to a stranger.') });
 P1(s, 3, 'Content', '10:18 – 10:38');
 title(s, 'Turn your export into site content.');
 lede(s, 'Done when: resume-template.md is filled, with no placeholders and nothing you wouldn’t say to a stranger.');
@@ -568,7 +570,7 @@ stickies(s); here(s, 'DESCRIBE');
 // 39 Step 4: build prompt
 s = slide({ name:'Step 4: build the first version',
   notes: NOTE('10:38–10:45, continues at 11:00', 'Now the build. Use vc-build-small. Attach the example index.html and your completed template. Type the prompt exactly. The point of “keep every id, every CUSTOMIZE comment, every ADD-ON SLOT comment” is that the file stays compatible with the themes, the print stylesheet, and the afternoon features. Open the result by double-clicking it. Send it to your phone if you can. We break at 10:45; if your file isn’t open yet, that’s the first thing after the break.', 'a fragment instead of a whole file. Stuck.md row one: “Return the complete index.html file, every line, nothing omitted.”', 'your name in the browser tab, three roles visible, every link goes where it should, and nothing says “Jordan.”') });
-P1(s, 4, 'Build', '10:38 – 10:45 · 11:00');
+P1(s, 4, 'Build · Portable route', '10:38 – 10:45 · 11:00');
 title(s, 'One prompt, one complete file back.');
 lede(s, 'Done when: your name is in the tab, three roles are visible, every link works, and nothing says “Jordan.”');
 promptCard(s, 'Using the attached index.html as the exact structure and style, replace all of Jordan Rivera\'s content with mine from resume-template.md. Keep every id, every CUSTOMIZE comment, every ADD-ON SLOT comment, the theme and layout system, and the print stylesheet. Delete the Projects section if my template has nothing for it. Return the complete file.', M, 2.3, CW, 2.1, { label:'ATTACH THE EXAMPLE index.html + YOUR resume-template.md · VERBATIM' });
@@ -670,7 +672,7 @@ stickies(s); here(s, 'CHECK');
 
 // 48 Step 6: save to GitHub
 s = slide({ name:'Step 6: save to GitHub',
-  notes: NOTE('11:20–11:30', 'Ten minutes and deliverable one. v0 route: click Deploy, accept v0’s offer to connect the project to GitHub, pick my-first-site, and you’re done with this slide. Portable route: follow the setup guide, don’t improvise. Open my-first-site. Add file, Upload files. Choose index.html itself, not a ZIP, not a folder. Commit message like “First version of my site,” commit to main. Refresh and make sure index.html sits at the top level, lowercase. That’s the save.', 'a ZIP or a folder uploaded instead of the file. index.html itself, at the top level.', 'a live *.vercel.app address open on someone else’s phone, recorded in project-state.md.') });
+  notes: NOTE('11:20–11:30', 'Ten minutes and deliverable one. v0 route: click Deploy, accept v0’s offer to connect the project to GitHub, pick my-first-site, and you’re done with this slide. Portable route: follow the setup guide, don’t improvise. Open my-first-site. Add file, Upload files. Choose index.html itself, not a ZIP, not a folder. Commit message like “First version of my site,” commit to main. Refresh and make sure index.html sits at the top level, lowercase. That’s the save.', 'a ZIP or a folder uploaded instead of the file. index.html itself, at the top level.', 'my-first-site shows the save after a refresh: index.html at the top level, lowercase, or v0’s first push.') });
 P1(s, 6, 'Save', '11:20 – 11:30');
 title(s, 'Save it: upload index.html to GitHub.');
 lede(s, 'v0 route: click Deploy. When v0 offers to connect the project to GitHub (before or after Deploy), accept and pick my-first-site. Every version is pushed there. Skip the steps below.', { h:0.7 });
@@ -687,11 +689,11 @@ numbered(s, ['“Add New” → “Project” → Import my-first-site.','Framew
 stickies(s); here(s, 'PUBLISH');
 
 // ---- Mini-lesson: Reading what the agent wrote (11:30–11:45) ----
-const RA = (s, k, time) => kicker(s, `Reading what the agent wrote · ${k} of 3 · 15 min total`, time);
+const RA = (s, k, part, time) => kicker(s, `Reading what the agent wrote · ${k} of 3 · ${part} · 15 min total`, time);
 // 50 A commit and a diff
 s = slide({ name:'Reading what the agent wrote 1: a commit and a diff',
-  notes: NOTE('11:30–11:35', 'Your site’s live and GitHub holds at least one commit. Open it on the projector. A commit is a named checkpoint; a diff is what changed between two checkpoints. Green added, red removed. Read it in this order: the message first, does it say what you asked for; the file names second, did it touch only the files you expected; the lines last, and only the red ones closely, because deletions are where the surprises hide. You don’t need to understand every line. You need to notice when the shape of the change doesn’t match the size of your request.', 'developers skimming. Ask one of them to read a diff aloud to everyone.', 'everyone has opened one commit in their own repository and found the green and red.') });
-RA(s, 1, '11:30 – 11:35');
+  notes: NOTE('11:30–11:35', 'You opened a diff this morning. Now we read one like a reviewer, because this afternoon the agent hands you one. Green added, red removed. Read it in this order: the message first, does it say what you asked for; the file names second, did it touch only the files you expected; the lines last, and only the red ones closely, because deletions are where the surprises hide. You don’t need to understand every line. You need to notice when the shape of the change doesn’t match the size of your request.', 'developers skimming. Ask one of them to read a diff aloud to everyone.', 'everyone has opened one commit in their own repository and found the green and red.') });
+RA(s, 1, 'The diff', '11:30 – 11:35');
 title(s, 'A diff shows what the agent changed.');
 box(s, M, 1.95, 6.3, 3.5, { fill:NAVY, line:NAVY });
 s.addText([
@@ -709,7 +711,7 @@ here(s, 'CHECK');
 // 51 The pull request, drawn with the "no" exit
 s = slide({ name:'Reading what the agent wrote 2: the pull request',
   notes: NOTE('11:35–11:40', 'The pull request is the human checkpoint in the agent loop. The agent works on a branch, a separate line of changes. It opens a pull request: here’s what I propose. You review the diff, Vercel shows you a preview URL, and you merge or you say no. This afternoon you practice it: increment 2 of the game, the battle, is done on a branch and merged through a pull request. Everyone, including the v0 route.', 'people merging without opening the Files changed tab. The green button is not the review.', 'everyone can name the four red flags.') });
-RA(s, 2, '11:35 – 11:40');
+RA(s, 2, 'The pull request', '11:35 – 11:40');
 title(s, 'The pull request is the human checkpoint.');
 lede(s, 'This afternoon: increment 2 of the game goes through a pull request. Every route.');
 { const y=2.6, h=0.8, w=2.4, g=(CW-4*w)/3, names=['Branch','Pull request','Review','Merge'], under=['The agent works on a separate line. The live site is untouched.','“Here is what I propose.” The diff, the message, a preview URL.','You read it: message, files, lines. You click the preview.','Yes: it goes live in about a minute.'];
@@ -726,7 +728,7 @@ here(s, 'CHECK');
 // 52 Four red flags
 s = slide({ name:'Reading what the agent wrote 2: four red flags',
   notes: NOTE('11:35–11:40', 'Four red flags that mean no. Files changed that you didn’t ask about. Tests or checks deleted. Secrets or keys in the code; that one stops everything, it must never be in a repository. A scope bigger than the prompt. Any one of them and you say no. Saying no feels rude the first time. It isn’t. It’s the job, and the agent has no feelings about it. Ask for a smaller change, or restore the previous version.', 'people merging without opening the Files changed tab. The green button is not the review.', 'everyone can name the four red flags.') });
-RA(s, 2, '11:35 – 11:40');
+RA(s, 2, 'Red flags', '11:35 – 11:40');
 title(s, 'Four red flags. Any one of them means no.');
 lede(s, 'Saying no costs one sentence: “Redo this with only what I asked for.”');
 ['Changed files you did not ask about','Deleted tests or checks','Secrets or keys in the code','A scope bigger than the prompt'].forEach((f,i)=>{ const y=2.5+i*0.9; s.addShape(pres.ShapeType.rect, { x:M, y:y+0.1, w:0.36, h:0.36, fill:{ color:RED }, line:{ color:RED, width:0 } }); text(s, f, M+0.65, y, CW-0.65, 0.56, { size:22, bold:true, valign:'middle' }); });
@@ -735,7 +737,7 @@ here(s, 'CHECK');
 // 53 Rollback, three ways
 s = slide({ name:'Reading what the agent wrote 3: rollback',
   notes: NOTE('11:40–11:45', 'Nothing is lost if it’s in GitHub. A merge that broke the site is one commit. Revert it: GitHub opens a new pull request that undoes it; merge it and Vercel ships the previous version. On v0, every generation is a version; open the history and restore the one that worked. Third way: promote an earlier good deploy in Vercel. The rule for the day: never fix a broken file by hand. Go back to the last good version and ask for a smaller change. I demonstrate one revert on the projector, on my own site, now.', 'people who “fixed it” by editing the live file in the chat until it half works. Back to the last good commit.', 'everyone can find the Revert button on a merged pull request and the version history in v0.') });
-RA(s, 3, '11:40 – 11:45');
+RA(s, 3, 'Rollback', '11:40 – 11:45');
 title(s, 'Nothing is lost if it’s in GitHub.');
 lede(s, 'Never fix a broken file by hand. Go back to the last good version and ask for a smaller change.');
 cols(s, [['GitHub · Revert',null,BLUE,['1   Open the merged pull request that broke it.','2   Click “Revert.” Merge the new pull request.','3   Vercel ships the previous version.']],['v0 · restore a version',null,ORANGE,['1   Every generation is a version. Open the history.','2   Restore the one that worked.','3   Push; GitHub and the live URL follow.']],['Vercel · promote',null,ORANGE,['1   Open the Deployments list.','2   Pick an earlier successful deploy.','3   Promote it while you fix the new one.']]], { y:2.4, size:15, gap2:9, h:3.0 });
@@ -774,11 +776,14 @@ SK(s, '11:45 – 11:51');
 title(s, 'Install it where you work. Three ways in each.');
 lede(s, 'A skill is text. Any chatbot that can read a file or a paste can use one. The rows differ in how automatically it loads.');
 { const colx=[M, M+CW/2+0.25], cw=CW/2-0.25;
-  [['Claude',[['Claude.ai, any plan','Open a Project. Add SKILL.md to its knowledge. One line in the project instructions: “Follow the attached skills when their trigger phrases apply.”'],['Claude.ai, plans with Skills','Settings → Capabilities → Skills. Upload the skill folder as a ZIP. Toggle it on. It loads itself when the description matches.'],['Claude Code and Cowork','Put the folder at .claude/skills/<name>/SKILL.md in your project. It appears as /<name>. Nothing to upload.']]],
-   ['ChatGPT',[['Any chat, any plan','Paste SKILL.md after the one-line instruction on the next slide. Lasts one conversation.'],['A Project','Create a Project. Upload the SKILL.md files. In the instructions: “Follow the attached skills when their trigger phrases apply. Say which one you are using.”'],['A custom GPT','Create a GPT. Upload the skills as Knowledge. Same line in its instructions. Share it with your team.']]]].forEach(([nm,rows],c)=>{ const x=colx[c];
-    text(s, nm, x, 2.35, cw, 0.4, { size:22, bold:true, color:c?INK:INK });
-    rows.forEach(([wh,how],i)=>{ const y=2.85+i*1.15; text(s, wh, x, y, cw, 0.3, { mono:true, size:11, bold:true, color:ORANGE, cs:1 }); text(s, how, x, y+0.3, cw, 0.85, { size:13 }); }); });
+  [['Claude',[['Claude.ai, any plan','Open a Project.',' Add SKILL.md to its knowledge. One line in the project instructions: “Follow the attached skills when their trigger phrases apply.”'],['Claude.ai, plans with Skills','Settings → Capabilities → Skills.',' Upload the skill folder as a ZIP. Toggle it on. It loads itself when the description matches.'],['Claude Code and Cowork','Put the folder at',' .claude/skills/<name>/SKILL.md in your project. It appears as /<name>. Nothing to upload.']]],
+   ['ChatGPT',[['Any chat, any plan','Paste SKILL.md',' after the one-line instruction on the next slide. Lasts one conversation.'],['A Project','Create a Project.',' Upload the SKILL.md files. In the instructions: “Follow the attached skills when their trigger phrases apply. Say which one you are using.”'],['A custom GPT','Create a GPT.',' Upload the skills as Knowledge. Same line in its instructions. Share it with your team.']]]].forEach(([nm,rows],c)=>{ const x=colx[c];
+    text(s, nm, x, 2.35, cw, 0.4, { size:22, bold:true });
+    // the lead words are bold so a student finds their row by shape
+    rows.forEach(([wh,lead,rest],i)=>{ const y=2.85+i*1.15; text(s, wh, x, y, cw, 0.3, { mono:true, size:11, bold:true, color:ORANGE, cs:1 });
+      s.addText([{ text:lead, options:{ bold:true } },{ text:rest }], { x, y:y+0.3, w:cw, h:0.85, fontFace:SANS, fontSize:13, color:INK, margin:0, isTextBox:true, valign:'top', lineSpacingMultiple:1.15 }); }); });
 }
+text(s, 'Row missing on your plan? The paste route always works.', M, 6.35, CW, 0.3, { size:14, color:MUTED });
 
 // 57 Sprint 1: skills menu (reference table)
 s = slide({ name:'Live hacking sprint 1: the skills menu',
@@ -905,7 +910,7 @@ here(s, 'PLAN');
 
 // 69 Build 1: board
 s = slide({ name:'Build increment 1: the board',
-  notes: NOTE('13:40–14:00', 'First increment. Board only. Two buttons, Award to me and Award to opponent, stand in for the battle so you can test the board on its own. One index.html, inline CSS and JavaScript, no external files. Open it. Click three of your marks in a row: it says you won. Three of theirs: you lost. Fill the board with no line: Draw. Play again and Restart both work. Compare with checkpoint 1. If yours doesn’t detect wins by 2:00, download checkpoint 1 and keep going.', 'the diagonal lines not detected. “Detect the eight lines” is in the prompt; test 1-5-9 and 3-5-7 specifically.', 'win, lose, and draw each observed once, with Restart in between.') });
+  notes: NOTE('13:40–14:00', 'First increment. Board only. Two buttons, Award to me and Award to opponent, stand in for the battle so you can test the board on its own. One index.html, inline CSS and JavaScript, no external files. “Visually hidden” means a label only a screen reader hears, so a board made of emoji still reads as X and O. Open it. Click three of your marks in a row: it says you won. Three of theirs: you lost. Fill the board with no line: Draw. Play again and Restart both work. Compare with checkpoint 1. If yours doesn’t detect wins by 2:00, download checkpoint 1 and keep going.', 'the diagonal lines not detected. “Detect the eight lines” is in the prompt; test 1-5-9 and 3-5-7 specifically.', 'win, lose, and draw each observed once, with Restart in between.') });
 G(s, 'Build 1 of 3 · the board · vc-game-build', '1:40 – 2:00');
 title(s, 'Build the board alone.');
 lede(s, 'Behind at 2:00? Download checkpoint-1-board/index.html and build the battle next.');
@@ -916,7 +921,7 @@ stickies(s); here(s, 'BUILD');
 
 // 70 Build 2: battle
 s = slide({ name:'Build increment 2: the battle',
-  notes: NOTE('14:00–14:15', 'Second increment, its own file, and the pull request exercise. Do it on a branch. v0: a new generation, push it, accept GitHub’s offer to open a pull request. Portable: branch dropdown, type battle, create it, upload the file to that branch, “Compare & pull request.” Health is text, two each. Attacks cycle in your order. One answer per exchange. Ends at zero. Test: two correct answers end it in two exchanges. Read the diff: message, files, lines. Merge. At 2:15, if I call cut two, everyone continues from checkpoint 2.', 'health not changing on a correct answer. The exact help sentence from stuck.md: “I click Shield when it shows Laser and the alien’s health does not change.”', 'two correct answers end the battle in two exchanges with no Next exchange button after the win.') });
+  notes: NOTE('14:00–14:15', 'Second increment, its own file, on a branch, and the pull request exercise. Portable: branch dropdown, type battle, create it, upload the file to that branch, “Compare & pull request.” v0: a new generation, push it, accept GitHub’s offer to open a pull request. If your v0 pushed straight to main, make the branch and the pull request on GitHub yourself, the portable steps. The review is the lesson, not which button made the branch. Read the diff: message, files, lines. Merge. At 2:15, if I call cut two, everyone continues from checkpoint 2.', 'health not changing on a correct answer. Use the exact stuck.md sentence: what you clicked, what it showed, what didn’t change.', 'two correct answers end the battle in two exchanges with no Next exchange button after the win.') });
 G(s, 'Build 2 of 3 · the battle · vc-game-build', '2:00 – 2:15');
 title(s, 'Build the battle as its own file, on a branch.');
 lede(s, 'This one goes through a pull request: branch, upload, “Compare & pull request,” read message, files, lines, then merge.', { color:ORANGE });
@@ -1038,24 +1043,26 @@ here(s, 'SAVE');
 
 // 82 LinkedIn close
 s = slide({ name:'LinkedIn close: the optional post and endorsement',
-  notes: NOTE('17:23–17:26', 'Optional, and it doesn’t affect anything about today. Add Vibe Coding to your LinkedIn skills if the label exists; if not, ask me which accurate label to use. Connect with me; I’ll give you the exact profile, don’t guess it. Publish a post in your own words about something you built, learned, or worked through; honest beats flattering. Send me the profile URL, the post URL, and the exact skill name through the class contact channel and I endorse it personally. It’s recognition of a skill you practiced today, not a certification. The chatbot prompt on the slide drafts it; you decide whether to post.', 'posts that claim more than was built. Describe what you actually completed.', 'none; optional.') });
+  notes: NOTE('17:23–17:26', 'Optional, and it doesn’t affect anything about today. Add Vibe Coding to your LinkedIn skills if the label exists; if not, ask me which accurate label to use. Connect with me; I’ll give you the exact profile, don’t guess it. Publish a post in your own words about something you built, learned, or worked through; honest beats flattering. Email the profile URL, the post URL, and the exact skill name to mrhinkle@allthingsai.org, subject “Endorsement,” and I endorse it personally. It’s recognition of a skill you practiced today, not a certification. The chatbot prompt on the slide drafts it; you decide whether to post.', 'posts that claim more than was built. Describe what you actually completed.', 'none; optional.') });
 HO(s, 'Optional');
 title(s, 'Optional: post about today and I’ll endorse the skill.');
 lede(s, 'Recognition of a skill you practiced today, not a certification. You choose what to publish.');
-numbered(s, ['Add “Vibe Coding” in your profile’s Skills section. Can’t find it? Ask me which label to use.','Connect with me on LinkedIn, using the profile I show you now, not a guess.','Publish a post in your own words: something you built, learned, or worked through.','Send me your profile URL, post URL, and the exact skill name. I endorse it personally.'], { y:2.35, h:1.9, size:15, gap:6 });
+numbered(s, ['Add “Vibe Coding” in your profile’s Skills section. Can’t find it? Ask me which label to use.','Connect with me on LinkedIn, using the profile I show you now, not a guess.','Publish a post in your own words: something you built, learned, or worked through.','Send me your profile URL, post URL, and the exact skill name: mrhinkle@allthingsai.org, subject “Endorsement.” I endorse it personally.'], { y:2.35, h:1.9, size:15, gap:6 });
 promptCard(s, 'Help me draft a short LinkedIn post about this class using only these facts: [what I built, what works, what I learned, and a challenge]. Keep my voice. Mention that Mark offered a skill endorsement to participants who post about their experience. Do not invent outcomes, praise, or expertise. Give me a draft to review; do not publish it or message anyone.', M, 4.4, CW, 1.8, { label:'ASK YOUR CHATBOT FOR A DRAFT · VERBATIM' });
 
 // 83 Two offers: everyone gets the slides, reviewers get the book
 s = slide({ name:'Two offers: the slides and the book',
-  notes: NOTE('17:26–17:28', 'Two offers, open to everyone. First, everyone gets the slides and all the course materials. They’re in the repo on the screen, github.com/mrhinkle/Vibe-Coding-for-Non-Technical-Professionals; the PDF and the PPTX sit in presentations/ato-2026-workshop. The link is also on the hold slide and the thank-you slide. Second, reviewers get the book. Tell me what worked and what didn’t and I send you the preview release edition of Software Development for Non-Programmers: Beyond Vibecoding. Good or bad, specific or short, it all counts, and the critical stuff helps me most; tell me what to cut. Email mrhinkle@allthingsai.org, subject “ATO workshop feedback,” or hand me the printed sheet before you leave. I read every one myself.', 'people writing only nice things. Ask for the one thing to cut.', 'everyone knows the email address and the subject line.') });
+  notes: NOTE('17:26–17:28', 'Two offers, open to everyone. First, everyone gets the slides and all the course materials. They’re in the repo on the screen, github.com/mrhinkle/Vibe-Coding-for-Non-Technical-Professionals; the PDF and the PPTX sit in presentations/ato-2026-workshop. The link is also on the hold slide and the thank-you slide. Second, reviewers get the book. Tell me what worked and what didn’t and I send you the preview release edition of Software Development for Non-Programmers: Beyond Vibecoding. Good or bad, specific or short, it all counts, and the critical stuff helps me most; tell me what to cut. Email mrhinkle@allthingsai.org, subject “ATO workshop feedback,” or hand me the printed sheet before you leave. I read every one myself.', 'people writing only nice things. Ask for the one thing to cut.', 'everyone has scanned the link or photographed this slide.') });
 HO(s, 'Two offers');
 title(s, 'Everyone gets the slides. Reviewers get the book.');
-label(s, 'Everyone gets the slides', M, 2.0, 8.6);
-text(s, 'The slides and all the course materials are in the repo. PDF and PPTX in presentations/ato-2026-workshop.', M, 2.35, 8.6, 0.6, { size:16 });
-text(s, 'github.com/mrhinkle/Vibe-Coding-for-Non-Technical-Professionals', M, 3.0, 8.6, 0.4, { mono:true, size:14, bold:true });
-label(s, 'Reviewers get the book', M, 3.85, 8.6);
-text(s, 'Send me feedback, good or bad, and you get the preview release edition of Software Development for Non-Programmers: Beyond Vibecoding.', M, 4.2, 8.6, 0.8, { size:16 });
-text(s, 'To: mrhinkle@allthingsai.org\nSubject: ATO workshop feedback\nOr hand me the printed sheet before you leave.', M, 5.1, 8.6, 1.1, { mono:true, size:14 });
+label(s, 'Everyone gets the slides', M, 2.0, 6.7);
+text(s, 'The slides and all the course materials are in the repo. PDF and PPTX in presentations/ato-2026-workshop.', M, 2.35, 6.7, 0.75, { size:16 });
+text(s, 'github.com/mrhinkle/Vibe-Coding-for-Non-Technical-Professionals', M, 3.15, 6.7, 0.4, { mono:true, size:12, bold:true });
+label(s, 'Reviewers get the book', M, 3.95, 6.7);
+text(s, 'Send me feedback, good or bad, and you get the preview release edition of Software Development for Non-Programmers: Beyond Vibecoding.', M, 4.3, 6.7, 0.95, { size:16 });
+text(s, 'To: mrhinkle@allthingsai.org\nSubject: ATO workshop feedback\nOr hand me the printed sheet before you leave.', M, 5.3, 6.7, 1.1, { mono:true, size:14 });
+s.addImage({ path:ASSETS+'qr-repo.png', x:7.75, y:2.0, w:1.9, h:1.9 });
+text(s, 'Scan for the slides', 7.75, 3.95, 1.9, 0.3, { mono:true, size:11, color:DIM, align:'center' });
 s.addImage({ path:ASSETS+'book-cover.jpg', x:W-M-2.4, y:1.95, w:2.4, h:3.6 });
 text(s, 'Advance Release Edition', W-M-2.4, 5.6, 2.4, 0.3, { mono:true, size:11, color:DIM, align:'center' });
 
@@ -1076,9 +1083,11 @@ title(s, 'Now it’s two URLs you own.', { w:7.8 });
 para(s, ['A site about you, live in your Vercel. A game you drew on paper at one o’clock, playing on a phone.','Run the same six steps on Monday, on something at work.'], { y:2.0, w:7.8, h:2.0, size:17, gap:12, color:WHITE });
 text(s, 'MARK HINKLE', M, 4.4, 7, 0.3, { mono:true, size:11, color:ORANGE, cs:1.5 });
 text(s, 'mrhinkle@allthingsai.org', M, 4.75, 7, 0.5, { mono:true, size:20, color:WHITE });
-text(s, 'All Things AI · allthingsai.org     The AIE Network · theaienterprise.io', M, 5.3, 8.4, 0.4, { mono:true, size:12, color:'D6DEEA' });
-s.addImage({ path:ASSETS+'ata-square.png', x:9.4, y:2.0, w:2.6, h:2.6 });
-s.addImage({ path:ASSETS+'logo-aie-white.png', x:9.1, y:4.9, w:3.2, h:0.8, sizing:{ type:'contain', w:3.2, h:0.8 } });
+text(s, 'All Things AI · allthingsai.org     The AIE Network · theaienterprise.io', M, 5.3, 7.9, 0.4, { mono:true, size:12, color:'D6DEEA' });
+s.addImage({ path:ASSETS+'ata-square.png', x:8.7, y:2.0, w:2.1, h:2.1 });
+s.addImage({ path:ASSETS+'qr-repo.png', x:W-M-1.63, y:2.0, w:1.63, h:1.63 });
+text(s, 'Scan for the slides', W-M-1.9, 3.68, 1.9, 0.3, { mono:true, size:11, color:'D6DEEA', align:'center' });
+s.addImage({ path:ASSETS+'logo-aie-white.png', x:8.7, y:4.6, w:3.2, h:0.8, sizing:{ type:'contain', w:3.2, h:0.8 } });
 text(s, 'Feedback sheets on the table on your way out. Subject line: ATO workshop feedback.', M, 5.95, CW, 0.35, { size:14, color:WHITE });
 text(s, 'Slides and all course materials: github.com/mrhinkle/Vibe-Coding-for-Non-Technical-Professionals', M, 6.35, CW, 0.3, { mono:true, size:11, color:'D6DEEA' });
 
