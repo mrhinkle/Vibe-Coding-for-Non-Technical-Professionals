@@ -2,21 +2,43 @@
 
 A full-day, hands-on class for business professionals with no programming experience. Use your favorite chatbot to create two things you can share: **a simple website on Vercel, then a browser game**.
 
-The class starts with 30 minutes on how software is developed. Students then learn GitHub, Vercel, and a repeatable workflow: describe the outcome, build a small version, check what it actually does, save progress, and publish.
+The class starts with 30 minutes on how software is developed. Students then learn GitHub, Vercel, and one repeatable workflow: Plan → Design → Build → Test → Deploy → Maintain.
 
 **Duration:** six teaching hours (360 minutes), plus lunch and breaks.
 
 **Instructor:** Mark Hinkle.
 
-**Status:** course documentation assembled; seven runnable website starters are included; game checkpoints and classroom rehearsal remain preparation work. The existing presentation is included as reference. Complete the [instructor preflight](instructor/preflight.md) before teaching.
+**Status:** course documentation assembled; seven runnable website starters are included; the final 63-slide All Things Open 2026 workshop deck is checked in with rendered slides and review evidence; game checkpoints and classroom rehearsal remain preparation work. Complete the [instructor preflight](instructor/preflight.md) before teaching.
 
-## Give this course to your chatbot
+## Give this course to Claude, Grok, ChatGPT, or another coding agent
 
-**[Start here](START-HERE.md)** for the student route. Point an authorized coding assistant at this repository and ask it to read **[AI-START.md](AI-START.md)**. If your chatbot cannot access the private repository, download and attach **[AI-COURSE-PACK.md](AI-COURSE-PACK.md)**, a single text file containing the current lessons, prompts, templates, and skills. If file upload is unavailable, paste the entry point and current lesson.
+**[Start here](START-HERE.md)** for the student route. Point an authorized coding agent at this repository and ask it to read **[AI-START.md](AI-START.md)**. If the agent cannot access the private repository, download and attach **[AI-COURSE-PACK.md](AI-COURSE-PACK.md)**, a single text file containing the current lessons, prompts, templates, and skills. If file upload is unavailable, paste the entry point and current lesson.
 
-> Read AI-START.md from this repository or the course materials I attached. Be my patient guide. Tell me which files you actually received, ask whether I am starting or continuing, and guide me through the website first, then the game. Use one checkpoint at a time and show me how to check each result.
+Copy this prompt into Claude, Grok, ChatGPT, or another assistant that can work with files:
 
-Private repository access does not transfer automatically to your chatbot. Students need repository access or an instructor-supplied copy. Instructions never require sharing passwords or access tokens. The website and game belong in separate learner-owned repositories.
+```text
+Read README.md and AI-START.md from this repository or the course materials
+I attached. Tell me which files you actually opened. If you cannot access the
+course, say so and ask me for AI-COURSE-PACK.md or the smallest current lesson.
+
+I am here to build two separate projects: the website first, then the game.
+Ask whether I am starting fresh, continuing saved work, or stuck. Use plain
+language and one checkpoint at a time. Before changing anything, show me the
+finish line, the files you expect to touch, and the exact result I should see.
+After each change, tell me what to try and record Passed, Failed, or Not tested.
+
+Keep the course repository, my-first-site, and my-first-game separate. Never
+ask for passwords, authentication codes, recovery codes, or real secret keys.
+Do not add accounts, payments, databases, email, or paid services to the core
+exercises. If you are blocked, stop and name the exact missing file, screen,
+permission, or error instead of pretending the step worked.
+
+Use this loop throughout: Plan → Design → Build → Test → Deploy →
+Maintain. End each checkpoint with: current project and version,
+what changed, what was observed, what remains, and the next small action.
+```
+
+Private repository access does not transfer automatically to an agent. Students need repository access or an instructor-supplied copy. A product name or connection badge is not proof the files were loaded. Instructions never require sharing passwords or access tokens. The website and game belong in separate learner-owned repositories.
 
 ## Start here
 
@@ -33,7 +55,7 @@ Private repository access does not transfer automatically to your chatbot. Stude
 | Wanting multiple AI helpers | [Three collaboration options](docs/multiple-agents.md) and [sample AGENTS.md](templates/AGENTS.md) |
 | Changing chats or stopping for the day | [Project state template](templates/project-state.md) |
 | Looking for words or prompts | [Glossary](docs/glossary.md) and [prompt library](docs/prompt-library.md) |
-| Updating the slides | [Presentation reference and adaptation plan](presentations/README.md) |
+| Opening or updating the workshop slides | [Presentation index and Claude handoff](presentations/README.md) |
 | Checking where the material came from | [Source map](repository-map.md) |
 
 ## What students will accomplish
@@ -129,9 +151,9 @@ tools/                      Rebuild the guide and single-file course pack
 
 ## Current readiness
 
-The curriculum, 17 skill entrypoints, detailed self-study documentation, illustrated participant guide, and student templates are assembled. The 18-page guide uses the existing All Things AI logo and palette with explanatory diagrams. It is separate from the existing 51-slide deck preserved under `presentations/reference-six-hour-class/`. That older deck teaches one business application and includes database and email topics; it has **not yet been rewritten for this two-project agenda**.
+The curriculum, 17 skill entrypoints, detailed self-study documentation, illustrated participant guide, student templates, and final 63-slide All Things Open 2026 workshop deck are assembled. The deck, its design and build source, all 63 rendered slide images, and exact review evidence are in [`presentations/ato-2026-ai-agents-vibe-coding/`](presentations/ato-2026-ai-agents-vibe-coding/). The older 51-slide one-project class remains preserved separately under `presentations/reference-six-hour-class/` as historical reference.
 
-Before class, revise the slides, prepare and test recovery checkpoints, rehearse each offered chatbot route, and playtest the selected game recipes. Seven standalone website starters are included and checked locally; playable game checkpoints still need preparation. Documentation checks are not a substitute for a classroom rehearsal.
+Before class, prepare and test recovery checkpoints, rehearse each offered chatbot route, and playtest the selected game recipes. Seven standalone website starters are included and checked locally; playable game checkpoints still need preparation. Documentation and deck checks are not a substitute for a classroom rehearsal.
 
 The multiple-agent lesson is optional. It does not add a required block to the 360-minute agenda. Begin with one builder and one read-only reviewer; advanced native agents and isolated worktrees are extensions.
 

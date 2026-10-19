@@ -1,7 +1,10 @@
 .DS_Store
-node_modules/
+node_modules
 .env
 .env.*
 .vercel/
 *.log
 __pycache__/
+.codex-build/
+.codex-finalizer/
+tmp/

@@ -11,6 +11,18 @@ The existing six-hour class from `mrhinkle/Presentations` is preserved in [refer
 
 These files are unmodified reference copies. The current course is defined by the root [instructor guide](../instructor-guide.md), [setup guide](../setup-guide.md), and [student workbook](../handouts/student-workbook.md). The reference handouts contain earlier requirements and dated pricing; they are not the current prerequisites.
 
+## All Things Open 2026 workshop edition
+
+The final 63-slide [AI Agents & Vibe Coding workshop](ato-2026-ai-agents-vibe-coding/) is the current presentation for the October 19, 2026 All Things Open extended workshop.
+
+- [Final PowerPoint](ato-2026-ai-agents-vibe-coding/ai-agents-vibe-coding-ato-2026-model-review-v45.pptx)
+- [Claude handoff prompt](ato-2026-ai-agents-vibe-coding/CLAUDE-OPEN-PRESENTATION.md)
+- [All 63 rendered slides](ato-2026-ai-agents-vibe-coding/rendered-slides/), their [SHA-linked render manifest](ato-2026-ai-agents-vibe-coding/rendered-slides/RENDER-MANIFEST.md), and the [montage preview](ato-2026-ai-agents-vibe-coding/workshop-overview.webp)
+- [Presentation design system](ato-2026-ai-agents-vibe-coding/design.md), [reference builder source](ato-2026-ai-agents-vibe-coding/restructure-two-projects.mjs), and [editable diagram components](ato-2026-ai-agents-vibe-coding/design-system.mjs)
+- [Validation receipt](ato-2026-ai-agents-vibe-coding/presentation-validation.json) and [Kimi K3 final review](ato-2026-ai-agents-vibe-coding/kimi-k3-final-review.md)
+
+The final deck passed package integrity, first-party PowerPoint import, font-policy checks, layout geometry, full render inspection, and independent Kimi K3 review through OpenRouter. The receipt records that native font rendering was not independently verified. Its SHA-256 is `58d4fdb1942ec4b8397d7079b7b5fb1e4e4e147a3153e5f3cf28e79f1d4f31ab`. The older reference deck remains unchanged.
+
 ## What the existing deck covers
 
 The existing deck, titled *Vibe Coding, Take Two: The Six-Hour Class*, uses an All Things AI design and teaches a single business tool. It includes a simplified development lifecycle, requirements, GitHub, previews, testing, deployment, recovery, skills, and ownership. It also introduces database and email services and organizes live building into three 20-minute sprints.
@@ -35,10 +47,10 @@ Move database, email-service, and advanced CI content to optional follow-on mate
 
 ## Remaining presentation work
 
-- [ ] Rewrite slide content and speaker notes for the current teaching schedule.
-- [ ] Add screenshots from the exact setup routes used in rehearsal.
-- [ ] Add website and game milestones, skill prompts, and timeboxes.
-- [ ] Render and visually inspect the revised PowerPoint and PDF.
+- [x] Rewrite slide content and speaker notes for the current teaching schedule.
+- [x] Add GitHub and Vercel screenshots from the current setup routes.
+- [x] Add website and game milestones, skill prompts, and timeboxes.
+- [x] Render and visually inspect the revised PowerPoint.
 - [ ] Run a timed rehearsal using the student workbook.
 
-The imported generator is retained as source, not a verified reproducible build. Its environment and dependencies must be checked before using it to regenerate a deck. Neither the reference deck nor a revised export has been visually reviewed as part of assembling this repository.
+The imported reference generator is retained as historical source. The checked-in v45 PowerPoint is the exact reviewed delivery artifact. `restructure-two-projects.mjs` is the reference editing source used to create it, but it retains local runtime and input-deck paths and is not a portable one-command rebuild without adapting those paths.

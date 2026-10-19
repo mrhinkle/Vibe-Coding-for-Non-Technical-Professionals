@@ -1,0 +1,150 @@
+{
+  "schemaVersion": "presentation-finalization.v1",
+  "finalSha256": "58d4fdb1942ec4b8397d7079b7b5fb1e4e4e147a3153e5f3cf28e79f1d4f31ab",
+  "byteCount": 17102583,
+  "packageIntegrity": {
+    "chart_count": 0,
+    "claim_boundary": "Structural package checks only; no slide text, notes, formulas, chart values, or native PowerPoint execution were inspected.",
+    "finding_count": 0,
+    "findings": [],
+    "notes_parts_skipped": 63,
+    "relationship_part_count": 131,
+    "slide_count": 63,
+    "status": "pass",
+    "exitCode": 0,
+    "findingCount": 0,
+    "warnings": []
+  },
+  "presentationLayout": {
+    "finding_count": 0,
+    "findings": [],
+    "font_policy": {
+      "checked_text_script_count": 1305,
+      "native_font_rendering_verified": false,
+      "observed_font_families": [
+        "Courier New",
+        "Montserrat",
+        "Verdana"
+      ],
+      "observed_font_use_counts": {
+        "Courier New": 310,
+        "Montserrat": 933,
+        "Verdana": 62
+      },
+      "passed": true,
+      "performed": true
+    },
+    "slide_count": 63,
+    "slide_size_in": [
+      13.3333,
+      7.5
+    ],
+    "warning_count": 0,
+    "warnings": [],
+    "exitCode": 0,
+    "findingCount": 0,
+    "fontPolicy": {
+      "checked_text_script_count": 1305,
+      "native_font_rendering_verified": false,
+      "observed_font_families": [
+        "Courier New",
+        "Montserrat",
+        "Verdana"
+      ],
+      "observed_font_use_counts": {
+        "Courier New": 310,
+        "Montserrat": 933,
+        "Verdana": 62
+      },
+      "passed": true,
+      "performed": true
+    }
+  },
+  "fontSelection": {
+    "basis": "design",
+    "approvedFamilies": [
+      "Courier New",
+      "Montserrat",
+      "Verdana"
+    ],
+    "scriptFonts": {},
+    "referenceSha256": null,
+    "referenceFontsVerifiedInEncodedText": false,
+    "checked_text_script_count": 1305,
+    "native_font_rendering_verified": false,
+    "observed_font_families": [
+      "Courier New",
+      "Montserrat",
+      "Verdana"
+    ],
+    "observed_font_use_counts": {
+      "Courier New": 310,
+      "Montserrat": 933,
+      "Verdana": 62
+    },
+    "passed": true,
+    "performed": true
+  },
+  "firstPartyImport": {
+    "performed": true,
+    "passed": true,
+    "slideCount": 63,
+    "sha256": "58d4fdb1942ec4b8397d7079b7b5fb1e4e4e147a3153e5f3cf28e79f1d4f31ab",
+    "runtimeNodeModules": "/Users/mrhinkle/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules",
+    "nodeExecutable": "/opt/homebrew/Cellar/node/26.9.0/bin/node"
+  },
+  "nativeTableArithmetic": {
+    "performed": true,
+    "checked_column_count": 0,
+    "checks": [],
+    "claim_boundary": "Displayed-value arithmetic with rounding tolerance; not source-data verification.",
+    "eligible_table_count": 0,
+    "finding_count": 0,
+    "findings": [],
+    "native_table_count": 0,
+    "passed": true,
+    "schema_version": "presentation-native-table-arithmetic.v1",
+    "skipped_tables": [],
+    "slide_count": 63,
+    "warning_count": 0,
+    "warnings": []
+  },
+  "nativeChartTitles": {
+    "performed": true,
+    "checks": [],
+    "finding_count": 0,
+    "findings": [],
+    "native_chart_count": 0,
+    "native_powerpoint_verified": false,
+    "passed": true,
+    "presentation_sha256": "58d4fdb1942ec4b8397d7079b7b5fb1e4e4e147a3153e5f3cf28e79f1d4f31ab",
+    "schema_version": "presentation-native-chart-titles.v1",
+    "slide_count": 63,
+    "source_text_emitted": false,
+    "unresolved_linked_title_count": 0
+  },
+  "sourceDerivedPolicyFlags": [
+    "--expected-slide-size-emu",
+    "12192000,6858000",
+    "--validate-bullet-geometry",
+    "--validate-heading-fit",
+    "--cover-role",
+    "none",
+    "--expected-slide-count",
+    "63",
+    "--approved-font-family",
+    "Courier New",
+    "--approved-font-family",
+    "Montserrat",
+    "--approved-font-family",
+    "Verdana"
+  ],
+  "nativeChartValidation": {
+    "detectedOwnerSlides": [],
+    "detectedChartCount": 0,
+    "targetApplication": "portable",
+    "sourceChartOwnersExplicitlyDeclared": true,
+    "validatorRan": false,
+    "passed": true
+  }
+}
